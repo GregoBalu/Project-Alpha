@@ -1,5 +1,5 @@
 
-with (obj_enemy_base)
+with (obj_entity_base)
 {
     if (distance_to_object(obj_player) > 24) continue;
    // depth = layer_get_depth("Instances") - bbox_bottom;

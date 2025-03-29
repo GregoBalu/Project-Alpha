@@ -9,6 +9,7 @@ input_sprint            = vk_shift;
 input_playersheet       = vk_tab;
 
 input_use               = ord("F");
+input_talk              = vk_space;
 
 input_pause             = vk_escape;
 

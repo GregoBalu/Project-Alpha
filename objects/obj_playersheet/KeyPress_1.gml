@@ -1,3 +1,5 @@
+if (instance_exists(obj_dialog)) exit;
+
 if (keyboard_check(global.input_playersheet)) {
     if (state == State.Closed) {
         state = State.Opening;

@@ -1,3 +1,5 @@
+if (instance_exists(obj_dialog)) exit;
+
 var _hor = (keyboard_check(global.input_right)?1:0) - (keyboard_check(global.input_left)?1:0);
 var _ver = (keyboard_check(global.input_down)?1:0) - (keyboard_check(global.input_up)?1:0);
 var sprint_modifier = keyboard_check(global.input_sprint)?1.5:1;

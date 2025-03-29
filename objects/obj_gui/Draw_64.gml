@@ -1,3 +1,5 @@
+if (instance_exists(obj_dialog)) exit;
+
 display_set_gui_size(640, 480);
 
 draw_set_font(font_base);
@@ -37,6 +39,10 @@ draw_button_hint(_x + _width + _margin + _width + _margin, _y, _width, _height, 
 
 if (show_use > 0) {
     draw_button_hint(_x +4*(_width+_margin), _y, _width, _height, _padding, global.input_use);
+}
+
+if (show_talk > 0) {
+    draw_button_hint(_x +5*(_width+_margin), _y, _width*2, _height, _padding, global.input_talk);
 }
 
 if (show_corruption > 0) {

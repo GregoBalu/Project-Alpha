@@ -1,0 +1,34 @@
+TODO AND IDEAS
+
+- Changeable Ultimate ability
+    - Talent cost >=2
+
+
+
+- Battle effect indicators
+    - small icons
+        - armor break
+    - hints
+
+
+- More Decor
+- Gold
+- Inventory
+- Equipable items
+- Treasure chest
+- NPCs
+    - Dialog
+    - Vendor
+
+- heal/defensive ability?
+- pick all abilities?
+
+- main menu (start new, exit)
+    - Difficulty:  easy/medium/hard : starting stats
+
+- No healing potions
+    - instead cauldrons that
+        - need ingredients?
+        - need to perform some sort of magic to use
+        - replenish health on demand, but 1 time use
+    > witch aesthetic?

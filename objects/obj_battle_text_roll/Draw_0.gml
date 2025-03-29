@@ -1,0 +1,1 @@
+draw_textbox_color(x, y, width, height, text, color, fa_center, fa_middle);

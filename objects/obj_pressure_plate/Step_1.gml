@@ -1,0 +1,2 @@
+previousPressed = isPressed;
+isPressed = false;

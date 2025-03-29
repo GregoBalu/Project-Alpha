@@ -1,0 +1,1 @@
+if (CONTINOUS_FOG) shroud_add_fog();

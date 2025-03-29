@@ -1,0 +1,1 @@
+draw_textbox(x, y, sprite_width, sprite_height, text);

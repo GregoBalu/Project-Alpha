@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_battle_music",
+  "audioGroupId":{
+    "name":"ag_music",
+    "path":"audiogroups/ag_music",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":105.864,
+  "name":"snd_battle_music",
+  "parent":{
+    "name":"music",
+    "path":"folders/Sounds/music.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_battle_music.mp3",
+  "type":0,
+  "volume":1.0,
+}

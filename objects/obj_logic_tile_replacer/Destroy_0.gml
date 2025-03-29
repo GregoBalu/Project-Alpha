@@ -1,0 +1,1 @@
+ds_grid_destroy(original_tile_info);

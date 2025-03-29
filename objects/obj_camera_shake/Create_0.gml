@@ -8,3 +8,11 @@ shake_magnitude = 0;//scale
 shake_fade = 0.25;//decrease per ticks
 
 show_debug_message("Camera shake created");
+
+/*function start() {
+    view_camera[0] = view_camera[1];
+}
+
+function end() {
+    view_camera[0] = cam;
+}*/

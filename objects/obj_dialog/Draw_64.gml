@@ -5,6 +5,24 @@ var _dy = gui_h * 0.7;
 var _boxw = gui_w;
 var _boxh = gui_h - _dy;
 
+if (messages[current_message].name == global.dialog_player_name && messages[current_message].spr != undefined) {
+    var _w = sprite_get_width(messages[current_message].spr);
+    var _h = sprite_get_height(messages[current_message].spr);
+    
+    var _spr_w = speaker_sprite_width;
+    var _spr_h = _spr_w * (_h / _w);
+    
+    draw_sprite_stretched(messages[current_message].spr, 0, 0-sprite_animate_x, gui_h*0.3, _spr_w, _spr_h);
+} else if (messages[current_message].spr != undefined) {
+    var _w = sprite_get_width(messages[current_message].spr);
+    var _h = sprite_get_height(messages[current_message].spr);
+    
+    var _spr_w = speaker_sprite_width;
+    var _spr_h = _spr_w * (_h / _w);
+    
+    draw_sprite_stretched(messages[current_message].spr, 0, gui_w-speaker_sprite_width+sprite_animate_x, gui_h*0.3, _spr_w, _spr_h);
+}
+
 draw_sprite_stretched(spr_box, 0, _dx, _dy, _boxw, _boxh);
 
 _dx += 16;

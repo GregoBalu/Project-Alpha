@@ -4,10 +4,9 @@
 /// @param  {real}  _magnitude  The amount of screenshake to apply
 /// @param  {real}  _fade       How quickly the screenshake effect will fade out
 /// @description    Set the screenshake object variables.
-
 function screenshake(_delay, _time, _magnitude, _fade)
 {
-    //show_debug_message("Screenshake");
+    show_debug_message("Screenshake");
     //var _iid = instance_create_layer(0, 0, layer_get_id("Instances"), obj_camera_shake);
     with (obj_camera_shake)
     {
@@ -16,5 +15,14 @@ function screenshake(_delay, _time, _magnitude, _fade)
         shake_time = _time;
         shake_magnitude = _magnitude;
         shake_fade = _fade;
+    }
+}
+
+function screenshake_stop()
+{
+    show_debug_message("Stop Screenshake");
+    with (obj_camera_shake)
+    {
+        shake = false;
     }
 }

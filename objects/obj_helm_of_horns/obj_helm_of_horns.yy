@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_ring_of_erityc",
+  "%Name":"obj_helm_of_horns",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_ring_of_erityc",
+  "name":"obj_helm_of_horns",
   "overriddenProperties":[],
   "parent":{
     "name":"Inventory",
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_ring",
-    "path":"sprites/spr_ring/spr_ring.yy",
+    "name":"spr_helm_of_horns",
+    "path":"sprites/spr_helm_of_horns/spr_helm_of_horns.yy",
   },
   "spriteMaskId":null,
   "visible":true,

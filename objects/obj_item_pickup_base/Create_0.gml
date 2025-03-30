@@ -16,7 +16,7 @@ if (despawn_seconds > 0) {
     despawn_threshold1 = 0.7*despawn_seconds * TIME_SECOND;
     despawn_threshold2 = 0.3*despawn_seconds * TIME_SECOND;
 }
-if (despawn_seconds > 0) {
+if (pickup_delay_seconds > 0) {
     alarm[PICKUP_ALARM] = pickup_delay_seconds * TIME_SECOND;
 } else {
     can_pickup = true;

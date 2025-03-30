@@ -8,6 +8,7 @@
   "name":"obj_item_pickup_inventory_base",
   "overriddenProperties":[
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_item_pickup_base","path":"objects/obj_item_pickup_base/obj_item_pickup_base.yy",},"propertyId":{"name":"only_player","path":"objects/obj_item_pickup_base/obj_item_pickup_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"True",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_item_pickup_base","path":"objects/obj_item_pickup_base/obj_item_pickup_base.yy",},"propertyId":{"name":"pickup_delay_seconds","path":"objects/obj_item_pickup_base/obj_item_pickup_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
   ],
   "parent":{
     "name":"Items",

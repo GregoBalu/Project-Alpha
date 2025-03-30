@@ -12,12 +12,10 @@ TODO AND IDEAS
 
 
 - More Decor
-- Gold
 - Inventory
-- Equipable items
-- Treasure chest
+    - drag & drop func
+
 - NPCs
-    - Dialog
     - Vendor
 
 - heal/defensive ability?

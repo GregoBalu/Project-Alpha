@@ -26,5 +26,17 @@ generate_loot = function(obj) {
         instance_create_layer(random_range(obj.x-2,obj.x+2), random_range(obj.y-2,obj.y+2), itemsLayer, obj_item_speed_potion, data);
     } else if (rand < 82) {
         //item?
+        
+        
+        
+        
+        
+    } else if (rand < 95) {
+        var inst = instance_create_layer(random_range(obj.x-2,obj.x+2), random_range(obj.y-2,obj.y+2), itemsLayer, obj_item_coin);
+        inst.depth = depth - 1;
+    } else{
+        var inst = instance_create_layer(random_range(obj.x-2,obj.x+2), random_range(obj.y-2,obj.y+2), itemsLayer, obj_item_coin);
+        inst.depth = depth - 1;
+        inst.coin_amount = 3;
     }
 }

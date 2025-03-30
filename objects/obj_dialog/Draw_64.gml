@@ -34,8 +34,12 @@ draw_set_color(messages[current_message].color);
 draw_text(_dx, _dy, _name);
 draw_set_color(c_black);
 
+//draw_text(_dx + 100, _dy, $"{current_char}/ {string_length(messages[current_message].msg)}");
+
 _dx += 4;
 _dy += 40;
+
+
 
 draw_set_color(messages[current_message].msg_color);
 draw_set_font(messages[current_message].msg_font);

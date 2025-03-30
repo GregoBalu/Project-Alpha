@@ -15,6 +15,7 @@ function screenshake(_delay, _time, _magnitude, _fade)
         shake_time = _time;
         shake_magnitude = _magnitude;
         shake_fade = _fade;
+        camera_origin = new Vec2(camera_get_view_x(view_camera[0]), camera_get_view_y(view_camera[0]))
     }
 }
 

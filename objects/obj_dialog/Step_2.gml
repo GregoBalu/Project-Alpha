@@ -6,10 +6,10 @@ if (sprite_animate_x > 0) {
     
 var _str = messages[current_message].msg;
 
-if (current_char < string_length(_str)) {
+if (floor(current_char) < string_length(_str)) {
     current_char += char_speed * (1 + real(keyboard_check(input_key)) );
     
-    draw_message = string_copy(_str, 0, current_char);
+    draw_message = string_copy(_str, 0, floor(current_char));
     
     has_more = false;
     at_end = false;

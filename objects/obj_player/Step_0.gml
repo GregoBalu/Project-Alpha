@@ -4,6 +4,11 @@ var _hor = (keyboard_check(global.input_right)?1:0) - (keyboard_check(global.inp
 var _ver = (keyboard_check(global.input_down)?1:0) - (keyboard_check(global.input_up)?1:0);
 var sprint_modifier = keyboard_check(global.input_sprint)?1.5:1;
 
+var _len = (_hor !=0 || _ver!=0);
+var _dir = point_direction(0,0, _hor, _ver);
+_hor = lengthdir_x(_len, _dir);
+_ver = lengthdir_y(_len, _dir);
+
 var _actual_move_speed = move_speed * sprint_modifier;
 
 move_and_collide(_hor * _actual_move_speed, _ver * _actual_move_speed, tilemap, undefined, undefined, undefined, _actual_move_speed, _actual_move_speed);

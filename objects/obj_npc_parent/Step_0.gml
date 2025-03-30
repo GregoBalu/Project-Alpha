@@ -1,6 +1,6 @@
 if (instance_exists(obj_dialog)) exit;
     
-if (instance_exists(obj_player) && distance_to_object(obj_player) < 8) {
+if (instance_exists(obj_player) && distance_to_object(obj_player) < talk_distance) {
     if (!can_talk) {
         can_talk = true;
         obj_gui.show_talk++;
@@ -18,5 +18,18 @@ if (instance_exists(obj_player) && distance_to_object(obj_player) < 8) {
     if (can_talk) {
         can_talk = false;
         obj_gui.show_talk--;
+    }
+}
+
+if (do_wander) {
+
+    var _hor = clamp(target_x - x, -1, 1);
+    var _ver = clamp(target_y - y, -1, 1);
+    
+    move_and_collide(_hor * move_speed, _ver * move_speed, [tilemap, obj_enemy_base], undefined, undefined, undefined, move_speed, move_speed); {}
+    if (_hor != 0 || _ver != 0) {
+        //MOVING = true;
+    } else {
+        //MOVING = false;
     }
 }

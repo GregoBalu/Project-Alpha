@@ -5,10 +5,13 @@
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_npc_parent",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_entity_base","path":"objects/obj_entity_base/obj_entity_base.yy",},"propertyId":{"name":"move_speed","path":"objects/obj_entity_base/obj_entity_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0.4",},
+  ],
   "parent":{
     "name":"Objects",
     "path":"folders/Objects.yy",
@@ -33,6 +36,8 @@
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"dialog","filters":[],"listItems":[],"multiselect":false,"name":"dialog","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"-1","varType":4,},
     {"$GMObjectProperty":"v1","%Name":"dialog_alt","filters":[],"listItems":[],"multiselect":false,"name":"dialog_alt","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"-1","varType":4,},
+    {"$GMObjectProperty":"v1","%Name":"do_wander","filters":[],"listItems":[],"multiselect":false,"name":"do_wander","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"true","varType":3,},
+    {"$GMObjectProperty":"v1","%Name":"wander_range","filters":[],"listItems":[],"multiselect":false,"name":"wander_range","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"16","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

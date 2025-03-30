@@ -33,8 +33,8 @@ function dialog_entry(_name, _color, _sprite, _msg, _msg_font = font_base, _msg_
             
     _startAction = _on_start_action;
     _endAction = _on_end_action;
-    onStart = function() { show_debug_message("Start"); _startAction(); }
-    onEnd = function() { show_debug_message("End"); _endAction(); }
+    onStart = function() { _startAction(); }
+    onEnd = function() { _endAction(); }
 }
 
 dialog_player_name = "Omar";
@@ -47,7 +47,7 @@ dialog_welcome = [
     new dialog_entry(dialog_player_name, dialog_player_color, spr_player_idle_down, "Will do. Any sign of corruption yet? ..."),
     new dialog_entry("", c_white, undefined, "<A loud bang shakes the ground>", font_base_italic, c_ltgray, 
         function() {
-            screenshake(30, 10*TIME_SECOND, 2, 0.25);
+            screenshake(0, 3*TIME_SECOND, 2, 0.25);
         }, function() {
             screenshake_stop();
         }),

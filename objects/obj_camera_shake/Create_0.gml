@@ -7,6 +7,8 @@ shake_time = 0;//ticks
 shake_magnitude = 0;//scale
 shake_fade = 0.25;//decrease per ticks
 
+camera_origin = new Vec2(0, 0);
+
 show_debug_message("Camera shake created");
 
 /*function start() {

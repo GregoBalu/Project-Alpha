@@ -5,7 +5,7 @@ var _dy = gui_h * 0.7;
 var _boxw = gui_w;
 var _boxh = gui_h - _dy;
 
-if (messages[current_message].name == global.dialog_player_name && messages[current_message].spr != undefined) {
+if (messages[current_message].name == global.dialog_player_name && messages[current_message].spr != undefined && messages[current_message].spr != noone) {
     var _w = sprite_get_width(messages[current_message].spr);
     var _h = sprite_get_height(messages[current_message].spr);
     

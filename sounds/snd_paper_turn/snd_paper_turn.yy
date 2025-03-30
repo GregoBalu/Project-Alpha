@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":10.752,
+  "duration":1.37325,
   "name":"snd_paper_turn",
   "parent":{
     "name":"sfx",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_paper_turn.mp3",
+  "soundFile":"snd_paper_turn.wav",
   "type":0,
   "volume":1.0,
 }

@@ -37,6 +37,7 @@ function draw_textbox_background_color(_anchor_x, _anchor_y, _box_width, _box_he
     
     var text_width = string_width(_text);
     var text_height = string_height(_text);
+    var line_height = string_height("A line");
 
     
     //var text_width_scale = clamp(_box_width/text_width, 0.2, 1.0);
@@ -64,33 +65,73 @@ function draw_textbox_background_color(_anchor_x, _anchor_y, _box_width, _box_he
     var _actual_text_width = text_width*_scale_width;
     var _actual_text_height = text_height*_scale_height;
     
-    var topLeft = new Vec2(_anchor_x, _anchor_y);
-    if (_halign == fa_center) {
-        topLeft.x -= _actual_text_width/2;
-    } else if (_halign == fa_right) {
-        topLeft.x -= _actual_text_width;
-    }
-    if (_valign == fa_middle) {
-        topLeft.y -= _actual_text_height/2;
-    } else if (_valign == fa_bottom) {
-        topLeft.y -= _actual_text_height;
-    }
-    
-    
-    if (_debug) {
-        draw_rectangle_color(topLeft.x, topLeft.y, topLeft.x + _actual_text_width-1, topLeft.y+_actual_text_height-1, c_ltgrey, c_ltgrey, c_ltgrey, c_ltgrey,true);
-    }
-    if (_background_data != undefined) {
-        draw_sprite_stretched(_background_data.sprite, _background_data.image_index, topLeft.x - _background_data.margin, topLeft.y - _background_data.margin, 
-                _actual_text_width+2*_background_data.margin, 
-                _actual_text_height+2*_background_data.margin);
-    }
-    
-    //if (text_width_scale <= 0.2) {
-    //    draw_text_ext_transformed_color(_anchor_x, _anchor_y, _text, 1, _box_width, 0.2, 0.2, 0, _color, _color, _color, _color, 1);
-    //} else {
+    var _min_scale = 0.25;
+    if (text_width_scale <= _min_scale) {
+        
+        var _wr = (text_width / _box_width)*_min_scale;
+        if (_wr <= 1) {
+            //ok
+        } else {
+            //increase height by _wr line
+            //show_debug_message($"wr={_wr} lh={line_height} ath={_actual_text_height}");
+            var _old_height = _actual_text_height;
+            _actual_text_height += (line_height*_min_scale) * (ceil(_wr));
+            //_actual_text_height = min(_actual_text_height, _box_height);
+            //show_debug_message($"wr={_wr} lh={line_height*_min_scale} old={_old_height} -> ath={_actual_text_height}");
+        }
+        
+        var topLeft = new Vec2(_anchor_x, _anchor_y);
+        if (_halign == fa_center) {
+            topLeft.x -= _actual_text_width/2;
+        } else if (_halign == fa_right) {
+            topLeft.x -= _actual_text_width;
+        }
+        if (_valign == fa_middle) {
+            topLeft.y -= _actual_text_height/2;
+        } else if (_valign == fa_bottom) {
+            topLeft.y -= _actual_text_height;
+        }
+        
+        if (_background_data != undefined) {
+            draw_sprite_stretched(_background_data.sprite, _background_data.image_index, topLeft.x - _background_data.margin, topLeft.y - _background_data.margin, 
+                    _actual_text_width+2*_background_data.margin, 
+                    _actual_text_height+2*_background_data.margin);
+        }
+        
+        if (_debug) {
+            draw_rectangle_color(topLeft.x, topLeft.y, topLeft.x + _actual_text_width-1, topLeft.y+_actual_text_height-1, c_red, c_red, c_red, c_red,true);
+            draw_circle_color(_anchor_x, _anchor_y, 2, c_green, c_green, false);
+        }
+        
+        draw_set_color(_color);
+        draw_text_ext_transformed_color(_anchor_x, _anchor_y, _text, line_height, _box_width* (1/_min_scale), _min_scale, _min_scale, 0, _color, _color, _color, _color, 1);
+    } else {
+        var topLeft = new Vec2(_anchor_x, _anchor_y);
+        if (_halign == fa_center) {
+            topLeft.x -= _actual_text_width/2;
+        } else if (_halign == fa_right) {
+            topLeft.x -= _actual_text_width;
+        }
+        if (_valign == fa_middle) {
+            topLeft.y -= _actual_text_height/2;
+        } else if (_valign == fa_bottom) {
+            topLeft.y -= _actual_text_height;
+        }
+        
+        if (_background_data != undefined) {
+            draw_sprite_stretched(_background_data.sprite, _background_data.image_index, topLeft.x - _background_data.margin, topLeft.y - _background_data.margin, 
+                    _actual_text_width+2*_background_data.margin, 
+                    _actual_text_height+2*_background_data.margin);
+        }
+        if (_debug) {
+            draw_rectangle_color(topLeft.x, topLeft.y, topLeft.x + _actual_text_width-1, topLeft.y+_actual_text_height-1, c_red, c_red, c_red, c_red,true);
+        }
+        
+        draw_set_color(_color);
         draw_text_transformed_color(_anchor_x, _anchor_y, _text, _scale_width, _scale_height, 0, _color, _color, _color, _color, 1);
-    //}
+    }
+    //draw_text_ext(_anchor_x, _anchor_y, _text, -1, _box_width);
+    draw_set_color(c_black);
     
     draw_set_halign(fa_left);
     draw_set_valign(fa_top);

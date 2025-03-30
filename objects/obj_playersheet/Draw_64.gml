@@ -55,10 +55,17 @@ if (is_visible) {
     
     _yshift += 22;
     if (opening_state-32 > (_x+8+48)) {
-        draw_textbox(_x+10, _y + _yshift +6, 46, 6, string("Damage: {0}", obj_player.damage));
-        draw_textbox(_x+10, _y + _yshift +12, 46, 6, string("Move speed: {0}", obj_player.move_speed));
-        draw_textbox(_x+10, _y + _yshift +18, 46, 6, string("Defense: {0}", obj_player.defense));
-        draw_textbox(_x+10, _y + _yshift +24, 46, 6, string("Crit chance: {0}%", obj_player.crit_chance*100));
+        _yshift += 6;
+        draw_textbox(_x+10, _y + _yshift, 46, 6, string("Damage: {0}", obj_player.damage));
+        _yshift += 6;
+        draw_textbox(_x+10, _y + _yshift, 46, 6, string("Move speed: {0}", obj_player.move_speed));
+        _yshift += 6;
+        draw_textbox(_x+10, _y + _yshift, 46, 6, string("Defense: {0}", obj_player.defense));
+        _yshift += 6;
+        draw_textbox(_x+10, _y + _yshift, 46, 6, string("Crit chance: {0}%", obj_player.crit_chance*100));
+        _yshift += 6;
+        draw_textbox(_x+10, _y + _yshift, 46, 6, string("Lifesteal: {0}%", obj_player.lifesteal*100));
+        _yshift += 6;
     }
     
     

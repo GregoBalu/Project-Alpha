@@ -6,7 +6,7 @@ if (state == State.Closed) {
 
 if (state == State.Closing || state == State.Opening) {
     if (openingSoundId == undefined || !audio_is_playing(openingSoundId)) {
-        openingSoundId = audio_play_sound(snd_paper_turn, 5, true, 1, 1.2);
+        openingSoundId = audio_play_sound(snd_paper_turn, 5, true, 1, 0);
     }
 } else  {
     if (openingSoundId != undefined && audio_is_playing(openingSoundId)) {

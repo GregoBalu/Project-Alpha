@@ -1,3 +1,7 @@
+function initDialog() {
+    initInput();
+}
+initInput();
 
 function create_dialog(_messages){
     if (instance_exists(obj_dialog)) return;
@@ -38,10 +42,10 @@ function dialog_entry(_name, _color, _sprite, _msg, _msg_font = font_base, _msg_
     onEnd = function() { _endAction(); }
 }
 
-dialog_player_name = "Omar";
-dialog_player_color = c_lime;
+global.dialog_player_name = "Omar";
+global.dialog_player_color = c_lime;
 
-dialog_welcome = [
+global.dialog_welcome = [
     new dialog_entry("Geoff", c_aqua, spr_npc1, "Hey, I started to worry you wouldn't show up at all. What took you so long?"),
     new dialog_entry(dialog_player_name, dialog_player_color, spr_player_idle_down, "Sorry, I got held up by the guards at the city exit. So where is this Witch you were talking about?"),
     new dialog_entry("Geoff", c_aqua, spr_npc1, "She ... It went deep inside this dungeon of sort but it may know our plan. It started to prepare. Be on your guard!"),
@@ -54,22 +58,22 @@ dialog_welcome = [
         }),
     new dialog_entry(dialog_player_name, dialog_player_color, spr_player_idle_down, "Nevermind, I'll get started!")
 ];
-dialog_welcome_alt = [
-new dialog_entry("Geoff", c_aqua, spr_npc1, "Get in there and slay that Witch!")
+global.dialog_welcome_alt = [
+    new dialog_entry("Geoff", c_aqua, spr_npc1, "Get in there and slay that Witch!")
 ];
 
-dialog_hint_cauldron = [
+global.dialog_hint_cauldron = [
     new dialog_entry("Cauldron", c_white, spr_cauldron, "This is a cauldron. It's used by witches to brew potions and soup."),
     new dialog_entry("Cauldron", c_white, spr_cauldron, "Most potions brewed in them are beneficial to you but they also make you slightly more prone to corruption."),
     new dialog_entry("Cauldron", c_white, spr_cauldron, "The exact effects are determined by the ingredient used to brew, for example a potion of the roots of Chaka bush heals you.")
 ]
 
-dialog_hint_healing_potion = [
+global.dialog_hint_healing_potion = [
     new dialog_entry("Healing Potion", c_white, spr_heal_bottle, "This is a healing potion loot. If you pick it up you instantly drink it healing your current HP.")
 ]
 
-dialog_hint_playersheet = [
-    new dialog_entry("Player sheet", c_white, undefined, $"Open your player sheet with your TAB key to get more information or acquire new talents and equip gear")
+global.dialog_hint_playersheet = [
+    new dialog_entry("Player sheet", c_white, undefined, $"Open your player sheet with your {key2str(global.input_playersheet)} key to get more information or acquire new talents and equip gear")
 ]
 
 

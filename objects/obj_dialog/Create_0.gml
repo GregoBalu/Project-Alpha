@@ -1,3 +1,5 @@
+initDialog();
+
 messages = [];
 current_message = -1;
 current_char = 0;

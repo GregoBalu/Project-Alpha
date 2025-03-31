@@ -1,17 +1,30 @@
+function initInput() {
+    global.input_up                = ord("W");
+    global.input_left              = ord("A");
+    global.input_down              = ord("S");
+    global.input_right             = ord("D");
+    
+    global.input_sprint            = vk_shift;
+    global.input_playersheet       = vk_tab;
+    
+    global.input_use               = ord("F");
+    global.input_talk              = vk_space;
+    
+    global.input_pause             = vk_escape;
+}
 
+global.input_up                = ord("W");
+global.input_left              = ord("A");
+global.input_down              = ord("S");
+global.input_right             = ord("D");
 
-input_up                = ord("W");
-input_left              = ord("A");
-input_down              = ord("S");
-input_right             = ord("D");
+global.input_sprint            = vk_shift;
+global.input_playersheet       = vk_tab;
 
-input_sprint            = vk_shift;
-input_playersheet       = vk_tab;
+global.input_use               = ord("F");
+global.input_talk              = vk_space;
 
-input_use               = ord("F");
-input_talk              = vk_space;
-
-input_pause             = vk_escape;
+global.input_pause             = vk_escape;
 
 
 

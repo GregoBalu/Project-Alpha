@@ -66,16 +66,19 @@ function draw_textbox_background_color(_anchor_x, _anchor_y, _box_width, _box_he
     var _actual_text_height = text_height*_scale_height;
     
     var _min_scale = 0.25;
-    if (text_width_scale <= _min_scale) {
+    if (text_width_scale <= _min_scale || _actual_text_width > _box_width) {
         
-        var _wr = (text_width / _box_width)*_min_scale;
+        _scale_width = max(_min_scale, _scale_width);
+        _actual_text_width = text_width*_scale_width;
+        
+        var _wr = (text_width / _box_width)*_scale_width;
         if (_wr <= 1) {
             //ok
         } else {
             //increase height by _wr line
             //show_debug_message($"wr={_wr} lh={line_height} ath={_actual_text_height}");
             var _old_height = _actual_text_height;
-            _actual_text_height += (line_height*_min_scale) * (ceil(_wr));
+            _actual_text_height += (line_height*_scale_width) * (ceil(_wr));
             //_actual_text_height = min(_actual_text_height, _box_height);
             //show_debug_message($"wr={_wr} lh={line_height*_min_scale} old={_old_height} -> ath={_actual_text_height}");
         }
@@ -104,7 +107,7 @@ function draw_textbox_background_color(_anchor_x, _anchor_y, _box_width, _box_he
         }
         
         draw_set_color(_color);
-        draw_text_ext_transformed_color(_anchor_x, _anchor_y, _text, line_height, _box_width* (1/_min_scale), _min_scale, _min_scale, 0, _color, _color, _color, _color, 1);
+        draw_text_ext_transformed_color(_anchor_x, _anchor_y, _text, line_height, _box_width* (1/_scale_width), _scale_width, _scale_height, 0, _color, _color, _color, _color, 1);
     } else {
         var topLeft = new Vec2(_anchor_x, _anchor_y);
         if (_halign == fa_center) {

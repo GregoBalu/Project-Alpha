@@ -145,6 +145,7 @@
     {"id":{"name":"obj_logic_duplicate","path":"objects/obj_logic_duplicate/obj_logic_duplicate.yy",},},
     {"id":{"name":"obj_logic_instance_check","path":"objects/obj_logic_instance_check/obj_logic_instance_check.yy",},},
     {"id":{"name":"obj_logic_or","path":"objects/obj_logic_or/obj_logic_or.yy",},},
+    {"id":{"name":"obj_logic_order","path":"objects/obj_logic_order/obj_logic_order.yy",},},
     {"id":{"name":"obj_logic_spike_pause","path":"objects/obj_logic_spike_pause/obj_logic_spike_pause.yy",},},
     {"id":{"name":"obj_logic_tile_replacer","path":"objects/obj_logic_tile_replacer/obj_logic_tile_replacer.yy",},},
     {"id":{"name":"obj_loottable","path":"objects/obj_loottable/obj_loottable.yy",},},

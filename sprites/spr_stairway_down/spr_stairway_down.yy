@@ -20,6 +20,7 @@
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"9a48a61e-2d7e-4118-b9d0-7955366847d9","blendMode":0,"displayName":"default","isLocked":false,"name":"9a48a61e-2d7e-4118-b9d0-7955366847d9","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"796a4cd6-9723-4fe9-8d21-7320bdf3ab8c","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"796a4cd6-9723-4fe9-8d21-7320bdf3ab8c","opacity":50.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_stairway_down",
   "nineSlice":null,

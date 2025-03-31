@@ -8,6 +8,11 @@ function isBaamAddonEnabled() {
 #macro Battle_Text_Roll_Heal_Normal #22FF22
 #macro Battle_Text_Roll_Heal_Crit #A0DD30
 
+hint_buff_fire = "Ignited: lowers defense and take DoT each turn";
+hint_buff_corruption = "Corruption: significant DoT each turn";
+hint_buff_acid = "Acid spit: lowers defense and take DoT each turn";
+hint_buff_stun = "Stun: cannot take action";
+
 /**
  * Function to calculate crit.
  * @param {real} _crit_chance Crit chance (0-1)
@@ -65,7 +70,10 @@ function enemySimpleAttack(_obj) {
     var _enemy_damage = calc_damage(obj_battle_enemy.data.damage, obj_battle_enemy.data.crit_chance);
     var _animTime = BattleEnemyAttackAnimationTime;
     
-    obj_battle_player.take_damage(_enemy_damage.damage, _enemy_damage.did_crit);
+    var _actual_dmg = obj_battle_player.take_damage(_enemy_damage.damage, _enemy_damage.did_crit);
+    if (obj_battle_enemy.data.lifesteal > 0) {
+        obj_battle_enemy.take_damage(-_actual_dmg*obj_battle_enemy.data.lifesteal, _enemy_damage.did_crit);
+    }
     obj_battle_enemy.play_attack_animation(_enemy_damage.did_crit);
     
     obj_battle_enemy.data.charge_attack = clamp(obj_battle_enemy.data.charge_attack + .4, 0, obj_battle_enemy.data.charge_attack_total);
@@ -85,14 +93,18 @@ function enemyCastFireball(_damage_modifier, _obj, _dot_dmg_modifier = 1.0, _dot
             point_direction(_obj.x-20, _obj.y-_obj.sprite_height/2, obj_battle_player.x, obj_battle_player.y), 1.9, 2.0,
             spr_fireball_explosion, 0.5);
     
-    obj_battle_player.take_damage(_enemy_damage.damage, _enemy_damage.did_crit);
+    var _actual_dmg = obj_battle_player.take_damage(_enemy_damage.damage, _enemy_damage.did_crit);
+    if (obj_battle_enemy.data.lifesteal > 0) {
+        obj_battle_enemy.take_damage(-_actual_dmg*obj_battle_enemy.data.lifesteal, _enemy_damage.did_crit);
+    }
     
     obj_battle_player.add_buff(new BattleBuff((_enemy_damage.did_crit?4:2)*_dot_len_modifier, 
                                 {
                                     original_damage : _enemy_damage.damage,
                                     did_crit : _enemy_damage.did_crit,
                                     dot_dmg_mod : _dot_dmg_modifier,
-                                    sprite: spr_buff_fire
+                                    sprite: spr_buff_fire,
+                                    hint: global.hint_buff_fire
                                 },
                                 function(_data){
                                     //start
@@ -103,7 +115,55 @@ function enemyCastFireball(_damage_modifier, _obj, _dot_dmg_modifier = 1.0, _dot
                                 }, function(_data) {
                                     //player turn pre
                                     obj_battle_player.image_blend = c_red;
-                                    obj_battle_player.take_damage(0.1*_data.dot_dmg_mod*_data.original_damage,_data.did_crit);
+                                    var _actual_dmg = obj_battle_player.take_damage(0.1*_data.dot_dmg_mod*_data.original_damage,_data.did_crit);
+                                    if (obj_battle_enemy.data.lifesteal > 0) {
+                                        obj_battle_enemy.take_damage(-_actual_dmg*obj_battle_enemy.data.lifesteal, _data.did_crit);
+                                    }
+                                    obj_battle_player.image_blend = c_white;
+                                }));
+    
+    obj_battle_enemy.data.charge_util = clamp(obj_battle_enemy.data.charge_util + .4, 0, obj_battle_enemy.data.charge_util_total);
+    
+    return _animTime;
+}
+
+function enemyCastCorruptionBolt(_damage_modifier, _obj, _dot_dmg_modifier = 1.0, _dot_len_modifier = 1.0) {
+    obj_battle_enemy.data.charge_util -= 1;
+    
+    var _enemy_damage = calc_damage(obj_battle_enemy.data.damage*_damage_modifier, obj_battle_enemy.data.crit_chance);
+    var _animTime = BattleEnemyAttackAnimationTime;
+    
+    obj_battle_enemy.play_attack_animation(_enemy_damage.did_crit);
+    
+    spawn_projectile(spr_corruption_bolt, _obj.x-20, _obj.y-_obj.sprite_height/2, _obj.depth, 
+            point_direction(_obj.x-20, _obj.y-_obj.sprite_height/2, obj_battle_player.x, obj_battle_player.y), 1.9, 3.0,
+            spr_corruption_bolt_explosion, 1.5);
+    
+    var _actual_dmg = obj_battle_player.take_damage(_enemy_damage.damage, _enemy_damage.did_crit);
+    if (obj_battle_enemy.data.lifesteal > 0) {
+        obj_battle_enemy.take_damage(-_actual_dmg*obj_battle_enemy.data.lifesteal, _enemy_damage.did_crit);
+    }
+    
+    audio_play_sound(snd_ghost_special, 5, false, 1.0, 0.5);
+    obj_battle_player.add_buff(new BattleBuff((_enemy_damage.did_crit?4:2)*_dot_len_modifier, 
+                                {
+                                    original_damage : _enemy_damage.damage,
+                                    did_crit : _enemy_damage.did_crit,
+                                    dot_dmg_mod : _dot_dmg_modifier,
+                                    sprite: spr_buff_corruption,
+                                    hint: global.hint_buff_corruption
+                                },
+                                function(_data){
+                                    //start
+                                }, function(_data) {
+                                    //end
+                                }, function(_data) {
+                                    //player turn pre
+                                    obj_battle_player.image_blend = c_purple;
+                                    var _actual_dmg = obj_battle_player.take_damage(0.5*_data.dot_dmg_mod*_data.original_damage,_data.did_crit);
+                                    if (obj_battle_enemy.data.lifesteal > 0) {
+                                        obj_battle_enemy.take_damage(-_actual_dmg*obj_battle_enemy.data.lifesteal, _data.did_crit);
+                                    }
                                     obj_battle_player.image_blend = c_white;
                                 }));
     
@@ -124,13 +184,17 @@ function enemyCastInferno(_obj) {
     
     audio_play_sound(snd_fire, 5, false, 0.7*global.audio_master_volume*global.audio_sfx_volume, undefined, 0.6);
     
-    obj_battle_player.take_damage(_enemy_damage.damage, _enemy_damage.did_crit);
+    var _actual_dmg = obj_battle_player.take_damage(_enemy_damage.damage, _enemy_damage.did_crit);
+    if (obj_battle_enemy.data.lifesteal > 0) {
+        obj_battle_enemy.take_damage(-_actual_dmg*obj_battle_enemy.data.lifesteal, _enemy_damage.did_crit);
+    }
     
     obj_battle_player.add_buff(new BattleBuff((_enemy_damage.did_crit?6:4), 
                                 {
                                     original_damage : _enemy_damage.damage,
                                     did_crit : _enemy_damage.did_crit,
-                                    sprite: spr_buff_fire
+                                    sprite: spr_buff_fire,
+                                    hint: global.hint_buff_fire
                                 },
                                 function(_data){
                                     //start
@@ -141,7 +205,10 @@ function enemyCastInferno(_obj) {
                                 }, function(_data) {
                                     //player turn pre
                                     obj_battle_player.image_blend = c_red;
-                                    obj_battle_player.take_damage(0.1*_data.original_damage, _data.did_crit);
+                                    var _actual_dmg = obj_battle_player.take_damage(0.1*_data.original_damage, _data.did_crit);
+                                    if (obj_battle_enemy.data.lifesteal > 0) {
+                                        obj_battle_enemy.take_damage(-_actual_dmg*obj_battle_enemy.data.lifesteal, _data.did_crit);
+                                    }
                                     obj_battle_player.image_blend = c_white;
                                 }));
     
@@ -158,13 +225,17 @@ function enemyCastAcid(_damage_modifier, _obj) {
     
     spawn_projectile(spr_acid, _obj.x-20, _obj.y-_obj.sprite_height/2, _obj.depth, 180, 2, 1.5);
     
-    obj_battle_player.take_damage(_enemy_damage.damage, _enemy_damage.did_crit);
+    var _actual_dmg = obj_battle_player.take_damage(_enemy_damage.damage, _enemy_damage.did_crit);
+    if (obj_battle_enemy.data.lifesteal > 0) {
+        obj_battle_enemy.take_damage(-_actual_dmg*obj_battle_enemy.data.lifesteal, _enemy_damage.did_crit);
+    }
     
     obj_battle_player.add_buff(new BattleBuff(_enemy_damage.did_crit?6:4, 
                                 {
                                     original_damage : _enemy_damage.damage,
                                     did_crit : _enemy_damage.did_crit,
-                                    sprite: spr_buff_acid
+                                    sprite: spr_buff_acid,
+                                    hint: global.hint_buff_acid
                                 },
                                 function(_data){
                                     //start
@@ -175,7 +246,10 @@ function enemyCastAcid(_damage_modifier, _obj) {
                                 }, function(_data) {
                                     //player turn pre
                                     obj_battle_player.image_blend = c_green;
-                                    obj_battle_player.take_damage(0.1*_data.original_damage, _data.did_crit);
+                                    var _actual_dmg = obj_battle_player.take_damage(0.1*_data.original_damage, _data.did_crit);
+                                    if (obj_battle_enemy.data.lifesteal > 0) {
+                                        obj_battle_enemy.take_damage(-_actual_dmg*obj_battle_enemy.data.lifesteal, _data.did_crit);
+                                    }
                                     obj_battle_player.image_blend = c_white;
                                 }));
     
@@ -201,7 +275,10 @@ function enemyHeavyAttack(_obj) {
     var _enemy_damage = calc_damage(obj_battle_enemy.data.damage*2, obj_battle_enemy.data.crit_chance);
     var _animTime = BattleEnemyAttackAnimationTime;
     
-    obj_battle_player.take_damage(_enemy_damage.damage, _enemy_damage.did_crit);
+    var _actual_dmg = obj_battle_player.take_damage(_enemy_damage.damage, _enemy_damage.did_crit);
+    if (obj_battle_enemy.data.lifesteal > 0) {
+        obj_battle_enemy.take_damage(-_actual_dmg*obj_battle_enemy.data.lifesteal, _enemy_damage.did_crit);
+    }
     obj_battle_enemy.play_attack_animation(_enemy_damage.did_crit);
     
     obj_battle_enemy.data.charge_attack = clamp(obj_battle_enemy.data.charge_attack + .4, 0, obj_battle_enemy.data.charge_attack_total);
@@ -218,7 +295,8 @@ function enemyInterruptAttack(_obj) {
     obj_battle_enemy.play_attack_animation(false);
     obj_battle_player.add_buff(new BattleBuff(2, 
                     {
-                        sprite: spr_buff_stun
+                        sprite: spr_buff_stun,
+                        hint: global.hint_buff_stun
                     },
                     function(_data){
                         //start
@@ -292,6 +370,19 @@ function BattleBuff(_turns, _data, _startFunc, _endFunc, _playerTurnPreFunc = un
     }
 }
 
+/**
+ * Function Spawns a projectile instance with given parameters.
+ * @param {Asset.GMSprite} _sprite Sprite to spawn
+ * @param {real} _x X coord of the projectile to spawn at
+ * @param {real} _y Y coord of the projectile to spawn at
+ * @param {real} _depth Depth of the projectile image
+ * @param {real} _dir Direction of the projectile to fly
+ * @param {real} _speed Speed of the flying projectile
+ * @param {real} _life_seconds Seconds of lifetime of the projectile
+ * @param {Asset.GMSprite} [_splash_sprite]=noone Extra splash sprite to play at the end of the projectile's path
+ * @param {real} [_splash_seconds]=0 Seconds to play the explosion animation for.
+ * @returns {Id.Instance} Id of the newly spawned projectile instance.
+ */
 function spawn_projectile(_sprite, _x, _y, _depth, _dir, _speed, _life_seconds, _splash_sprite = noone, _splash_seconds = 0) {
     return instance_create_layer(_x, _y, "Effects", obj_battle_projectile, {
         sprite_index : _sprite,

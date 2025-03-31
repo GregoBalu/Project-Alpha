@@ -12,6 +12,9 @@ generate_loot = function(obj) {
     if (rand < 50) {
         return;
     } else if (rand < 70) {
+        show_debug_message("Spawn Ingredient root");
+        instance_create_layer(random_range(obj.x-2,obj.x+2), random_range(obj.y-2,obj.y+2), itemsLayer, obj_ingredient_root);
+    } else if (rand < 75) {
         show_debug_message("Spawn Health potion");
         instance_create_layer(random_range(obj.x-2,obj.x+2), random_range(obj.y-2,obj.y+2), itemsLayer, obj_item_health_potion);
     } else if (rand < 80) {
@@ -24,7 +27,7 @@ generate_loot = function(obj) {
             speed_decay_seconds : 5
         };
         instance_create_layer(random_range(obj.x-2,obj.x+2), random_range(obj.y-2,obj.y+2), itemsLayer, obj_item_speed_potion, data);
-    } else if (rand < 82) {
+    } else if (rand < 85) {
         //item?
         
         

@@ -1,3 +1,4 @@
+
 function create_dialog(_messages){
     if (instance_exists(obj_dialog)) return;
         
@@ -65,6 +66,10 @@ dialog_hint_cauldron = [
 
 dialog_hint_healing_potion = [
     new dialog_entry("Healing Potion", c_white, spr_heal_bottle, "This is a healing potion loot. If you pick it up you instantly drink it healing your current HP.")
+]
+
+dialog_hint_playersheet = [
+    new dialog_entry("Player sheet", c_white, undefined, $"Open your player sheet with your TAB key to get more information or acquire new talents and equip gear")
 ]
 
 

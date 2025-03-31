@@ -29,7 +29,13 @@ if (!battle_started) {
         {
             var _sprite = _buffs[|_i].data.sprite ?? spr_debug_16;
             
-            draw_sprite_stretched(_sprite, 0, _x, _y+_i*(_h+_gap), _w, _h);
+            var _tl = new Vec2(_x, _y+_i*(_h+_gap));
+            
+            draw_sprite_stretched(_sprite, 0, _tl.x, _tl.y, _w, _h);
+            if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _tl.x, _tl.y, _tl.x + _w -1, _tl.y + _h -1)) {
+                draw_textbox_background(mouse_gui_x, mouse_gui_y, 128, 32, _buffs[|_i].data.hint, 
+                        new BackgroundData(spr_hint_back, 0, 2), (mouse_gui_x<=(room_width/2))?fa_left:fa_right);
+            }
         }
     }
     

@@ -19,3 +19,7 @@ function droppedItem(_item) {
     is_holding_item = false;
     held_item = undefined;
 }
+
+function onBattleDamageReceived(_damaged_amount) {
+    
+}

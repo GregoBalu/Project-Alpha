@@ -35,6 +35,8 @@ function take_damage(_amount, _did_crit) {
         _color = _did_crit?Battle_Text_Roll_Heal_Crit:Battle_Text_Roll_Heal_Normal;
     }
     
+    data.onBattleDamageReceived(_damaged_amount);
+    
     instance_create_depth(xstart, ystart-10, depth-1, obj_battle_text_roll, {
         text : string("{0}", string_format(-_damaged_amount,1,1)),
         time_seconds : 1.2,

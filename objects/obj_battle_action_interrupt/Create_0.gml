@@ -21,7 +21,10 @@ action = function() {
         obj_battle_manager.player_turn(undefined, animTime);
         obj_battle_player.play_attack_animation(false);
         obj_battle_enemy.add_buff(new BattleBuff(4, 
-                {sprite: spr_buff_stun},
+                {
+                    sprite: spr_buff_stun,
+                    hint: global.hint_buff_stun
+                },
                 function(_data){
                     //start
                     obj_battle_enemy.is_stunned = true;

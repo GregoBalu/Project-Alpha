@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_finnish",
-    "path":"sprites/spr_finnish/spr_finnish.yy",
+    "name":"spr_stairway_down",
+    "path":"sprites/spr_stairway_down/spr_stairway_down.yy",
   },
   "spriteMaskId":null,
   "visible":true,

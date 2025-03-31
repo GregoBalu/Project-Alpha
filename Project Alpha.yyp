@@ -300,6 +300,7 @@
     {"id":{"name":"spr_speed_bottle","path":"sprites/spr_speed_bottle/spr_speed_bottle.yy",},},
     {"id":{"name":"spr_speed","path":"sprites/spr_speed/spr_speed.yy",},},
     {"id":{"name":"spr_spike","path":"sprites/spr_spike/spr_spike.yy",},},
+    {"id":{"name":"spr_stairway_down","path":"sprites/spr_stairway_down/spr_stairway_down.yy",},},
     {"id":{"name":"spr_steam_emitter","path":"sprites/spr_steam_emitter/spr_steam_emitter.yy",},},
     {"id":{"name":"spr_sword_of_misery","path":"sprites/spr_sword_of_misery/spr_sword_of_misery.yy",},},
     {"id":{"name":"spr_talent_def_hp","path":"sprites/spr_talent_def_hp/spr_talent_def_hp.yy",},},

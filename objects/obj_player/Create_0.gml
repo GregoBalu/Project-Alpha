@@ -18,6 +18,7 @@ sprite_index = spr_player_idle_down;
 
 light_tilemaps = [layer_tilemap_get_id("Tiles_Col"), layer_tilemap_get_id("No_light")];
 tilemap_hurt=layer_tilemap_get_id("Tiles_Back_Hurt");
+tilemap_normal=layer_tilemap_get_id("Tiles_Back");
 hurt_frame = 0;
 hurt_cd_ticks = 0.3*TIME_SECOND;
 
@@ -176,4 +177,16 @@ function add_corruption(_amount) {
     
     corruption = clamp(corruption + _amt, 0, corruption_total);
     show_debug_message($"Corruption: {corruption}/{corruption_total}");
+    if (corruption == corruption_total) {
+        if (!spawn_ghost(tilemap_normal, tilemap)) {
+            audio_play_sound(snd_ghost_whoosh, 6, false);
+        }
+    } else if (corruption >= corruption_total*0.8) {
+        var _rand = random_range(0, 10);
+        if (_rand < 2) {
+            spawn_ghost(tilemap_normal, tilemap);
+        } else {
+            audio_play_sound(snd_ghost_whoosh, 6, false);
+        }
+    }
 }

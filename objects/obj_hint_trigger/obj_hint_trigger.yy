@@ -28,10 +28,7 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"hint_id","filters":[],"listItems":[],"multiselect":false,"name":"hint_id","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"unique_id","varType":2,},
-    {"$GMObjectProperty":"v1","%Name":"hint","filters":[],"listItems":[],"multiselect":false,"name":"hint","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":2,},
-    {"$GMObjectProperty":"v1","%Name":"hint_sprite","filters":[
-        "GMSprite",
-      ],"listItems":[],"multiselect":false,"name":"hint_sprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":5,},
+    {"$GMObjectProperty":"v1","%Name":"hint_dialog","filters":[],"listItems":[],"multiselect":false,"name":"hint_dialog","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":4,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

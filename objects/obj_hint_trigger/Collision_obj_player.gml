@@ -7,5 +7,5 @@ if (!is_triggered) {
         }
     }
     
-    create_dialog([new dialog_entry("Hint", c_white, hint_sprite, hint)]);
+    create_dialog(hint_dialog);
 }

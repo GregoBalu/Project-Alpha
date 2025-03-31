@@ -57,6 +57,15 @@ dialog_welcome_alt = [
 new dialog_entry("Geoff", c_aqua, spr_npc1, "Get in there and slay that Witch!")
 ];
 
+dialog_hint_cauldron = [
+    new dialog_entry("Cauldron", c_white, spr_cauldron, "This is a cauldron. It's used by witches to brew potions and soup."),
+    new dialog_entry("Cauldron", c_white, spr_cauldron, "Most potions brewed in them are beneficial to you but they also make you slightly more prone to corruption."),
+    new dialog_entry("Cauldron", c_white, spr_cauldron, "The exact effects are determined by the ingredient used to brew, for example a potion of the roots of Chaka bush heals you.")
+]
+
+dialog_hint_healing_potion = [
+    new dialog_entry("Healing Potion", c_white, spr_heal_bottle, "This is a healing potion loot. If you pick it up you instantly drink it healing your current HP.")
+]
 
 
 

@@ -4,7 +4,9 @@ if (instance_exists(obj_player) && distance_to_object(obj_player) < talk_distanc
     if (!can_talk) {
         can_talk = true;
         obj_gui.show_talk++;
-        audio_play_sound_at(snd_huh, x, y, 0, 1, 16, 0.3, false, 5);
+        if (!is_silent) {
+            audio_play_sound_at(snd_huh, x, y, 0, 1, 16, 0.3, false, 5);
+        }
     }
     
     if (keyboard_check_pressed(input_key)) {

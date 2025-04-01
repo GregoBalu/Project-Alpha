@@ -76,6 +76,10 @@ global.dialog_hint_playersheet = [
     new dialog_entry("Player sheet", c_white, undefined, $"Open your player sheet with your {key2str(global.input_playersheet)} key to get more information or acquire new talents and equip gear")
 ]
 
+global.dialog_hint_room1_leverpuzzle = [
+    new dialog_entry("Note", c_white, spr_note, "You find a hastely scribbled note describing a room on fire with strange vibrant colors."),
+    new dialog_entry("Note", c_green, spr_note, "You cannot make out most of the text just a small drawing on the bottom, which depicts four colors in a row: yellow, green, green, yellow")
+];
 
 
 

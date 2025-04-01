@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_logic_icon",
-    "path":"sprites/spr_logic_icon/spr_logic_icon.yy",
+    "name":"spr_logic_not_icon",
+    "path":"sprites/spr_logic_not_icon/spr_logic_not_icon.yy",
   },
   "spriteMaskId":null,
   "visible":false,

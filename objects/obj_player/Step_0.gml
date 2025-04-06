@@ -11,27 +11,29 @@ _ver = lengthdir_y(_len, _dir);
 
 var _actual_move_speed = move_speed * sprint_modifier;
 
-move_and_collide(_hor * _actual_move_speed, _ver * _actual_move_speed, tilemap, undefined, undefined, undefined, _actual_move_speed, _actual_move_speed);
+move_and_collide(_hor * _actual_move_speed, _ver * _actual_move_speed, collision_tilemaps, undefined, undefined, undefined, _actual_move_speed, _actual_move_speed);
 
 //var _vmat = camera_get_view_mat(view_camera[0]);
 audio_listener_set_position(0, x, y, 0);
 
-var _is_on_hurt_tile = (tilemap_get_at_pixel(tilemap_hurt, x, y) != 0) || 
-                        (tilemap_get_at_pixel(tilemap_hurt, bbox_left, y) != 0) ||
-                        (tilemap_get_at_pixel(tilemap_hurt, bbox_right, y) != 0) || 
-                        (tilemap_get_at_pixel(tilemap_hurt, bbox_left, bbox_bottom) != 0) ||
-                        (tilemap_get_at_pixel(tilemap_hurt, bbox_right, bbox_bottom) != 0);
-if (_is_on_hurt_tile) {
-    image_blend = c_red;
-    --hurt_frame;
-    if (hurt_frame <= 0) {
-        log_stat($"obj_player [Step] Hurt tick");
-        hp -= 1;
-        hurt_frame = hurt_cd_ticks;
+if (tilemap_hurt != -1) {
+    var _is_on_hurt_tile = (tilemap_get_at_pixel(tilemap_hurt, x, y) != 0) || 
+                            (tilemap_get_at_pixel(tilemap_hurt, bbox_left, y) != 0) ||
+                            (tilemap_get_at_pixel(tilemap_hurt, bbox_right, y) != 0) || 
+                            (tilemap_get_at_pixel(tilemap_hurt, bbox_left, bbox_bottom) != 0) ||
+                            (tilemap_get_at_pixel(tilemap_hurt, bbox_right, bbox_bottom) != 0);
+    if (_is_on_hurt_tile) {
+        image_blend = c_red;
+        --hurt_frame;
+        if (hurt_frame <= 0) {
+            log_stat($"obj_player [Step] Hurt tick");
+            hp -= 1;
+            hurt_frame = hurt_cd_ticks;
+        }
+    } else if (hurt_frame != 0) {
+        hurt_frame = 0;
+        image_blend = c_white;
     }
-} else if (hurt_frame != 0) {
-    hurt_frame = 0;
-    image_blend = c_white;
 }
 
 

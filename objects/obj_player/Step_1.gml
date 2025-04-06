@@ -1,0 +1,1 @@
+previous_location = new Vec2(x, y);

@@ -1,6 +1,7 @@
 // Inherit the parent event
 event_inherited();
 
+previous_location = new Vec2(xstart, ystart);
 shroud_radius = 7.5;
 default_shroud_mask = [];
 current_shroud_mask = undefined;

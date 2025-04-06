@@ -25,6 +25,10 @@ function Vec2(_x, _y) constructor {
         var _diff_y = lengthdir_y(_len_y, _dir);
         return new Vec2(x+_diff_x,y+_diff_y);
     }
+    
+    function distance(_other) {
+        return point_distance(x, y, _other.x, _other.y);
+    }
 }
 
 enum Orientation { UP, UPRIGHT, RIGHT, DOWNRIGHT, DOWN, DOWNLEFT, LEFT, UPLEFT };

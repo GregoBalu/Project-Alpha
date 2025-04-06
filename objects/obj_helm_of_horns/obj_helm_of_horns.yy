@@ -15,7 +15,7 @@
     "name":"obj_equipable_item_base",
     "path":"objects/obj_equipable_item_base/obj_equipable_item_base.yy",
   },
-  "persistent":false,
+  "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,

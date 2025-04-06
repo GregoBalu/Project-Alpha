@@ -22,10 +22,10 @@ with (obj_entity_base)
     }
 }
 
-current_location = new Vec2(x, y);
+var current_location = new Vec2(x, y);
 if (current_location.distance(previous_location) > 0) {
     shroud_set_fog();
     
-    shroud_clear_position(x, y, light_tilemaps, current_shroud_mask);
+    shroud_clear_position(x, y, no_see_tilemaps, current_shroud_mask);
 }
 delete current_location;

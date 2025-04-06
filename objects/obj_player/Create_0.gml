@@ -17,7 +17,6 @@ unlocked_talents = ds_list_create();
 orientation = Orientation.DOWN;
 sprite_index = spr_player_idle_down;
 
-light_tilemaps = [layer_tilemap_get_id("Tiles_Col"), layer_tilemap_get_id("No_light")];
 tilemap_hurt=layer_tilemap_get_id("Tiles_Back_Hurt");
 tilemap_normal=layer_tilemap_get_id("Tiles_Back");
 hurt_frame = 0;
@@ -64,7 +63,7 @@ function change_shroud_mask(other_mask) {
     log_stat($"obj_player [change_shroud_mask] {other_mask}");
     current_shroud_mask = other_mask;
     shroud_set_fog();
-    shroud_clear_position(x, y, light_tilemaps, current_shroud_mask);
+    shroud_clear_position(x, y, no_see_tilemaps, current_shroud_mask);
 }
 
 function change_orientation(_ori) {

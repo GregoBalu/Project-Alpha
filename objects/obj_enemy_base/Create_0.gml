@@ -5,7 +5,7 @@ target_y = y;
 
 see_player = false
 
-alarm[0] = move_tickdelay_seconds * game_get_speed(gamespeed_fps);
+alarm[0] = move_tickdelay_seconds * TIME_SECOND;
 
 function initBattle() {
     //Override me

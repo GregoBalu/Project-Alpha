@@ -1,7 +1,7 @@
 
 
 if (instance_exists(obj_player) && point_distance(xstart,ystart,x,y)<(2*wander_range) &&
-         distance_to_object(obj_player) < distance_to_player && !collision_line(x, y, obj_player.x, obj_player.y, tilemap, false, false))
+         distance_to_object(obj_player) < distance_to_player && !collision_line(x, y, obj_player.x, obj_player.y, no_see_tilemaps, false, false))
 {
     see_player = true;
     target_x = obj_player.x;

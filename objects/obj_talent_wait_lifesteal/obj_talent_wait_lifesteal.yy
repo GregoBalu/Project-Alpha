@@ -15,7 +15,7 @@
     "name":"obj_talent_base",
     "path":"objects/obj_talent_base/obj_talent_base.yy",
   },
-  "persistent":false,
+  "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,

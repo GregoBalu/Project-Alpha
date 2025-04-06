@@ -32,6 +32,8 @@
     {"$GMObjectProperty":"v1","%Name":"inst_id","filters":[],"listItems":[],"multiselect":false,"name":"inst_id","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":4,},
     {"$GMObjectProperty":"v1","%Name":"new_force","filters":[],"listItems":[],"multiselect":false,"name":"new_force","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"new_force_dir","filters":[],"listItems":[],"multiselect":false,"name":"new_force_dir","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"new_force_boost_delay_sec","filters":[],"listItems":[],"multiselect":false,"name":"new_force_boost_delay_sec","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"new_force_boost","filters":[],"listItems":[],"multiselect":false,"name":"new_force_boost","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

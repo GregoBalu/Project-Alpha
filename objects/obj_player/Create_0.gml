@@ -178,13 +178,13 @@ function add_corruption(_amount) {
     corruption = clamp(corruption + _amt, 0, corruption_total);
     show_debug_message($"Corruption: {corruption}/{corruption_total}");
     if (corruption == corruption_total) {
-        if (!spawn_ghost(tilemap_normal, tilemap)) {
+        if (!spawn_ghost(tilemap_normal, collision_tilemaps)) {
             audio_play_sound(snd_ghost_whoosh, 6, false);
         }
     } else if (corruption >= corruption_total*0.8) {
         var _rand = random_range(0, 10);
         if (_rand < 2) {
-            spawn_ghost(tilemap_normal, tilemap);
+            spawn_ghost(tilemap_normal, collision_tilemaps);
         } else {
             audio_play_sound(snd_ghost_whoosh, 6, false);
         }

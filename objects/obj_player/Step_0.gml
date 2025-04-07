@@ -95,6 +95,7 @@ else
 }
 
 if (hp <= 0) {
+    show_debug_message("You dead");
     log_stat($"obj_player [Step] dead");
     game_restart();
 }

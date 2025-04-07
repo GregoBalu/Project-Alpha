@@ -108,6 +108,7 @@ function draw_textbox_background_color(_anchor_x, _anchor_y, _box_width, _box_he
         
         draw_set_color(_color);
         draw_text_ext_transformed_color(_anchor_x, _anchor_y, _text, line_height, _box_width* (1/_scale_width), _scale_width, _scale_height, 0, _color, _color, _color, _color, 1);
+        delete topLeft;
     } else {
         var topLeft = new Vec2(_anchor_x, _anchor_y);
         if (_halign == fa_center) {
@@ -132,14 +133,13 @@ function draw_textbox_background_color(_anchor_x, _anchor_y, _box_width, _box_he
         
         draw_set_color(_color);
         draw_text_transformed_color(_anchor_x, _anchor_y, _text, _scale_width, _scale_height, 0, _color, _color, _color, _color, 1);
+        delete topLeft;
     }
     //draw_text_ext(_anchor_x, _anchor_y, _text, -1, _box_width);
     draw_set_color(c_black);
     
     draw_set_halign(fa_left);
     draw_set_valign(fa_top);
-
-    delete topLeft;
 }
 
 
@@ -150,7 +150,7 @@ function draw_textbox_background_color(_anchor_x, _anchor_y, _box_width, _box_he
  * @param {real} _width  Width of the progress bar
  * @param {real} _height  Height of the progress bar
  * @param {real} _percent  Percent of the progress bar [0,1]
- * @param {constant.color} _color  Color of the progress bar
+ * @param {Constant.Color} _color  Color of the progress bar
  */
 function draw_progress_bar(_anchor_x, _anchor_y, _width, _height, _percent, _color) {
     draw_sprite_stretched(spr_box, 0, _anchor_x, _anchor_y, _width, _height);

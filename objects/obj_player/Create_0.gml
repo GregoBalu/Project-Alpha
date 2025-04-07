@@ -33,9 +33,10 @@ audio_listener_orientation(0,1,0,0,0,1);
 
 /**
 * Calculate XP gain for player based on _enemy killed
-* @param {Asset.GMObject} _enemy Enemy that is killed.
+* @param {Id.Instance} _enemy Enemy that is killed.
 */
 function gain_experience(_enemy) {
+    show_debug_message("gain_experience()");
     
     var _level_difference = _enemy.level - level;
     var _modifier = power(1.25, _level_difference);

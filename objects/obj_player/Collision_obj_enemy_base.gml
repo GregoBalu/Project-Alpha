@@ -8,4 +8,5 @@ _switcher.player_data = self;
 _switcher.enemy_data = other;
 _switcher.original_room = room;
 
+show_debug_message($"Battle start go from {room}");
 room_goto(rm_battle);

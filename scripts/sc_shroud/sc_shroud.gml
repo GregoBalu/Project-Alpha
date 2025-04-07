@@ -38,7 +38,7 @@ function shroud_clear_grid_setup(_sight_radius, _grid_size)
  * Function Description
  * @param {real} _sight_radius Description
  * @param {real} _grid_size Description
- * @param {Orientation} _orientation Description
+ * @param {Enum.Orientation} _orientation Description
  * @returns {Id.DsGrid<Real>} Clear grid mask
  */
 function shroud_clear_grid_setup_blocked(_sight_radius, _grid_size, _orientation)
@@ -190,7 +190,7 @@ function find_collider(startX, startY, endX, endY, stepDist, _tilemap){
     }*/
     
     //If the raycast hit nothing, return false
-    return noone;
+    //return noone;
 }
 
 function check_vision(startX, startY, endX, endY, origEndX, origEndY, endGlobalGridX, endGlobalGridY, _tilemap, _half_grid_size) {

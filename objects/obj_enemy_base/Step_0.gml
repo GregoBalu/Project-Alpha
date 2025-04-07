@@ -13,6 +13,7 @@ if (_hor != 0 || _ver != 0) {
 }
 
 if (hp <= 0) {
+    show_debug_message("enemy dead");
     obj_loottable.generate_loot(self);
     obj_player.gain_experience(self);
     instance_destroy();

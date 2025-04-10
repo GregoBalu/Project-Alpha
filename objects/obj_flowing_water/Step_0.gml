@@ -11,8 +11,12 @@ if (collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom-8, obj_play
         alarm[0] = BOOST_TICK;
     }
     
-    obj_player.x += lengthdir_x(current_force, force_direction);
-    obj_player.y += lengthdir_y(current_force, force_direction);
+    var _move_x = lengthdir_x(current_force, force_direction);
+    var _move_y = lengthdir_y(current_force, force_direction);
+    
+    with (obj_player) {
+        move_and_collide(_move_x, _move_y, collision_tilemaps, undefined, undefined, undefined);
+    }
     
 } else {
     if (is_in_use) {

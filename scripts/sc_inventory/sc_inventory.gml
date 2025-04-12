@@ -58,7 +58,7 @@ function RDTable() constructor {
         
         for (var _c = 0; _c < _count; _c++) {
             var _rand = random_range(0, _sumWeight);
-            show_debug_message($"Rolled {_rand} (0-{_sumWeight}) for {_c}/{_count}");
+            show_debug_message($"Rolled {_rand} (0-{_sumWeight}) for {_c+1}/{_count}");
             var _currW = 0;
             for (var _i = 0; _i < ds_list_size(list); _i++)
             {

@@ -16,6 +16,14 @@ function spawn_effect(_sprite, _x, _y, _w, _h, _depth, _dir, _speed, _life_secon
 }
 
 function point_check_for_spawn(_p, _ok_tilemap, _collision_tilemap, _width, _height) {
+    if (typeof(_collision_tilemap) == "array") {
+        var _res = true;
+        for (var _i = 0; _i < array_length(_collision_tilemap); _i++) {
+            _res = _res && point_check_for_spawn(_p, _ok_tilemap, _collision_tilemap[_i], _width, _height);
+        }
+        return _res;
+    }
+    
     if (tilemap_get_at_pixel(_ok_tilemap, _p.x, _p.y) <= 0 || tilemap_get_at_pixel(_collision_tilemap, _p.x, _p.y) > 0) {
         return false;
     }

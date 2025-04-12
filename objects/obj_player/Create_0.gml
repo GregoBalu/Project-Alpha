@@ -11,7 +11,7 @@ firstRoomEnter = true;
 
 
 xp_total = get_xp_total(level);
-talent_points = 1;
+//talent_points = 1;
 unlocked_talents = ds_list_create();
 
 orientation = Orientation.DOWN;
@@ -24,6 +24,7 @@ hurt_cd_ticks = 0.3*TIME_SECOND;
 
 buff_bar = instance_create_layer(x, y, layer_get_id("GUI"), obj_buff_bar);
 gui = instance_create_layer(x, y, layer_get_id("GUI"), obj_gui);
+gui.depth = obj_playersheet.depth +1;
 
 inventory = ds_map_create();
 equipped_items = ds_map_create();

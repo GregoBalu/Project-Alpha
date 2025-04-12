@@ -55,6 +55,7 @@
     {"$GMObjectProperty":"v1","%Name":"corruption","filters":[],"listItems":[],"multiselect":false,"name":"corruption","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"corruption_total","filters":[],"listItems":[],"multiselect":false,"name":"corruption_total","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"10","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"luck","filters":[],"listItems":[],"multiselect":false,"name":"luck","rangeEnabled":true,"rangeMax":50.0,"rangeMin":-10.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"talent_points","filters":[],"listItems":[],"multiselect":false,"name":"talent_points","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

@@ -255,6 +255,7 @@
     {"id":{"name":"spr_corruption_bolt","path":"sprites/spr_corruption_bolt/spr_corruption_bolt.yy",},},
     {"id":{"name":"spr_corruption_decal","path":"sprites/spr_corruption_decal/spr_corruption_decal.yy",},},
     {"id":{"name":"spr_corruption","path":"sprites/spr_corruption/spr_corruption.yy",},},
+    {"id":{"name":"spr_crab","path":"sprites/spr_crab/spr_crab.yy",},},
     {"id":{"name":"spr_dark_bottle","path":"sprites/spr_dark_bottle/spr_dark_bottle.yy",},},
     {"id":{"name":"spr_darkness","path":"sprites/spr_darkness/spr_darkness.yy",},},
     {"id":{"name":"spr_debug_16","path":"sprites/spr_debug_16/spr_debug_16.yy",},},

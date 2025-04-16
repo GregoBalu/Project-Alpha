@@ -1,6 +1,22 @@
 
 
 
+
+/**
+ * Function Description
+ * @param {Asset.GMSprite} _sprite Description
+ * @param {real} _x Description
+ * @param {real} _y Description
+ * @param {real} _w Description
+ * @param {real} _h Description
+ * @param {real} _depth Description
+ * @param {real} _dir Description
+ * @param {real} _speed Description
+ * @param {real} _life_seconds Description
+ * @param {Asset.GMSprite} [_splash_sprite]=noone Description
+ * @param {real} [_splash_seconds]=0 Description
+ * @returns {Id.Instance<obj_effect>} Description
+ */
 function spawn_effect(_sprite, _x, _y, _w, _h, _depth, _dir, _speed, _life_seconds, _splash_sprite = noone, _splash_seconds = 0) {
     return instance_create_layer(_x, _y, "Instances", obj_effect, {
         sprite_index : _sprite,

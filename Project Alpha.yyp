@@ -207,6 +207,7 @@
     {"id":{"name":"snd_battle_music","path":"sounds/snd_battle_music/snd_battle_music.yy",},},
     {"id":{"name":"snd_drink","path":"sounds/snd_drink/snd_drink.yy",},},
     {"id":{"name":"snd_dung_music","path":"sounds/snd_dung_music/snd_dung_music.yy",},},
+    {"id":{"name":"snd_explosion","path":"sounds/snd_explosion/snd_explosion.yy",},},
     {"id":{"name":"snd_fire","path":"sounds/snd_fire/snd_fire.yy",},},
     {"id":{"name":"snd_ghost_aggro","path":"sounds/snd_ghost_aggro/snd_ghost_aggro.yy",},},
     {"id":{"name":"snd_ghost_attack","path":"sounds/snd_ghost_attack/snd_ghost_attack.yy",},},

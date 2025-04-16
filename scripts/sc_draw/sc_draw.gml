@@ -27,13 +27,33 @@ function draw_textbox_background(_anchor_x, _anchor_y, _box_width, _box_height, 
     draw_textbox_background_color(_anchor_x, _anchor_y, _box_width, _box_height, _text, _background_data, c_black, _halign, _valign, _debug);
 }
     
+/**
+ * Draw a textbox with a background image
+ * @param {real} _anchor_x Anchor point X
+ * @param {real} _anchor_y Anchor point Y
+ * @param {real} _box_width Textbox width
+ * @param {real} _box_height Textbox height
+ * @param {string} _text Text to draw
+ * @param {BackgroundData} _background_data Data for background image
+ * @param {Constant.Color} _color Color of the text
+ * @param {Constant.HAlign} [_halign]=fa_left Horizontal alignment of text in the textbox
+ * @param {Constant.VAlign} [_valign]=fa_top Vertical alignment of text in the textbox
+ * @param {bool} [_debug]=false Debug flag to show debug stuff
+ */
 function draw_textbox_background_color(_anchor_x, _anchor_y, _box_width, _box_height, _text, _background_data, _color, _halign = fa_left, _valign = fa_top, _debug = false) {
     draw_set_halign(_halign);
     draw_set_valign(_valign);
+    draw_set_alpha(1);
     
     if (draw_get_font() == noone) {
         draw_set_font(font_base);
     }
+    
+    if (_debug) {
+        show_debug_message($"draw_textbox({_anchor_x}, {_anchor_y}, {_box_width}, {_box_height}, ..) @ {display_get_gui_width()}, {display_get_gui_height()}");
+    }
+    //draw_rectangle_color(_anchor_x, _anchor_y, _anchor_x+_box_width, _anchor_y+_box_height, c_black, c_black, c_black, c_black, false);
+    //return;
     
     var text_width = string_width(_text);
     var text_height = string_height(_text);

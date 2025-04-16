@@ -148,7 +148,7 @@ if (is_visible) {
             }
             _draw_hint_data = {
                 hint_x : _hint_x,
-                hint_y : y,
+                hint_y : clamp(mouse_gui_y, _col+5, _col+_talentHeight-5),
                 hint : talents[|_i].hint,
                 halign : _halign
             };
@@ -185,7 +185,7 @@ if (is_visible) {
                 if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _x, _y, _x+_w, _y+_h)) {
                     if (mouse_check_button_pressed(mb_right)) {
                         obj_player.unequipItem(_slot);
-                        return;
+                        return undefined;
                     }
                     var _hint_x = clamp(mouse_gui_x, _x+_margin, _x+_w-_margin);
                     var _halign = fa_left;
@@ -233,7 +233,7 @@ if (is_visible) {
                 if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _x, _y, _x+_w, _y+_h)) {
                     if (mouse_check_button_pressed(mb_right)) {
                         obj_player.equipItem(_slot);
-                        return;
+                        return undefined;
                     }
                     var _hint_x = clamp(mouse_gui_x, _x+_margin, _x+_w-_margin);
                     var _halign = fa_left;
@@ -266,6 +266,7 @@ if (is_visible) {
         //draw_sprite_stretched_ext(spr_gui_slot, 0, _invX + _invGap + (_invGap + _invSlotW)*3, _invY , _invSlotW, _invSlotH, #C0C0C0, 1);
         //draw_sprite_stretched_ext(spr_gui_slot, 0, _invX + _invGap + (_invGap + _invSlotW)*4, _invY , _invSlotW, _invSlotH, #C0C0C0, 1);
         
+       
         if (_hint_data != undefined) {
             _do_draw_hint = true;
             _draw_hint_data = _hint_data;
@@ -273,8 +274,8 @@ if (is_visible) {
     }
     
     
-    if (_do_draw_hint) {
-        
+    if (_do_draw_hint) { 
+        //show_debug_message($"_hint_data={_hint_data}, _do_draw_hint={_do_draw_hint}, hint={_draw_hint_data.hint}");
         draw_textbox_background(_draw_hint_data.hint_x, _draw_hint_data.hint_y, 64, 64, _draw_hint_data.hint, new BackgroundData(spr_hint_back, 0, 8), _draw_hint_data.halign);
     }
 } 

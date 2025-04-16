@@ -11,7 +11,7 @@ _ver = lengthdir_y(_len, _dir);
 
 var _actual_move_speed = move_speed * sprint_modifier;
 
-move_and_collide(_hor * _actual_move_speed, _ver * _actual_move_speed, collision_tilemaps, undefined, undefined, undefined, _actual_move_speed, _actual_move_speed);
+move_and_collide(_hor * _actual_move_speed, _ver * _actual_move_speed, collision_array, undefined, undefined, undefined, _actual_move_speed, _actual_move_speed);
 
 //var _vmat = camera_get_view_mat(view_camera[0]);
 audio_listener_set_position(0, x, y, 0);

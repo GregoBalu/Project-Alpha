@@ -3,6 +3,7 @@ default_depth = depth;
 MOVING = false;
 
 collision_tilemaps = [layer_tilemap_get_id("Tiles_Col_Invis"), layer_tilemap_get_id("Tiles_Col")];
+collision_array = [obj_collider, layer_tilemap_get_id("Tiles_Col_Invis"), layer_tilemap_get_id("Tiles_Col")];
 no_see_tilemaps = [layer_tilemap_get_id("No_light"), layer_tilemap_get_id("Tiles_Col")];
 
 if (hp_total == 0) {

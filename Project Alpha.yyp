@@ -19,8 +19,8 @@
     {"$GMFolder":"","%Name":"Objects","folderPath":"folders/Objects.yy","name":"Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Battle","folderPath":"folders/Objects/Battle.yy","name":"Battle","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Buffs","folderPath":"folders/Objects/Buffs.yy","name":"Buffs","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Enemies","folderPath":"folders/Objects/Enemies.yy","name":"Enemies","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Colliders","folderPath":"folders/Objects/Colliders.yy","name":"Colliders","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Enemies","folderPath":"folders/Objects/Enemies.yy","name":"Enemies","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"GUI","folderPath":"folders/Objects/GUI.yy","name":"GUI","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Inventory","folderPath":"folders/Objects/Inventory.yy","name":"Inventory","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Items","folderPath":"folders/Objects/Items.yy","name":"Items","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -63,7 +63,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.13.0.190",
+    "IDEVersion":"2024.13.1.193",
   },
   "name":"Project Alpha",
   "resources":[
@@ -348,6 +348,7 @@
     {"id":{"name":"spr_torch2","path":"sprites/spr_torch2/spr_torch2.yy",},},
     {"id":{"name":"spr_water_arrow","path":"sprites/spr_water_arrow/spr_water_arrow.yy",},},
     {"id":{"name":"spr_water_fountain","path":"sprites/spr_water_fountain/spr_water_fountain.yy",},},
+    {"id":{"name":"spr_water_thing","path":"sprites/spr_water_thing/spr_water_thing.yy",},},
     {"id":{"name":"spr_water","path":"sprites/spr_water/spr_water.yy",},},
     {"id":{"name":"TileSet_cave","path":"tilesets/TileSet_cave/TileSet_cave.yy",},},
     {"id":{"name":"TileSet1","path":"tilesets/TileSet1/TileSet1.yy",},},

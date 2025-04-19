@@ -10,7 +10,7 @@ bonus_corruption_resistance = 0.4;
 minus_move_speed = 0.4;
 
 name = "Robe of Voices";
-description = $"This robe is woven of soft fabric what's ripples almost sound as soft voices speaking.\nBonus corruption resistance: +{bonus_corruption_resistance*100}%\nMinus move speed: -{minus_move_speed}";
+description = $"This robe is woven of soft fabric what's ripples almost sound as soft voices speaking.\nCorruption resistance: +{bonus_corruption_resistance*100}%\Move speed: -{minus_move_speed}";
 
 
 

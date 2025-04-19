@@ -1,1 +1,2 @@
-gain_experience(obj_enemy1);
+//gain_experience(obj_enemy1);
+coins++;

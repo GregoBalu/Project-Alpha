@@ -39,14 +39,44 @@ draw_set_color(c_black);
 _dx += 4;
 _dy += 40;
 
+var _text_width = _boxw - _dx*2;
 
-
-draw_set_color(messages[current_message].msg_color);
-draw_set_font(messages[current_message].msg_font);
-draw_text_ext(_dx, _dy, draw_message, -1, _boxw - _dx*2);
+draw_set_color(messages[current_message].msg.color);
+draw_set_font(messages[current_message].msg.font);
+draw_text_ext(_dx, _dy, draw_message, -1, _text_width);
 
 draw_set_font(font_base);
 draw_set_color(c_ltgray);
+
+if (messages[current_message].type == DialogType.Chat) {
+    
+} else {
+    if (at_end) {
+        _dy += string_height_ext(draw_message, -1, _text_width) + 4;
+        
+        var _lastHeight = 0;
+        for (var _c = 0; _c < array_length(messages[current_message].choices); _c++)  {
+            if (!messages[current_message].choices[_c].condition()) { 
+                continue;
+            }
+            _dy += _lastHeight + 4;
+            draw_set_color(messages[current_message].choices[_c].color);
+            draw_set_font(messages[current_message].choices[_c].font);
+            draw_text_ext(_dx, _dy, messages[current_message].choices[_c].text, -1, _text_width);
+            var _width = string_width_ext(messages[current_message].choices[_c].text, -1, _text_width);
+            _lastHeight = string_height_ext(messages[current_message].choices[_c].text, -1, _text_width);
+            draw_rectangle(_dx, _dy, _dx+_width, _dy+_lastHeight, true);
+            if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _dx, _dy, _dx+_width, _dy+_lastHeight)) {
+                if (mouse_check_button_pressed(mb_left)) {
+                    messages[current_message].choices[_c].onClick();
+                }
+            }
+            
+            draw_set_font(font_base);
+            draw_set_color(c_ltgray);
+        }
+    }
+}
 
 if (has_more) {
     var _tpad = 8;

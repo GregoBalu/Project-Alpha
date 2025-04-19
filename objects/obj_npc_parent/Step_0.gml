@@ -1,6 +1,6 @@
 if (instance_exists(obj_dialog)) exit;
     
-if (instance_exists(obj_player) && distance_to_object(obj_player) < talk_distance) {
+if (dialog != -1 && instance_exists(obj_player) && distance_to_object(obj_player) < talk_distance) {
     if (!can_talk) {
         can_talk = true;
         obj_gui.show_talk++;

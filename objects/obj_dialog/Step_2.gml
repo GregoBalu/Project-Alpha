@@ -4,7 +4,7 @@ if (sprite_animate_x > 0) {
     sprite_animate_x -= 10;
 }
     
-var _str = messages[current_message].msg;
+var _str = messages[current_message].msg.text;
 
 if (floor(current_char) < string_length(_str)) {
     current_char += char_speed * (1 + real(keyboard_check(input_key)) );

@@ -22,6 +22,8 @@ tilemap_normal=layer_tilemap_get_id("Tiles_Back");
 hurt_frame = 0;
 hurt_cd_ticks = 0.3*TIME_SECOND;
 
+talents = ds_list_create();
+
 playersheet = instance_create_layer(x, y, layer_get_id("GUI"), obj_playersheet);
 buff_bar = instance_create_layer(x, y, layer_get_id("GUI"), obj_buff_bar);
 gui = instance_create_layer(x, y, layer_get_id("GUI"), obj_gui);

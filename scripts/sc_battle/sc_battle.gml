@@ -12,6 +12,8 @@ hint_buff_fire = "Ignited: lowers defense and take DoT each turn";
 hint_buff_corruption = "Corruption: significant DoT each turn";
 hint_buff_acid = "Acid spit: lowers defense and take DoT each turn";
 hint_buff_stun = "Stun: cannot take action";
+hint_buff_lifesteal = "Lifesteal: dealing damage heals a portion of it";
+hint_buff_armor_shred = "Armor shred: defense reduced";
 
 /**
  * Function to calculate crit.

@@ -99,7 +99,7 @@ if (is_visible) {
     var _do_draw_hint = false;
     var _draw_hint_data = {};
 
-    for (var _i = 0; _i < ds_list_size(talents); _i++)
+    for (var _i = 0; _i < ds_list_size(obj_player.talents); _i++)
     {
         var _row = _x + 70 + _gapX + (_i mod _talentsPerRow) * (_talentWidth + _gapX);
         
@@ -110,7 +110,7 @@ if (is_visible) {
         }
         
         var _col = _y + 16 + _gapY + (_i div _talentsPerRow) * (_talentHeight + _gapY);
-        var _hasCost = checkTalentCost(talents[|_i]);
+        var _hasCost = checkTalentCost(obj_player.talents[|_i]);
         var _alpha = _hasCost?1:0.3;
         var _color = #DDDDDD;
         var _isMouseOver = false;
@@ -118,20 +118,20 @@ if (is_visible) {
             _isMouseOver = true;
         }
         
-        if (talents[|_i].unlocked) {
+        if (obj_player.talents[|_i].unlocked) {
             _color = #EEEEEE;
         } else if (_isMouseOver && _hasCost) {
             _color = #FFFFFF;
         }
         
-        if (talents[|_i].unlocked) {
+        if (obj_player.talents[|_i].unlocked) {
             draw_sprite_stretched_ext(spr_highlight, 0, _row-_gapX/4, _col-_gapY/4, _talentWidth+_gapX/2, _talentHeight+_gapY/2, c_white, 1);
         }
         
-        draw_sprite_stretched_ext(talents[|_i].sprite_index, 0, _row, _col, _talentWidth, _talentHeight, _color, _alpha);
-        draw_textbox(_row + _talentWidth/2, _col+_talentHeight, _talentWidth+_gapX/2, _gapY, talents[|_i].name, fa_center);
+        draw_sprite_stretched_ext(obj_player.talents[|_i].sprite_index, 0, _row, _col, _talentWidth, _talentHeight, _color, _alpha);
+        draw_textbox(_row + _talentWidth/2, _col+_talentHeight, _talentWidth+_gapX/2, _gapY, obj_player.talents[|_i].name, fa_center);
         
-        if (talents[|_i].unlocked) {
+        if (obj_player.talents[|_i].unlocked) {
             draw_sprite_stretched_ext(spr_check, 0, _row+_talentWidth/2, _col+_talentHeight/2, _talentWidth/2, _talentHeight/2, c_green, 1);
         }
         
@@ -149,13 +149,13 @@ if (is_visible) {
             _draw_hint_data = {
                 hint_x : _hint_x,
                 hint_y : clamp(mouse_gui_y, _col+5, _col+_talentHeight-5),
-                hint : talents[|_i].hint,
+                hint : obj_player.talents[|_i].hint,
                 halign : _halign
             };
         }
     
-        if (!talents[|_i].unlocked && _isMouseOver && mouse_check_button_pressed(mb_left)) {
-            talents[|_i].action();
+        if (!obj_player.talents[|_i].unlocked && _isMouseOver && mouse_check_button_pressed(mb_left)) {
+            obj_player.talents[|_i].action();
         }
     }
     

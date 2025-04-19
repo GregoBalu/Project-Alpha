@@ -28,9 +28,43 @@ if (instance_exists(obj_room_switcher)) {
     corruption = _inst.player_data.corruption;
     corruption_total = _inst.player_data.corruption_total;
     luck = _inst.player_data.luck;
+    ds_list_copy(talents, _inst.player_data.talents);
     talent_points = _inst.player_data.talent_points;
     ds_list_copy(unlocked_talents, _inst.player_data.unlocked_talents);
     ds_map_copy(inventory, _inst.player_data.inventory);
     ds_map_copy(equipped_items, _inst.player_data.equipped_items);
     coins = _inst.player_data.coins;
+} else {
+    {
+        ds_list_add(talents, instance_create_layer(0, 0, "GUI", obj_talent_heavy_cheap, {
+            visible : false,
+            depth : depth+10,
+            persistent: true
+        }));
+        ds_list_add(talents, instance_create_layer(0, 0, "GUI", obj_talent_def_hp, {
+            visible : false,
+            depth : depth+10,
+            persistent: true
+        }));
+        ds_list_add(talents, instance_create_layer(0, 0, "GUI", obj_talent_hp_dmg, {
+            visible : false,
+            depth : depth+10,
+            persistent: true
+        }));
+        ds_list_add(talents, instance_create_layer(0, 0, "GUI", obj_talent_light_crit, {
+            visible : false,
+            depth : depth+10,
+            persistent: true
+        }));
+        ds_list_add(talents, instance_create_layer(0, 0, "GUI", obj_talent_interrupt_armor_breaker, {
+            visible : false,
+            depth : depth+10,
+            persistent: true
+        }));
+        ds_list_add(talents, instance_create_layer(0, 0, "GUI", obj_talent_wait_lifesteal, {
+            visible : false,
+            depth : depth+10,
+            persistent: true
+        }));
+    }
 }

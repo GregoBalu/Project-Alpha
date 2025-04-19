@@ -8,7 +8,7 @@ opening_state = min_open_state;
 max_open_state = 316;
 
 depth = 0;
-talents = ds_list_create();
+
 
 openingSoundId = undefined;
 

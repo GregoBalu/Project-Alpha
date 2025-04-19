@@ -7,12 +7,14 @@ if (instance_exists(obj_room_switcher)) {
         corruption : self.corruption,
         corruption_total: self.corruption_total,
         luck: self.luck,
+        talents: ds_list_create(),
         talent_points: self.talent_points,
         unlocked_talents: ds_list_create(),
         inventory: ds_map_create(),
         equipped_items: ds_map_create(),
         coins: self.coins
     };
+    ds_list_copy(_inst.player_data.talents, self.talents);
     ds_list_copy(_inst.player_data.unlocked_talents, self.unlocked_talents);
     ds_map_copy(_inst.player_data.inventory, self.inventory);
     ds_map_copy(_inst.player_data.equipped_items, self.equipped_items);

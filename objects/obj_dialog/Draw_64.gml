@@ -67,6 +67,9 @@ if (messages[current_message].type == DialogType.Chat) {
             _lastHeight = string_height_ext(messages[current_message].choices[_c].text, -1, _text_width);
             draw_rectangle(_dx, _dy, _dx+_width, _dy+_lastHeight, true);
             if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _dx, _dy, _dx+_width, _dy+_lastHeight)) {
+                draw_set_alpha(0.4);
+                draw_rectangle_color(_dx, _dy, _dx+_width, _dy+_lastHeight-1, c_gray, c_gray, c_gray, c_gray, false);
+                draw_set_alpha(1);
                 if (mouse_check_button_pressed(mb_left)) {
                     messages[current_message].choices[_c].onClick();
                 }

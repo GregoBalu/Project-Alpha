@@ -93,6 +93,7 @@ function dialog_vendor_item(_name, _price, _stock, _on_click_action) : dialog_ch
         }
         stock--;
         obj_player.coins -= price;
+        audio_play_sound(snd_coin_drop, 5, false);
         return true;
     }
 }
@@ -160,7 +161,7 @@ global.dialog_hint_room1_leverpuzzle = [
 
 global.dialog_cave_vendor = [
     new dialog_entry(global.dialog_vendor_name, global.dialog_vendor_color, spr_npc_vendor, new dialog_text("We meet again. Come look at my goods or you will face death quickly.")),
-    new dialog_choice_entry(global.dialog_vendor_name, global.dialog_vendor_color, spr_npc_vendor, new dialog_text("Options:"), [
+    new dialog_choice_entry(global.dialog_vendor_name, global.dialog_vendor_color, spr_npc_vendor, new dialog_text($"Current coins: XXX. Options:"), [
         new dialog_vendor_item("Healing potion", 2, 2, function() {
             obj_player.hp = clamp(obj_player.hp + 5, 0, obj_player.hp_total);
             return true;

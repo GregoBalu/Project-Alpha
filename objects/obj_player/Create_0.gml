@@ -153,7 +153,7 @@ function equipItem(_fromInventorySlot) {
 
 function unequipItem(_equipSlot) {
     if (!ds_map_exists(equipped_items, _equipSlot)) {
-        return;
+        return false;
     }
     
     var _invSlot = undefined;
@@ -168,12 +168,13 @@ function unequipItem(_equipSlot) {
     } else if (!ds_map_exists(inventory, InventorySlots.Slot5)) {
         _invSlot = InventorySlots.Slot5;
     } else {
-        return;
+        return false;
     }
     
     equipped_items[?_equipSlot].unequip();
     inventory[?_invSlot] = equipped_items[?_equipSlot];
     ds_map_delete(equipped_items, _equipSlot);
+    return true;
 }
 
 function add_corruption(_amount) {

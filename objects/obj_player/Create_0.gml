@@ -126,6 +126,7 @@ function addToInventory(_obj, _slot = InventorySlots.Slot1) {
     ds_map_add(inventory, _slot, _inst);
     return true;
 }
+addToInventory(obj_robe_of_voices);
 
 function equipItem(_fromInventorySlot) {
     if (!ds_map_exists(inventory, _fromInventorySlot)) {
@@ -179,6 +180,8 @@ function unequipItem(_equipSlot) {
 function add_corruption(_amount) {
     
     var _amt = clamp(_amount * (1.0-(luck/100) ), -_amount, _amount);
+    
+    _amt = _amt * (1.0-corruption_resistance);
     
     corruption = clamp(corruption + _amt, 0, corruption_total);
     show_debug_message($"Corruption: {corruption}/{corruption_total}");

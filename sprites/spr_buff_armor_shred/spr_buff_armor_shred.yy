@@ -1,6 +1,6 @@
 {
   "$GMSprite":"",
-  "%Name":"spr_buff_corruption",
+  "%Name":"spr_buff_armor_shred",
   "bboxMode":0,
   "bbox_bottom":31,
   "bbox_left":0,
@@ -12,19 +12,19 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"63a4cecb-75ef-4a4f-b221-680bdf7ea485","name":"63a4cecb-75ef-4a4f-b221-680bdf7ea485","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"d0150a0d-f561-4414-b547-5b766c1c3d85","name":"d0150a0d-f561-4414-b547-5b766c1c3d85","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":32,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"db22285a-a001-420a-8db6-bcdb1cf67b3e","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"db22285a-a001-420a-8db6-bcdb1cf67b3e","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
-    {"$GMImageLayer":"","%Name":"0ced40ca-2e74-4bdf-b85a-b8574aff195f","blendMode":0,"displayName":"default","isLocked":false,"name":"0ced40ca-2e74-4bdf-b85a-b8574aff195f","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
-    {"$GMImageLayer":"","%Name":"db2bad01-3ef0-4b1e-aeee-8ba3124a9fb1","blendMode":0,"displayName":"Layer 2","isLocked":false,"name":"db2bad01-3ef0-4b1e-aeee-8ba3124a9fb1","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
-    {"$GMImageLayer":"","%Name":"c24ac4b1-c989-412c-8f63-ec2acf22bff1","blendMode":0,"displayName":"Back","isLocked":false,"name":"c24ac4b1-c989-412c-8f63-ec2acf22bff1","opacity":30.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"781908f8-cb3b-42b9-bf30-acc0d9a08d72","blendMode":0,"displayName":"Layer 3","isLocked":false,"name":"781908f8-cb3b-42b9-bf30-acc0d9a08d72","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"c48b7643-2827-465f-9bc0-ce932b8eed04","blendMode":0,"displayName":"Layer 2","isLocked":false,"name":"c48b7643-2827-465f-9bc0-ce932b8eed04","opacity":73.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"00cb0e23-f1d1-405e-909b-1fce922d83b3","blendMode":0,"displayName":"default","isLocked":false,"name":"00cb0e23-f1d1-405e-909b-1fce922d83b3","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"6666e783-02b6-41bd-9e6e-7d7d1e6ef506","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"6666e783-02b6-41bd-9e6e-7d7d1e6ef506","opacity":30.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_buff_corruption",
+  "name":"spr_buff_armor_shred",
   "nineSlice":null,
   "origin":0,
   "parent":{
@@ -36,7 +36,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"spr_buff_corruption",
+    "%Name":"spr_buff_armor_shred",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -60,7 +60,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_buff_corruption",
+    "name":"spr_buff_armor_shred",
     "playback":1,
     "playbackSpeed":3.0,
     "playbackSpeedType":0,
@@ -74,8 +74,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"63a4cecb-75ef-4a4f-b221-680bdf7ea485","path":"sprites/spr_buff_corruption/spr_buff_corruption.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"4ace1766-b8b0-4144-8906-48457866d006","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"d0150a0d-f561-4414-b547-5b766c1c3d85","path":"sprites/spr_buff_armor_shred/spr_buff_armor_shred.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"64d05cb1-d869-4cad-b62c-038c050d481c","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

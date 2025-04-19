@@ -24,7 +24,8 @@ action = function() {
         obj_battle_player.add_buff(new BattleBuff(lifesteal_duration, 
                                     {
                                         lifesteal_amount : bonus_lifesteal,
-                                        sprite: spr_buff_lifesteal
+                                        sprite: spr_buff_lifesteal,
+                                        hint: global.hint_buff_lifesteal
                                     },
                                     function(_data){
                                         //start

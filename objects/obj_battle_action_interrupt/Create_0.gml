@@ -34,7 +34,10 @@ action = function() {
                 }));
         if (armor_decrease > 0) {
             obj_battle_enemy.add_buff(new BattleBuff(_did_crit?6:3, 
-                    {sprite:undefined}, 
+                    {
+                        sprite:spr_buff_armor_shred,
+                        hint: global.hint_buff_armor_shred
+                    }, 
                     function(_data) {
                         //start
                         show_debug_message("Armor shredding applied");

@@ -238,6 +238,7 @@
     {"id":{"name":"spr_box","path":"sprites/spr_box/spr_box.yy",},},
     {"id":{"name":"spr_brazier","path":"sprites/spr_brazier/spr_brazier.yy",},},
     {"id":{"name":"spr_buff_acid","path":"sprites/spr_buff_acid/spr_buff_acid.yy",},},
+    {"id":{"name":"spr_buff_armor_shred","path":"sprites/spr_buff_armor_shred/spr_buff_armor_shred.yy",},},
     {"id":{"name":"spr_buff_corruption","path":"sprites/spr_buff_corruption/spr_buff_corruption.yy",},},
     {"id":{"name":"spr_buff_fire","path":"sprites/spr_buff_fire/spr_buff_fire.yy",},},
     {"id":{"name":"spr_buff_lifesteal","path":"sprites/spr_buff_lifesteal/spr_buff_lifesteal.yy",},},

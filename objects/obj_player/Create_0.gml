@@ -126,10 +126,6 @@ function addToInventory(_obj, _slot = InventorySlots.Slot1) {
     ds_map_add(inventory, _slot, _inst);
     return true;
 }
-addToInventory(obj_robe_of_voices);
-addToInventory(obj_sword_of_misery);
-addToInventory(obj_ring_of_erityc);
-addToInventory(obj_helm_of_horns);
 
 function equipItem(_fromInventorySlot) {
     if (!ds_map_exists(inventory, _fromInventorySlot)) {

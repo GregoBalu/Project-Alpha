@@ -3,7 +3,8 @@ event_inherited();
 bonus_lifesteal = 0;
 lifesteal_duration = 0;
 
-charge_gain = 0.4;
+attack_charge_gain = 0.4;
+utility_charge_gain = 0.4;
 
 for (var _i = 0; _i < ds_list_size(obj_battle_switcher.player_data.unlocked_talents); _i++)
 {
@@ -11,7 +12,11 @@ for (var _i = 0; _i < ds_list_size(obj_battle_switcher.player_data.unlocked_tale
     if (_talent.object_index == obj_talent_wait_lifesteal) {
         bonus_lifesteal += _talent.bonus_lifesteal;
         lifesteal_duration = _talent.lifesteal_turns;
-        charge_gain -= _talent.minus_charge;
+        attack_charge_gain -= _talent.minus_charge;
+        utility_charge_gain -= _talent.minus_charge;
+    } else if (_talent.object_index == obj_talent_wait_charge) {
+        attack_charge_gain += _talent.bonus_attack_charge;
+        utility_charge_gain -= _talent.minus_utility_charge;
     }
 }
 
@@ -41,4 +46,4 @@ action = function() {
     alarm[0] = (animTime + getBattleAfterActionCooldownSeconds()) * TIME_SECOND;
 }
 
-hint = $"Wait a turn and gain charge.\nCharge gain: {charge_gain} each"
+hint = $"Wait a turn and gain charge.\nCharge gain: {attack_charge_gain} attack, {utility_charge_gain} utility";

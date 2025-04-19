@@ -1,2 +1,2 @@
-obj_battle_player.data.charge_attack = clamp(obj_battle_player.data.charge_attack + charge_gain, 0, obj_battle_player.data.charge_attack_total);
-obj_battle_player.data.charge_util = clamp(obj_battle_player.data.charge_util + charge_gain, 0, obj_battle_player.data.charge_util_total);
+obj_battle_player.data.charge_attack = clamp(obj_battle_player.data.charge_attack + attack_charge_gain, 0, obj_battle_player.data.charge_attack_total);
+obj_battle_player.data.charge_util = clamp(obj_battle_player.data.charge_util + utility_charge_gain, 0, obj_battle_player.data.charge_util_total);

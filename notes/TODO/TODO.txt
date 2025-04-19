@@ -5,12 +5,6 @@ TODO AND IDEAS
 
 
 
-- Battle effect indicators
-    - small icons
-        - armor break
-    - hints
-
-
 - More Decor
 - Inventory
     - drag & drop func

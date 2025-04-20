@@ -129,6 +129,13 @@ if (is_visible) {
         }
         
         draw_sprite_stretched_ext(obj_player.talents[|_i].sprite_index, 0, _row, _col, _talentWidth, _talentHeight, _color, _alpha);
+        if (obj_player.talents[|_i].cost_amount == 1) {
+            draw_sprite(spr_talent_cost_1, 0, _row-3, _col-2);
+        } else if (obj_player.talents[|_i].cost_amount == 2) {
+            draw_sprite(spr_talent_cost_2, 0, _row-3, _col-2);
+        } else if (obj_player.talents[|_i].cost_amount == 3) {
+            draw_sprite(spr_talent_cost_3, 0, _row-3, _col-2);
+        }
         draw_textbox(_row + _talentWidth/2, _col+_talentHeight, _talentWidth+_gapX/2, _gapY, obj_player.talents[|_i].name, fa_center);
         
         if (obj_player.talents[|_i].unlocked) {

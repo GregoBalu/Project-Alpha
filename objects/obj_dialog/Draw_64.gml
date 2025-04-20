@@ -52,14 +52,23 @@ if (messages[current_message].type == DialogType.Chat) {
     
 } else {
     if (at_end) {
+        var _choice_start_y = _dy;
+        var _last_drawn = choice_scroll;
+        var _choices_count = array_length(messages[current_message].choices);
         _dy += string_height_ext(draw_message, -1, _text_width) + 4;
         
         var _lastHeight = 0;
-        for (var _c = 0; _c < array_length(messages[current_message].choices); _c++)  {
+        for (var _c = choice_scroll; _c < array_length(messages[current_message].choices); _c++)  {
             if (!messages[current_message].choices[_c].condition()) { 
+                _choices_count--;
                 continue;
             }
             _dy += _lastHeight + 4;
+            if (_dy >= gui_h-4) {
+                choice_need_scroll = true;
+                continue;
+            }
+            _last_drawn = _c;
             draw_set_color(messages[current_message].choices[_c].color);
             draw_set_font(messages[current_message].choices[_c].font);
             draw_text_ext(_dx, _dy, messages[current_message].choices[_c].text, -1, _text_width);
@@ -72,11 +81,29 @@ if (messages[current_message].type == DialogType.Chat) {
                 draw_set_alpha(1);
                 if (mouse_check_button_pressed(mb_left)) {
                     messages[current_message].choices[_c].onClick();
+                    choice_need_scroll = false;
+                    choice_scroll = 0;
                 }
             }
             
             draw_set_font(font_base);
             draw_set_color(c_ltgray);
+        }
+        if (choice_need_scroll) {
+            var _scroll_x1 = _boxw-25;
+            var _scroll_x2 = _boxw-21;
+            draw_set_alpha(0.8);
+            var _scroll_height = (gui_h-1)-_choice_start_y;
+            draw_rectangle_color(_scroll_x1, _choice_start_y, _scroll_x2, gui_h-1, c_gray, c_gray, c_gray, c_gray, false);
+            draw_set_alpha(1);
+            var _percent_drawn = (_last_drawn - choice_scroll+1) / _choices_count;
+            var _scrollable_height = _scroll_height * _percent_drawn;
+            var _scroll_at_percent = choice_scroll / _choices_count;
+            var _scrollable_y = _choice_start_y + (_scroll_at_percent*_scroll_height);
+            //show_debug_message($"scroll_h={_scroll_height} scrollable={_scrollable_height}   perc={_percent_drawn}% @{_scroll_at_percent} / {_choices_count} y={_scrollable_y}");
+            draw_rectangle_color(_scroll_x1, _scrollable_y, _scroll_x2, _scrollable_y+_scrollable_height, c_dkgray, c_dkgray, c_dkgray, c_dkgray, false);
+            //draw_line_color(_scroll_x1, _scrollable_y+(_scrollable_height/3), _scroll_x2, _scrollable_y+(_scrollable_height/3), c_black, c_black);
+            //draw_line_color(_scroll_x1, _scrollable_y+2*(_scrollable_height/3), _scroll_x2, _scrollable_y+2*(_scrollable_height/3), c_black, c_black);
         }
     }
 }

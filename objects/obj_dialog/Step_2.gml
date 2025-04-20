@@ -26,6 +26,8 @@ else {
         if (current_message >= array_length(messages)) {
             instance_destroy();
         } else {
+            choice_need_scroll = false;
+            choice_scroll = 0;
             current_char = 0;
             sprite_animate_x = speaker_sprite_width;
             messages[current_message].onStart();

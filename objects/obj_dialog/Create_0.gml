@@ -17,3 +17,6 @@ speaker_sprite_width = gui_w*0.3
 
 sprite_animate_x = speaker_sprite_width;
 
+choice_need_scroll = false;
+choice_scroll = 0;
+

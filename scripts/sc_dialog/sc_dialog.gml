@@ -159,11 +159,35 @@ global.dialog_hint_room1_leverpuzzle = [
     new dialog_entry("Note", c_green, spr_note, new dialog_text("You cannot make out most of the text just a small drawing on the bottom, which depicts four colors in a row: yellow, green, green, yellow") )
 ];
 
+global.dialog_room1_vendor = [
+    new dialog_entry(global.dialog_vendor_name, global.dialog_vendor_color, spr_npc_vendor, new dialog_text("I see you are persistent. Come take a look at my wares.")),
+    new dialog_choice_entry(global.dialog_vendor_name, global.dialog_vendor_color, spr_npc_vendor, new dialog_text($"Current coins: XXX. Options:"), [
+        new dialog_vendor_item("Healing potion", 2, 2, function() {
+            obj_player.hp = clamp(obj_player.hp + 5, 0, obj_player.hp_total);
+            return true;
+        }),
+        new dialog_vendor_item("Corruption removal", 5, 100, function() {
+            obj_player.add_corruption(-2);
+            return true;
+        }),
+        new dialog_vendor_item("Crane of wisdom", 10, 1, function() {
+            if (obj_player.addToInventory(obj_crane_of_wisdom)) {
+                return true;
+            }
+            return false;
+        })
+    ])
+];
+
 global.dialog_cave_vendor = [
     new dialog_entry(global.dialog_vendor_name, global.dialog_vendor_color, spr_npc_vendor, new dialog_text("We meet again. Come look at my goods or you will face death quickly.")),
     new dialog_choice_entry(global.dialog_vendor_name, global.dialog_vendor_color, spr_npc_vendor, new dialog_text($"Current coins: XXX. Options:"), [
         new dialog_vendor_item("Healing potion", 2, 2, function() {
             obj_player.hp = clamp(obj_player.hp + 5, 0, obj_player.hp_total);
+            return true;
+        }),
+        new dialog_vendor_item("Corruption removal", 5, 100, function() {
+            obj_player.add_corruption(-2);
             return true;
         }),
         new dialog_vendor_item("Crane of wisdom", 10, 1, function() {

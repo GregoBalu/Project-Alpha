@@ -1,4 +1,4 @@
-if (state == InterractItemState.Undisturbed) {
+if (can_interract && state == InterractItemState.Undisturbed) {
     onInterract();
     state = InterractItemState.Interracted;
 }

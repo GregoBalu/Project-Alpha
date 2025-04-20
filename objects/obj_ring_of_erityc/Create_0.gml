@@ -4,14 +4,14 @@ event_inherited();
 is_equipable = true;
 
 
-equip_slot = EquipSlot.Weapon;
+equip_slot = EquipSlot.Ring;
 
 hp_increase = 5;
 original_charge_attack_reduction = 1;
 charge_attack_reduction = original_charge_attack_reduction;
 
 name = "Ring of Erityc";
-description = $"This ring was that thought to be unobtainable.\nHealth: +{hp_increase}\nAttack charge gain: -{original_charge_attack_reduction}";
+description = $"This ring was that thought to be unobtainable.\nHealth: +{hp_increase}\nAttack charge max gain: -{original_charge_attack_reduction}";
 
 
 

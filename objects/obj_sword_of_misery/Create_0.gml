@@ -6,7 +6,7 @@ is_equipable = true;
 
 equip_slot = EquipSlot.Weapon;
 
-bonus_damage = 5;
+bonus_damage = 2;
 original_crit_reduction = 0.1;
 crit_reduction = original_crit_reduction;
 

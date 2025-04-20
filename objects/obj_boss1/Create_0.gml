@@ -57,7 +57,7 @@ function battleDraw(_obj) {
         
         var _x = _obj.x + 40;
         var _y = _obj.y - 30;
-        var _r = 6;
+        var _r = 8;
         
         draw_circle_color(_x, _y, _r, c_gray, c_gray, false);
         draw_circle_color(_x, _y, 1, c_black, c_black, false);

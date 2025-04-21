@@ -285,6 +285,7 @@
     {"id":{"name":"spr_flowing_water","path":"sprites/spr_flowing_water/spr_flowing_water.yy",},},
     {"id":{"name":"spr_full_flames","path":"sprites/spr_full_flames/spr_full_flames.yy",},},
     {"id":{"name":"spr_glow","path":"sprites/spr_glow/spr_glow.yy",},},
+    {"id":{"name":"spr_gold_pile","path":"sprites/spr_gold_pile/spr_gold_pile.yy",},},
     {"id":{"name":"spr_gui_back_roll","path":"sprites/spr_gui_back_roll/spr_gui_back_roll.yy",},},
     {"id":{"name":"spr_gui_back","path":"sprites/spr_gui_back/spr_gui_back.yy",},},
     {"id":{"name":"spr_gui_slot","path":"sprites/spr_gui_slot/spr_gui_slot.yy",},},

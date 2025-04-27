@@ -3,7 +3,8 @@ TODO AND IDEAS
 - Changeable Ultimate ability
     - Talent cost >=2
 
-
+- Talent route-k?
+    - prerequisite, unlocks next, ...
 
 - More Decor
 - Inventory

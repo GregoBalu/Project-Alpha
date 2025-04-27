@@ -4,7 +4,7 @@ event_inherited();
 image_speed = 0;
 image_index = 0;
 
-itemsLayer = layer_get_id("Items");
+itemsLayer = layer_get_id("Instances");
 
 xcenter = x + sprite_width/2;
 ycenter = y + sprite_height/2;

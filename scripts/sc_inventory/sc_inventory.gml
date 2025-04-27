@@ -98,7 +98,7 @@ function CoinDrop(_amount = 1) : RDObject("Coin", false, true) constructor {
     amount = _amount;
     
     function create_instance(_x, _y, _layer) {
-        instance_create_layer(_x, _y, _layer, obj_item_coin, {
+        return instance_create_layer(_x, _y, _layer, obj_item_coin, {
             coin_amount: amount
         });
     }
@@ -117,7 +117,7 @@ function ItemDrop(_obj, _struct, _uniq, _enab = true) : RDObject("Item", _uniq, 
     object_data = _struct;
     
     function create_instance(_x, _y, _layer) {
-        instance_create_layer(_x, _y, _layer, object_index, object_data);
+        return instance_create_layer(_x, _y, _layer, object_index, object_data);
     }
 }
 

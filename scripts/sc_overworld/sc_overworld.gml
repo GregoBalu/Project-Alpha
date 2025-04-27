@@ -1,5 +1,5 @@
 
-
+global.do_pause = false;
 
 
 /**

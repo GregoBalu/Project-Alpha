@@ -196,6 +196,7 @@
     {"id":{"name":"rm_battle","path":"rooms/rm_battle/rm_battle.yy",},},
     {"id":{"name":"rm_cave","path":"rooms/rm_cave/rm_cave.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"RoomUI","path":"roomui/RoomUI/RoomUI.yy",},},
     {"id":{"name":"sc_audio","path":"scripts/sc_audio/sc_audio.yy",},},
     {"id":{"name":"sc_battle","path":"scripts/sc_battle/sc_battle.yy",},},
     {"id":{"name":"sc_constants","path":"scripts/sc_constants/sc_constants.yy",},},

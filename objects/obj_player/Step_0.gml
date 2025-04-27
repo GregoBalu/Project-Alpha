@@ -1,4 +1,4 @@
-if (instance_exists(obj_dialog)) exit;
+if (instance_exists(obj_dialog) || global.do_pause) exit;
 
 var _hor = (keyboard_check(global.input_right)?1:0) - (keyboard_check(global.input_left)?1:0);
 var _ver = (keyboard_check(global.input_down)?1:0) - (keyboard_check(global.input_up)?1:0);

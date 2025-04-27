@@ -15,6 +15,8 @@
     {"name":"inst_55173BA9","path":"rooms/Menu/Menu.yy",},
     {"name":"inst_23DA3138","path":"rooms/Menu/Menu.yy",},
     {"name":"inst_626E8D20","path":"rooms/Menu/Menu.yy",},
+    {"name":"Resume_Button","path":"roomui/RoomUI/RoomUI.yy",},
+    {"name":"Menu_Button","path":"roomui/RoomUI/RoomUI.yy",},
   ],
   "isDnd":false,
   "layers":[

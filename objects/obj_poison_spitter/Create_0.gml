@@ -22,3 +22,6 @@ getBuffData = function(_othr) {
 
 ds_list_add(no_effect_frames, 0);
 ds_list_add(no_effect_frames, 1);
+
+ds_list_add(no_effect_frames, 7);
+ds_list_add(no_effect_frames, 8);

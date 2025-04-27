@@ -18,4 +18,4 @@ TODO AND IDEAS
 - main menu (start new, exit)
     - Difficulty:  easy/medium/hard : starting stats
 
-
+- enemy level balance (diff increase)

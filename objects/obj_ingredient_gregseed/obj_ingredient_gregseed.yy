@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_ingredient_root",
+  "%Name":"obj_ingredient_gregseed",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_ingredient_root",
+  "name":"obj_ingredient_gregseed",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_ingredient","path":"objects/obj_ingredient/obj_ingredient.yy",},"propertyId":{"name":"brew_color","path":"objects/obj_ingredient/obj_ingredient.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"$FF0000FF",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_ingredient","path":"objects/obj_ingredient/obj_ingredient.yy",},"propertyId":{"name":"brew_color","path":"objects/obj_ingredient/obj_ingredient.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"$FF00697A",},
   ],
   "parent":{
     "name":"Items",
@@ -40,8 +40,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_ingredient_root",
-    "path":"sprites/spr_ingredient_root/spr_ingredient_root.yy",
+    "name":"spr_ingredient_gregseed",
+    "path":"sprites/spr_ingredient_gregseed/spr_ingredient_gregseed.yy",
   },
   "spriteMaskId":{
     "name":"collision_24",

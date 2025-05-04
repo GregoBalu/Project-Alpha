@@ -20,3 +20,5 @@ TODO AND IDEAS
     - Difficulty:  easy/medium/hard : starting stats
 
 - enemy level balance (diff increase)
+
+- CAULDRON NE COLLISIONRE IVÓDJON MEG

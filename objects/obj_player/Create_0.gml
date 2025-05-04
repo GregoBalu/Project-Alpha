@@ -178,8 +178,8 @@ function unequipItem(_equipSlot) {
 }
 
 function add_corruption(_amount) {
-    
-    var _amt = clamp(_amount * (1.0-(luck/100) ), -_amount, _amount);
+    //TODO: add sound effect
+    var _amt = _amount
     
     _amt = _amt * (1.0-corruption_resistance);
     

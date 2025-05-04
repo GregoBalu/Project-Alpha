@@ -27,7 +27,6 @@ if (instance_exists(obj_room_switcher)) {
     xp_total = _inst.player_data.xp_total;
     corruption = _inst.player_data.corruption;
     corruption_total = _inst.player_data.corruption_total;
-    luck = _inst.player_data.luck;
     ds_list_copy(talents, _inst.player_data.talents);
     talent_points = _inst.player_data.talent_points;
     ds_list_copy(unlocked_talents, _inst.player_data.unlocked_talents);

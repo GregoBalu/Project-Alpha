@@ -6,7 +6,6 @@ if (instance_exists(obj_room_switcher)) {
         xp_total : self.xp_total,
         corruption : self.corruption,
         corruption_total: self.corruption_total,
-        luck: self.luck,
         talents: ds_list_create(),
         talent_points: self.talent_points,
         unlocked_talents: ds_list_create(),

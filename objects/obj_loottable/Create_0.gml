@@ -5,6 +5,7 @@ itemsLayer = layer_get_id("Items");
 loottable = new RDTable();
 loottable.add_entry(50, new RDNull());
 loottable.add_entry(20, new ItemDrop(obj_ingredient_root, {}, false, true));
+loottable.add_entry(5, new ItemDrop(obj_ingredient_gregseed, {}, false, true));
 loottable.add_entry(5, new ItemDrop(obj_item_health_potion, {}, false, true));
 loottable.add_entry(5, new ItemDrop(obj_item_resto_potion, {}, false, true));
 loottable.add_entry(1, new ItemDrop(obj_item_resto_potion, {

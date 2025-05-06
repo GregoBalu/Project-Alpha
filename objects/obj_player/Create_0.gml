@@ -178,6 +178,10 @@ function unequipItem(_equipSlot) {
 }
 
 function add_corruption(_amount) {
+    if (corruption >= corruption_total) {
+        return;
+    }
+    
     //TODO: add sound effect
     var _amt = _amount
     

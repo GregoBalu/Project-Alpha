@@ -4,5 +4,6 @@ if (state == InterractItemState.Interracted) {
     instance_destroy(other);
     state = InterractItemState.Undisturbed;
     can_interract = false;
-    alarm[0] = TIME_SECOND;
+    //alarm[0] = TIME_SECOND;
+    can_interract = true;
 }

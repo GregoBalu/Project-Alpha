@@ -1,3 +1,4 @@
+event_inherited();
 
 if (state == InterractItemState.Undisturbed) {
     ++frame;

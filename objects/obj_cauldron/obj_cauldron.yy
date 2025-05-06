@@ -11,7 +11,9 @@
   ],
   "managed":true,
   "name":"obj_cauldron",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_item_interract_base","path":"objects/obj_item_interract_base/obj_item_interract_base.yy",},"propertyId":{"name":"interract_as_collision","path":"objects/obj_item_interract_base/obj_item_interract_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"False",},
+  ],
   "parent":{
     "name":"Items",
     "path":"folders/Objects/Items.yy",

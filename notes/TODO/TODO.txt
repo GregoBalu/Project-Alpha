@@ -21,4 +21,3 @@ TODO AND IDEAS
 
 - enemy level balance (diff increase)
 
-- CAULDRON NE COLLISIONRE IVÓDJON MEG

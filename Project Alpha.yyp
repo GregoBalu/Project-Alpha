@@ -283,6 +283,7 @@
     {"id":{"name":"spr_finnish","path":"sprites/spr_finnish/spr_finnish.yy",},},
     {"id":{"name":"spr_fireball_explosion","path":"sprites/spr_fireball_explosion/spr_fireball_explosion.yy",},},
     {"id":{"name":"spr_fireball","path":"sprites/spr_fireball/spr_fireball.yy",},},
+    {"id":{"name":"spr_firetoad","path":"sprites/spr_firetoad/spr_firetoad.yy",},},
     {"id":{"name":"spr_flower1","path":"sprites/spr_flower1/spr_flower1.yy",},},
     {"id":{"name":"spr_flower2","path":"sprites/spr_flower2/spr_flower2.yy",},},
     {"id":{"name":"spr_flowing_water","path":"sprites/spr_flowing_water/spr_flowing_water.yy",},},

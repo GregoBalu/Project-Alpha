@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_spark",
-    "path":"sprites/spr_spark/spr_spark.yy",
+    "name":"spr_firetoad",
+    "path":"sprites/spr_firetoad/spr_firetoad.yy",
   },
   "spriteMaskId":null,
   "visible":true,

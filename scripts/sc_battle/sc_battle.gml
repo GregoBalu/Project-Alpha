@@ -70,13 +70,12 @@ function checkCost(cost_type, cost_amount) {
 
 function enemySimpleAttack(_obj) {
     var _enemy_damage = calc_damage(obj_battle_enemy.data.damage, obj_battle_enemy.data.crit_chance);
-    var _animTime = BattleEnemyAttackAnimationTime;
     
     var _actual_dmg = obj_battle_player.take_damage(_enemy_damage.damage, _enemy_damage.did_crit);
     if (obj_battle_enemy.data.lifesteal > 0) {
         obj_battle_enemy.take_damage(-_actual_dmg*obj_battle_enemy.data.lifesteal, _enemy_damage.did_crit);
     }
-    obj_battle_enemy.play_attack_animation(_enemy_damage.did_crit);
+    var _animTime = obj_battle_enemy.play_attack_animation(_enemy_damage.did_crit);
     
     obj_battle_enemy.data.charge_attack = clamp(obj_battle_enemy.data.charge_attack + .4, 0, obj_battle_enemy.data.charge_attack_total);
     
@@ -87,9 +86,8 @@ function enemyCastFireball(_damage_modifier, _obj, _dot_dmg_modifier = 1.0, _dot
     obj_battle_enemy.data.charge_util -= 1;
     
     var _enemy_damage = calc_damage(obj_battle_enemy.data.damage*_damage_modifier, obj_battle_enemy.data.crit_chance);
-    var _animTime = BattleEnemyAttackAnimationTime;
     
-    obj_battle_enemy.play_attack_animation(_enemy_damage.did_crit);
+    var _animTime = obj_battle_enemy.play_cast_animation(_enemy_damage.did_crit);
     
     spawn_projectile(spr_fireball, _obj.x-20, _obj.y-_obj.sprite_height/2, _obj.depth, 
             point_direction(_obj.x-20, _obj.y-_obj.sprite_height/2, obj_battle_player.x, obj_battle_player.y), 1.9, 2.0,
@@ -135,7 +133,7 @@ function enemyCastCorruptionBolt(_damage_modifier, _obj, _dot_dmg_modifier = 1.0
     var _enemy_damage = calc_damage(obj_battle_enemy.data.damage*_damage_modifier, obj_battle_enemy.data.crit_chance);
     var _animTime = BattleEnemyAttackAnimationTime;
     
-    obj_battle_enemy.play_attack_animation(_enemy_damage.did_crit);
+    obj_battle_enemy.play_cast_animation(_enemy_damage.did_crit);
     
     spawn_projectile(spr_corruption_bolt, _obj.x-20, _obj.y-_obj.sprite_height/2, _obj.depth, 
             point_direction(_obj.x-20, _obj.y-_obj.sprite_height/2, obj_battle_player.x, obj_battle_player.y), 1.9, 3.0,
@@ -178,7 +176,7 @@ function enemyCastInferno(_obj) {
     
     var _enemy_damage = calc_damage(obj_battle_enemy.data.damage*3, obj_battle_enemy.data.crit_chance*2);
         
-    obj_battle_enemy.play_attack_animation(_enemy_damage.did_crit);
+    obj_battle_enemy.play_cast_animation(_enemy_damage.did_crit);
     
     screenshake(0.1*TIME_SECOND, 2*TIME_SECOND, 2, 0.5);
     
@@ -223,7 +221,7 @@ function enemyCastAcid(_damage_modifier, _obj) {
     var _enemy_damage = calc_damage(obj_battle_enemy.data.damage*_damage_modifier, obj_battle_enemy.data.crit_chance);
     var _animTime = BattleEnemyAttackAnimationTime;
     
-    obj_battle_enemy.play_attack_animation(_enemy_damage.did_crit);
+    obj_battle_enemy.play_cast_animation(_enemy_damage.did_crit);
     
     spawn_projectile(spr_acid, _obj.x-20, _obj.y-_obj.sprite_height/2, _obj.depth, 180, 2, 1.5);
     
@@ -261,9 +259,7 @@ function enemyCastAcid(_damage_modifier, _obj) {
 }
 
 function enemyWait(_obj) {
-    var _animTime = BattleEnemyWaitAnimationTime;
-                    
-    obj_battle_enemy.play_wait_animation();
+    var _animTime = obj_battle_enemy.play_wait_animation();
     
     obj_battle_enemy.data.charge_attack = clamp(obj_battle_enemy.data.charge_attack + .4, 0, obj_battle_enemy.data.charge_attack_total);
     obj_battle_enemy.data.charge_util = clamp(obj_battle_enemy.data.charge_util + .4, 0, obj_battle_enemy.data.charge_util_total);
@@ -281,7 +277,7 @@ function enemyHeavyAttack(_obj) {
     if (obj_battle_enemy.data.lifesteal > 0) {
         obj_battle_enemy.take_damage(-_actual_dmg*obj_battle_enemy.data.lifesteal, _enemy_damage.did_crit);
     }
-    obj_battle_enemy.play_attack_animation(_enemy_damage.did_crit);
+    obj_battle_enemy.play_heavyattack_animation(_enemy_damage.did_crit);
     
     obj_battle_enemy.data.charge_attack = clamp(obj_battle_enemy.data.charge_attack + .4, 0, obj_battle_enemy.data.charge_attack_total);
     

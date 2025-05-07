@@ -1,6 +1,13 @@
 // Inherit the parent event
 event_inherited();
 
+color = choose(#FFFFFF, #FFEEEE, #FFDDDD, #FFCCCC);
+image_blend = color;
+
+function initBattle() {
+    image_blend = color;
+}
+
 function doEnemyAction(_selfData, _playerData) {
     var _select = random_range(0, 10);
         

@@ -7,6 +7,13 @@ see_player = false
 
 alarm[0] = move_tickdelay_seconds * TIME_SECOND;
 
+battle = {
+    animation_attack: battle_animation_attack,
+    animation_attack_fps: battle_animation_attack_fps,
+    animation_wait: battle_animation_wait,
+    animation_wait_fps: battle_animation_wait_fps
+};
+
 function initBattle() {
     //Override me
 }

@@ -340,7 +340,6 @@
     {"id":{"name":"spr_shadow","path":"sprites/spr_shadow/spr_shadow.yy",},},
     {"id":{"name":"spr_shelf","path":"sprites/spr_shelf/spr_shelf.yy",},},
     {"id":{"name":"spr_skeleton","path":"sprites/spr_skeleton/spr_skeleton.yy",},},
-    {"id":{"name":"spr_slash","path":"sprites/spr_slash/spr_slash.yy",},},
     {"id":{"name":"spr_slider","path":"sprites/spr_slider/spr_slider.yy",},},
     {"id":{"name":"spr_spark","path":"sprites/spr_spark/spr_spark.yy",},},
     {"id":{"name":"spr_speed_bottle","path":"sprites/spr_speed_bottle/spr_speed_bottle.yy",},},

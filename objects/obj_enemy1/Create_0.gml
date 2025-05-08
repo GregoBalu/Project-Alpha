@@ -4,6 +4,11 @@ event_inherited();
 color = choose(#FFFFFF, #FFEEEE, #FFDDDD, #FFCCCC);
 image_blend = color;
 
+battle.idle_sound = snd_firetoad_idle;
+battle.idle_sound_min_seconds = 5;
+battle.idle_sound_max_seconds = 8;
+alarm[5] = random_range(5, 10) * TIME_SECOND;
+
 function initBattle() {
     image_blend = color;
 }
@@ -17,7 +22,9 @@ function doEnemyAction(_selfData, _playerData) {
     if (_selfData.charge_util >= 2) _select++;
     
     if (_select < 5) {
-        return enemySimpleAttack(obj_battle_enemy);
+        var _animTime = enemySimpleAttack(obj_battle_enemy);
+        audio_play_sound(snd_firetoad_lick, 5, false, 1.0, 0, random_range(0.9, 1.1));
+        return _animTime;
     } else if (_selfData.charge_util >= 1) {
         if (_select < 7) {
             return enemyInterruptAttack(obj_battle_enemy);
@@ -27,6 +34,8 @@ function doEnemyAction(_selfData, _playerData) {
     } else if (_selfData.charge_attack >= 1) {
             return enemyHeavyAttack(obj_battle_enemy);
     } else {
-        return enemyWait(obj_battle_enemy);
+        var _animTime = enemyWait(obj_battle_enemy);
+        audio_play_sound(snd_firetoad_wait, 5, false, 1.0, 0, random_range(0.9, 1.1));
+        return _animTime;
     }
 }

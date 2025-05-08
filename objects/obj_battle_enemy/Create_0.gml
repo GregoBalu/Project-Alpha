@@ -20,7 +20,12 @@ attack_distance = 20;
 
 battle_enemy_wait_noti.image_speed = battle_enemy_wait_noti.image_speed*(1.0/BattleEnemyWaitAnimationTime);
 
+if (data.battle.idle_sound != noone) {
+    alarm[5] = random_range(data.battle.idle_sound_min_seconds, data.battle.idle_sound_max_seconds) * TIME_SECOND;
+}
+
 play_attack_animation = function(_did_crit) {
+    alarm[5] = 0;
     if (_did_crit) {
         battle_enemy_crit_noti.visible = true;
     }
@@ -47,6 +52,7 @@ play_attack_animation = function(_did_crit) {
 }
 
 function play_heavyattack_animation(_did_crit) {
+    alarm[5] = 0;
     if (_did_crit) {
         attack_move = 3;
         attack_distance = 30;
@@ -60,6 +66,7 @@ function play_heavyattack_animation(_did_crit) {
 }
 
 play_wait_animation = function() {
+    alarm[5] = 0;
     battle_enemy_wait_noti.visible = true;
     battle_enemy_wait_noti.image_index = 0;
     
@@ -78,6 +85,7 @@ play_wait_animation = function() {
 }
 
 function play_cast_animation(_did_crit) {
+    alarm[5] = 0;
     if (_did_crit) {
         attack_move = 3;
         attack_distance = 30;

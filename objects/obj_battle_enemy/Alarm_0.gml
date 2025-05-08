@@ -1,4 +1,5 @@
 //Animate to Left
+alarm[5] = 0;
 battle_player_damaged_stars.visible = true;
 
 x -= attack_move;

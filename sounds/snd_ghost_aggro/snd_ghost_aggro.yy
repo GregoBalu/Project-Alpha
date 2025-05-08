@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.988209,
+  "duration":1.9882087,
   "name":"snd_ghost_aggro",
   "parent":{
     "name":"ghost",

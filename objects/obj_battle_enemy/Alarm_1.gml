@@ -1,4 +1,5 @@
 //Animate to Right (back)
+alarm[5] = 0;
 x += attack_move;
 
 if (x < xstart) {

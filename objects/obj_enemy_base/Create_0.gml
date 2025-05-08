@@ -11,7 +11,10 @@ battle = {
     animation_attack: battle_animation_attack,
     animation_attack_fps: battle_animation_attack_fps,
     animation_wait: battle_animation_wait,
-    animation_wait_fps: battle_animation_wait_fps
+    animation_wait_fps: battle_animation_wait_fps,
+    idle_sound: noone,
+    idle_sound_min_seconds: 5,
+    idle_sound_max_seconds: 10
 };
 
 function initBattle() {

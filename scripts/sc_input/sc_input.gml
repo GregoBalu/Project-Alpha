@@ -26,6 +26,12 @@ global.input_talk              = vk_space;
 
 global.input_pause             = vk_escape;
 
+global.input_battle_light      = ord("A");
+global.input_battle_heavy      = ord("S");
+global.input_battle_wait       = ord("W");
+global.input_battle_interrup   = ord("D");
+global.input_battle_ultimate   = ord("F");
+
 
 
 

@@ -1,5 +1,7 @@
 event_inherited();
 
+hotkey = global.input_battle_ultimate;
+
 action = function() {
     if (!checkCost(cost_type, cost_amount)) {
         return;
@@ -21,10 +23,4 @@ damage_multiplier = 5;
 crit_multiplier = 2;
 charge_decrement = 2;
 
-hint = string("An ultimate attack.\nCost: {0} each\nDamage (x{1}): {2}\nCrit: (x{3}): {4}%\nDecrease charge attack by: {5}", 
-        cost_amount, 
-        damage_multiplier, 
-        obj_battle_switcher.player_data.damage*damage_multiplier, 
-        crit_multiplier,
-        obj_battle_player.data.crit_chance*crit_multiplier*100,
-        charge_decrement);
+hint = $"Ultimate [{key2str(hotkey)}]\nAn ultimate attack.\nCost: {cost_amount} each\nDamage (x{damage_multiplier}): {obj_battle_switcher.player_data.damage*damage_multiplier}\nCrit: (x{crit_multiplier}): {obj_battle_player.data.crit_chance*crit_multiplier*100}%\nDecrease charge attack by: {charge_decrement}";

@@ -41,7 +41,7 @@ function doEnemyAction(_selfData, _playerData) {
             return _animTime;
         } else {
             var _animTime = enemyCastFireball(1.2, obj_battle_enemy, 1, 1, 0.6);
-            //TODO: sound
+            audio_play_sound(snd_firetoad_croak, 5, false, 1.3, 0, random_range(0.9, 1.1));
             return _animTime;
         }
     } else if (_selfData.charge_attack >= 1) {
@@ -50,7 +50,7 @@ function doEnemyAction(_selfData, _playerData) {
         return _animTime;
     } else {
         var _animTime = enemyWait(obj_battle_enemy);
-        audio_play_sound(snd_firetoad_wait, 5, false, 1.0, 0, random_range(0.8, 1.3));
+        audio_play_sound(snd_firetoad_wait, 5, false, 1.2, 0, random_range(0.8, 1.3));
         return _animTime;
     }
 }

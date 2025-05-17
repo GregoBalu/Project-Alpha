@@ -1,5 +1,7 @@
 event_inherited();
 
+hotkey = global.input_battle_heavy;
+
 damage_modifier = 2;
 charge_gain = 0.2;
 
@@ -12,7 +14,7 @@ for (var _i = 0; _i < ds_list_size(obj_battle_switcher.player_data.unlocked_tale
     }
 }
 
-hint = $"A charged up heavy attack.\nCost: {cost_amount}\nDamage modifier: {damage_modifier}\nCharge gain: {charge_gain} attack";
+hint = $"Heavy Attack [{key2str(hotkey)}]\nA charged up heavy attack.\nCost: {cost_amount}\nDamage modifier: {damage_modifier}\nCharge gain: {charge_gain} attack";
 
 action = function() {
     if (checkCost(cost_type, cost_amount)) {

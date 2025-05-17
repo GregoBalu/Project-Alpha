@@ -1,5 +1,7 @@
 event_inherited();
 
+hotkey = global.input_battle_interrup;
+
 enemy_charge_util_increase_amount = 1;
 armor_decrease = 0;
 
@@ -52,4 +54,4 @@ action = function() {
     }
 };
 
-hint = string("Interrupt the enemy stunning it for 2 rounds and angering it.\nCost: {0}\nIncrease enemy charge attack by: {1}", cost_amount, enemy_charge_util_increase_amount)
+hint = string($"Interrupt [{key2str(hotkey)}]\nInterrupt the enemy stunning it for 2 rounds and angering it.\nCost: {cost_amount}\nIncrease enemy charge attack by: {enemy_charge_util_increase_amount}");

@@ -1,5 +1,7 @@
 event_inherited();
 
+hotkey = global.input_battle_light
+
 crit_chance = obj_battle_switcher.player_data.crit_chance;
 charge_gain = 0.4;
 
@@ -34,4 +36,4 @@ action = function() {
     alarm[0] = (animTime + getBattleAfterActionCooldownSeconds()) * TIME_SECOND;
 }
 
-hint = string("A light attack.\nDamage: {0}\nCrit chance: {1}%\nCharge gain: {2} attack", obj_battle_switcher.player_data.damage, crit_chance*100, charge_gain);
+hint = $"Light Attack [{key2str(hotkey)}]\nA light attack.\nDamage: {obj_battle_switcher.player_data.damage}\nCrit chance: {crit_chance*100}%\nCharge gain: {charge_gain} attack";

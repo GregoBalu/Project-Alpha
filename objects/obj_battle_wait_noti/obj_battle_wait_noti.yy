@@ -9,8 +9,8 @@
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_battle_notification_base","path":"objects/obj_battle_notification_base/obj_battle_notification_base.yy",},"propertyId":{"name":"max_jiggle_x","path":"objects/obj_battle_notification_base/obj_battle_notification_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0.2",},
   ],
   "parent":{
-    "name":"Battle",
-    "path":"folders/Objects/Battle.yy",
+    "name":"Indicators",
+    "path":"folders/Objects/Battle/Indicators.yy",
   },
   "parentObjectId":{
     "name":"obj_battle_notification_base",

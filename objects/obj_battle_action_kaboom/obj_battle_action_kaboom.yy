@@ -12,8 +12,8 @@
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_battle_action_parent","path":"objects/obj_battle_action_parent/obj_battle_action_parent.yy",},"propertyId":{"name":"cost_amount","path":"objects/obj_battle_action_parent/obj_battle_action_parent.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"2",},
   ],
   "parent":{
-    "name":"Battle",
-    "path":"folders/Objects/Battle.yy",
+    "name":"Actions",
+    "path":"folders/Objects/Battle/Actions.yy",
   },
   "parentObjectId":{
     "name":"obj_battle_action_parent",

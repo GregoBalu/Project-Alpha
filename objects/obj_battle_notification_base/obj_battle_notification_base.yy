@@ -9,8 +9,8 @@
   "name":"obj_battle_notification_base",
   "overriddenProperties":[],
   "parent":{
-    "name":"Battle",
-    "path":"folders/Objects/Battle.yy",
+    "name":"Indicators",
+    "path":"folders/Objects/Battle/Indicators.yy",
   },
   "parentObjectId":null,
   "persistent":false,

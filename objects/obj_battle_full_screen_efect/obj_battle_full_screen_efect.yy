@@ -10,8 +10,8 @@
   "name":"obj_battle_full_screen_efect",
   "overriddenProperties":[],
   "parent":{
-    "name":"Battle",
-    "path":"folders/Objects/Battle.yy",
+    "name":"Indicators",
+    "path":"folders/Objects/Battle/Indicators.yy",
   },
   "parentObjectId":null,
   "persistent":false,

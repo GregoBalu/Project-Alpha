@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_firetoad_croak",
+  "audioGroupId":{
+    "name":"ag_sfx",
+    "path":"audiogroups/ag_sfx",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.9683447,
+  "name":"snd_firetoad_croak",
+  "parent":{
+    "name":"firetoad",
+    "path":"folders/Sounds/enemies/firetoad.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_firetoad_croak.wav",
+  "type":0,
+  "volume":1.0,
+}

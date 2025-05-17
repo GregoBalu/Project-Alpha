@@ -6,8 +6,8 @@
   "name":"obj_battle_stars",
   "overriddenProperties":[],
   "parent":{
-    "name":"Battle",
-    "path":"folders/Objects/Battle.yy",
+    "name":"Indicators",
+    "path":"folders/Objects/Battle/Indicators.yy",
   },
   "parentObjectId":{
     "name":"obj_battle_notification_base",

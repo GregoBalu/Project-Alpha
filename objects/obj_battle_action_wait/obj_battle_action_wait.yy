@@ -9,8 +9,8 @@
   "name":"obj_battle_action_wait",
   "overriddenProperties":[],
   "parent":{
-    "name":"Battle",
-    "path":"folders/Objects/Battle.yy",
+    "name":"Actions",
+    "path":"folders/Objects/Battle/Actions.yy",
   },
   "parentObjectId":{
     "name":"obj_battle_action_parent",

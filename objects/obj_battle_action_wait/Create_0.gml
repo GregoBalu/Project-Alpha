@@ -1,5 +1,7 @@
 event_inherited();
 
+hotkey = global.input_battle_wait;
+
 bonus_lifesteal = 0;
 lifesteal_duration = 0;
 
@@ -46,4 +48,4 @@ action = function() {
     alarm[0] = (animTime + getBattleAfterActionCooldownSeconds()) * TIME_SECOND;
 }
 
-hint = $"Wait a turn and gain charge.\nCharge gain: {attack_charge_gain} attack, {utility_charge_gain} utility";
+hint = $"Wait [{key2str(hotkey)}]\nWait a turn and gain charge.\nCharge gain: {attack_charge_gain} attack, {utility_charge_gain} utility";

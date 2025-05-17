@@ -23,7 +23,7 @@ function doEnemyAction(_selfData, _playerData) {
     
     if (_select < 5) {
         var _animTime = enemySimpleAttack(obj_battle_enemy);
-        audio_play_sound(snd_firetoad_lick, 5, false, 1.0, 0, random_range(0.9, 1.1));
+        audio_play_sound(snd_firetoad_lick, 5, false, 1.0, 0, random_range(8, 13)/10);
         return _animTime;
     } else if (_selfData.charge_util >= 1) {
         if (_select < 7) {
@@ -35,7 +35,7 @@ function doEnemyAction(_selfData, _playerData) {
             return enemyHeavyAttack(obj_battle_enemy);
     } else {
         var _animTime = enemyWait(obj_battle_enemy);
-        audio_play_sound(snd_firetoad_wait, 5, false, 1.0, 0, random_range(0.9, 1.1));
+        audio_play_sound(snd_firetoad_wait, 5, false, 1.0, 0, random_range(0.8, 1.3));
         return _animTime;
     }
 }

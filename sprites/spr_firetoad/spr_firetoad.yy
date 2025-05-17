@@ -35,8 +35,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Enemies",
-    "path":"folders/Sprites/Enemies.yy",
+    "name":"Firetoad",
+    "path":"folders/Sprites/Enemies/Firetoad.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -10,6 +10,8 @@ alarm[0] = move_tickdelay_seconds * TIME_SECOND;
 battle = {
     animation_attack: noone,
     animation_attack_fps: 1,
+    animation_heavyattack: noone,
+    animation_heavyattack_fps: 1,
     animation_wait: noone,
     animation_wait_fps: 1,
     animation_cast: noone,

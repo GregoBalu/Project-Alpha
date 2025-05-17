@@ -25,8 +25,8 @@ TODO AND IDEAS
     - Firetoad
         - cast sound
         - interrupt anim/sound?
-        - heavy anim/sound
         - got hit sound
         - step sound
-
+        - Heavy attack animation/sound
+            - jump forward slam hard into the ground
         

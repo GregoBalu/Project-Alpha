@@ -1,1 +1,8 @@
-distance //205
+
+damaged_recently = false;
+
+function restart() {
+    x = xstart;
+    y = ystart;
+    
+}

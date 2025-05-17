@@ -7,12 +7,7 @@
   ],
   "managed":true,
   "name":"obj_enemy1",
-  "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_enemy_base","path":"objects/obj_enemy_base/obj_enemy_base.yy",},"propertyId":{"name":"battle_animation_attack","path":"objects/obj_enemy_base/obj_enemy_base.yy",},"resource":{"name":"spr_firetoad_attack","path":"sprites/spr_firetoad_attack/spr_firetoad_attack.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"spr_firetoad_attack",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_enemy_base","path":"objects/obj_enemy_base/obj_enemy_base.yy",},"propertyId":{"name":"battle_animation_attack_fps","path":"objects/obj_enemy_base/obj_enemy_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"20",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_enemy_base","path":"objects/obj_enemy_base/obj_enemy_base.yy",},"propertyId":{"name":"battle_animation_wait","path":"objects/obj_enemy_base/obj_enemy_base.yy",},"resource":{"name":"spr_firetoad_wait","path":"sprites/spr_firetoad_wait/spr_firetoad_wait.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"spr_firetoad_wait",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_enemy_base","path":"objects/obj_enemy_base/obj_enemy_base.yy",},"propertyId":{"name":"battle_animation_wait_fps","path":"objects/obj_enemy_base/obj_enemy_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"8",},
-  ],
+  "overriddenProperties":[],
   "parent":{
     "name":"Enemies",
     "path":"folders/Objects/Enemies.yy",

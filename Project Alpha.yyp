@@ -289,6 +289,7 @@
     {"id":{"name":"spr_fireball_explosion","path":"sprites/spr_fireball_explosion/spr_fireball_explosion.yy",},},
     {"id":{"name":"spr_fireball","path":"sprites/spr_fireball/spr_fireball.yy",},},
     {"id":{"name":"spr_firetoad_attack","path":"sprites/spr_firetoad_attack/spr_firetoad_attack.yy",},},
+    {"id":{"name":"spr_firetoad_cast","path":"sprites/spr_firetoad_cast/spr_firetoad_cast.yy",},},
     {"id":{"name":"spr_firetoad_wait","path":"sprites/spr_firetoad_wait/spr_firetoad_wait.yy",},},
     {"id":{"name":"spr_firetoad","path":"sprites/spr_firetoad/spr_firetoad.yy",},},
     {"id":{"name":"spr_flower1","path":"sprites/spr_flower1/spr_flower1.yy",},},

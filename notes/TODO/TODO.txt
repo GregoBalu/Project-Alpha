@@ -21,3 +21,12 @@ TODO AND IDEAS
 
 - enemy level balance (diff increase)
 
+- Sounds/Animation
+    - Firetoad
+        - cast sound
+        - interrupt anim/sound?
+        - heavy anim/sound
+        - got hit sound
+        - step sound
+
+        

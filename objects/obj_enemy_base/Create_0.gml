@@ -8,13 +8,17 @@ see_player = false
 alarm[0] = move_tickdelay_seconds * TIME_SECOND;
 
 battle = {
-    animation_attack: battle_animation_attack,
-    animation_attack_fps: battle_animation_attack_fps,
-    animation_wait: battle_animation_wait,
-    animation_wait_fps: battle_animation_wait_fps,
+    animation_attack: noone,
+    animation_attack_fps: 1,
+    animation_wait: noone,
+    animation_wait_fps: 1,
+    animation_cast: noone,
+    animation_cast_fps: 1,
     idle_sound: noone,
     idle_sound_min_seconds: 5,
-    idle_sound_max_seconds: 10
+    idle_sound_max_seconds: 10,
+    
+    cast_source_delta: new Vec2(-20, -sprite_height/2)
 };
 
 function initBattle() {

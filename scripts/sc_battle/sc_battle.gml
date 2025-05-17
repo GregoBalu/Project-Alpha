@@ -82,16 +82,15 @@ function enemySimpleAttack(_obj) {
     return _animTime;
 }
 
-function enemyCastFireball(_damage_modifier, _obj, _dot_dmg_modifier = 1.0, _dot_len_modifier = 1.0) {
+function enemyCastFireball(_damage_modifier, _obj, _dot_dmg_modifier = 1.0, _dot_len_modifier = 1.0, _projectile_delay_seconds = 0) {
     obj_battle_enemy.data.charge_util -= 1;
     
     var _enemy_damage = calc_damage(obj_battle_enemy.data.damage*_damage_modifier, obj_battle_enemy.data.crit_chance);
     
     var _animTime = obj_battle_enemy.play_cast_animation(_enemy_damage.did_crit);
     
-    spawn_projectile(spr_fireball, _obj.x-20, _obj.y-_obj.sprite_height/2, _obj.depth, 
-            point_direction(_obj.x-20, _obj.y-_obj.sprite_height/2, obj_battle_player.x, obj_battle_player.y), 1.9, 2.0,
-            spr_fireball_explosion, 0.5);
+    spawn_projectile_p2p(spr_fireball, _obj.x+_obj.data.battle.cast_source_delta.x, _obj.y+_obj.data.battle.cast_source_delta.y,  
+            obj_battle_player.x+10, obj_battle_player.y, _obj.depth, 2.0, spr_fireball_explosion, 0.5, _projectile_delay_seconds);
     
     var _actual_dmg = obj_battle_player.take_damage(_enemy_damage.damage, _enemy_damage.did_crit);
     if (obj_battle_enemy.data.lifesteal > 0) {
@@ -135,7 +134,7 @@ function enemyCastCorruptionBolt(_damage_modifier, _obj, _dot_dmg_modifier = 1.0
     
     obj_battle_enemy.play_cast_animation(_enemy_damage.did_crit);
     
-    spawn_projectile(spr_corruption_bolt, _obj.x-20, _obj.y-_obj.sprite_height/2, _obj.depth, 
+    spawn_projectile(spr_corruption_bolt, _obj.x+_obj.data.battle.cast_source_delta.x, _obj.y+_obj.data.battle.cast_source_delta.y, _obj.depth, 
             point_direction(_obj.x-20, _obj.y-_obj.sprite_height/2, obj_battle_player.x, obj_battle_player.y), 1.9, 3.0,
             spr_corruption_bolt_explosion, 1.5);
     
@@ -223,7 +222,7 @@ function enemyCastAcid(_damage_modifier, _obj) {
     
     obj_battle_enemy.play_cast_animation(_enemy_damage.did_crit);
     
-    spawn_projectile(spr_acid, _obj.x-20, _obj.y-_obj.sprite_height/2, _obj.depth, 180, 2, 1.5);
+    spawn_projectile(spr_acid, _obj.x+_obj.data.battle.cast_source_delta.x, _obj.y+_obj.data.battle.cast_source_delta.y, _obj.depth, 180, 2, 1.5);
     
     var _actual_dmg = obj_battle_player.take_damage(_enemy_damage.damage, _enemy_damage.did_crit);
     if (obj_battle_enemy.data.lifesteal > 0) {
@@ -381,7 +380,7 @@ function BattleBuff(_turns, _data, _startFunc, _endFunc, _playerTurnPreFunc = un
  * @param {real} [_splash_seconds]=0 Seconds to play the explosion animation for.
  * @returns {Id.Instance} Id of the newly spawned projectile instance.
  */
-function spawn_projectile(_sprite, _x, _y, _depth, _dir, _speed, _life_seconds, _splash_sprite = noone, _splash_seconds = 0) {
+function spawn_projectile(_sprite, _x, _y, _depth, _dir, _speed, _life_seconds, _splash_sprite = noone, _splash_seconds = 0, _delay_seconds = 0) {
     return instance_create_layer(_x, _y, "Effects", obj_battle_projectile, {
         sprite_index : _sprite,
         //depth : _depth,
@@ -389,7 +388,24 @@ function spawn_projectile(_sprite, _x, _y, _depth, _dir, _speed, _life_seconds, 
         move_speed : _speed,
         life_seconds : _life_seconds,
         splash_image : _splash_sprite,
-        splash_seconds : _splash_seconds
+        splash_seconds : _splash_seconds,
+        initial_delay_seconds : _delay_seconds
+    });
+}
+
+function spawn_projectile_p2p(_sprite, _from_x, _from_y, _to_x, _to_y, _depth, _life_seconds, _splash_sprite = noone, _splash_seconds = 0, _delay_seconds = 0) {
+    var _dir = point_direction(_from_x, _from_y, _to_x, _to_y);
+    var _speed = point_distance(_from_x, _from_y, _to_x, _to_y) / (_life_seconds*TIME_SECOND-_splash_seconds*TIME_SECOND );
+    
+    return instance_create_layer(_from_x, _from_y, "Effects", obj_battle_projectile, {
+        sprite_index : _sprite,
+        //depth : _depth,
+        move_direction : _dir,
+        move_speed : _speed,
+        life_seconds : _life_seconds,
+        splash_image : _splash_sprite,
+        splash_seconds : _splash_seconds,
+        initial_delay_seconds : _delay_seconds
     });
 }
 

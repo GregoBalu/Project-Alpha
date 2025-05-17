@@ -86,16 +86,26 @@ play_wait_animation = function() {
 
 function play_cast_animation(_did_crit) {
     alarm[5] = 0;
-    if (_did_crit) {
-        attack_move = 3;
-        attack_distance = 30;
-        battle_enemy_crit_noti.visible = true;
+    if (data.battle.animation_cast == noone) {
+        if (_did_crit) {
+            attack_move = 3;
+            attack_distance = 30;
+            battle_enemy_crit_noti.visible = true;
+        } else {
+            attack_move = 2;
+            attack_distance = 20;
+        }
+        alarm[BattleEnemyEvents.AttackStart] = 0.1 * TIME_SECOND;
+        return 0.333;
     } else {
-        attack_move = 2;
-        attack_distance = 20;
+        sprite_index = data.battle.animation_cast;
+        image_index = 0;
+        var _total_frames = sprite_get_number(data.battle.animation_cast);
+        var _speed = data.battle.animation_cast_fps;
+        var _animTime = (_total_frames / _speed);
+        alarm[BattleEnemyEvents.MoveReset] = (_animTime) * TIME_SECOND;
+        return _animTime;
     }
-    alarm[BattleEnemyEvents.AttackStart] = 0.1 * TIME_SECOND;
-    return 0.333;
 }
 
 data.initBattle();

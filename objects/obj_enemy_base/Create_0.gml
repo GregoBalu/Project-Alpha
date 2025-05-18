@@ -5,7 +5,9 @@ target_y = y;
 
 see_player = false
 
-alarm[0] = move_tickdelay_seconds * TIME_SECOND;
+if (wander_range > 0 && move_speed > 0) {
+    alarm[0] = move_tickdelay_seconds * TIME_SECOND;
+}
 
 battle = {
     animation_attack: noone,

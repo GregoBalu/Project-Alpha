@@ -285,12 +285,11 @@ function enemyHeavyAttack(_obj) {
     return _animTime;
 }
 
-function enemyInterruptAttack(_obj) {
+function enemyInterruptAttack(_obj, _turns = 2) {
     obj_battle_enemy.data.charge_util -= 1;
             
-    var animTime = BattleEnemyAttackAnimationTime;
-    obj_battle_enemy.play_attack_animation(false);
-    obj_battle_player.add_buff(new BattleBuff(2, 
+    var animTime = obj_battle_enemy.play_attack_animation(false);
+    obj_battle_player.add_buff(new BattleBuff(_turns, 
                     {
                         sprite: spr_buff_stun,
                         hint: global.hint_buff_stun

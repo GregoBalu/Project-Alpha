@@ -385,6 +385,7 @@
     {"id":{"name":"spr_torch2","path":"sprites/spr_torch2/spr_torch2.yy",},},
     {"id":{"name":"spr_water_arrow","path":"sprites/spr_water_arrow/spr_water_arrow.yy",},},
     {"id":{"name":"spr_water_fountain","path":"sprites/spr_water_fountain/spr_water_fountain.yy",},},
+    {"id":{"name":"spr_water_thing_lesser_end","path":"sprites/spr_water_thing_lesser_end/spr_water_thing_lesser_end.yy",},},
     {"id":{"name":"spr_water_thing_main","path":"sprites/spr_water_thing_main/spr_water_thing_main.yy",},},
     {"id":{"name":"spr_water_thing","path":"sprites/spr_water_thing/spr_water_thing.yy",},},
     {"id":{"name":"spr_water","path":"sprites/spr_water/spr_water.yy",},},

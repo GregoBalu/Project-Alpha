@@ -2,6 +2,9 @@
 event_inherited();
 
 
+show_debug_message($"x={x} y={y} id={id}")
+
+
 function initBattle() {
     //Override me
 }

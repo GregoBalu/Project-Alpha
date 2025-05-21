@@ -26,6 +26,20 @@ function Vec2(_x, _y) constructor {
         return new Vec2(x+_diff_x,y+_diff_y);
     }
     
+    function add(vec2) {
+        return new Vec2(x+vec2.x, y+vec2.y);
+    }
+    
+    function rotateAntiClockwise(_deg) {
+        var old_x = x;
+        var old_y = y;
+        var cos_v = cos(_deg);
+        var sin_v = sin(_deg);
+        
+        x = old_x*cos_v - old_y*sin_v;
+        y = old_x*sin_v + old_y*cos_v;
+    }
+    
     function distance(_other) {
         return point_distance(x, y, _other.x, _other.y);
     }

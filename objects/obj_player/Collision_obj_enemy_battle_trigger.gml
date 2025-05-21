@@ -1,5 +1,5 @@
 if (instance_exists(obj_battle_switcher)) exit;
-
+if (!other.valid()) exit;
 
 var _enemy = other.enemy;
 

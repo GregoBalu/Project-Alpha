@@ -7,12 +7,7 @@ for (var _i = 0; _i < array_length(lesser_tentacles); ++_i)
 {
     if (instance_exists(lesser_tentacles[_i])) {
         ++lesser_tentacles_remaining;
-    }
-}
-if (lesser_tentacles_remaining != _prev_tentacles) {
-    if (lesser_tentacles_remaining == 0) {
-        instance_destroy(for_show_tentacles[1]);
-    } else if (lesser_tentacles_remaining == 1) {
-        instance_destroy(for_show_tentacles[0]);
+    } else if (instance_exists(for_show_tentacles[_i])) {
+        instance_destroy(for_show_tentacles[_i]);
     }
 }

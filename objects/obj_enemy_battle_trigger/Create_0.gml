@@ -4,3 +4,7 @@ show_debug_message($"inst_id={inst_id} idof={instance_id_get(inst_id)} obj_ind={
 
 
 enemy = inst_id;
+
+function valid() {
+    return instance_exists(inst_id);
+}

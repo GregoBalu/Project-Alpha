@@ -11,7 +11,7 @@ if (loot_point[0] == 0 && loot_point[1] == 0) {
 } else {
     loot_point_offset[0] = loot_point[0]-x;
     loot_point_offset[1] = loot_point[1]-y;
-    show_debug_message($"loot to {loot_point[0]},{loot_point[1]} -> offset={loot_point_offset[0]},{loot_point_offset[1]}");
+    //show_debug_message($"loot to {loot_point[0]},{loot_point[1]} -> offset={loot_point_offset[0]},{loot_point_offset[1]}");
 }
 
 if (wander_range > 0 && move_speed > 0) {

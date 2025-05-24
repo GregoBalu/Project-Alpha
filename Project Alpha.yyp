@@ -294,6 +294,7 @@
     {"id":{"name":"spr_darkness","path":"sprites/spr_darkness/spr_darkness.yy",},},
     {"id":{"name":"spr_debug_16","path":"sprites/spr_debug_16/spr_debug_16.yy",},},
     {"id":{"name":"spr_debug_32","path":"sprites/spr_debug_32/spr_debug_32.yy",},},
+    {"id":{"name":"spr_effect_swirl","path":"sprites/spr_effect_swirl/spr_effect_swirl.yy",},},
     {"id":{"name":"spr_enemy_ghost","path":"sprites/spr_enemy_ghost/spr_enemy_ghost.yy",},},
     {"id":{"name":"spr_enemy1","path":"sprites/spr_enemy1/spr_enemy1.yy",},},
     {"id":{"name":"spr_enemy2","path":"sprites/spr_enemy2/spr_enemy2.yy",},},

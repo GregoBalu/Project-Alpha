@@ -5,8 +5,10 @@ if (collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_player
     if (!prev_frame_collision) {
         prev_frame_collision = true;
         cd_to_teleport = 0;
+        effect_index = 0;
     }
     
+    effect_index = (effect_index+1) mod 18;
     ++cd_to_teleport;
     if (cd_to_teleport >= teleport_at_frames) {
         obj_player.x = target_x;

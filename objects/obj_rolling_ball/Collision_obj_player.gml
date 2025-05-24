@@ -1,3 +1,7 @@
+if (!can_start) {
+    exit;
+}
+
 if (is_on && !paused && !damaged_recently) {
     obj_player.hp = clamp(obj_player.hp - damage_to_player, 0, obj_player.hp_total);
     damaged_recently = true;

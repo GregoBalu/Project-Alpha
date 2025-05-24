@@ -5,6 +5,10 @@ target_y = y;
 
 see_player = false
 
+loot_point_offset = array_create(2);
+loot_point_offset[0] = loot_point[0]-x;
+loot_point_offset[1] = loot_point[1]-y;
+
 if (wander_range > 0 && move_speed > 0) {
     alarm[0] = move_tickdelay_seconds * TIME_SECOND;
 }

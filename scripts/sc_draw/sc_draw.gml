@@ -232,10 +232,10 @@ function draw_pie(x1,y1,x2,y2,x3,y3,x4,y4,outline,precision = 24)
     draw_primitive_end();
 }
 
-function draw_shadow() {
-    var _xoffset = (-sprite_width/2)+1;
+function draw_shadow(_offset_x = 0, _offset_y = 0) {
+    var _xoffset = (-sprite_width/2)+1 + _offset_x;
     //var _xoffset = (bbox_right - bbox_left)/2+1
-    var _yoffset = (sprite_height/2)-7;
+    var _yoffset = (sprite_height/2)-7 + _offset_y;
     //var _yoffset = (bbox_bottom - bbox_top)/2-1
     
     draw_sprite_stretched_ext(spr_shadow, 0, x+_xoffset, y+_yoffset, sprite_width-2, 8, c_white, 0.5);

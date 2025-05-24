@@ -23,7 +23,7 @@ generate_loot = function(obj) {
     var _res = loottable.roll(1);
     
     for (var _i = 0; _i < array_length(_res); _i++) {
-        _res[_i].create_instance(random_range(obj.x-2+obj.loot_point_offset[0],obj.x+2+obj.loot_point_offset[1]), random_range(obj.y-2,obj.y+2), itemsLayer);
+        _res[_i].create_instance(obj.loot_point_offset[0]+random_range(obj.x-2,obj.x+2), obj.loot_point_offset[1]+random_range(obj.y-2,obj.y+2), itemsLayer);
     }
     
     /*var _max_roll = 100 + obj.level;

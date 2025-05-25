@@ -21,7 +21,7 @@ if (collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_player
         var _dir = point_direction(obj_player.x, obj_player.y, x, y);
         var _len = point_distance(obj_player.x, obj_player.y, x, y);
         
-        show_debug_message($"len={_len} dir={_dir}");
+        //show_debug_message($"len={_len} dir={_dir}");
         
         var _dx = 0;
         var _dy = 0;

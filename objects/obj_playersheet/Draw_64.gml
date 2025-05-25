@@ -118,7 +118,10 @@ if (is_visible) {
             _isMouseOver = true;
         }
         
-        if (obj_player.talents[|_i].unlocked) {
+        var _talentCanInterract = !obj_player.talents[|_i].unlocked || (obj_player.talents[|_i].stackable && obj_player.talents[|_i].current_stack < obj_player.talents[|_i].max_stacks);
+        var _talentMaxedOut = obj_player.talents[|_i].unlocked && (!obj_player.talents[|_i].stackable || obj_player.talents[|_i].current_stack == obj_player.talents[|_i].max_stacks);
+        
+        if (!_talentCanInterract) {
             _color = #EEEEEE;
         } else if (_isMouseOver && _hasCost) {
             _color = #FFFFFF;
@@ -139,8 +142,11 @@ if (is_visible) {
         
         draw_textbox(_row + _talentWidth/2, _col+_talentHeight, _talentWidth+_gapX/2, _gapY, obj_player.talents[|_i].name, fa_center);
         
-        if (obj_player.talents[|_i].unlocked) {
+        if (_talentMaxedOut) {
             draw_sprite_stretched_ext(spr_check, 0, _row+_talentWidth/2, _col+_talentHeight/2, _talentWidth/2, _talentHeight/2, c_green, 1);
+        } else if (obj_player.talents[|_i].unlocked) {
+            draw_sprite_stretched_ext(spr_check, 0, _row+_talentWidth/2, _col+_talentHeight/2, _talentWidth/2, _talentHeight/2, c_yellow, 1);
+            draw_textbox(_row +_talentWidth-5, _col-1, 6, 6, $"{obj_player.talents[|_i].current_stack}/{obj_player.talents[|_i].max_stacks}");
         }
         
         if (_isMouseOver) {
@@ -162,7 +168,7 @@ if (is_visible) {
             };
         }
     
-        if (!obj_player.talents[|_i].unlocked && _isMouseOver && mouse_check_button_pressed(mb_left)) {
+        if (_talentCanInterract && _isMouseOver && mouse_check_button_pressed(mb_left)) {
             obj_player.talents[|_i].action();
         }
     }

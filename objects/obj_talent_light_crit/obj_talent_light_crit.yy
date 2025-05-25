@@ -8,8 +8,8 @@
   "name":"obj_talent_light_crit",
   "overriddenProperties":[],
   "parent":{
-    "name":"PlayerSheet",
-    "path":"folders/Objects/PlayerSheet.yy",
+    "name":"Talents",
+    "path":"folders/Objects/Talents.yy",
   },
   "parentObjectId":{
     "name":"obj_talent_base",

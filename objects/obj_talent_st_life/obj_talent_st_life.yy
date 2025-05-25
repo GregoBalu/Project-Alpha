@@ -1,21 +1,21 @@
 {
   "$GMObject":"",
-  "%Name":"obj_talent_hp_dmg",
+  "%Name":"obj_talent_st_life",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_talent_hp_dmg",
+  "name":"obj_talent_st_life",
   "overriddenProperties":[],
   "parent":{
     "name":"Talents",
     "path":"folders/Objects/Talents.yy",
   },
   "parentObjectId":{
-    "name":"obj_talent_base",
-    "path":"objects/obj_talent_base/obj_talent_base.yy",
+    "name":"obj_talent_stackable_base",
+    "path":"objects/obj_talent_stackable_base/obj_talent_stackable_base.yy",
   },
-  "persistent":true,
+  "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_talent_hp_dmg",
-    "path":"sprites/spr_talent_hp_dmg/spr_talent_hp_dmg.yy",
+    "name":"spr_talent_life",
+    "path":"sprites/spr_talent_life/spr_talent_life.yy",
   },
   "spriteMaskId":null,
   "visible":true,

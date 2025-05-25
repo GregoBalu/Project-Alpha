@@ -10,8 +10,8 @@
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_talent_base","path":"objects/obj_talent_base/obj_talent_base.yy",},"propertyId":{"name":"cost_amount","path":"objects/obj_talent_base/obj_talent_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"2",},
   ],
   "parent":{
-    "name":"PlayerSheet",
-    "path":"folders/Objects/PlayerSheet.yy",
+    "name":"Talents",
+    "path":"folders/Objects/Talents.yy",
   },
   "parentObjectId":{
     "name":"obj_talent_base",

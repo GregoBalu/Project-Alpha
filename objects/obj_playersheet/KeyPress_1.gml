@@ -13,3 +13,8 @@ if (keyboard_check(global.input_playersheet)) {
         state = State.Opening;
     }
 }
+if (keyboard_check(global.input_pause)) {
+    if (state != State.Closed) {
+        state = State.Closing;
+    }
+}

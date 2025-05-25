@@ -30,3 +30,7 @@ TODO AND IDEAS
         - Heavy attack animation/sound
             - jump forward slam hard into the ground
         
+- cave boss and tentacles
+    - moves
+    - animations
+    - sounds

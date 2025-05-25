@@ -57,8 +57,6 @@
     {"name":"inst_307EEBEF","path":"rooms/rm_cave/rm_cave.yy",},
     {"name":"inst_7FBE6238","path":"rooms/rm_cave/rm_cave.yy",},
     {"name":"inst_72831A63","path":"rooms/rm_cave/rm_cave.yy",},
-    {"name":"Resume_Button","path":"roomui/RoomUI/RoomUI.yy",},
-    {"name":"Menu_Button","path":"roomui/RoomUI/RoomUI.yy",},
     {"name":"inst_45690620","path":"rooms/rm_cave/rm_cave.yy",},
     {"name":"inst_51112547","path":"rooms/rm_cave/rm_cave.yy",},
     {"name":"inst_EA3A2F7","path":"rooms/rm_cave/rm_cave.yy",},

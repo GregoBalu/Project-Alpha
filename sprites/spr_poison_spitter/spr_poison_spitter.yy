@@ -35,7 +35,7 @@
   "origin":0,
   "parent":{
     "name":"Traps",
-    "path":"folders/Sprites/Traps.yy",
+    "path":"folders/Sprites/Player/Traps.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -3,9 +3,6 @@ TODO AND IDEAS
 - Changeable Ultimate ability
     - Talent cost >=2
 
-- Talent route-k?
-    - prerequisite, unlocks next, ...
-
 - More Decor
 - Inventory
     - drag & drop func
@@ -13,8 +10,12 @@ TODO AND IDEAS
 - NPCs
     - Vendor
 
-- heal/defensive ability?
-- pick all abilities?
+- talent rework:
+    - cannot choose anymore
+    - every levelup, random selected 3, can choose 1
+    - playersheet shows the unlocked ones
+    - random special options:
+        - don't pick any, next lvlup will be more powerful talents
 
 - main menu (start new, exit)
     - Difficulty:  easy/medium/hard : starting stats
@@ -29,6 +30,10 @@ TODO AND IDEAS
         - step sound
         - Heavy attack animation/sound
             - jump forward slam hard into the ground
+    - enemy2
+        -new sprite
+        -all animations
+        -all sounds
         
 - cave boss and tentacles
     - moves

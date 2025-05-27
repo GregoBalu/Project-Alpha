@@ -1,6 +1,7 @@
 
 function clicked() {
     //Override me
+    clickAction();
 }
 
 width = bbox_right - bbox_left;

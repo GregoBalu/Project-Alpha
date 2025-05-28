@@ -99,7 +99,8 @@ if (is_visible) {
     var _do_draw_hint = false;
     var _draw_hint_data = {};
 
-    for (var _i = 0; _i < ds_list_size(obj_player.talents); _i++)
+    var _list = obj_player.unlocked_talents;
+    for (var _i = 0; _i < ds_list_size(_list); _i++)
     {
         var _row = _x + 70 + _gapX + (_i mod _talentsPerRow) * (_talentWidth + _gapX);
         
@@ -110,7 +111,7 @@ if (is_visible) {
         }
         
         var _col = _y + 16 + _gapY + (_i div _talentsPerRow) * (_talentHeight + _gapY);
-        var _hasCost = checkTalentCost(obj_player.talents[|_i]);
+        var _hasCost = checkTalentCost(_list[|_i]);
         var _alpha = _hasCost?1:0.3;
         var _color = #DDDDDD;
         var _isMouseOver = false;
@@ -118,8 +119,8 @@ if (is_visible) {
             _isMouseOver = true;
         }
         
-        var _talentCanInterract = !obj_player.talents[|_i].unlocked || (obj_player.talents[|_i].stackable && obj_player.talents[|_i].current_stack < obj_player.talents[|_i].max_stacks);
-        var _talentMaxedOut = obj_player.talents[|_i].unlocked && (!obj_player.talents[|_i].stackable || obj_player.talents[|_i].current_stack == obj_player.talents[|_i].max_stacks);
+        var _talentCanInterract = !_list[|_i].unlocked || (_list[|_i].stackable && _list[|_i].current_stack < _list[|_i].max_stacks);
+        var _talentMaxedOut = _list[|_i].unlocked && (!_list[|_i].stackable || _list[|_i].current_stack == _list[|_i].max_stacks);
         
         if (!_talentCanInterract) {
             _color = #EEEEEE;
@@ -127,26 +128,26 @@ if (is_visible) {
             _color = #FFFFFF;
         }
         
-        draw_sprite_stretched_ext(obj_player.talents[|_i].sprite_index, 0, _row, _col, _talentWidth, _talentHeight, _color, _alpha);
-        if (obj_player.talents[|_i].cost_amount == 1) {
+        draw_sprite_stretched_ext(_list[|_i].sprite_index, 0, _row, _col, _talentWidth, _talentHeight, _color, _alpha);
+        if (_list[|_i].cost_amount == 1) {
             draw_sprite(spr_talent_cost_1, 0, _row-3, _col-2);
-        } else if (obj_player.talents[|_i].cost_amount == 2) {
+        } else if (_list[|_i].cost_amount == 2) {
             draw_sprite(spr_talent_cost_2, 0, _row-3, _col-2);
-        } else if (obj_player.talents[|_i].cost_amount == 3) {
+        } else if (_list[|_i].cost_amount == 3) {
             draw_sprite(spr_talent_cost_3, 0, _row-3, _col-2);
         }
         
-        if (obj_player.talents[|_i].unlocked) {
+        if (_list[|_i].unlocked) {
             draw_sprite_stretched_ext(spr_highlight, 0, _row-_gapX/4, _col-_gapY/4, _talentWidth+_gapX/2, _talentHeight+_gapY/2, c_white, 0.5);
         }
         
-        draw_textbox(_row + _talentWidth/2, _col+_talentHeight, _talentWidth+_gapX/2, _gapY, obj_player.talents[|_i].name, fa_center);
+        draw_textbox(_row + _talentWidth/2, _col+_talentHeight, _talentWidth+_gapX/2, _gapY, _list[|_i].name, fa_center);
         
         if (_talentMaxedOut) {
             draw_sprite_stretched_ext(spr_check, 0, _row+_talentWidth/2, _col+_talentHeight/2, _talentWidth/2, _talentHeight/2, c_green, 1);
-        } else if (obj_player.talents[|_i].unlocked) {
+        } else if (_list[|_i].unlocked) {
             draw_sprite_stretched_ext(spr_check, 0, _row+_talentWidth/2, _col+_talentHeight/2, _talentWidth/2, _talentHeight/2, c_yellow, 1);
-            draw_textbox(_row +_talentWidth-5, _col-1, 6, 6, $"{obj_player.talents[|_i].current_stack}/{obj_player.talents[|_i].max_stacks}");
+            draw_textbox(_row +_talentWidth-5, _col-1, 6, 6, $"{_list[|_i].current_stack}/{_list[|_i].max_stacks}");
         }
         
         if (_isMouseOver) {
@@ -163,13 +164,13 @@ if (is_visible) {
             _draw_hint_data = {
                 hint_x : _hint_x,
                 hint_y : clamp(mouse_gui_y, _col+5, _col+_talentHeight-5),
-                hint : obj_player.talents[|_i].hint,
+                hint : _list[|_i].hint,
                 halign : _halign
             };
         }
     
         if (_talentCanInterract && _isMouseOver && mouse_check_button_pressed(mb_left)) {
-            obj_player.talents[|_i].action();
+            _list[|_i].action();
         }
     }
     

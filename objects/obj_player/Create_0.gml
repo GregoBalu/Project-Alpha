@@ -11,7 +11,7 @@ firstRoomEnter = true;
 
 
 xp_total = get_xp_total(level);
-//talent_points = 1;
+
 unlocked_talents = ds_list_create();
 
 orientation = Orientation.DOWN;
@@ -35,6 +35,7 @@ inventory = ds_map_create();
 equipped_items = ds_map_create();
 coins = 0;
 
+
 camera_set_view_target(view_camera[0], id);
 
 audio_listener_orientation(0,1,0,0,0,1);
@@ -51,21 +52,33 @@ function gain_experience(_enemy) {
     var _base_xp = _enemy.base_xp;
     
     var _xp = _base_xp * _modifier;
-    
+
     xp += _xp;
+    var _level_gained = 0;
     while (xp >= xp_total) {
         xp -= xp_total;
         level++;
         xp_total = get_xp_total(level);
-        talent_points++;
         
         log_stat($"obj_player [gain_experience] level up -> {level}");
-        audio_play_sound(snd_achieve, 8, false);
+        _level_gained++;
         
         hp_total += 3;
         hp = clamp(hp+5, 0, hp_total);
         damage += .5;
     }
+    if (_level_gained > 0) {
+        gain_talent(_level_gained);
+    }
+}
+
+function gain_talent(_num) {
+    talent_points+= _num;
+        
+    audio_play_sound(snd_achieve, 8, false);
+    
+    var _inst = instance_create_layer(0, 0, "GUI", obj_talent_picker);
+    _inst.depth = obj_playersheet.depth -1;
 }
 
 function change_shroud_mask(other_mask) {

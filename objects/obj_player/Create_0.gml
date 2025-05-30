@@ -78,7 +78,6 @@ function gain_talent(_num) {
     audio_play_sound(snd_achieve, 8, false);
     
     var _inst = instance_create_layer(0, 0, "GUI", obj_talent_picker);
-    _inst.depth = obj_playersheet.depth -1;
 }
 
 function change_shroud_mask(other_mask) {

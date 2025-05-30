@@ -49,6 +49,8 @@ if (talent1 != noone) {
     }
     draw_sprite_stretched(talent1.sprite_index, talent1.image_index, _x+_image_offset_x, _y+_image_offset_y, _image_w, _image_h);
     draw_textbox(_x + 54, _y + 90, 26, 18, talent1.name, fa_center, fa_middle);
+} else {
+    draw_sprite_stretched_ext(spr_talent_nothing, 0, _x, _y, _picker_w, _picker_h, c_white, 0.6);
 }
 
 _x += _picker_w+_gap_w;
@@ -76,6 +78,8 @@ if (talent2 != noone) {
     }
     draw_sprite_stretched(talent2.sprite_index, talent2.image_index, _x+_image_offset_x, _y+_image_offset_y, _image_w, _image_h);
     draw_textbox(_x + 54, _y + 90, 26, 18, talent2.name, fa_center, fa_middle);
+} else {
+    draw_sprite_stretched_ext(spr_talent_nothing, 0, _x, _y, _picker_w, _picker_h, c_white, 0.6);
 }
 
 _x += _picker_w+_gap_w;
@@ -103,6 +107,8 @@ if (talent3 != noone) {
     }
     draw_sprite_stretched(talent3.sprite_index, talent3.image_index, _x+_image_offset_x, _y+_image_offset_y, _image_w, _image_h);
     draw_textbox(_x + 54, _y + 90, 26, 18, talent3.name, fa_center, fa_middle, false);
+} else {
+    draw_sprite_stretched_ext(spr_talent_nothing, 0, _x, _y, _picker_w, _picker_h, c_white, 0.6);
 }
 
 if (_doDrawHint) {

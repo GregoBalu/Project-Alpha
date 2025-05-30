@@ -159,6 +159,10 @@ global.dialog_hint_room1_leverpuzzle = [
     new dialog_entry("Note", c_green, spr_note, new dialog_text("You cannot make out most of the text just a small drawing on the bottom, which depicts four colors in a row: yellow, green, green, yellow") )
 ];
 
+global.dialog_lore_room1_hiddensecret1 = [
+    new dialog_entry("Note", c_white, spr_note, new dialog_text("Abandon all hope. Turn around while you can ..."))
+];
+
 global.dialog_room1_vendor = [
     new dialog_entry(global.dialog_vendor_name, global.dialog_vendor_color, spr_npc_vendor, new dialog_text("I see you are persistent. Come take a look at my wares.")),
     new dialog_choice_entry(global.dialog_vendor_name, global.dialog_vendor_color, spr_npc_vendor, new dialog_text($"Current coins: XXX. Options:"), [

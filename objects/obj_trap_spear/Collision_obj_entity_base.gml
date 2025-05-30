@@ -2,7 +2,7 @@ if (!is_on) {
     exit;
 }
 
-if (state <= State_IDLE+10 /*|| state == State_DOWN*/) {
+if (!doExtending) {
     exit;
 }
 

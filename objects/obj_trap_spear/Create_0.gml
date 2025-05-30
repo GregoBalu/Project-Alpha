@@ -6,6 +6,7 @@
 image_speed = 0;
 state = is_on?State_EXTENDED:State_IDLE;
 doDamage = true;
+doExtending = false;
 
 afterPauseUp = true;
 
@@ -44,6 +45,7 @@ function pause() {
 }
 
 function extend() {
+    doExtending = true;
     state += 1;
     image_index = state;
     if ( state == State_EXTENDED) {
@@ -54,6 +56,7 @@ function extend() {
 }
 
 function retract() {
+    doExtending = false;
     state -= 1;
     image_index = state;
     if ( state == State_IDLE ) {

@@ -7,8 +7,8 @@
   "managed":true,
   "name":"obj_enemy2",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_entity_base","path":"objects/obj_entity_base/obj_entity_base.yy",},"propertyId":{"name":"move_speed","path":"objects/obj_entity_base/obj_entity_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1.6",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_entity_base","path":"objects/obj_entity_base/obj_entity_base.yy",},"propertyId":{"name":"default_move_speed","path":"objects/obj_entity_base/obj_entity_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1.6",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_entity_base","path":"objects/obj_entity_base/obj_entity_base.yy",},"propertyId":{"name":"move_speed","path":"objects/obj_entity_base/obj_entity_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1.4",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_entity_base","path":"objects/obj_entity_base/obj_entity_base.yy",},"propertyId":{"name":"default_move_speed","path":"objects/obj_entity_base/obj_entity_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1.4",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_entity_base","path":"objects/obj_entity_base/obj_entity_base.yy",},"propertyId":{"name":"hp","path":"objects/obj_entity_base/obj_entity_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"17",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_entity_base","path":"objects/obj_entity_base/obj_entity_base.yy",},"propertyId":{"name":"damage","path":"objects/obj_entity_base/obj_entity_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"2",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_entity_base","path":"objects/obj_entity_base/obj_entity_base.yy",},"propertyId":{"name":"crit_chance","path":"objects/obj_entity_base/obj_entity_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0.02",},
@@ -43,8 +43,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_enemy2",
-    "path":"sprites/spr_enemy2/spr_enemy2.yy",
+    "name":"spr_enemy_plant",
+    "path":"sprites/spr_enemy_plant/spr_enemy_plant.yy",
   },
   "spriteMaskId":null,
   "visible":true,

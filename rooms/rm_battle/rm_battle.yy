@@ -22,8 +22,8 @@
     {"name":"battle_enemy_wait_noti","path":"rooms/rm_battle/rm_battle.yy",},
     {"name":"inst_144309D2","path":"rooms/rm_battle/rm_battle.yy",},
     {"name":"inst_157B101E","path":"rooms/rm_battle/rm_battle.yy",},
-    {"name":"inst_208C4DBA","path":"rooms/rm_battle/rm_battle.yy",},
     {"name":"inst_4345E60D","path":"rooms/rm_battle/rm_battle.yy",},
+    {"name":"inst_29459D8F","path":"rooms/rm_battle/rm_battle.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -50,7 +50,7 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_music_player","path":"objects/obj_music_player/obj_music_player.yy",},"propertyId":{"name":"music","path":"objects/obj_music_player/obj_music_player.yy",},"resource":{"name":"snd_battle_music","path":"sounds/snd_battle_music/snd_battle_music.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"snd_battle_music",},
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_music_player","path":"objects/obj_music_player/obj_music_player.yy",},"propertyId":{"name":"volume","path":"objects/obj_music_player/obj_music_player.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0.1",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":160.0,"y":0.0,},
-        {"$GMRInstance":"v2","%Name":"inst_208C4DBA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_208C4DBA","objectId":{"name":"obj_battle_action_kaboom","path":"objects/obj_battle_action_kaboom/obj_battle_action_kaboom.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":164.0,"y":144.0,},
+        {"$GMRInstance":"v2","%Name":"inst_29459D8F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_29459D8F","objectId":{"name":"obj_battle_action_mind_flash","path":"objects/obj_battle_action_mind_flash/obj_battle_action_mind_flash.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":164.0,"y":144.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Assets","assets":[],"depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Assets","properties":[],"resourceType":"GMRAssetLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":30.0,"animationSpeedType":0,"colour":4294967295,"depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":{"name":"spr_battle_screen","path":"sprites/spr_battle_screen/spr_battle_screen.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},

@@ -3,4 +3,4 @@ action = function() {
 }
 
 hint = "";
-hotkey = undefined;
+hotkey = vk_enter;

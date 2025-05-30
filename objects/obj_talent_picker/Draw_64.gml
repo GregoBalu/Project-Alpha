@@ -1,34 +1,31 @@
+display_set_gui_size(320, 180);
+draw_set_font(font_base);
 
-var _width = display_get_gui_width();
-var _height = display_get_gui_height();
+draw_sprite_stretched(spr_gui_back, 0, 10, 16, 300, 148);
 
-draw_sprite_stretched(spr_gui_back, 0, _width*0.2, _height*0.2, _width*0.6, _height*0.6);
+var _gap_w = 16;
+var _gap_w2 = 8;
+var _gap_h = 16;
+var _gap_h2 = 8;
+var _x = 10 + _gap_w2;
+var _y = 16 + _gap_h;
+var _picker_w = 84;
+var _picker_h = 112;
 
-var _gap_w = max(_width*0.02, 12);
-var _gap_w2 = _gap_w/2;
-var _gap_h = max(_height*0.1, 12);
-var _gap_h2 = _gap_h/2;
-var _x = _width*0.2 + _gap_w2;
-var _y = _height*0.2 + _gap_h2;
-var _picker_w = _width*0.2 - _gap_w;
-var _picker_h = _height*0.6 - _gap_h;
+var _image_offset_x = 17;
+var _image_offset_y = 17;
+var _image_w = 50;
+var _image_h = 50;
 
-var _image_offset_x = _picker_w/4;
-var _image_offset_y = _picker_h*0.14;
+var _cost_offset_x = 12;
+var _cost_offset_y = 82;
+var _cost_w = 18;
+var _cost_h = 18;
+
+var _doDrawHint = false;
+var _hint_text = "";
 
 if (talent1 != noone) {
-    if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _x, _y, _x+_picker_w, _y+_picker_h) ) {
-        draw_sprite_stretched_ext(spr_talent_engraving, 0, _x, _y, _picker_w, _picker_h, c_ltgray, 1);
-        if (mouse_check_button_pressed(mb_left)) {
-            talent1.action();
-            instance_destroy();
-            exit;
-        }
-        //draw_textbox_background(mouse_gui_x, mouse_gui_y, _picker_w, _picker_h, talent1.hint, new BackgroundData(spr_hint_back, 0, 5));
-    } else {
-        draw_sprite_stretched(spr_talent_engraving, 0, _x, _y, _picker_w, _picker_h);
-    }
-    draw_sprite_stretched(talent1.sprite_index, talent1.image_index, _x+_image_offset_x, _y+_image_offset_y, _picker_w*0.5, _picker_h*0.5);
     var _spr = spr_talent_cost_1;
     if (talent1.cost_amount == 1) {
         _spr = spr_talent_cost_1;
@@ -37,11 +34,34 @@ if (talent1 != noone) {
     } else if (talent1.cost_amount == 3) {
         _spr = spr_talent_cost_3;
     }
-    draw_sprite_stretched(_spr, 0, _x+_picker_w*0.135, _y+_picker_h*0.735, _picker_w*0.15, _picker_h*0.14);
+    draw_sprite_stretched(_spr, 0, _x+_cost_offset_x, _y+_cost_offset_y, _cost_w, _cost_h);
+    if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _x, _y, _x+_picker_w, _y+_picker_h) ) {
+        draw_sprite_stretched_ext(spr_talent_engraving, 0, _x, _y, _picker_w, _picker_h, c_ltgray, 1);
+        if (mouse_check_button_pressed(mb_left)) {
+            talent1.action();
+            instance_destroy();
+            exit;
+        }
+        _doDrawHint = true;
+        _hint_text = talent1.hint;
+    } else {
+        draw_sprite_stretched(spr_talent_engraving, 0, _x, _y, _picker_w, _picker_h);
+    }
+    draw_sprite_stretched(talent1.sprite_index, talent1.image_index, _x+_image_offset_x, _y+_image_offset_y, _image_w, _image_h);
+    draw_textbox(_x + 54, _y + 90, 26, 18, talent1.name, fa_center, fa_middle);
 }
 
 _x += _picker_w+_gap_w;
 if (talent2 != noone) {
+    var _spr = spr_talent_cost_1;
+    if (talent2.cost_amount == 1) {
+        _spr = spr_talent_cost_1;
+    } else if (talent2.cost_amount == 2) {
+        _spr = spr_talent_cost_2;
+    } else if (talent2.cost_amount == 3) {
+        _spr = spr_talent_cost_3;
+    }
+    draw_sprite_stretched(_spr, 0, _x+_cost_offset_x, _y+_cost_offset_y, _cost_w, _cost_h);
     if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _x, _y, _x+_picker_w, _y+_picker_h) ) {
         draw_sprite_stretched_ext(spr_talent_engraving, 0, _x, _y, _picker_w, _picker_h, c_ltgray, 1);
         if (mouse_check_button_pressed(mb_left)) {
@@ -49,14 +69,26 @@ if (talent2 != noone) {
             instance_destroy();
             exit;
         }
+        _doDrawHint = true;
+        _hint_text = talent2.hint;
     } else {
         draw_sprite_stretched(spr_talent_engraving, 0, _x, _y, _picker_w, _picker_h);
     }
-    draw_sprite_stretched(talent2.sprite_index, talent2.image_index, _x+_image_offset_x, _y+_image_offset_y, _picker_w*0.5, _picker_h*0.5);
+    draw_sprite_stretched(talent2.sprite_index, talent2.image_index, _x+_image_offset_x, _y+_image_offset_y, _image_w, _image_h);
+    draw_textbox(_x + 54, _y + 90, 26, 18, talent2.name, fa_center, fa_middle);
 }
 
 _x += _picker_w+_gap_w;
 if (talent3 != noone) {
+    var _spr = spr_talent_cost_1;
+    if (talent3.cost_amount == 1) {
+        _spr = spr_talent_cost_1;
+    } else if (talent3.cost_amount == 2) {
+        _spr = spr_talent_cost_2;
+    } else if (talent3.cost_amount == 3) {
+        _spr = spr_talent_cost_3;
+    }
+    draw_sprite_stretched(_spr, 0, _x+_cost_offset_x, _y+_cost_offset_y, _cost_w, _cost_h);
     if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _x, _y, _x+_picker_w, _y+_picker_h) ) {
         draw_sprite_stretched_ext(spr_talent_engraving, 0, _x, _y, _picker_w, _picker_h, c_ltgray, 1);
         if (mouse_check_button_pressed(mb_left)) {
@@ -64,8 +96,24 @@ if (talent3 != noone) {
             instance_destroy();
             exit;
         }
+        _doDrawHint = true;
+        _hint_text = talent3.hint;
     } else {
         draw_sprite_stretched(spr_talent_engraving, 0, _x, _y, _picker_w, _picker_h);
     }
-    draw_sprite_stretched(talent3.sprite_index, talent3.image_index, _x+_image_offset_x, _y+_image_offset_y, _picker_w*0.5, _picker_h*0.5);
+    draw_sprite_stretched(talent3.sprite_index, talent3.image_index, _x+_image_offset_x, _y+_image_offset_y, _image_w, _image_h);
+    draw_textbox(_x + 54, _y + 90, 26, 18, talent3.name, fa_center, fa_middle, false);
+}
+
+if (_doDrawHint) {
+    var _halign = fa_left;
+    var _valign = fa_top;
+    var _margin = 8;
+    var _hint_x = mouse_gui_x+_margin;
+    var _hint_y = mouse_gui_y+_margin
+    if (mouse_gui_x > 160) {
+        _halign = fa_right;
+        _hint_x = mouse_gui_x-_margin
+    }
+    draw_textbox_background(_hint_x, _hint_y, _picker_w, _picker_h, _hint_text, new BackgroundData(spr_hint_back, 0, _margin), _halign, _valign);
 }

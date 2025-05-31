@@ -1,3 +1,4 @@
+audio_group_load(ag_sfx);
 
 var lay_id = layer_get_id("Tiles_Col_Invis");
 var lay_id2 = layer_get_id("Tiles_Col");

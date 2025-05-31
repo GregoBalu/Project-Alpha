@@ -1,1 +1,2 @@
 current_value = audio_group_get_gain(audio_group);
+updateIndicator();

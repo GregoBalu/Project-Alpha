@@ -29,14 +29,12 @@ buff_bar = instance_create_layer(x, y, layer_get_id("GUI"), obj_buff_bar);
 gui = instance_create_layer(x, y, layer_get_id("GUI"), obj_gui);
 gui.depth = obj_playersheet.depth +1;
 camera = instance_create_layer(0, 0, layer_get_id("Instances"), obj_camera);
-camera.follow_player = true;
+camera.follow_point = new Vec2(x, y);
 
 inventory = ds_map_create();
 equipped_items = ds_map_create();
 coins = 0;
 
-
-camera_set_view_target(view_camera[0], id);
 
 audio_listener_orientation(0,1,0,0,0,1);
 

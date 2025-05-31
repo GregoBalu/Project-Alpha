@@ -1,3 +1,5 @@
+
+
 with (obj_entity_base)
 {
     if (distance_to_object(obj_player) > 24) continue;

@@ -1,6 +1,3 @@
-//x = camera_get_view_x(view_camera[0]) ;
-//y = camera_get_view_y(view_camera[0]) ;
-//camera_get_view_width()
 
 if (ds_list_size(buffs) > 0) {
     visible = global.do_draw_adventure_gui;

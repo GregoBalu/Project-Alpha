@@ -8,6 +8,12 @@ lifesteal_duration = 0;
 attack_charge_gain = 0.4;
 utility_charge_gain = 0.4;
 
+attack_charge_gain_multiplier = 1;
+utility_charge_gain_multiplier = 1;
+
+unusable_turns_after_use = 0;
+used_at = -1;
+
 for (var _i = 0; _i < ds_list_size(obj_battle_switcher.player_data.unlocked_talents); _i++)
 {
     var _talent = obj_battle_switcher.player_data.unlocked_talents[|_i];
@@ -19,6 +25,10 @@ for (var _i = 0; _i < ds_list_size(obj_battle_switcher.player_data.unlocked_tale
     } else if (_talent.object_index == obj_talent_wait_charge) {
         attack_charge_gain += _talent.bonus_attack_charge;
         utility_charge_gain -= _talent.minus_utility_charge;
+    } else if (_talent.object_index == obj_talent_wait_more) {
+        attack_charge_gain_multiplier += _talent.charge_multiplier-1;
+        utility_charge_gain_multiplier += _talent.charge_multiplier-1;
+        unusable_turns_after_use += _talent.skip_turn_after_use;
     }
 }
 
@@ -37,15 +47,24 @@ action = function() {
                                     function(_data){
                                         //start
                                         obj_battle_player.data.lifesteal += _data.lifesteal_amount;
-                                        show_debug_message("New lifesteal is {0}", obj_battle_player.data.lifesteal);
+                                        //show_debug_message("New lifesteal is {0}", obj_battle_player.data.lifesteal);
                                     }, function(_data) {
                                         //end
                                         obj_battle_player.data.lifesteal -= _data.lifesteal_amount;
-                                        show_debug_message("New lifesteal is {0}", obj_battle_player.data.lifesteal);
+                                        //show_debug_message("New lifesteal is {0}", obj_battle_player.data.lifesteal);
                                     }));
+    }
+    if (unusable_turns_after_use>0) {
+        used_at = obj_battle_manager.turn;
     }
     
     alarm[0] = (animTime + getBattleAfterActionCooldownSeconds()) * TIME_SECOND;
 }
 
-hint = $"Wait [{key2str(hotkey)}]\nWait a turn and gain charge.\nCharge gain: {attack_charge_gain} attack, {utility_charge_gain} utility";
+function canUse() {
+    var _cannot_use = (unusable_turns_after_use>0 && used_at>=0 && (used_at+unusable_turns_after_use) > obj_battle_manager.turn );
+    if (_cannot_use) return false;
+    return obj_battle_manager.battle_started && !obj_battle_manager.enemy_turn && checkCost(cost_type, cost_amount);
+}
+
+hint = $"Wait [{key2str(hotkey)}]\nWait a turn and gain charge.\nCharge gain: {attack_charge_gain*attack_charge_gain_multiplier} attack, {utility_charge_gain*utility_charge_gain_multiplier} utility";

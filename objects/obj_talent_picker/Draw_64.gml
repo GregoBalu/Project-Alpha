@@ -2,6 +2,7 @@ display_set_gui_size(320, 180);
 draw_set_font(font_base);
 
 draw_sprite_stretched(spr_gui_back, 0, 10, 16, 300, 148);
+draw_textbox(160, 20, 80, 8, $"Potential max talent power: {obj_player.talent_points}", fa_center, fa_top);
 
 var _gap_w = 16;
 var _gap_w2 = 8;
@@ -24,6 +25,8 @@ var _cost_h = 18;
 
 var _doDrawHint = false;
 var _hint_text = "";
+
+
 
 if (talent1 != noone) {
     var _spr = spr_talent_cost_1;
@@ -48,7 +51,7 @@ if (talent1 != noone) {
         draw_sprite_stretched(spr_talent_engraving, 0, _x, _y, _picker_w, _picker_h);
     }
     draw_sprite_stretched(talent1.sprite_index, talent1.image_index, _x+_image_offset_x, _y+_image_offset_y, _image_w, _image_h);
-    draw_textbox(_x + 54, _y + 90, 26, 18, talent1.name, fa_center, fa_middle);
+    draw_textbox_color(_x + 54, _y + 90, 26, 18, talent1.name, c_yellow, fa_center, fa_middle);
 } else {
     draw_sprite_stretched_ext(spr_talent_nothing, 0, _x, _y, _picker_w, _picker_h, c_white, 0.6);
 }
@@ -77,7 +80,7 @@ if (talent2 != noone) {
         draw_sprite_stretched(spr_talent_engraving, 0, _x, _y, _picker_w, _picker_h);
     }
     draw_sprite_stretched(talent2.sprite_index, talent2.image_index, _x+_image_offset_x, _y+_image_offset_y, _image_w, _image_h);
-    draw_textbox(_x + 54, _y + 90, 26, 18, talent2.name, fa_center, fa_middle);
+    draw_textbox_color(_x + 54, _y + 90, 26, 18, talent2.name, c_yellow, fa_center, fa_middle);
 } else {
     draw_sprite_stretched_ext(spr_talent_nothing, 0, _x, _y, _picker_w, _picker_h, c_white, 0.6);
 }
@@ -106,7 +109,7 @@ if (talent3 != noone) {
         draw_sprite_stretched(spr_talent_engraving, 0, _x, _y, _picker_w, _picker_h);
     }
     draw_sprite_stretched(talent3.sprite_index, talent3.image_index, _x+_image_offset_x, _y+_image_offset_y, _image_w, _image_h);
-    draw_textbox(_x + 54, _y + 90, 26, 18, talent3.name, fa_center, fa_middle, false);
+    draw_textbox_color(_x + 54, _y + 90, 26, 18, talent3.name, c_yellow, fa_center, fa_middle, false);
 } else {
     draw_sprite_stretched_ext(spr_talent_nothing, 0, _x, _y, _picker_w, _picker_h, c_white, 0.6);
 }

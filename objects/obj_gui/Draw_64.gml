@@ -14,11 +14,6 @@ var _padding = 5;
 
 //draw_sprite_stretched(spr_button, 0, _x, _y, 20, 20);
 
-function draw_button_hint(_x, _y, _width, _height, _padding, _key){
-    draw_sprite_stretched(spr_button, keyboard_check(_key)?2:0, _x, _y, _width, _height);
-    draw_textbox_color(_x+(_width/2), _y+(_height/2), _width-2*_padding, _height-2*_padding, key2str(_key), c_black, fa_center, fa_middle) ;
-}
-
 draw_button_hint(_x, _y, _width, _height, _padding, global.input_pause);
 
 _y += _height + _margin;

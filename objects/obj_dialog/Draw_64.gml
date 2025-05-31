@@ -108,6 +108,9 @@ if (messages[current_message].type == DialogType.Chat) {
     }
 }
 
+var _but_w = 36;
+draw_button_hint(_boxw - 26 - _but_w, gui_h - 30, _but_w, 2*_but_w/3, 4, global.input_talk);
+
 if (has_more) {
     var _tpad = 8;
     var _tw = 8;

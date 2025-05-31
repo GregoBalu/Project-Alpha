@@ -242,6 +242,9 @@ function draw_shadow(_offset_x = 0, _offset_y = 0) {
     //draw_sprite_stretched_ext(spr_shadow, 0, bbox_left+1, bbox_bottom, sprite_width-2, 8, c_white, 0.5);
 }
 
-
+function draw_button_hint(_x, _y, _width, _height, _padding, _key){
+    draw_sprite_stretched(spr_button, keyboard_check(_key)?2:0, _x, _y, _width, _height);
+    draw_textbox_color(_x+(_width/2), _y+(_height/2), _width-2*_padding, _height-2*_padding, key2str(_key), c_black, fa_center, fa_middle) ;
+}
 
 

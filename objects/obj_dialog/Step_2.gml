@@ -7,7 +7,7 @@ if (sprite_animate_x > 0) {
 var _str = messages[current_message].msg.text;
 
 if (floor(current_char) < string_length(_str)) {
-    current_char += char_speed * (1 + real(keyboard_check(input_key)) );
+    current_char += char_speed * (1 + real(keyboard_check(input_key))*2 );
     
     draw_message = string_copy(_str, 0, floor(current_char));
     

@@ -14,7 +14,7 @@ var _h = 8;
 draw_sprite_stretched(spr_box, 0, _x, _y, _w, _h);
 draw_sprite_stretched_ext(spr_box, 1, _x, _y, _w * (data.hp / data.hp_total), _h, hp_color, 1);
 if (point_in_rectangle(mouse_x, mouse_y, _x, _y, _x + _w, _y+_h)) {
-    draw_textbox_background(mouse_x+5, mouse_y-5, 10, 6, data.hp, new BackgroundData(spr_hint_back, 0, 2), fa_left, fa_bottom);
+    draw_textbox_background(mouse_x+5, mouse_y-5, 10, 6, data.hp, new BackgroundData(spr_hint_back, 0, 8), fa_left, fa_bottom);
 }
 
 _y += _h + 2;

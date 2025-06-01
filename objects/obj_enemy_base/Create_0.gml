@@ -2,6 +2,7 @@ event_inherited();
 
 target_x = x;
 target_y = y;
+using_path = false;
 
 see_player = false
 

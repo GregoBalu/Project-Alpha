@@ -82,6 +82,7 @@
     {"id":{"name":"License","path":"notes/License/License.yy",},},
     {"id":{"name":"README","path":"notes/README/README.yy",},},
     {"id":{"name":"TODO","path":"notes/TODO/TODO.yy",},},
+    {"id":{"name":"obj_ai_grid","path":"objects/obj_ai_grid/obj_ai_grid.yy",},},
     {"id":{"name":"obj_barrel","path":"objects/obj_barrel/obj_barrel.yy",},},
     {"id":{"name":"obj_battle_action_heavy","path":"objects/obj_battle_action_heavy/obj_battle_action_heavy.yy",},},
     {"id":{"name":"obj_battle_action_interrupt","path":"objects/obj_battle_action_interrupt/obj_battle_action_interrupt.yy",},},

@@ -35,6 +35,8 @@ inventory = ds_map_create();
 equipped_items = ds_map_create();
 coins = 0;
 
+debug_visualize_mp_grid = false;
+
 
 audio_listener_orientation(0,1,0,0,0,1);
 

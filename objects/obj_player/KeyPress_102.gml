@@ -6,6 +6,7 @@ for (var _i = 0; _i < array_length(_keys); ++_i)
     show_debug_message("Slot {0}: {1}", _keys[_i], inventory[?_keys[_i]]);
 }*/
 
-add_corruption(1);
+//add_corruption(1);
 //show_debug_message($"Corruption: {corruption}/{corruption_total}");
 
+debug_visualize_mp_grid = !debug_visualize_mp_grid;

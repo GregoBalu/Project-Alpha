@@ -20,3 +20,9 @@ if (see_player) {
     
     draw_ellipse_color(_dot_x - _w/2, _y + _h/2, _dot_x + _w/2, _y - _h/2, c_orange, c_orange, false);
 }
+
+/*if (using_path) {
+    draw_circle_color(x, y, max(sprite_width, sprite_height), c_green, c_green, true);
+} else {
+    draw_circle_color(x, y, max(sprite_width, sprite_height), c_blue, c_blue, true);
+}*/

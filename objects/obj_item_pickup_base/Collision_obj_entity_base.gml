@@ -9,11 +9,13 @@ if (can_pickup) {
     //show_debug_message("Pickup");
     if (onPickup(other)) {
         instance_create_layer(other.x, other.y, "GUI", obj_battle_text_roll, {
-            text : $"{_pickupText}",
+            text : _pickupText,
             time_seconds : 1.5,
             width : 32,
             heigth : 16,
-            color : _pickupColor
+            color : _pickupColor,
+            max_sway: 8,
+            vertical_speed: 0.3
         });
         instance_destroy();
     } else {

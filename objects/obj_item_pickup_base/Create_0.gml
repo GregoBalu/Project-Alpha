@@ -2,6 +2,8 @@
 #macro PICKUP_ALARM 1
 
 can_pickup = false;
+_pickupText = "+1 item";
+_pickupColor = c_orange;
 
 back_glow_color = c_white;
 _background_sprite_time = 0;

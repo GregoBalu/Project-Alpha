@@ -307,8 +307,7 @@ function enemyInterruptAttack(_obj, _turns = 2) {
 }
 
 function get_xp_total(_level) {
-    //10log(x)+20
-    static _xp_table = [20, 23, 25, 26, 27, 28, 29, 29, 30];
+    static _xp_table = [15, 18, 20, 21, 22, 23, 24, 24, 25];
     static _len = array_length(_xp_table);
     if (_level < _len) {
         return _xp_table[_level-1];

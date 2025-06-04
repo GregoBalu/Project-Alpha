@@ -10,7 +10,7 @@ function explode(){
     alarm[1] = 0.2 * TIME_SECOND;
     alarm[0] = 0.5 * TIME_SECOND;
     
-    if (0 < collision_circle_list(x, y, explosion_radius, [obj_coll_rock], false, true, collision_list, false)) {
+    if (0 < collision_circle_list(x, y, explosion_radius, [obj_coll_rock,obj_coll_crate], false, true, collision_list, false)) {
         for (var _i = 0; _i < ds_list_size(collision_list); _i++)
         {
             collision_list[|_i].image_alpha = 0.5;

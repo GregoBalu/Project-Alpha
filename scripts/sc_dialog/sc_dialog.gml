@@ -140,6 +140,10 @@ global.dialog_welcome_alt = [
     new dialog_entry("Geoff", c_aqua, spr_npc1, new dialog_text("Get in there and slay that Witch!") )
 ];
 
+global.dialog_hint_talent_star = [
+    new dialog_entry("Talent Star", c_white, undefined, new dialog_text($"This is a talent star. You can pick it up to to gain a talent point and be able to choose a talent just like when you would level up.") )
+]
+
 global.dialog_hint_cauldron = [
     new dialog_entry("Cauldron", c_white, spr_cauldron, new dialog_text("This is a cauldron. It's used by witches to brew potions and soup.") ),
     new dialog_entry("Cauldron", c_white, spr_cauldron, new dialog_text("Most potions brewed in them are beneficial to you but they also make you slightly more prone to corruption.") ),
@@ -179,6 +183,10 @@ global.dialog_room1_vendor = [
                 return true;
             }
             return false;
+        }),
+        new dialog_vendor_item("Talent potencial", 10, 2, function() {
+            obj_player.talent_points++;
+            return true;
         })
     ])
 ];
@@ -199,6 +207,10 @@ global.dialog_cave_vendor = [
                 return true;
             }
             return false;
+        }),
+        new dialog_vendor_item("Talent Star", 20, 1, function() {
+            instance_create_layer(obj_npc_vendor.x, obj_npc_vendor.y, "Items", obj_talent_star);
+            return true;
         })
     ])
 ];

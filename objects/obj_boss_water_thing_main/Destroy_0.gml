@@ -6,3 +6,5 @@ for (var _i = 0; _i < array_length(lesser_tentacles); ++_i)
         instance_destroy(for_show_tentacles[_i]);
     }
 }
+
+instance_create_layer(x, y, "Items", obj_talent_star);

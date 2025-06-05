@@ -62,6 +62,7 @@ function gain_experience(_enemy) {
         
         log_stat($"obj_player [gain_experience] level up -> {level}");
         _level_gained++;
+        audio_play_sound(snd_achieve, 8, false);
         
         hp_total += 3;
         hp = clamp(hp+5, 0, hp_total);
@@ -74,8 +75,6 @@ function gain_experience(_enemy) {
 
 function gain_talent(_num) {
     talent_points+= _num;
-        
-    audio_play_sound(snd_achieve, 8, false);
     
     var _inst = instance_create_layer(0, 0, "GUI", obj_talent_picker);
 }

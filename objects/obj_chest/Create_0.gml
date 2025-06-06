@@ -9,7 +9,7 @@ itemsLayer = layer_get_id("Instances");
 xcenter = x + sprite_width/2;
 ycenter = y + sprite_height/2;
 
-if (loottable == noone) {
+if (loottable == noone || !instance_exists(loottable)) {
     show_debug_message($"No loottable set for chest {id} / {instance_id}");
 }
 
@@ -18,7 +18,7 @@ function onInterract() {
     image_index = 1;
     
     //empty contents
-    if (loottable == noone) {
+    if (loottable == noone || !instance_exists(loottable)) {
         exit;
     }
     loottable.generate_loot(random_range(bbox_left, bbox_right), random_range(ycenter, bbox_bottom), itemsLayer)

@@ -120,6 +120,7 @@
     {"name":"inst_63F1FB62","path":"rooms/rm_cave/rm_cave.yy",},
     {"name":"inst_425DE863","path":"rooms/rm_cave/rm_cave.yy",},
     {"name":"inst_58868B7D","path":"rooms/rm_cave/rm_cave.yy",},
+    {"name":"inst_1B0B4F65","path":"rooms/rm_cave/rm_cave.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -230,6 +231,7 @@
         {"$GMRInstance":"v2","%Name":"inst_58868B7D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_58868B7D","objectId":{"name":"obj_chest","path":"objects/obj_chest/obj_chest.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_chest","path":"objects/obj_chest/obj_chest.yy",},"propertyId":{"name":"loottable","path":"objects/obj_chest/obj_chest.yy",},"resource":{"name":"obj_item_loottable_rcave_high","path":"objects/obj_item_loottable_rcave_high/obj_item_loottable_rcave_high.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"obj_item_loottable_rcave_high",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":-0.49218753,"scaleY":0.49218753,"x":479.0,"y":61.75,},
+        {"$GMRInstance":"v2","%Name":"inst_1B0B4F65","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1B0B4F65","objectId":{"name":"obj_item_loottable_rcave_high","path":"objects/obj_item_loottable_rcave_high/obj_item_loottable_rcave_high.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":576.0,"y":736.0,},
       ],"layers":[],"name":"Items","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Logic","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v2","%Name":"inst_9E78508","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_9E78508","objectId":{"name":"obj_logic_water_flow_change","path":"objects/obj_logic_water_flow_change/obj_logic_water_flow_change.yy",},"properties":[

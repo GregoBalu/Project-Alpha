@@ -13,7 +13,7 @@ table.add_entry(8, new ItemDrop(obj_item_pickup_inventory_base, {
 
 function generate_loot(_x, _y, _layer) {
     
-    show_debug_message("generate_loot(rcave_low)");
+    show_debug_message("generate_loot(rcave_high)");
         
     var _res = table.roll(1);
     

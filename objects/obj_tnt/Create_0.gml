@@ -4,10 +4,13 @@ collision_list = ds_list_create();
 
 function explode(){
     
-    image_alpha = 0.5;
-    explosion_id = spawn_effect(spr_fireball_explosion, x, y, explosion_radius*2, explosion_radius*2, depth-1, 0, 0, 0.5, spr_fireball_explosion, 0.5);
-    audio_id = audio_play_sound_at(snd_explosion, x, y, 0, 1, 1, 0.2, false, 5, 1);
-    alarm[1] = 0.2 * TIME_SECOND;
+    if (distance_to_object(obj_player) <= (camera_get_view_width(obj_player.camera.cam)+64) ) {
+        image_alpha = 0.5;
+        explosion_id = spawn_effect(spr_fireball_explosion, x, y, explosion_radius*2, explosion_radius*2, depth-1, 0, 0, 0.5, spr_fireball_explosion, 0.5);
+        audio_id = audio_play_sound_at(snd_explosion, x, y, 0, 1, 1, 0.2, false, 5, 1);
+        alarm[1] = 0.2 * TIME_SECOND;
+    }
+    
     alarm[0] = 0.5 * TIME_SECOND;
     
     if (0 < collision_circle_list(x, y, explosion_radius, [obj_coll_rock,obj_coll_crate], false, true, collision_list, false)) {

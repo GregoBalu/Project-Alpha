@@ -2,7 +2,8 @@ display_set_gui_size(320, 180);
 draw_set_font(font_base);
 
 draw_sprite_stretched(spr_gui_back, 0, 10, 16, 300, 148);
-draw_textbox(160, 24, 80, 10, $"Potential max talent power: {obj_player.talent_points}", fa_center, fa_top);
+draw_textbox(160, 20, 80, 10, "Pick a talent!", fa_center, fa_top);
+draw_textbox(160, 30, 80, 10, $"Potential max talent power: {obj_player.talent_points}", fa_center, fa_top);
 
 var _gap_w = 16;
 var _gap_w2 = 8;

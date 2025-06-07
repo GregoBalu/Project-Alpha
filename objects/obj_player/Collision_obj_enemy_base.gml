@@ -1,5 +1,7 @@
 if (instance_exists(obj_battle_switcher)) exit;
     
+if (global.do_pause) exit;
+    
 show_debug_message($"obj_player [Collision] obj_enemy_base {other}");
 log_stat($"obj_player [Collision] obj_enemy_base {other}");
 

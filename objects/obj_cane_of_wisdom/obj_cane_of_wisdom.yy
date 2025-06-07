@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_crane_of_wisdom",
+  "%Name":"obj_cane_of_wisdom",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_crane_of_wisdom",
+  "name":"obj_cane_of_wisdom",
   "overriddenProperties":[],
   "parent":{
     "name":"Inventory",

@@ -64,9 +64,9 @@ function gain_experience(_enemy) {
         _level_gained++;
         audio_play_sound(snd_achieve, 8, false);
         
-        hp_total += 3;
-        hp = clamp(hp+5, 0, hp_total);
-        damage += .5;
+        hp_total += 2;
+        hp = clamp(hp+3, 0, hp_total);
+        damage += .3;
     }
     if (_level_gained > 0) {
         gain_talent(_level_gained);

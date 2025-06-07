@@ -70,6 +70,10 @@ function dialog_choice_text(_text, _on_click_action, _cond_action = function() {
     function onClick() {
         _clickAction();
     }
+    
+    reset = function() {
+        
+    }
 }
 
 /**
@@ -81,7 +85,9 @@ function dialog_choice_text(_text, _on_click_action, _cond_action = function() {
  */
 function dialog_vendor_item(_name, _price, _stock, _on_click_action) : dialog_choice_text(string_concat(_name, " ... ", _price, "g"), _on_click_action, function() { return true; }, font_base_italic ) constructor {
     
+    init_price = _price;
     price = _price;
+    init_stock = _stock;
     stock = _stock;
     _condAction = function() {
         return stock > 0 && obj_player.coins >= price;
@@ -95,6 +101,11 @@ function dialog_vendor_item(_name, _price, _stock, _on_click_action) : dialog_ch
         obj_player.coins -= price;
         audio_play_sound(snd_coin_drop, 5, false);
         return true;
+    }
+    
+    reset = function() {
+        price = init_price;
+        stock = init_stock;
     }
 }
 
@@ -155,7 +166,7 @@ global.dialog_hint_healing_potion = [
 ]
 
 global.dialog_hint_playersheet = [
-    new dialog_entry("Player sheet", c_white, undefined, new dialog_text($"Open your player sheet with your {key2str(global.input_playersheet)} key to get more information or acquire new talents and equip gear") )
+    new dialog_entry("Player sheet", c_white, undefined, new dialog_text($"Open your player sheet with your {key2str(global.input_playersheet)} key to get more information or equip gear.") )
 ]
 
 global.dialog_hint_room1_leverpuzzle = [
@@ -178,13 +189,13 @@ global.dialog_room1_vendor = [
             obj_player.add_corruption(-2);
             return true;
         }),
-        new dialog_vendor_item("Crane of wisdom", 10, 1, function() {
-            if (obj_player.addToInventory(obj_crane_of_wisdom)) {
+        new dialog_vendor_item("Cane of wisdom", 10, 1, function() {
+            if (obj_player.addToInventory(obj_cane_of_wisdom)) {
                 return true;
             }
             return false;
         }),
-        new dialog_vendor_item("Talent potencial", 10, 2, function() {
+        new dialog_vendor_item("Talent potential", 10, 2, function() {
             obj_player.talent_points++;
             return true;
         })
@@ -202,8 +213,8 @@ global.dialog_cave_vendor = [
             obj_player.add_corruption(-2);
             return true;
         }),
-        new dialog_vendor_item("Crane of wisdom", 10, 1, function() {
-            if (obj_player.addToInventory(obj_crane_of_wisdom)) {
+        new dialog_vendor_item("Cane of wisdom", 10, 1, function() {
+            if (obj_player.addToInventory(obj_cane_of_wisdom)) {
                 return true;
             }
             return false;

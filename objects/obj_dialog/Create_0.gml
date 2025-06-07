@@ -10,8 +10,8 @@ at_end = false;
 char_speed = 0.7;
 input_key = global.input_talk;
 
-gui_w = display_get_gui_width();
-gui_h = display_get_gui_height();
+gui_w = 720;
+gui_h = 540;
 
 speaker_sprite_width = gui_w*0.3
 

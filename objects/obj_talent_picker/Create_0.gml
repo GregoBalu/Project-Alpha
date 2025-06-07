@@ -8,6 +8,11 @@ talent1 = noone;
 talent2 = noone;
 talent3 = noone;
 
+no_talent_chance = 0.1;
+delay_talent_chance = 0.4;
+
+randomize();
+
 var _all_unlocked = true;
 for (var _i = 0; _i < ds_list_size(obj_player.talents); ++_i) {
     if (!obj_player.talents[|_i].stackable && !obj_player.talents[|_i].unlocked) {
@@ -26,7 +31,7 @@ if (_all_unlocked) {
 }
 
 function get_random_talent(_ignore1=-1, _ignore2=-1) {
-    if (random_range(0, 1) < 0.1) {
+    if (random_range(0, 1) < no_talent_chance) {
         //show_debug_message($"No talent early");
         return -1;
     }
@@ -61,7 +66,7 @@ function get_random_talent(_ignore1=-1, _ignore2=-1) {
 var _i1 = get_random_talent();
 talent1 = (_i1==-1?noone:obj_player.talents[|_i1]);
 var _i2 = -1;
-if (random_range(0, 10) < 3) {
+if (random_range(0, 1) < delay_talent_chance) {
     talent2 = instance_create_layer(0, 0, "GUI", obj_talent_wait_pick);
 } else {
     _i2 = get_random_talent(_i1);
@@ -75,6 +80,8 @@ if (talent1 == noone && (talent2 == noone || _i2==-1) && talent3 == noone) {
     instance_destroy();
     exit;
 }
+
+//TODO: sound
 
 
 

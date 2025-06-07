@@ -9,7 +9,7 @@ equip_slot = EquipSlot.Weapon;
 bonus_max_utility_charge = 2;
 minus_damage = 1.5;
 
-name = "Crane of Wisdom";
+name = "Cane of Wisdom";
 description = $"This short staff is making you think like a wizard.\nTotal utility charges: +{bonus_max_utility_charge}\nDamage: -{minus_damage}";
 
 

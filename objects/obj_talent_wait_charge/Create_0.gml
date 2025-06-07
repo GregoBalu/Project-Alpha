@@ -14,4 +14,4 @@ bonus_attack_charge = 0.2;
 minus_utility_charge = 0.2;
 
 name = "Tip of balance";
-hint = string($"attack charge gain increase: +{bonus_attack_charge}\nutility charge gain decrease: -{minus_utility_charge}");
+hint = string($"Modifies action: Wait\nattack charge gain: +{bonus_attack_charge}\nutility charge gain: -{minus_utility_charge}");

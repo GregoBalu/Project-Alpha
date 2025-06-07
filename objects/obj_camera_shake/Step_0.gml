@@ -35,4 +35,13 @@ if (shake)
             } 
         }
     }
+} else if (shake_time > 0 || shake_magnitude > 0) {
+    shake_time = 0;
+    shake_magnitude = 0;
+    if (instance_exists(obj_camera)) {
+        obj_camera.offset.x = 0;
+        obj_camera.offset.y = 0;
+    } else {
+        camera_set_view_pos(cam, camera_origin.x, camera_origin.y); 
+    }
 }

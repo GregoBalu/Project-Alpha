@@ -33,22 +33,26 @@ var _type_alpha = 0.8;
 var _doDrawHint = false;
 var _hint_text = "";
 
-
-
-if (talent1 != noone) {
-    var _spr = spr_talent_cost_1;
-    if (talent1.cost_amount == 1) {
+function getCostSpr(tal) {
+    var _spr = spr_talent_cost_0;
+    if (tal.cost_amount == 1) {
         _spr = spr_talent_cost_1;
-    } else if (talent1.cost_amount == 2) {
+    } else if (tal.cost_amount == 2) {
         _spr = spr_talent_cost_2;
-    } else if (talent1.cost_amount == 3) {
+    } else if (tal.cost_amount == 3) {
         _spr = spr_talent_cost_3;
     }
+    return _spr;
+}
+
+if (talent1 != noone) {
+    var _spr = getCostSpr(talent1);
     draw_sprite_stretched(_spr, 0, _x+_cost_offset_x, _y+_cost_offset_y, _cost_w, _cost_h);
     if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _x, _y, _x+_picker_w, _y+_picker_h) ) {
         draw_sprite_stretched_ext(spr_talent_engraving, 0, _x, _y, _picker_w, _picker_h, c_ltgray, 1);
         if (mouse_check_button_pressed(mb_left)) {
             talent1.action();
+            //TODO: sound
             instance_destroy();
             exit;
         }
@@ -69,19 +73,13 @@ if (talent1 != noone) {
 
 _x += _picker_w+_gap_w;
 if (talent2 != noone) {
-    var _spr = spr_talent_cost_1;
-    if (talent2.cost_amount == 1) {
-        _spr = spr_talent_cost_1;
-    } else if (talent2.cost_amount == 2) {
-        _spr = spr_talent_cost_2;
-    } else if (talent2.cost_amount == 3) {
-        _spr = spr_talent_cost_3;
-    }
+    var _spr = getCostSpr(talent2);
     draw_sprite_stretched(_spr, 0, _x+_cost_offset_x, _y+_cost_offset_y, _cost_w, _cost_h);
     if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _x, _y, _x+_picker_w, _y+_picker_h) ) {
         draw_sprite_stretched_ext(spr_talent_engraving, 0, _x, _y, _picker_w, _picker_h, c_ltgray, 1);
         if (mouse_check_button_pressed(mb_left)) {
             talent2.action();
+            //TODO: sound
             instance_destroy();
             exit;
         }
@@ -102,14 +100,7 @@ if (talent2 != noone) {
 
 _x += _picker_w+_gap_w;
 if (talent3 != noone) {
-    var _spr = spr_talent_cost_1;
-    if (talent3.cost_amount == 1) {
-        _spr = spr_talent_cost_1;
-    } else if (talent3.cost_amount == 2) {
-        _spr = spr_talent_cost_2;
-    } else if (talent3.cost_amount == 3) {
-        _spr = spr_talent_cost_3;
-    }
+    var _spr = getCostSpr(talent3);
     //Cost:
     draw_sprite_stretched(_spr, 0, _x+_cost_offset_x, _y+_cost_offset_y, _cost_w, _cost_h);
     //Backdrop:
@@ -117,6 +108,7 @@ if (talent3 != noone) {
         draw_sprite_stretched_ext(spr_talent_engraving, 0, _x, _y, _picker_w, _picker_h, c_ltgray, 1);
         if (mouse_check_button_pressed(mb_left)) {
             talent3.action();
+            //TODO: sound
             instance_destroy();
             exit;
         }

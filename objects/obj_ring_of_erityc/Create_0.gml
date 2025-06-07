@@ -11,7 +11,7 @@ original_charge_attack_reduction = 1;
 charge_attack_reduction = original_charge_attack_reduction;
 
 name = "Ring of Erityc";
-description = $"This ring was that thought to be unobtainable.\nHealth: +{hp_increase}\nAttack charge max gain: -{original_charge_attack_reduction}";
+description = $"This ring was thought to be unobtainable.\nHealth: +{hp_increase}\nAttack charge max gain: -{original_charge_attack_reduction}";
 
 
 

@@ -54,4 +54,4 @@ action = function() {
     }
 };
 
-hint = string($"Interrupt [{key2str(hotkey)}]\nInterrupt the enemy stunning it for 2 rounds and angering it.\nCost: {cost_amount}\nIncrease enemy charge attack by: {enemy_charge_util_increase_amount}");
+hint = string($"Interrupt [{key2str(hotkey)}]\nInterrupt the enemy stunning it for 2 rounds and angering it.\nCost: {cost_amount}\nIncrease enemy utility attack by: {enemy_charge_util_increase_amount}");

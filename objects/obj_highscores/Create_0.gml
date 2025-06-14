@@ -1,0 +1,1 @@
+scores = get_highscores();

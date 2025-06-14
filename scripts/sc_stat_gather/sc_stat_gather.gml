@@ -48,3 +48,99 @@ function log_stat(_str) {
     */
 }
 
+global.highscore = 0;
+
+/**
+ * Function Description
+ * @param {Real} _time Time point
+ * @param {Real} _score Score
+ */
+function HighscoreItem(_time, _score) constructor {
+    time = _time;
+    hscore = _score;
+    
+    
+}
+
+function log_highscore(_score) {
+    var _file = file_text_open_append("highscore.dat");
+    
+    var _ct = date_current_datetime();
+    file_text_write_string(_file, $"01:{_ct}={_score}");
+    file_text_writeln(_file);
+    
+    file_text_close(_file);
+}
+
+function get_highscores() {
+    var _file = file_text_open_read("highscore.dat");
+    
+    
+    var _result = ds_list_create();
+    if (_file < 0) {
+        return _result;
+    }
+    
+    do {
+        var _line = file_text_read_string(_file);
+        show_debug_message($"Read str: {_line}");
+        
+        var _a = string_split(_line, ":", false, 1);
+        var _version = _a[0];
+        if (_version == "01") {
+            var _b = string_split(_a[1], "=", false, 1);
+            var _time = _b[0];
+            var _score = _b[1];
+             show_debug_message($"Inserting tim={_time} score={_score}");
+            ds_list_add(_result, new HighscoreItem(real(_time), real(_score) ) );
+        } else {
+            show_debug_message($"Unkown highscore version: '{_version}'");
+        }
+        
+        file_text_readln(_file);
+    } until(file_text_eof(_file));
+    show_debug_message($"Highscore list size={ds_list_size(_result)}");
+    file_text_close(_file);
+    return _result;
+}
+
+function Statistic() constructor {
+    total_xp = 0;
+    level_ups = 0;
+    talent_gains = 0;
+    
+    healing_cauldron = 0;
+    healing_cauldron_count = 0;
+    healing_potion = 0;
+    healing_potion_count = 0;
+    healing_lifesteal = 0;
+    healing_lifesteal_count = 0;
+    healing_levelup = 0;
+    healing_levelup_count = 0;
+    healing_other = 0;
+    healing_other_count = 0;
+    
+    damage_by_spiketrap = 0;
+    damage_by_spiketrap_count = 0;
+    damage_by_poisontrap = 0;
+    damage_by_poisontrap_count = 0;
+    damage_by_speartrap = 0;
+    damage_by_speartrap_count = 0;
+    damage_by_balltrap = 0;
+    damage_by_balltrap_count = 0;
+    damage_by_tnt = 0;
+    damage_by_tnt_count = 0;
+    
+    damage_by_enemies = 0;
+    damage_by_enemies_count = 0;
+    enemy_crits = 0;
+    
+    damage_to_enemies = 0;
+    damage_to_enemies_count = 0;
+    crits = 0;
+    
+    distance_walked = 0;
+    distance_ran = 0;
+    
+}
+

@@ -1,6 +1,7 @@
 
 function clicked() {
     //Override me
+    show_debug_message($"Button '{text}' clicked");
     clickAction();
 }
 

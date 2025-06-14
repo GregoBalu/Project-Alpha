@@ -20,6 +20,8 @@ function explode(){
         }
     }
     if (distance_to_object(obj_player) < explosion_radius) {
-        obj_player.hp = clamp(obj_player.hp - 6, 0, obj_player.hp_total);
+        obj_player.hp = clamp(obj_player.hp - damage, 0, obj_player.hp_total);
+        obj_player.statistic.damage_by_tnt += damage;
+        obj_player.statistic.damage_by_tnt_count++;
     }
 }

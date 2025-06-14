@@ -4,6 +4,8 @@ if (!can_start) {
 
 if (is_on && !paused && !damaged_recently) {
     obj_player.hp = clamp(obj_player.hp - damage_to_player, 0, obj_player.hp_total);
+    obj_player.statistic.damage_by_balltrap += damage_to_player;
+    obj_player.statistic.damage_by_balltrap_count++;
     damaged_recently = true;
     alarm[0] = 0.5*TIME_SECOND;
 }

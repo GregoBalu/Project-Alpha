@@ -15,6 +15,11 @@ gui_h = 540;
 
 speaker_sprite_width = gui_w*0.3
 
+dialog_height = gui_h * 0.3;
+if (fullscreen) {
+    dialog_height = gui_h;
+}
+
 sprite_animate_x = speaker_sprite_width;
 
 choice_need_scroll = false;

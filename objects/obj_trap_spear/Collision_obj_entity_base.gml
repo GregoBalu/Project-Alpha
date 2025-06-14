@@ -13,6 +13,10 @@ if (doDamage) {
     
     doDamage = false;
     other.hp -= damage;
+    if (other.object_index == obj_player) {
+        obj_player.statistic.damage_by_speartrap += damage;
+        obj_player.statistic.damage_by_speartrap_count++;
+    }
     
     spawn_effect(spr_blood_spill, other.x, other.y, 0.7*other.sprite_width, 0.7*other.sprite_width, other.depth-1, 0, 0, 1);
     //sprite_add_ext()

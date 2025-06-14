@@ -36,6 +36,7 @@ equipped_items = ds_map_create();
 coins = 0;
 
 debug_visualize_mp_grid = false;
+statistic = new Statistic();
 
 
 audio_listener_orientation(0,1,0,0,0,1);
@@ -54,10 +55,12 @@ function gain_experience(_enemy) {
     var _xp = _base_xp * _modifier;
 
     xp += _xp;
+    statistic.total_xp += _xp;
     var _level_gained = 0;
     while (xp >= xp_total) {
         xp -= xp_total;
         level++;
+        statistic.level_ups++;
         xp_total = get_xp_total(level);
         
         log_stat($"obj_player [gain_experience] level up -> {level}");
@@ -65,7 +68,11 @@ function gain_experience(_enemy) {
         audio_play_sound(snd_achieve, 8, false);
         
         hp_total += 2;
+        var _hp_begin = hp;
         hp = clamp(hp+3, 0, hp_total);
+        var _actual_healing = hp - _hp_begin;
+        statistic.healing_levelup += _actual_healing;
+        statistic.healing_levelup_count++;
         damage += .3;
     }
     if (_level_gained > 0) {
@@ -75,6 +82,7 @@ function gain_experience(_enemy) {
 
 function gain_talent(_num) {
     talent_points+= _num;
+    statistic.talent_gains += _num;
     
     var _inst = instance_create_layer(0, 0, "GUI", obj_talent_picker);
 }

@@ -13,8 +13,11 @@ if (doDamage) {
     
     doDamage = false;
     other.hp -= damage;
+    obj_player.statistic.damage_by_spiketrap += damage;
+    obj_player.statistic.damage_by_spiketrap_count++;
     
+    //TODO: sound effect
     spawn_effect(spr_blood_spill, other.x, other.y, 0.7*other.sprite_width, 0.7*other.sprite_width, other.depth-1, 0, 0, 1);
-    //sprite_add_ext()
+    
     alarm[3] = 0.2 * TIME_SECOND;
 }

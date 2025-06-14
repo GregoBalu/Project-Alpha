@@ -23,7 +23,27 @@ function take_damage(_amount, _did_crit) {
         _damaged_amount = clamp(_damaged_amount, 10*_amount, 0);
     }
     
+    var _hp_begin = data.hp;
     data.hp = clamp(data.hp - _damaged_amount, 0, data.hp_total);
+    var _actual_damage = _hp_begin - data.hp;
+    if (object_index == obj_battle_player) {
+        if (_actual_damage >= 0) {
+            data.statistic.damage_by_enemies += _actual_damage;
+            data.statistic.damage_by_enemies_count++;
+            if (_did_crit) {
+                data.enemy_crits++;
+            }
+        } else {
+            data.statistic.healing_lifesteal += abs(_actual_damage);
+            data.statistic.healing_lifesteal_count++;
+        }
+    } else {
+        obj_battle_player.data.statistic.damage_to_enemies += _actual_damage;
+        obj_battle_player.data.statistic.damage_to_enemies_count++;
+        if (_did_crit) {
+            obj_battle_player.data.statistic.crits++;
+        }
+    }
     if (data.hp < 0.1) {
         data.hp = 0;
     }

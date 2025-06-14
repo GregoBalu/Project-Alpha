@@ -11,8 +11,17 @@ _ver = lengthdir_y(_len, _dir);
 
 var _actual_move_speed = move_speed * sprint_modifier;
 
+var prevLoc = new Vec2(x, y);
 move_and_collide(_hor * _actual_move_speed, _ver * _actual_move_speed, collision_array, undefined, undefined, undefined, _actual_move_speed, _actual_move_speed);
+var newLoc = new Vec2(x, y);
 camera.follow_point = new Vec2(x, y);
+
+var _distTravelled = newLoc.distance(prevLoc);
+if (sprint_modifier > 1) {
+    statistic.distance_ran += _distTravelled;
+} else {
+    statistic.distance_walked += _distTravelled;
+}
 
 //var _vmat = camera_get_view_mat(view_camera[0]);
 audio_listener_set_position(0, x, y, 0);
@@ -114,5 +123,9 @@ else
 if (hp <= 0) {
     show_debug_message("You dead");
     log_stat($"obj_player [Step] dead");
-    game_restart();
+    
+    instance_create_layer(0,0, "Instances", obj_death, {
+        stat: self.statistic
+    });
+    room_goto(rm_stat);
 }

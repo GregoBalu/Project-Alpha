@@ -209,6 +209,11 @@ function add_corruption(_amount) {
     
     //TODO: add sound effect
     var _amt = _amount;
+    if (_amt > 0) {
+        statistic.corruption_gained += _amt;
+    } else {
+        statistic.corruption_lost += abs(_amt);
+    }
     
     _amt = _amt * (1.0-corruption_resistance);
     

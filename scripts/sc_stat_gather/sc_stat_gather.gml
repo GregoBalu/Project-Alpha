@@ -66,8 +66,10 @@ function log_highscore(_score) {
     var _file = file_text_open_append("highscore.dat");
     
     var _ct = date_current_datetime();
-    file_text_write_string(_file, $"01:{_ct}={_score}");
+    var _hi = new HighscoreItem(_ct, _score);
+    file_text_write_string(_file, json_stringify(_hi));
     file_text_writeln(_file);
+    delete _hi;
     
     file_text_close(_file);
 }
@@ -83,19 +85,13 @@ function get_highscores() {
     
     do {
         var _line = file_text_read_string(_file);
-        show_debug_message($"Read str: {_line}");
+        var _json = json_parse(_line);
         
-        var _a = string_split(_line, ":", false, 1);
-        var _version = _a[0];
-        if (_version == "01") {
-            var _b = string_split(_a[1], "=", false, 1);
-            var _time = _b[0];
-            var _score = _b[1];
-             show_debug_message($"Inserting tim={_time} score={_score}");
-            ds_list_add(_result, new HighscoreItem(real(_time), real(_score) ) );
-        } else {
-            show_debug_message($"Unkown highscore version: '{_version}'");
+        var _hi = new HighscoreItem(_json.time, _json.hscore);
+        if (global.highscore < _hi.hscore) {
+            global.highscore = _hi.hscore;
         }
+        ds_list_add(_result, _hi);
         
         file_text_readln(_file);
     } until(file_text_eof(_file));
@@ -142,5 +138,9 @@ function Statistic() constructor {
     distance_walked = 0;
     distance_ran = 0;
     
+    corruption_gained = 0;
+    corruption_lost = 0;
+    
+    start_time = date_current_datetime();
 }
 

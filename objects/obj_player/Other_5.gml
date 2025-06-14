@@ -11,7 +11,8 @@ if (instance_exists(obj_room_switcher)) {
         unlocked_talents: ds_list_create(),
         inventory: ds_map_create(),
         equipped_items: ds_map_create(),
-        coins: self.coins
+        coins: self.coins,
+        statistic: self.statistic
     };
     ds_list_copy(_inst.player_data.talents, self.talents);
     ds_list_copy(_inst.player_data.unlocked_talents, self.unlocked_talents);

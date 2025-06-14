@@ -1,5 +1,8 @@
 if (room == rm_stat) {
     
+    var _ct = date_current_datetime();
+    var _playtime_seconds = date_second_span(stat.start_time, _ct);
+    
     var _total_healing = stat.healing_cauldron + stat.healing_potion + stat.healing_lifesteal + stat.healing_levelup + stat.healing_other;
     var _total_damage_taken = stat.damage_by_spiketrap + stat.damage_by_poisontrap + stat.damage_by_speartrap + stat.damage_by_balltrap + stat.damage_by_tnt + stat.damage_by_enemies;
     var _total_damage_dealt = stat.damage_to_enemies;
@@ -16,6 +19,7 @@ if (room == rm_stat) {
     create_dialog([
         new dialog_entry("Death", c_white, spr_lamp, new dialog_text("You have died. Let's see what you have achieved in your short life:") ),
         new dialog_choice_entry("Death", c_white, spr_lamp, new dialog_text($"Score: {_score}  (Highscore: {global.highscore})"), [
+            new dialog_choice_text($"Total time played: {_playtime_seconds div 60}m {string_format(_playtime_seconds mod 60, 2, 0)}s", NOOP),
             new dialog_choice_text($"Total XP earned: {stat.total_xp}", NOOP),
             new dialog_choice_text($"Total level ups: {stat.level_ups}", NOOP),
             new dialog_choice_text($"Total talent points gained: {stat.talent_gains}"),
@@ -38,7 +42,9 @@ if (room == rm_stat) {
             new dialog_choice_text($"Total distance travelled: {_total_distance} units", NOOP),
                 new dialog_choice_text($"  |-Distance walked: {stat.distance_walked} units, {(_total_distance==0)?(0):(stat.distance_walked / _total_distance *100)}%", NOOP),
                 new dialog_choice_text($"  |-Distance ran: {stat.distance_ran} units, {(_total_distance==0)?(0):(stat.distance_ran / _total_distance *100)}%", NOOP),
-                
+            new dialog_choice_text($"Corruption", NOOP),
+                new dialog_choice_text($"  |-Total corruption gained: {stat.corruption_gained}", NOOP),
+                new dialog_choice_text($"  |-Total corruption lost: {stat.corruption_lost}", NOOP)
        ])
     ], true);
 }

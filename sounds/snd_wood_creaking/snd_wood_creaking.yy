@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_wood_creaking",
+  "audioGroupId":{
+    "name":"ag_sfx",
+    "path":"audiogroups/ag_sfx",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.92861676,
+  "name":"snd_wood_creaking",
+  "parent":{
+    "name":"sfx",
+    "path":"folders/Sounds/sfx.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_wood_creaking.wav",
+  "type":0,
+  "volume":1.0,
+}

@@ -17,6 +17,7 @@ if (can_pickup) {
             max_sway: 8,
             vertical_speed: 0.3
         });
+        audio_play_sound(snd_ding, 3, false);
         instance_destroy();
     } else {
         can_pickup = false;

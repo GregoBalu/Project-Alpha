@@ -23,7 +23,7 @@ function droppedItem(_item) {
 }
 
 function onBattleDamageReceived(_damaged_amount) {
-    
+    //TODO
 }
 
 function clone_from(_other) {

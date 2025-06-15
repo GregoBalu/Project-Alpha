@@ -6,7 +6,9 @@
   ],
   "managed":true,
   "name":"obj_item_resto_potion",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_item_pickup_base","path":"objects/obj_item_pickup_base/obj_item_pickup_base.yy",},"propertyId":{"name":"despawn_seconds","path":"objects/obj_item_pickup_base/obj_item_pickup_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0",},
+  ],
   "parent":{
     "name":"Items",
     "path":"folders/Objects/Items.yy",

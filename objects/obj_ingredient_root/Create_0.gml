@@ -3,6 +3,9 @@ event_inherited();
 
 healing_amount = 6;
 
+image_xscale = 0.8;
+image_yscale = 0.8;
+
 function onBrew() {
     var _hp_begin = obj_player.hp;
     obj_player.hp = clamp(obj_player.hp + healing_amount, 0, obj_player.hp_total);

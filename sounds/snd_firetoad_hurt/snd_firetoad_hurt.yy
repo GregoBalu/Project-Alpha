@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_firetoad_hurt",
+  "audioGroupId":{
+    "name":"ag_sfx",
+    "path":"audiogroups/ag_sfx",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.59104306,
+  "name":"snd_firetoad_hurt",
+  "parent":{
+    "name":"firetoad",
+    "path":"folders/Sounds/enemies/firetoad.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_firetoad_hurt.wav",
+  "type":0,
+  "volume":0.5,
+}

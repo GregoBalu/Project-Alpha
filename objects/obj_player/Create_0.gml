@@ -37,6 +37,8 @@ coins = 0;
 
 debug_visualize_mp_grid = false;
 statistic = new Statistic();
+footstep_audio = noone;
+last_footstep_frame = -1;
 
 
 audio_listener_orientation(0,1,0,0,0,1);
@@ -231,4 +233,9 @@ function add_corruption(_amount) {
             audio_play_sound(snd_ghost_whoosh, 6, false);
         }
     }
+}
+
+function onBattleDamageReceived(_damaged_amount) {
+    var _rand = choose(snd_player_hurt1, snd_player_hurt2, snd_player_hurt3);
+    audio_play_sound(_rand, 4, false, 1, 0, random_range(0.8, 1.1));
 }

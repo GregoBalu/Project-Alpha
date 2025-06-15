@@ -1,2 +1,0 @@
-previousPressed = isPressed;
-isPressed = false;

@@ -1,5 +1,6 @@
-previousPressed = false;
-isPressed = false;
+
+enum PressurePlateState { Pressed, NotPressed };
+state = PressurePlateState.NotPressed
 
 image_index = 0;
 image_speed = 0;

@@ -1,3 +1,7 @@
+function initOverworld() {
+    global.do_pause = false;
+}
+
 
 global.do_pause = false;
 

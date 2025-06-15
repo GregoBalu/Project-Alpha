@@ -10,9 +10,19 @@ door2 = tilemap_get_at_pixel(tilemap, x2, y2);
 On = function(_inst_id) {
     tilemap_set_at_pixel(tilemap, 0, x1, y1);
     tilemap_set_at_pixel(tilemap, 0, x2, y2);
+    
+    if (distance_to_object(obj_player) < 128) {
+        audio_falloff_set_model(audio_falloff_exponent_distance);
+        audio_play_sound_at(snd_sliding, x1, y1, 0, 0, 128, 2, false, 4, 0.3, 0, random_range(0.9, 1.1));
+    }
 };
 
 Off = function(_inst_id) {
     tilemap_set_at_pixel(tilemap, door1, x1, y1);
     tilemap_set_at_pixel(tilemap, door2, x2, y2);
+    
+    if (distance_to_object(obj_player) < 128) {
+        audio_falloff_set_model(audio_falloff_exponent_distance);
+        audio_play_sound_at(snd_sliding, x1, y1, 0, 0, 128, 2, false, 4, 0.3, 0, random_range(0.9, 1.1));
+    }
 };

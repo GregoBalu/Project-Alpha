@@ -31,7 +31,7 @@ function take_damage(_amount, _did_crit) {
             data.statistic.damage_by_enemies += _actual_damage;
             data.statistic.damage_by_enemies_count++;
             if (_did_crit) {
-                data.enemy_crits++;
+                data.statistic.enemy_crits++;
             }
         } else {
             data.statistic.healing_lifesteal += abs(_actual_damage);

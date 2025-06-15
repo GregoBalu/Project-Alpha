@@ -3,6 +3,7 @@ if (instance_exists(obj_dialog) || global.do_pause) exit;
 var _hor = (keyboard_check(global.input_right)?1:0) - (keyboard_check(global.input_left)?1:0);
 var _ver = (keyboard_check(global.input_down)?1:0) - (keyboard_check(global.input_up)?1:0);
 var sprint_modifier = keyboard_check(global.input_sprint)?1.5:1;
+image_speed = sprint_modifier;
 
 var _len = (_hor !=0 || _ver!=0);
 var _dir = point_direction(0,0, _hor, _ver);
@@ -25,6 +26,12 @@ if (sprint_modifier > 1) {
 
 //var _vmat = camera_get_view_mat(view_camera[0]);
 audio_listener_set_position(0, x, y, 0);
+//show_debug_message($"_distTravelled={_distTravelled} image_index={image_index}")
+if (_distTravelled > 0 && last_footstep_frame != round(image_index) && (round(image_index) mod 2) == 1) {
+    var _rand = choose(snd_player_footstep1, snd_player_footstep2);
+    footstep_audio = audio_play_sound(_rand, 4, false, 0.3, 0, random_range(0.5, 0.6));
+    last_footstep_frame = round(image_index);
+}
 
 if (tilemap_hurt != -1) {
     var _is_on_hurt_tile = (tilemap_get_at_pixel(tilemap_hurt, x, y) != 0) || 
@@ -85,6 +92,7 @@ if (_hor != 0 || _ver != 0)
 }
 else
 {
+    last_footstep_frame = -1;
     MOVING = false;
     if (sprite_index == spr_player_walk_down) {
         sprite_index = spr_player_idle_down;

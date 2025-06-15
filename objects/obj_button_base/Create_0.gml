@@ -14,3 +14,5 @@ text_color = c_black;
 
 enum ButtonState { Normal, Pressed, Hover };
 state = ButtonState.Normal;
+
+show_debug_message($"(instance_exists(obj_dialog)={instance_exists(obj_dialog)?"true":"false"} || global.do_pause={global.do_pause?"true":"false"}");

@@ -107,5 +107,10 @@ if (instance_exists(obj_room_switcher)) {
             depth : depth+10,
             persistent: true
         }));
+        ds_list_add(talents, instance_create_layer(0, 0, "GUI", obj_talent_interrupt_damage, {
+            visible : false,
+            depth : depth+10,
+            persistent: true
+        }));
     }
 }

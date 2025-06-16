@@ -35,15 +35,15 @@ battle = {
     cast_source_delta: new Vec2(-20, -sprite_height/2)
 };
 
-function initBattle() {
+initBattle = function() {
     //Override me
 }
 
-function doEnemyAction(_selfData, _playerData) {
+doEnemyAction = function(_selfData, _playerData) {
     //Override me
     return enemyWait(obj_battle_enemy);
 }
 
-function battleDraw() {
+battleDraw = function() {
     //Override me
 }

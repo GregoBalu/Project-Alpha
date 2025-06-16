@@ -47,7 +47,7 @@ audio_listener_orientation(0,1,0,0,0,1);
 * Calculate XP gain for player based on _enemy killed
 * @param {Id.Instance} _enemy Enemy that is killed.
 */
-function gain_experience(_enemy) {
+gain_experience = function(_enemy) {
     show_debug_message("gain_experience()");
     
     var _level_difference = _enemy.level - level;
@@ -82,21 +82,21 @@ function gain_experience(_enemy) {
     }
 }
 
-function gain_talent(_num) {
+gain_talent = function(_num) {
     talent_points+= _num;
     statistic.talent_gains += _num;
     
     var _inst = instance_create_layer(0, 0, "GUI", obj_talent_picker);
 }
 
-function change_shroud_mask(other_mask) {
+change_shroud_mask = function(other_mask) {
     log_stat($"obj_player [change_shroud_mask] {other_mask}");
     current_shroud_mask = other_mask;
     shroud_set_fog();
     shroud_clear_position(x, y, no_see_tilemaps, current_shroud_mask);
 }
 
-function change_orientation(_ori) {
+change_orientation = function(_ori) {
     if (orientation != _ori) {
         orientation = _ori;
         if (is_holding_item) {
@@ -105,14 +105,14 @@ function change_orientation(_ori) {
     }
 }
 
-function pickedUpItem(_item) {
+pickedUpItem = function(_item) {
     log_stat($"obj_player [pickedUpItem] {_item}");
     is_holding_item = true;
     held_item = _item;
     change_shroud_mask(blocking_shroud_mask_map[? orientation]);
 }
 
-function droppedItem(_item) {
+droppedItem = function(_item) {
     log_stat($"obj_player [droppedItem] {_item}");
     is_holding_item = false;
     held_item = undefined;
@@ -125,7 +125,7 @@ function droppedItem(_item) {
  * @param {Asset.InventorySlots} _slot Default Slot to add item to
  * @returns {bool} True if item is added to inventory, false if no space
  */
-function addToInventory(_obj, _slot = InventorySlots.Slot1) {
+addToInventory = function(_obj, _slot = InventorySlots.Slot1) {
     if (ds_map_exists(inventory, _slot)) {
         if (!ds_map_exists(inventory, InventorySlots.Slot1)) {
             _slot = InventorySlots.Slot1;
@@ -152,7 +152,7 @@ function addToInventory(_obj, _slot = InventorySlots.Slot1) {
     return true;
 }
 
-function equipItem(_fromInventorySlot) {
+equipItem = function(_fromInventorySlot) {
     if (!ds_map_exists(inventory, _fromInventorySlot)) {
         return;
     }
@@ -176,7 +176,7 @@ function equipItem(_fromInventorySlot) {
     equipped_items[?_eq_slot].equip();
 }
 
-function unequipItem(_equipSlot) {
+unequipItem = function(_equipSlot) {
     if (!ds_map_exists(equipped_items, _equipSlot)) {
         return false;
     }
@@ -202,7 +202,7 @@ function unequipItem(_equipSlot) {
     return true;
 }
 
-function add_corruption(_amount) {
+add_corruption = function(_amount) {
     if (_amount > 0 && corruption >= corruption_total ) {
         return;
     } else if (_amount < 0 && corruption <= 0) {
@@ -235,7 +235,7 @@ function add_corruption(_amount) {
     }
 }
 
-function onBattleDamageReceived(_damaged_amount) {
+onBattleDamageReceived = function(_damaged_amount) {
     var _rand = choose(snd_player_hurt1, snd_player_hurt2, snd_player_hurt3);
     audio_play_sound(_rand, 4, false, 1, 0, random_range(0.8, 1.1));
 }

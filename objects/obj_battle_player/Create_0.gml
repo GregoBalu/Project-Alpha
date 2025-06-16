@@ -13,6 +13,12 @@ data = obj_battle_switcher.player_data;
 attack_move = 2;
 attack_distance = 20;
 
+light_attacks_used = 0;
+heavy_attack_used = 0;
+wait_used = 0;
+interrupt_used = 0;
+ultimate_used = 0;
+
 play_attack_animation = function(_did_crit) {
     if (_did_crit) {
         attack_move = 3;

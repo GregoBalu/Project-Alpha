@@ -24,5 +24,4 @@ function onInterract() {
         exit;
     }
     loottable.generate_loot(random_range(bbox_left, bbox_right), random_range(ycenter, bbox_bottom), itemsLayer);
-    
 }

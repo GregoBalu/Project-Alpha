@@ -51,7 +51,7 @@ play_attack_animation = function(_did_crit) {
     }
 }
 
-function play_heavyattack_animation(_did_crit) {
+play_heavyattack_animation = function(_did_crit) {
     alarm[5] = 0;
     if (_did_crit) {
         battle_enemy_crit_noti.visible = true;
@@ -98,7 +98,7 @@ play_wait_animation = function() {
     }
 }
 
-function play_cast_animation(_did_crit) {
+play_cast_animation = function(_did_crit) {
     alarm[5] = 0;
     if (data.battle.animation_cast == noone) {
         if (_did_crit) {

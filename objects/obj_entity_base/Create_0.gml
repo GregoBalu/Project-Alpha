@@ -12,21 +12,21 @@ if (hp_total == 0) {
 
 is_holding_item = false;
 held_item = undefined;
-function pickedUpItem(_item) {
+pickedUpItem = function(_item) {
     is_holding_item = true;
     held_item = _item;
 }
 
-function droppedItem(_item) {
+droppedItem = function(_item) {
     is_holding_item = false;
     held_item = undefined;
 }
 
-function onBattleDamageReceived(_damaged_amount) {
+onBattleDamageReceived = function(_damaged_amount) {
     //TODO
 }
 
-function clone_from(_other) {
+clone_from = function(_other) {
     move_speed = _other.move_speed;
     default_move_speed = _other.default_move_speed;
     default_depth = _other.default_depth;
@@ -43,7 +43,7 @@ function clone_from(_other) {
     lifesteal = _other.lifesteal;
 }
 
-function clone_to(_other) {
+clone_to = function(_other) {
     _other.move_speed = move_speed;
     _other.default_move_speed = default_move_speed;
     _other.default_depth = default_depth;

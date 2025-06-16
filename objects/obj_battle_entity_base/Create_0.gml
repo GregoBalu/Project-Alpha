@@ -8,7 +8,7 @@ is_stunned = false;
  * @param {bool} _did_crit If the damage was a crit or not
  * @returns {real} The actual damage the entity took
  */
-function take_damage(_amount, _did_crit) {
+take_damage = function(_amount, _did_crit) {
     if (_amount == 0) {
         return 0;
     }
@@ -68,11 +68,11 @@ function take_damage(_amount, _did_crit) {
 }
 
 buffs = ds_list_create();
-function add_buff(_buff) {
+add_buff = function(_buff) {
     ds_list_add(buffs, _buff);
 }
 
-function tick_turn(_is_player_next_turn) {
+tick_turn = function(_is_player_next_turn) {
     for (var _i = 0; _i < ds_list_size(buffs);) {
         buffs[|_i].turn(_is_player_next_turn);
         if (buffs[|_i].remaining_turns == 0) {
@@ -83,7 +83,7 @@ function tick_turn(_is_player_next_turn) {
     }
 }
 
-function tick_stop() {
+tick_stop = function() {
     for (var _i = 0; _i < ds_list_size(buffs);) {
         buffs[|_i].stop();
         if (buffs[|_i].remaining_turns == 0) {

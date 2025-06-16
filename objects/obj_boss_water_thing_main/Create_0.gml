@@ -16,11 +16,11 @@ battle.idle_sound_min_seconds = 5;
 battle.idle_sound_max_seconds = 8;
 battle.cast_source_delta = new Vec2(0, 0);*/
 
-function initBattle() {
+initBattle = function() {
     //Override me
 }
 
-function doEnemyAction(_selfData, _playerData) {
+doEnemyAction = function(_selfData, _playerData) {
     //Override me
     if (lesser_tentacles_remaining > 0) {
         if (battle_state == 0) {
@@ -50,6 +50,6 @@ function doEnemyAction(_selfData, _playerData) {
     return enemyWait(obj_battle_enemy);
 }
 
-function battleDraw() {
+battleDraw = function() {
     //Override me
 }

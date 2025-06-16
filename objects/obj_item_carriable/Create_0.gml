@@ -15,7 +15,7 @@ _background_sprite_fps = 6;
 _background_sprite_refresh_rate = 60/_background_sprite_fps;
 
 
-function item_pickup(_othr) {
+item_pickup = function(_othr) {
     
     show_debug_message("Pickup carry");
     carried_by = _othr;
@@ -27,7 +27,7 @@ function item_pickup(_othr) {
     
 }
 
-function item_drop(_othr) {
+item_drop = function(_othr) {
     show_debug_message("Drop carry");
     carried_by.droppedItem(self);
     carried_by = noone;

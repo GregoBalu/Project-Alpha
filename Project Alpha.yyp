@@ -274,6 +274,7 @@
     {"id":{"name":"snd_ghost_special","path":"sounds/snd_ghost_special/snd_ghost_special.yy",},},
     {"id":{"name":"snd_ghost_whoosh","path":"sounds/snd_ghost_whoosh/snd_ghost_whoosh.yy",},},
     {"id":{"name":"snd_huh","path":"sounds/snd_huh/snd_huh.yy",},},
+    {"id":{"name":"snd_item_swap","path":"sounds/snd_item_swap/snd_item_swap.yy",},},
     {"id":{"name":"snd_melow1","path":"sounds/snd_melow1/snd_melow1.yy",},},
     {"id":{"name":"snd_paper_turn","path":"sounds/snd_paper_turn/snd_paper_turn.yy",},},
     {"id":{"name":"snd_player_footstep1","path":"sounds/snd_player_footstep1/snd_player_footstep1.yy",},},

@@ -18,11 +18,11 @@ battle.cast_source_delta = new Vec2(0, 0);
 
 alarm[5] = random_range(5, 10) * TIME_SECOND;
 
-function initBattle() {
+initBattle = function() {
     image_blend = color;
 }
 
-function doEnemyAction(_selfData, _playerData) {
+doEnemyAction = function(_selfData, _playerData) {
     var _select = random_range(0, 10);
         
     if (_selfData.charge_attack >= 1) _select++;
@@ -55,6 +55,6 @@ function doEnemyAction(_selfData, _playerData) {
     }
 }
 
-function onBattleDamageReceived(_damaged_amount) {
+onBattleDamageReceived = function(_damaged_amount) {
     audio_play_sound(snd_firetoad_hurt, 4, false, 1.0, 0, random_range(0.8, 1.1));
 }

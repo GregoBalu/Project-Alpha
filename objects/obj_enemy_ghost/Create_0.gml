@@ -3,7 +3,7 @@ event_inherited();
 
 audio_play_sound(snd_ghost_aggro, 5, false, 1.0, 0.3);
 
-function doEnemyAction(_selfData, _playerData) {
+doEnemyAction = function(_selfData, _playerData) {
     var _select = random_range(0, 10);
         
     if (_selfData.charge_attack >= 1) _select++;
@@ -37,6 +37,6 @@ function doEnemyAction(_selfData, _playerData) {
     }
 }
 
-function onBattleDamageReceived(_damaged_amount) {
+onBattleDamageReceived = function(_damaged_amount) {
     audio_play_sound(snd_ghost_damaged, 4, false, 1.0, 0.3);
 }

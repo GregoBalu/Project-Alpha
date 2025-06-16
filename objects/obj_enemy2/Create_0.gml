@@ -1,7 +1,7 @@
 // Inherit the parent event
 event_inherited();
 
-function doEnemyAction(_selfData, _playerData) {
+doEnemyAction = function(_selfData, _playerData) {
     if (_selfData.charge_util >= 1) {
         return enemyCastAcid(1.1, obj_battle_enemy);
     }

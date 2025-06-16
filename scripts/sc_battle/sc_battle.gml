@@ -271,13 +271,13 @@ function enemyHeavyAttack(_obj) {
     obj_battle_enemy.data.charge_attack -= 1;
             
     var _enemy_damage = calc_damage(obj_battle_enemy.data.damage*2, obj_battle_enemy.data.crit_chance);
-    var _animTime = BattleEnemyAttackAnimationTime;
+    //var _animTime = BattleEnemyAttackAnimationTime;
     
     var _actual_dmg = obj_battle_player.take_damage(_enemy_damage.damage, _enemy_damage.did_crit);
     if (obj_battle_enemy.data.lifesteal > 0) {
         obj_battle_enemy.take_damage(-_actual_dmg*obj_battle_enemy.data.lifesteal, _enemy_damage.did_crit);
     }
-    obj_battle_enemy.play_heavyattack_animation(_enemy_damage.did_crit);
+    var _animTime = obj_battle_enemy.play_heavyattack_animation(_enemy_damage.did_crit);
     
     obj_battle_enemy.data.charge_attack = clamp(obj_battle_enemy.data.charge_attack + .4, 0, obj_battle_enemy.data.charge_attack_total);
     
@@ -330,7 +330,7 @@ function get_xp_total(_level) {
 function BattleBuff(_turns, _data, _startFunc, _endFunc, _playerTurnPreFunc = undefined, _playerTurnPostFunc = undefined,
          _enemyTurnPreFunc = undefined, _enemyTurnPostFunc = undefined) constructor {
     max_turns = _turns;
-    remaining_turns = max_turns;
+    remaining_turns = max_turns; //If you need a buff to stop, set this to 0
     data = _data;
     start_func = _startFunc;
     end_func = _endFunc;
@@ -341,8 +341,8 @@ function BattleBuff(_turns, _data, _startFunc, _endFunc, _playerTurnPreFunc = un
             
     start_func(data);
     
-    function turn(_is_next_turn_player) {
-        if (remaining_turns == 0) return;
+    turn = function(_is_next_turn_player) {
+        if (remaining_turns <= 0) return;
         
         --remaining_turns;
         if (remaining_turns == 0) {
@@ -360,7 +360,7 @@ function BattleBuff(_turns, _data, _startFunc, _endFunc, _playerTurnPreFunc = un
         }
     }
             
-    function stop() {
+    stop = function() {
         end_func(data);
         remaining_turns = 0;
     }

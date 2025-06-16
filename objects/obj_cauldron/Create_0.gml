@@ -21,6 +21,7 @@ if (prefilled) {
 function onInterract() {
     audio_play_sound(snd_drink, 5, false, 1.1);
     ingredient.onBrew();
+    instance_destroy(ingredient);
     ingredient = noone;
     obj_player.add_corruption(corruption_amount);
 }

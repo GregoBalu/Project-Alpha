@@ -3,13 +3,13 @@ event_inherited();
 
 charge_turns_max = 3;
 
-function initBattle() {
+initBattle = function() {
     obj_battle_enemy.charge_started = false;
     obj_battle_enemy.charge_turns = charge_turns_max;
     obj_battle_enemy.turns_without_charge = 0;
 }
 
-function doEnemyAction(_selfData, _playerData) {
+doEnemyAction = function(_selfData, _playerData) {
     
     if (obj_battle_manager.turn < 2) {
         var _select = random_range(0, 2);
@@ -52,7 +52,7 @@ function doEnemyAction(_selfData, _playerData) {
     }
 }
 
-function battleDraw(_obj) {
+battleDraw = function(_obj) {
     if (obj_battle_enemy.charge_started) {
         
         var _x = _obj.x + 40;

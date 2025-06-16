@@ -21,6 +21,8 @@ for (var _i = 0; _i < ds_list_size(obj_battle_switcher.player_data.unlocked_tale
 }
 
 action = function() {
+    obj_battle_player.light_attacks_used++;
+    
     var res = calc_damage(obj_battle_player.data.damage, crit_chance);
     if (good_damage_percent < 1) {
         if (random_range(0, 1) < good_damage_percent) {

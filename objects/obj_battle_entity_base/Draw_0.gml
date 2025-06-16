@@ -3,7 +3,15 @@ draw_set_font(font_base);
 draw_self();
 
 if (is_stunned) {
-    draw_sprite_stretched(spr_battle_ko, 0, x-sprite_width, y-sprite_height, sprite_width, sprite_height);
+    //var _offset_x = sprite_get_xoffset(sprite_index);
+    var _offset_y = sprite_get_yoffset(sprite_index);
+    var _dx = x-sprite_width;
+    var _dy = y-(sprite_height*0.2);
+    if (_offset_y == 0) {
+        _dy = y-(sprite_height);
+    }
+    
+    draw_sprite(spr_battle_ko, 0, _dx, _dy);
 }
 
 var _x = xstart -20;

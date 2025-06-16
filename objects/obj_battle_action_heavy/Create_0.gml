@@ -19,6 +19,7 @@ hint = $"Heavy Attack [{key2str(hotkey)}]\nA charged up heavy attack.\nCost: {co
 action = function() {
     if (checkCost(cost_type, cost_amount)) {
         obj_battle_player.data.charge_attack -= cost_amount;
+        obj_battle_player.heavy_attack_used++;
         
         var res = calc_damage(obj_battle_player.data.damage*damage_modifier, obj_battle_player.data.crit_chance);
         var animTime = BattlePlayerAttackAnimationTime;

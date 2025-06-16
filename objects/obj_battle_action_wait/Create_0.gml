@@ -34,7 +34,10 @@ for (var _i = 0; _i < ds_list_size(obj_battle_switcher.player_data.unlocked_tale
 
 action = function() {
     var animTime = BattlePlayerWaitAnimationTime;
-    obj_battle_manager.player_turn(undefined, animTime);
+    
+    obj_battle_player.wait_used++;
+    show_debug_message("Wait");
+    
     obj_battle_player.play_wait_animation();
     
     if (lifesteal_duration > 0) {
@@ -58,6 +61,7 @@ action = function() {
         used_at = obj_battle_manager.turn;
     }
     
+    obj_battle_manager.player_turn(undefined, animTime);
     alarm[0] = (animTime + getBattleAfterActionCooldownSeconds()) * TIME_SECOND;
 }
 

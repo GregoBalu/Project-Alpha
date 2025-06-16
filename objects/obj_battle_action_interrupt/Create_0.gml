@@ -26,6 +26,8 @@ action = function() {
     if (checkCost(cost_type, cost_amount)) {
         obj_battle_player.data.charge_util -= cost_amount;
         
+        obj_battle_player.interrupt_used++;
+        
         var _did_crit = calc_crit(obj_battle_player.data.crit_chance);
         
         var animTime = BattlePlayerAttackAnimationTime;

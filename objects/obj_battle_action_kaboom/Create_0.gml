@@ -10,6 +10,8 @@ action = function() {
     obj_battle_player.data.charge_attack -= cost_amount;
     obj_battle_player.data.charge_util -= cost_amount;
     
+    obj_battle_player.ultimate_used++;
+    
     var res = calc_damage(obj_battle_player.data.damage*damage_multiplier, obj_battle_player.data.crit_chance*crit_multiplier);
     var animTime = BattlePlayerAttackAnimationTime;
     obj_battle_manager.player_turn(res, animTime);

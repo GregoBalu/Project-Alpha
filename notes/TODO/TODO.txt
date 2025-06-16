@@ -1,5 +1,8 @@
 TODO AND IDEAS
 
+Music:
+https://www.beepbox.co
+
 - Changeable Ultimate ability
     - Talent cost >=2
 
@@ -26,7 +29,6 @@ TODO AND IDEAS
     - Firetoad
         - cast sound
         - interrupt anim/sound?
-        - got hit sound
         - step sound
         - Heavy attack animation/sound
             - jump forward slam hard into the ground

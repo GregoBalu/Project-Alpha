@@ -2,6 +2,18 @@
 event_inherited();
 
 
+//battle.animation_attack: noone,
+//battle.animation_attack_fps: 1,
+//battle.animation_heavyattack: noone,
+//battle.animation_heavyattack_fps: 1,
+//battle.animation_wait: noone,
+//battle.animation_wait_fps: 1,
+battle.animation_cast = spr_water_thing_lesser_end_cast;
+battle.animation_cast_fps = 8;
+//battle.idle_sound: noone,
+//battle.idle_sound_min_seconds: 5,
+//battle.idle_sound_max_seconds: 10,
+
 
 
 

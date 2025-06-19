@@ -32,7 +32,10 @@ battle = {
     idle_sound_min_seconds: 5,
     idle_sound_max_seconds: 10,
     
-    cast_source_delta: new Vec2(-20, -sprite_height/2)
+    cast_source_delta: new Vec2(-20, -sprite_height/2),
+    
+    battle_screen_sprite: spr_battle_screen,
+    battle_screen_sprite_speed: 0.4
 };
 
 initBattle = function() {

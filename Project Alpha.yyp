@@ -297,6 +297,8 @@
     {"id":{"name":"spr_battle_clock","path":"sprites/spr_battle_clock/spr_battle_clock.yy",},},
     {"id":{"name":"spr_battle_crit","path":"sprites/spr_battle_crit/spr_battle_crit.yy",},},
     {"id":{"name":"spr_battle_ko","path":"sprites/spr_battle_ko/spr_battle_ko.yy",},},
+    {"id":{"name":"spr_battle_screen_cave_water","path":"sprites/spr_battle_screen_cave_water/spr_battle_screen_cave_water.yy",},},
+    {"id":{"name":"spr_battle_screen_cave","path":"sprites/spr_battle_screen_cave/spr_battle_screen_cave.yy",},},
     {"id":{"name":"spr_battle_screen_splitted","path":"sprites/spr_battle_screen_splitted/spr_battle_screen_splitted.yy",},},
     {"id":{"name":"spr_battle_screen","path":"sprites/spr_battle_screen/spr_battle_screen.yy",},},
     {"id":{"name":"spr_battle_sleep","path":"sprites/spr_battle_sleep/spr_battle_sleep.yy",},},

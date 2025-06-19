@@ -13,6 +13,8 @@ battle.animation_cast_fps = 8;
 //battle.idle_sound: noone,
 //battle.idle_sound_min_seconds: 5,
 //battle.idle_sound_max_seconds: 10,
+battle.battle_screen_sprite = spr_battle_screen_cave_water;
+battle.battle_screen_sprite_speed = 2;
 
 
 

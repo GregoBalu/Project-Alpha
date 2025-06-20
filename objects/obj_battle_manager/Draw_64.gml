@@ -1,6 +1,6 @@
 if (!battle_started) {
     display_set_gui_size(room_width, room_height);
-    draw_sprite(spr_battle_screen_splitted, background_subimg, 0, 0);
+    draw_sprite(obj_battle_enemy.data.battle.battle_screen_animated, background_subimg, 0, 0);
     
 } else {
     display_set_gui_size(room_width, room_height);

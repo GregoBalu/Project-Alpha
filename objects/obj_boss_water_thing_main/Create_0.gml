@@ -15,6 +15,8 @@ battle.idle_sound = snd_firetoad_idle;
 battle.idle_sound_min_seconds = 5;
 battle.idle_sound_max_seconds = 8;
 battle.cast_source_delta = new Vec2(0, 0);*/
+battle.battle_screen_sprite = spr_battle_screen_cave_water;
+battle.battle_screen_sprite_speed = 2;
 
 initBattle = function() {
     //Override me

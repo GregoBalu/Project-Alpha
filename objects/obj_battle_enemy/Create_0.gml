@@ -122,4 +122,4 @@ play_cast_animation = function(_did_crit) {
     }
 }
 
-data.initBattle();
+data.initBattle(self);

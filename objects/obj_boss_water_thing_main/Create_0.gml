@@ -16,9 +16,9 @@ battle.idle_sound_min_seconds = 5;
 battle.idle_sound_max_seconds = 8;
 battle.cast_source_delta = new Vec2(0, 0);*/
 battle.battle_screen_sprite = spr_battle_screen_cave_water;
-battle.battle_screen_sprite_speed = 2;
+battle.battle_screen_sprite_speed = 4;
 
-initBattle = function() {
+initBattle = function(_self) {
     //Override me
 }
 
@@ -42,16 +42,19 @@ doEnemyAction = function(_selfData, _playerData) {
             return _animTime;
         } else {
             battle_state = 0;
+            //TODO
             var _animTime = enemyWait(obj_battle_enemy);
             //TODO: audio
             return _animTime;
         }
     }
     
+    //TODO
+    
     
     return enemyWait(obj_battle_enemy);
 }
 
-battleDraw = function() {
+battleDraw = function(_self) {
     //Override me
 }

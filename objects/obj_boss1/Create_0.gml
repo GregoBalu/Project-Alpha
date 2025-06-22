@@ -3,7 +3,7 @@ event_inherited();
 
 charge_turns_max = 3;
 
-initBattle = function() {
+initBattle = function(_self) {
     obj_battle_enemy.charge_started = false;
     obj_battle_enemy.charge_turns = charge_turns_max;
     obj_battle_enemy.turns_without_charge = 0;

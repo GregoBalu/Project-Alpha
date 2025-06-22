@@ -19,7 +19,7 @@ battle.battle_screen_sprite_speed = 4;
 
 
 
-initBattle = function() {
+initBattle = function(_self) {
     obj_battle_enemy.base_stun_chance = 0.0;
     obj_battle_enemy.stun_chance = 0.5;
 }
@@ -109,6 +109,6 @@ doEnemyAction = function(_selfData, _playerData) {
     }
 }
 
-battleDraw = function() {
+battleDraw = function(_self) {
     //Override me
 }

@@ -6,6 +6,7 @@ if (wander_range > 0 && move_speed > 0) {
         if (mp_grid_path(global.mp_grid, _path, x, y, target_x, target_y, true)) {
             path_start(_path, move_speed, path_action_stop, false);
             using_path = true;
+            MOVING = true;
         } else {
             using_path = false;
             var _hor = clamp(target_x - x, -1, 1);

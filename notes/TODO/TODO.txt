@@ -13,12 +13,6 @@ https://www.beepbox.co
 - NPCs
     - Vendor
 
-- talent rework:
-    - cannot choose anymore
-    - every levelup, random selected 3, can choose 1
-    - playersheet shows the unlocked ones
-    - random special options:
-        - don't pick any, next lvlup will be more powerful talents
 
 - main menu (start new, exit)
     - Difficulty:  easy/medium/hard : starting stats
@@ -36,6 +30,8 @@ https://www.beepbox.co
         -new sprite
         -all animations
         -all sounds
+
+- New enemy3
         
 - cave boss and tentacles
     - moves

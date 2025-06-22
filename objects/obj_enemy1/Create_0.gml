@@ -14,16 +14,12 @@ battle.idle_sound = snd_firetoad_idle;
 battle.idle_sound_min_seconds = 5;
 battle.idle_sound_max_seconds = 8;
 battle.cast_source_delta = new Vec2(0, 0);
-if (room == rm_cave) {
-    battle.battle_screen_sprite = spr_battle_screen_cave;
-    battle.battle_screen_sprite_speed = 2;
-}
 
 
 alarm[5] = random_range(5, 10) * TIME_SECOND;
 
-initBattle = function() {
-    image_blend = color;
+initBattle = function(_self) {
+    _self.image_blend = color;
 }
 
 doEnemyAction = function(_selfData, _playerData) {

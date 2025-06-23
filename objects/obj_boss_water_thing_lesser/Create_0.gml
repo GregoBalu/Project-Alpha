@@ -52,7 +52,7 @@ doEnemyAction = function(_selfData, _playerData) {
                             original_damage: _enemy_damage,
                             did_free: false,
                             pre_wait_used: 0,
-                            sprite: spr_debug_16,
+                            sprite: spr_buff_squeeze,
                             hint: "You are being squeezed, you cannot breathe. You have to relax somehow ..."
                         },
                         function(_data){

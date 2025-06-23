@@ -1,7 +1,7 @@
 TODO AND IDEAS
 
 Music:
-https://www.beepbox.co
+[BeepBox](https://www.beepbox.co)
 
 - Changeable Ultimate ability
     - Talent cost >=2
@@ -9,9 +9,6 @@ https://www.beepbox.co
 - More Decor
 - Inventory
     - drag & drop func
-
-- NPCs
-    - Vendor
 
 
 - main menu (start new, exit)
@@ -27,9 +24,12 @@ https://www.beepbox.co
         - Heavy attack animation/sound
             - jump forward slam hard into the ground
     - enemy2
-        -new sprite
-        -all animations
-        -all sounds
+        - new sprite
+        - all animations
+        - all sounds
+    - Mimic
+        - all animations
+        - all sounds
 
 - New enemy3
         

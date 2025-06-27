@@ -3,6 +3,7 @@ if (instance_exists(obj_dialog)) exit;
 if (dialog != -1 && instance_exists(obj_player) && distance_to_object(obj_player) < talk_distance) {
     if (!can_talk) {
         can_talk = true;
+        talk_index = 0;
         obj_gui.show_talk++;
         if (!is_silent) {
             audio_play_sound_at(snd_huh, x, y, 0, 1, 16, 0.3, false, 5);
@@ -22,6 +23,11 @@ if (dialog != -1 && instance_exists(obj_player) && distance_to_object(obj_player
         can_talk = false;
         obj_gui.show_talk--;
     }
+}
+
+if (can_talk) {
+    talk_index += 0.125;
+    talk_index = talk_index mod 5;
 }
 
 if (do_wander) {

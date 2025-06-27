@@ -4,7 +4,15 @@ target_x = x;
 target_y = y;
 using_path = false;
 
-see_player = false
+see_player = false;
+
+animation = {
+    idle_stand: sprite_index,
+    walk_up: sprite_index,
+    walk_right: sprite_index,
+    walk_down: sprite_index,
+    walk_left: sprite_index
+};
 
 loot_point_offset = array_create(2);
 if (loot_point[0] == 0 && loot_point[1] == 0) {

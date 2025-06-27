@@ -1,4 +1,5 @@
 path_end();
+MOVING = false;
 
 if (wander_range > 0 && move_speed > 0) {
     if (instance_exists(obj_player) && point_distance(xstart,ystart,x,y)<(2*wander_range) &&
@@ -12,6 +13,7 @@ if (wander_range > 0 && move_speed > 0) {
         see_player = false;
         if(random_range(0, 10) < 3) {
             //stay put
+            MOVING = false;
         } else {
             target_x = random_range(xstart - wander_range, xstart + wander_range);
             target_y = random_range(ystart - wander_range, ystart + wander_range);

@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_firetoad",
-    "path":"sprites/spr_firetoad/spr_firetoad.yy",
+    "name":"spr_firetoad_idle",
+    "path":"sprites/spr_firetoad_idle/spr_firetoad_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

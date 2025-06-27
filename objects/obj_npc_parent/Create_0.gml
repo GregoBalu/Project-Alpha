@@ -6,6 +6,7 @@ can_talk = false;
 used_dialog = false;
 
 talk_distance = 8;
+talk_index = 0;
 
 target_x = x;
 target_y = y;

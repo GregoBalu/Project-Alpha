@@ -46,6 +46,46 @@ function Vec2(_x, _y) constructor {
 }
 
 enum Orientation { UP, UPRIGHT, RIGHT, DOWNRIGHT, DOWN, DOWNLEFT, LEFT, UPLEFT };
+function dir2Orientation(_dir) {
+    _dir = _dir mod 360;
+    if (337.5 <= _dir || _dir <= 22.5) {
+        return Orientation.RIGHT;
+    } else if (22.5 < _dir && _dir < 67.5) {
+        return Orientation.UPRIGHT;
+    } else if (67.5 <= _dir && _dir <= 112.5) {
+        return Orientation.UP;
+    } else if (112.5 < _dir && _dir < 157.5) {
+        return Orientation.UPLEFT;
+    } else if (157.5 <= _dir && _dir <= 202.5) {
+        return Orientation.LEFT;
+    } else if (202.5 < _dir && _dir < 247.5) {
+        return Orientation.DOWNLEFT;
+    } else if (247.5 <= _dir && _dir <= 292.5) {
+        return Orientation.DOWN;
+    } else if (292.5 < _dir && _dir < 337.5) {
+        return Orientation.DOWNRIGHT;
+    }
+}
+function Orientation2Str(_ori) {
+    switch (_ori) {
+        case Orientation.UP:
+            return "UP";
+        case Orientation.UPRIGHT:
+            return "UPRIGHT";
+        case Orientation.UPLEFT:
+            return "UPLEFT";
+        case Orientation.RIGHT:
+            return "RIGHT";
+        case Orientation.DOWNRIGHT:
+            return "DOWNRIGHT";
+        case Orientation.DOWN:
+            return "DOWN";
+        case Orientation.DOWNLEFT:
+            return "DOWNLEFT";
+        case Orientation.LEFT:
+            return "LEFT";
+    }
+}
 
 /**
  * Function Description

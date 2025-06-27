@@ -9,7 +9,7 @@ enum BattleEnemyEvents {
 #macro BattleEnemyWaitAnimationTime    0.8
 
 data = obj_battle_switcher.enemy_data;
-sprite_index = data.sprite_index;
+sprite_index = data.animation.idle_stand;
 image_xscale = data.image_xscale;
 image_yscale = data.image_yscale;
 

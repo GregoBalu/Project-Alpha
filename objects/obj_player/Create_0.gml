@@ -14,7 +14,6 @@ xp_total = get_xp_total(level);
 
 unlocked_talents = ds_list_create();
 
-orientation = Orientation.DOWN;
 sprite_index = spr_player_idle_down;
 
 tilemap_hurt=layer_tilemap_get_id("Tiles_Back_Hurt");

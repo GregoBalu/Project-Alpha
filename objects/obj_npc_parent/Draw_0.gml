@@ -7,6 +7,6 @@ draw_circle_color(xstart, ystart, wander_range, c_blue, c_blue, true);
 draw_circle_color(xstart, ystart, wander_range*2, c_yellow, c_yellow, true);*/
 
 if (can_talk && !instance_exists(obj_dialog)) {
-    draw_sprite(spr_talk, 0, x, y -16);
+    draw_sprite(spr_talk, talk_index, x, y -16);
     
 }

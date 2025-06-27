@@ -4,6 +4,11 @@ event_inherited();
 color = choose(#FFFFFF, #FFEEEE, #FFDDDD, #FFCCCC);
 image_blend = color;
 
+animation.walk_down = spr_firetoad_down;
+animation.walk_up = spr_firetoad_up;
+animation.walk_right = spr_firetoad_down;
+animation.walk_left = spr_firetoad_down;
+
 battle.animation_attack = spr_firetoad_attack;
 battle.animation_attack_fps = 20;
 battle.animation_wait = spr_firetoad_wait;

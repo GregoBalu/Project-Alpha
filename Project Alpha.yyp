@@ -464,6 +464,7 @@
     {"id":{"name":"spr_talk","path":"sprites/spr_talk/spr_talk.yy",},},
     {"id":{"name":"spr_teleport","path":"sprites/spr_teleport/spr_teleport.yy",},},
     {"id":{"name":"spr_tileset_cave","path":"sprites/spr_tileset_cave/spr_tileset_cave.yy",},},
+    {"id":{"name":"spr_tileset_orig","path":"sprites/spr_tileset_orig/spr_tileset_orig.yy",},},
     {"id":{"name":"spr_tileset","path":"sprites/spr_tileset/spr_tileset.yy",},},
     {"id":{"name":"spr_title","path":"sprites/spr_title/spr_title.yy",},},
     {"id":{"name":"spr_tnt","path":"sprites/spr_tnt/spr_tnt.yy",},},

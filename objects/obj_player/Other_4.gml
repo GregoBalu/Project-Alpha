@@ -33,7 +33,7 @@ if (instance_exists(obj_room_switcher)) {
     ds_map_copy(inventory, _inst.player_data.inventory);
     ds_map_copy(equipped_items, _inst.player_data.equipped_items);
     coins = _inst.player_data.coins;
-    statistic = _inst.statistic;
+    statistic = _inst.player_data.statistic;
 } else {
     {
         ds_list_add(talents, instance_create_layer(0, 0, "GUI", obj_talent_heavy_cheap, {

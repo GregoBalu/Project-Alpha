@@ -121,6 +121,142 @@ function ItemDrop(_obj, _struct, _uniq, _enab = true) : RDObject("Item", _uniq, 
     }
 }
 
+enum KeyColor { Red, Blue, Green, Yellow, Purple };
+
+function keyColor2Color(_kc) {
+    switch (_kc) {
+        case KeyColor.Red:
+            return c_red;
+        case KeyColor.Blue:
+            return c_blue;
+        case KeyColor.Green:
+            return c_green;
+        case KeyColor.Yellow:
+            return c_yellow;
+        case KeyColor.Purple:
+            return c_purple;
+        default:
+            return c_white;
+    }
+}
+
+function keyColor2Str(_kc) {
+    switch (_kc) {
+        case KeyColor.Red:
+            return "red";
+        case KeyColor.Blue:
+            return "blue";
+        case KeyColor.Green:
+            return "green";
+        case KeyColor.Yellow:
+            return "yellow";
+        case KeyColor.Purple:
+            return "purple";
+        default:
+            return "no";
+    }
+}
+
+function KeyRing() constructor {
+    hasRed = false;
+    hasBlue = false;
+    hasGreen = false;
+    hasYellow = false;
+    hasPurple = false;
+    
+    has = function(_kc) {
+        switch (_kc) {
+        case KeyColor.Red:
+            return hasRed;
+        case KeyColor.Blue:
+            return hasBlue;
+        case KeyColor.Green:
+            return hasGreen;
+        case KeyColor.Yellow:
+            return hasYellow;
+        case KeyColor.Purple:
+            return hasPurple;
+        default:
+            return false;
+        }
+    }
+    
+    add = function(_kc) {
+        switch (_kc) {
+        case KeyColor.Red:
+            hasRed = true;
+            break;
+        case KeyColor.Blue:
+            hasBlue = true;
+            break;
+        case KeyColor.Green:
+            hasGreen = true;
+            break;
+        case KeyColor.Yellow:
+            hasYellow = true;
+            break;
+        case KeyColor.Purple:
+            hasPurple = true;
+            break;
+        }
+    }
+    
+    remove = function(_kc) {
+        switch (_kc) {
+        case KeyColor.Red:
+            hasRed = false;
+            break;
+        case KeyColor.Blue:
+            hasBlue = false;
+            break;
+        case KeyColor.Green:
+            hasGreen = false;
+            break;
+        case KeyColor.Yellow:
+            hasYellow = false;
+            break;
+        case KeyColor.Purple:
+            hasPurple = false;
+            break;
+        }
+    }
+    
+    count = function() {
+        var _res = 0;
+        if (hasRed) _res++;
+        if (hasBlue) _res++;
+        if (hasGreen) _res++;
+        if (hasYellow) _res++;
+        if (hasPurple) _res++;
+            
+        return _res;
+    }
+    
+    hint = function() {
+        var _res = "";
+        if (hasRed) {
+            _res += "Red key";
+        }
+        if (hasBlue) {
+            if (string_length(_res) > 0) { _res += "\n"}
+            _res += "Blue key";
+        }
+        if (hasGreen) {
+            if (string_length(_res) > 0) { _res += "\n"}
+            _res += "Green key";
+        }
+        if (hasYellow) {
+            if (string_length(_res) > 0) { _res += "\n"}
+            _res += "Yellow key";
+        }
+        if (hasPurple) {
+            if (string_length(_res) > 0) { _res += "\n"}
+            _res += "Purple key";
+        }
+        return _res;
+    }
+}
+
 
 
 

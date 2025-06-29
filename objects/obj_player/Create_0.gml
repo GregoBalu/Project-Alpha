@@ -39,6 +39,8 @@ statistic = new Statistic();
 footstep_audio = noone;
 last_footstep_frame = -1;
 
+key_ring = new KeyRing();
+
 
 audio_listener_orientation(0,1,0,0,0,1);
 

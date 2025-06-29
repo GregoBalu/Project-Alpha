@@ -1,7 +1,7 @@
 // Inherit the parent event
 event_inherited();
 
-function onBrew() {
+onBrew = function() {
     var _rand = floor(random_range(0, 6.999));//7seed on bush
     show_debug_message($"gregseed rand={_rand}");
     switch (_rand) {

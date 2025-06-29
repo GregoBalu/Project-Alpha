@@ -71,7 +71,7 @@ function dialog_choice_text(_text, _on_click_action, _cond_action = function() {
     }
     
     _clickAction = _on_click_action;
-    function onClick() {
+    onClick = function() {
         _clickAction();
     }
     
@@ -158,6 +158,10 @@ global.dialog_welcome_alt = [
 global.dialog_hint_talent_star = [
     new dialog_entry("Talent Star", c_white, undefined, new dialog_text($"This is a talent star. You can pick it up to to gain a talent point and be able to choose a talent just like when you would level up.") )
 ]
+
+global.dialog_hint_yellow_key = [
+    new dialog_entry("Yellow key", c_yellow, spr_key, new dialog_text("This is a yellow key. It opens the yellow door. Now where might that door be ...") ),
+ ]
 
 global.dialog_hint_cauldron = [
     new dialog_entry("Cauldron", c_white, spr_cauldron, new dialog_text("This is a cauldron. It's used by witches to brew potions and soup.") ),

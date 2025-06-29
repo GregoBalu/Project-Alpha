@@ -6,7 +6,7 @@ event_inherited();
  * @param {any*} othr  Instance that picked up
  * @returns {bool} Whether the pickup succeeded or not.
  */
-function onPickup(othr) {
+onPickup = function(othr) {
     othr.gain_talent(1);
      
     return true;

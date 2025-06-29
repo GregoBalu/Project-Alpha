@@ -14,7 +14,7 @@ if (loottable == noone || !instance_exists(loottable)) {
 }
 
 
-function onInterract() {
+onInterract = function() {
     image_index = 1;
     
     audio_play_sound(snd_wood_creaking, 4, false, 1.0, 0, random_range(0.8, 1.1));

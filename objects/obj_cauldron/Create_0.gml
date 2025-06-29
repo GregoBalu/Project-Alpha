@@ -18,7 +18,7 @@ if (prefilled) {
     state = InterractItemState.Interracted;
 }
 
-function onInterract() {
+onInterract = function() {
     audio_play_sound(snd_drink, 5, false, 1.1);
     ingredient.onBrew();
     instance_destroy(ingredient);

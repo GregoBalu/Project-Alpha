@@ -30,7 +30,7 @@ if (pickup_delay_seconds > 0) {
  * @param {any*} othr  Instance that picked up
  * @returns {bool} Whether the pickup succeeded or not.
  */
-function onPickup(othr) {
+onPickup = function(othr) {
     //show_debug_message("Pickup base");
     return false;
 }

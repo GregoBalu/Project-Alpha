@@ -2,6 +2,8 @@ default_move_speed = move_speed;
 default_depth = depth;
 MOVING = false;
 
+immobilized = false;
+
 orientation = Orientation.DOWN;
 
 collision_tilemaps = [layer_tilemap_get_id("Tiles_Col_Invis"), layer_tilemap_get_id("Tiles_Col")];

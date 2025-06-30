@@ -1,6 +1,6 @@
 if (instance_exists(obj_dialog)) exit;
 
-if (wander_range > 0 && move_speed > 0) {
+if (wander_range > 0 && move_speed > 0 && !immobilized) {
     if (path_index == -1) {
         var _path = path_add();
         if (mp_grid_path(global.mp_grid, _path, x, y, target_x, target_y, true)) {

@@ -369,6 +369,7 @@
     {"name":"inst_4D10D594","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_34F4EEBA","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_2898B1B5","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_176F44A9","path":"rooms/Room1/Room1.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -463,6 +464,7 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_hint_trigger","path":"objects/obj_hint_trigger/obj_hint_trigger.yy",},"propertyId":{"name":"hint_dialog","path":"objects/obj_hint_trigger/obj_hint_trigger.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"global.dialog_hint_yellow_key",},
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_hint_trigger","path":"objects/obj_hint_trigger/obj_hint_trigger.yy",},"propertyId":{"name":"hint_id","path":"objects/obj_hint_trigger/obj_hint_trigger.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"yellow_key",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.890625,"scaleY":0.75,"x":571.5,"y":220.0,},
+        {"$GMRInstance":"v2","%Name":"inst_176F44A9","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_176F44A9","objectId":{"name":"obj_painting_frog","path":"objects/obj_painting_frog/obj_painting_frog.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":495.0,"y":321.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":true,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Items","depth":600,"effectEnabled":true,"effectType":null,"gridX":8,"gridY":8,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v2","%Name":"inst_5E30C116","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5E30C116","objectId":{"name":"obj_item_health_potion","path":"objects/obj_item_health_potion/obj_item_health_potion.yy",},"properties":[

@@ -11,7 +11,9 @@ if (can_pickup) {
         
         if (keyboard_check_pressed(global.input_use)) {
             if (carried_by == noone) {
-                item_pickup(obj_player);
+                if (obj_player.held_item == undefined) {
+                    item_pickup(obj_player);
+                }
             } else {
                 item_drop(obj_player);
             }

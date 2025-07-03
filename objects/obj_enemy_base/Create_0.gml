@@ -47,7 +47,7 @@ battle = {
     battle_screen_animated: spr_battle_screen_splitted
 };
 if (room == Room1) {
-    battle.battle_screen_sprite = spr_battle_screen;
+    battle.battle_screen_sprite = spr_battle_screen_dungeon;
     battle.battle_screen_sprite_speed = 1;
     battle.battle_screen_animated = spr_battle_screen_splitted;
 } else if (room == rm_cave) {

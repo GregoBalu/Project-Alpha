@@ -1,3 +1,5 @@
+handled_action = false;
+
 
 if (can_pickup) {
     
@@ -12,11 +14,12 @@ if (can_pickup) {
         if (keyboard_check_pressed(global.input_use)) {
             if (carried_by == noone) {
                 if (obj_player.held_item == undefined) {
+                    handled_action = true;
                     item_pickup(obj_player);
                 }
-            } else {
+            }/* else {
                 item_drop(obj_player);
-            }
+            }*/
         }
     } else {
         if (lastShowState) {

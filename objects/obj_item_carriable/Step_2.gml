@@ -1,3 +1,9 @@
+
+if (!handled_action && carried_by != noone && keyboard_check_pressed(global.input_use)) {
+    item_drop(obj_player);
+}
+
+
 if (carried_by != noone) {
     
     var _xoffset = 0;

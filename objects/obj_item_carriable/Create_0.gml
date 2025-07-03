@@ -9,6 +9,7 @@ carried_by = noone;
 //yoffset = 0;
 offset = 0;
 originalDepth = depth;
+handled_action = false;
 
 _background_sprite_time = 0;
 _background_sprite_fps = 6;

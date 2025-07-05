@@ -1,0 +1,1 @@
+obj_fish_manager.returnRoom();

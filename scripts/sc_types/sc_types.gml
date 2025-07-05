@@ -16,21 +16,21 @@ function Vec2(_x, _y) constructor {
      * @param {Vec2} _other The other Vec2 to compare to.
      * @returns {Real} Direction of the other Vec2 compared to this Vec2.
      */ 
-    function direction(_other) {
+    direction = function(_other) {
         return point_direction(x, y, _other.x, _other.y);
     }
     
-    function add(_len_x, _len_y, _dir) {
+    add = function(_len_x, _len_y, _dir) {
         var _diff_x = lengthdir_x(_len_x, _dir);
         var _diff_y = lengthdir_y(_len_y, _dir);
         return new Vec2(x+_diff_x,y+_diff_y);
     }
     
-    function add(vec2) {
+    add = function(vec2) {
         return new Vec2(x+vec2.x, y+vec2.y);
     }
     
-    function rotateAntiClockwise(_deg) {
+    rotateAntiClockwise = function(_deg) {
         var old_x = x;
         var old_y = y;
         var cos_v = cos(_deg);
@@ -40,7 +40,12 @@ function Vec2(_x, _y) constructor {
         y = old_x*sin_v + old_y*cos_v;
     }
     
-    function distance(_other) {
+    /**
+     * Returns the distance from this point to another point.
+     * @param {Vec2} _other The other Vec2 to compare to.
+     * @returns {Real} The distance.
+     */
+    distance = function(_other) {
         return point_distance(x, y, _other.x, _other.y);
     }
 }

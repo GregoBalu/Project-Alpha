@@ -1,3 +1,7 @@
+if (instance_exists(obj_fish_switcher)) {
+    statistic.fish_caught += obj_fish_switcher.fish_caught;
+}
+
 if (!firstRoomEnter) exit;
     
 firstRoomEnter = false;

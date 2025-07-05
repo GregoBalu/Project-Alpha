@@ -31,6 +31,8 @@ function close_stats_gather_file() {
 
 function log_stat(_str) {
     
+    show_debug_message(_str);
+    
     /*if (!global.do_gather_stat) {
         exit;
     }
@@ -140,6 +142,8 @@ function Statistic() constructor {
     
     corruption_gained = 0;
     corruption_lost = 0;
+    
+    fish_caught = 0;
     
     start_time = date_current_datetime();
 }

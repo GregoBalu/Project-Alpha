@@ -1,0 +1,20 @@
+{
+  "$GMPath":"",
+  "%Name":"pth_fish_tnt",
+  "closed":false,
+  "kind":1,
+  "name":"pth_fish_tnt",
+  "parent":{
+    "name":"Fish",
+    "path":"folders/Paths/Fish.yy",
+  },
+  "points":[
+    {"speed":200.0,"x":49.0,"y":174.0,},
+    {"speed":150.0,"x":57.0,"y":102.5,},
+    {"speed":140.0,"x":112.0,"y":64.0,},
+    {"speed":100.0,"x":136.69016,"y":64.19484,},
+  ],
+  "precision":4,
+  "resourceType":"GMPath",
+  "resourceVersion":"2.0",
+}

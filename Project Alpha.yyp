@@ -151,6 +151,7 @@
     {"id":{"name":"obj_fish_return","path":"objects/obj_fish_return/obj_fish_return.yy",},},
     {"id":{"name":"obj_fish_switcher","path":"objects/obj_fish_switcher/obj_fish_switcher.yy",},},
     {"id":{"name":"obj_fish_target","path":"objects/obj_fish_target/obj_fish_target.yy",},},
+    {"id":{"name":"obj_fish_throwable_base","path":"objects/obj_fish_throwable_base/obj_fish_throwable_base.yy",},},
     {"id":{"name":"obj_fish_tnt","path":"objects/obj_fish_tnt/obj_fish_tnt.yy",},},
     {"id":{"name":"obj_flowing_water","path":"objects/obj_flowing_water/obj_flowing_water.yy",},},
     {"id":{"name":"obj_gui","path":"objects/obj_gui/obj_gui.yy",},},

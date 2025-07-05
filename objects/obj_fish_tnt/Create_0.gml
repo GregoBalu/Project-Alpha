@@ -1,10 +1,9 @@
+event_inherited();
+
 explosion_id = -1;
 audio_id = -1;
 explosion_radius = 16;
 
-show_debug_message($"Started tnt fish");
-path_start(path, 1, path_action_stop, true);
-show_debug_message($"Fish start TNT: {x},{y}");
 
 function explode(){
     show_debug_message("Fish TNT explode");
@@ -14,4 +13,8 @@ function explode(){
     alarm[1] = 0.2 * TIME_SECOND;
     
     alarm[0] = 0.5 * TIME_SECOND;
+}
+
+onPathEnd = function() {
+    explode();
 }

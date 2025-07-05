@@ -1,22 +1,24 @@
-if (following_path) {
-    image_angle += 2;
-    exit;
-}
+event_inherited();
+
+if (following_path) exit;
     
-if (distance_to_point(target.x, target.y) < 5) {
+if (skip_bounce_frame == 0 && (bbox_left <= bouncing_margin || bbox_top <= bouncing_margin || bbox_right >= room_width-bouncing_margin || bbox_bottom >= room_height-bouncing_margin)) {
     generate_new_target();
+    skip_bounce_frame = 10;
 }
 
-var _dx = target.x - x;
-var _dy = target.y - y;
-//var _len = point_distance(x, y, target.x, target.y);
+if (skip_bounce_frame > 0) {
+    skip_bounce_frame--;
+}
 
+speed = 1;
+direction = target_dir;
 
-//move_and_collide(_dx, _dy, , undefined, undefined, undefined, current_speed, current_speed);
-move_towards_point(target.x, target.y, 1);
-
-if (collision_circle(x, y, sprite_width/2, obj_fish_target, true, true)) {
+if (distance_to_object(obj_fish_target) <= 2) {
+    //show_debug_message("Ball Pushed")
+    var _dist = 2;
     var _dir = point_direction(x, y, obj_fish_target.x, obj_fish_target.y);
-    obj_fish_target.x += lengthdir_x(1, _dir);
-    obj_fish_target.y += lengthdir_y(1, _dir);
+    with (obj_fish_target) {
+        move_and_collide(lengthdir_x(_dist, _dir), lengthdir_y(_dist, _dir), [], undefined, undefined, undefined, _dist, _dist);
+    }
 }

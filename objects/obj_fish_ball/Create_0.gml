@@ -1,28 +1,24 @@
+event_inherited();
 
-path = path_add();
-path_set_kind(path, 1);
-path_set_closed(path, false);
-var _side_start = random_range(0,1);
-if (_side_start < 0.25) {
-    path_add_point(path, 0, random_range(0, room_height), 100);
-} else if (_side_start < 0.5) {
-    path_add_point(path, room_width, random_range(0, room_height), 100);
-} else if (_side_start < 0.75) {
-    path_add_point(path, random_range(0, room_height), 0, 100);
-} else {
-    path_add_point(path, random_range(0, room_height), room_height, 100);
-}
-path_add_point(path, x, y, 200);
-following_path = true;
-path_start(path, 100, path_action_stop, true);
 
-target = new Vec2(0, 0);
+target_dir = random_range(0, 360);
+bouncing_margin = 2;
+skip_bounce_frame = 0;
 
 generate_new_target = function() {
-    delete target;
-    target = new Vec2(random_range(obj_fish_manager.room_margin, room_width-obj_fish_manager.room_margin), random_range(obj_fish_manager.room_margin, room_height-obj_fish_manager.room_margin));
+    
+    if (bbox_left <= bouncing_margin) {
+        target_dir = ((90 - target_dir) + 90 + random_range(0,30)) % 360;
+    } else if (bbox_top <= bouncing_margin) {
+        target_dir = ((0 - target_dir) + 0 + random_range(0,30)) % 360;
+    } else if (bbox_right >= room_width-bouncing_margin) {
+        target_dir = ((90 - target_dir) + 90 + random_range(0,30)) % 360;
+    } else /*bbox_bottom >= room_height-bouncing_margin*/ {
+        target_dir = ((0 - target_dir) + 0 + random_range(0,30)) % 360;
+    }
+    
 }
 
-generate_new_target();
-
-alarm[0] = life;
+onPathEnd = function() {
+    alarm[0] = life;
+}

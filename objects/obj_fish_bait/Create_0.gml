@@ -1,3 +1,5 @@
+event_inherited();
 
-path_start(path, 1, path_action_stop, true);
-following_path = true;
+onPathEnd = function() {
+    obj_fish_manager.alarm[0] = random_range(2,3)*TIME_SECOND;
+}

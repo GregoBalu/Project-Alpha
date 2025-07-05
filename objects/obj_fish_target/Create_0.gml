@@ -5,5 +5,5 @@ enabled = true;
 
 time = 0;
 
-collision_array = [obj_fish_ball];
+collision_array = [];
 

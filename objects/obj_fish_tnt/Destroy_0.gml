@@ -1,1 +1,0 @@
-show_debug_message($"Fish end TNT: {x},{y}");

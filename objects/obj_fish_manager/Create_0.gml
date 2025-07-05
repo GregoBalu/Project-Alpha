@@ -33,14 +33,9 @@ dropTnt = function() {
     target = noone;
     fish.enabled = false;
 
-    var _last = new Vec2(path_get_point_x(pth_fish_tnt, 2), path_get_point_y(pth_fish_tnt, 2));
-    var _dist = _last.distance(new Vec2(fish.x, fish.y));
-    
-    path_delete_point(pth_fish_tnt, 3);
-    path_add_point(pth_fish_tnt, fish.x, fish.y, _dist>100?300:150);
-
     instance_create_layer(0, 0, "Instances", obj_fish_tnt, {
-        path: pth_fish_tnt
+        target_x: fish.x,
+        target_y: fish.y
     })
 
     

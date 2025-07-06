@@ -8,11 +8,13 @@ see_player = false;
 
 animation = {
     idle_stand: sprite_index,
+    isFirstStand: true,
     walk_up: sprite_index,
     walk_right: sprite_index,
     walk_down: sprite_index,
     walk_left: sprite_index
 };
+
 
 loot_point_offset = array_create(2);
 if (loot_point[0] == 0 && loot_point[1] == 0) {

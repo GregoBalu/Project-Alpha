@@ -1,4 +1,7 @@
 if (MOVING) {
+    if (!animation.isFirstStand) {
+        animation.isFirstStand = true;
+    }
     if (xprevious != x || yprevious != y) {
         var _dir = point_direction(xprevious, yprevious, x, y);
         var _new_ori = dir2Orientation(_dir);
@@ -28,9 +31,12 @@ if (MOVING) {
         }
     }
 } else if (!MOVING) {
-    if (DEBUG) {
-        show_debug_message($"Enemy standing");
+    if (animation.isFirstStand) {
+        if (DEBUG) {
+            show_debug_message($"Enemy standing");
+        }
+        animation.isFirstStand = false;
+        sprite_index = animation.idle_stand;
+        image_index = 0;
     }
-    sprite_index = animation.idle_stand;
-    image_index = 0;
 }

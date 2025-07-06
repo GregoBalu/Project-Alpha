@@ -44,7 +44,10 @@ if (room == rm_stat) {
                 new dialog_choice_text($"  |-Distance ran: {stat.distance_ran} units, {(_total_distance==0)?(0):(stat.distance_ran / _total_distance *100)}%", NOOP),
             new dialog_choice_text($"Corruption", NOOP),
                 new dialog_choice_text($"  |-Total corruption gained: {stat.corruption_gained}", NOOP),
-                new dialog_choice_text($"  |-Total corruption lost: {stat.corruption_lost}", NOOP)
+                new dialog_choice_text($"  |-Total corruption lost: {stat.corruption_lost}", NOOP),
+            new dialog_choice_text($"Total fish lured: {stat.fish_caught+stat.fish_missed}", NOOP),
+                new dialog_choice_text($"  |-Total fish caught: {stat.fish_caught}", NOOP),
+                new dialog_choice_text($"  |-Total fish got away: {stat.fish_missed}", NOOP)
        ])
     ], true);
 }

@@ -3,6 +3,13 @@ if (!enabled) {
     exit;
 }
 
+--timer;
+if (timer <= 0) {
+    obj_fish_manager.fishGotAway();
+    instance_destroy();
+    exit;
+}
+
 if (distance_to_point(target.x, target.y) < 5) {
     generate_new_target();
 }

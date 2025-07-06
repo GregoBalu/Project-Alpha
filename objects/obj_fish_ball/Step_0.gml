@@ -11,8 +11,8 @@ if (skip_bounce_frame > 0) {
     skip_bounce_frame--;
 }
 
-speed = 1;
-direction = target_dir;
+//speed = 1;
+//direction = target_dir;
 
 if (distance_to_object(obj_fish_target) <= 2) {
     //show_debug_message("Ball Pushed")

@@ -144,6 +144,7 @@ function Statistic() constructor {
     corruption_lost = 0;
     
     fish_caught = 0;
+    fish_missed = 0;
     
     start_time = date_current_datetime();
 }

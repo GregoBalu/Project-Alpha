@@ -17,4 +17,4 @@ var _ball = instance_create_layer(_target_x, _target_y, "Instances", obj_fish_ba
     life: random_range(3, 6)*TIME_SECOND
 });
 
-alarm[2] = random_range(3, 6)*TIME_SECOND;
+alarm[2] = random_range(1, 4)*TIME_SECOND;

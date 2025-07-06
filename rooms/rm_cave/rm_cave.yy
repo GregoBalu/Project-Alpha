@@ -121,8 +121,6 @@
     {"name":"inst_1B0B4F65","path":"rooms/rm_cave/rm_cave.yy",},
     {"name":"inst_5F83759D","path":"rooms/rm_cave/rm_cave.yy",},
     {"name":"inst_53149DF5","path":"rooms/rm_cave/rm_cave.yy",},
-    {"name":"inst_7B3FC916","path":"roomui/RoomUI/RoomUI.yy",},
-    {"name":"inst_4C3311D0","path":"roomui/RoomUI/RoomUI.yy",},
     {"name":"inst_94D7FAB","path":"rooms/rm_cave/rm_cave.yy",},
   ],
   "isDnd":false,
@@ -133,7 +131,7 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_entity_base","path":"objects/obj_entity_base/obj_entity_base.yy",},"propertyId":{"name":"level","path":"objects/obj_entity_base/obj_entity_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"3",},
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_entity_base","path":"objects/obj_entity_base/obj_entity_base.yy",},"propertyId":{"name":"hp","path":"objects/obj_entity_base/obj_entity_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"18",},
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_entity_base","path":"objects/obj_entity_base/obj_entity_base.yy",},"propertyId":{"name":"damage","path":"objects/obj_entity_base/obj_entity_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"13.5",},
-          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1280.0,"y":704.0,},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":754.0,"y":722.0,},
         {"$GMRInstance":"v2","%Name":"inst_37880523","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_37880523","objectId":{"name":"obj_shroud","path":"objects/obj_shroud/obj_shroud.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":675.0,"y":749.0,},
         {"$GMRInstance":"v2","%Name":"inst_521C4DEB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_521C4DEB","objectId":{"name":"obj_music_player","path":"objects/obj_music_player/obj_music_player.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_music_player","path":"objects/obj_music_player/obj_music_player.yy",},"propertyId":{"name":"music","path":"objects/obj_music_player/obj_music_player.yy",},"resource":{"name":"snd_melow1","path":"sounds/snd_melow1/snd_melow1.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"snd_melow1",},

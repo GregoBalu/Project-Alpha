@@ -251,7 +251,6 @@
     {"id":{"name":"obj_trap_spear","path":"objects/obj_trap_spear/obj_trap_spear.yy",},},
     {"id":{"name":"obj_water_fountain","path":"objects/obj_water_fountain/obj_water_fountain.yy",},},
     {"id":{"name":"ps_water_splash","path":"particles/ps_water_splash/ps_water_splash.yy",},},
-    {"id":{"name":"pth_fish_tnt","path":"paths/pth_fish_tnt/pth_fish_tnt.yy",},},
     {"id":{"name":"Menu","path":"rooms/Menu/Menu.yy",},},
     {"id":{"name":"rm_battle","path":"rooms/rm_battle/rm_battle.yy",},},
     {"id":{"name":"rm_cave","path":"rooms/rm_cave/rm_cave.yy",},},
@@ -520,9 +519,9 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"rm_cave","path":"rooms/rm_cave/rm_cave.yy",},},
     {"roomId":{"name":"Menu","path":"rooms/Menu/Menu.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"rm_cave","path":"rooms/rm_cave/rm_cave.yy",},},
     {"roomId":{"name":"rm_battle","path":"rooms/rm_battle/rm_battle.yy",},},
     {"roomId":{"name":"rm_stat","path":"rooms/rm_stat/rm_stat.yy",},},
     {"roomId":{"name":"rm_fish","path":"rooms/rm_fish/rm_fish.yy",},},

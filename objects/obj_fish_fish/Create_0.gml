@@ -10,6 +10,9 @@ part_emitter_enable(particle_system, part_emitter, true);
 target = new Vec2(0, 0);
 current_speed = 1;
 
+timer = random_range(7, 10)*TIME_SECOND;
+max_timer = timer;
+
 generate_new_target = function() {
     delete target;
     target = new Vec2(random_range(obj_fish_manager.room_margin, room_width-obj_fish_manager.room_margin), random_range(obj_fish_manager.room_margin, room_height-obj_fish_manager.room_margin));

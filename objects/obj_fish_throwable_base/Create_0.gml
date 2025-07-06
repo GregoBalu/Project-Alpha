@@ -25,5 +25,5 @@ delete entry_point;
 image_alpha = 0.8;
 
 onPathEnd = function() {
-    
+    //override if necessary
 }

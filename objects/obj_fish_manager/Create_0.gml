@@ -10,6 +10,9 @@ room_margin = 8;
 fish_caught = 0;
 fish_missed = 0;
 
+obj_fish_switcher.fish_caught = 0;
+obj_fish_switcher.fish_missed = 0;
+
 
 returnRoom = function() {
     room_goto(obj_fish_switcher.original_room);

@@ -5,6 +5,17 @@ target_y = y;
 using_path = false;
 
 see_player = false;
+player_close = false;
+
+check_player_close = function() {
+    if (distance_to_object(obj_player) < camera_get_view_width(obj_player.camera.cam)*1.5) {
+        player_close = true;
+    } else {
+        player_close = false;
+    }
+    alarm[11] = random_range(1.5,2.5)*TIME_SECOND;
+}
+check_player_close();
 
 animation = {
     idle_stand: sprite_index,

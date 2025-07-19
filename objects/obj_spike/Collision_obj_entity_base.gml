@@ -1,4 +1,4 @@
-if (!is_on) {
+if (!is_on || paused) {
     exit;
 }
 

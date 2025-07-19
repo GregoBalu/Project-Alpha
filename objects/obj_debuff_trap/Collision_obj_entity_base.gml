@@ -1,3 +1,5 @@
+if (!is_on || paused) exit;
+
 if (only_player && other.id != obj_player.id) {
     return;
 }

@@ -1,3 +1,5 @@
+event_inherited();
+
 debuffedTargets = ds_list_create();
 
 function applyEffect(_buff_obj, _buff_data) {

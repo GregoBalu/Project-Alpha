@@ -1,6 +1,11 @@
 path_end();
 MOVING = false;
 
+if (!player_close) {
+    alarm[0] = random_range(1,3) * TIME_SECOND;
+    exit;
+}
+
 if (wander_range > 0 && move_speed > 0 && !immobilized) {
     if (instance_exists(obj_player) && point_distance(xstart,ystart,x,y)<(2*wander_range) &&
              distance_to_object(obj_player) < distance_to_player && collision_line(x, y, obj_player.x, obj_player.y, no_see_tilemaps, false, false) == noone)

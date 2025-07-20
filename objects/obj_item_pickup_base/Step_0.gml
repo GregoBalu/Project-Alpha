@@ -1,3 +1,5 @@
+if (paused) exit;
+
 _background_sprite_time++;
 
 if (despawn_seconds > 0) {

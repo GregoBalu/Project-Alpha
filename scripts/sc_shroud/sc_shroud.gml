@@ -128,26 +128,25 @@ function find_collider(startX, startY, endX, endY, stepDist, _tilemap){
     
     //var step = max_len / stepDist;
     //show_debug_message("step={0}", stepDist);
-    
-    //var begin_point = [startX, startY];
+
     var begin_point_x = startX;
     var begin_point_y = startY;
-    //var end_point = [endX, endY];
+    
     var end_point_x = endX;
     var end_point_y = endY;
-    //var half_point = [endX, endY];
+    
     var half_point_x = endX;
     var half_point_y = endY;
     
     while (line_length >= stepDist) {
         _cnt++;
-        dir = point_direction(begin_point_x, begin_point_y, end_point_x, end_point_y);
+ 
         half_point_x = begin_point_x + lengthdir_x(line_length/2, dir)
         half_point_y = begin_point_y + lengthdir_y(line_length/2, dir);
-        //var colliderHalfWayId = collision_circle(half_point[0], half_point[1], 2, _tilemap, false, false);
-        if (collision_line(begin_point_x, begin_point_y, half_point_x, half_point_y, _tilemap, true, true) != noone) {
-            if (collision_line(half_point_x, half_point_y, end_point_x, end_point_y, _tilemap, true, true) != noone) {
-                if (collision_circle(half_point_x, half_point_y, 2, _tilemap, true, true) == noone) {
+
+        if (collision_line(begin_point_x, begin_point_y, half_point_x, half_point_y, _tilemap, false, true) != noone) {
+            if (collision_line(half_point_x, half_point_y, end_point_x, end_point_y, _tilemap, false, true) != noone) {
+                if (collision_circle(half_point_x, half_point_y, 2, _tilemap, false, true) == noone) {
                     return noone;
                 } else {
                     return [half_point_x,half_point_y];
@@ -163,44 +162,8 @@ function find_collider(startX, startY, endX, endY, stepDist, _tilemap){
         }
         line_length = point_distance(begin_point_x, begin_point_y, end_point_x, end_point_y);
     }
-    
-    //return end_point;
+
     return [begin_point_x,begin_point_y];
-    
-    //dir = point_direction(begin_point[0], begin_point[1], end_point[0], end_point[1]);
-    //half_point = [begin_point[0] + lengthdir_x(line_length/2, dir), begin_point[1] + lengthdir_y(line_length/2, dir)];
-    //return half_point;
-    
-    
-    //Begin raycast loop
-    /*var _cnt = 0;
-    for(var len = 0; len <= max_len; len += stepDist) {
-        ++_cnt;
-        var castX = startX + lengthdir_x(len, dir);
-        var castY = startY + lengthdir_y(len, dir);
-        ds_list_add(obj_shroud.debug_points, {
-            x : castX,
-            y : castY
-        });
-        
-        if(collision_circle(castX, castY, 2, _tilemap, true, true)) {
-        //if (collision_point(castX, castY, _tilemap, false, true)) {
-            show_debug_message("find_collider loop count: {0}", _cnt);
-            hitpoint[0] = castX;
-            hitpoint[1] = castY;
-            return hitpoint;
-        }
-    }
-    show_debug_message("find_collider loop count: {0}", _cnt);*/
-    
-    /*if(collision_point(endX, endY, _tilemap, false, true)) {
-        hitpoint[0] = endX;
-        hitpoint[1] = endY;
-        return hitpoint;
-    }*/
-    
-    //If the raycast hit nothing, return false
-    //return noone;
 }
 
 function check_vision(startX, startY, endX, endY, origEndX, origEndY, endGlobalGridX, endGlobalGridY, _tilemap, _half_grid_size) {
@@ -208,7 +171,7 @@ function check_vision(startX, startY, endX, endY, origEndX, origEndY, endGlobalG
     var _collide_line_id = collision_line(startX, startY, endX, endY, _tilemap, false, true);
     //var _collide_line_id = collision_rectangle(x1pos, y2pos, x2pos, y2pos, _tilemap, false, true);
     if (_collide_line_id == noone) {
-        /*var debug_data = {
+        var debug_data = {
             visible : true,
             has_collision : false,
             has_collider : false,
@@ -219,58 +182,20 @@ function check_vision(startX, startY, endX, endY, origEndX, origEndY, endGlobalG
             orig_end_x : origEndX,
             orig_end_y : origEndY
         };
-        ds_list_add(obj_shroud.debug_list, debug_data);*/
+        ds_list_add(obj_shroud.debug_list, debug_data);
         return true;
     } else {
-        /*var _collide_end_id = collision_point(endX, endY, _tilemap, true, false);
-        if (_collide_end_id == noone) {
-            //there is a collision, but not at the end
-            var debug_data = {
-                visible : false,
-                has_collision : true,
-                has_collider : false,
-                start_x : startX,
-                start_y : startY,
-                end_x : endX,
-                end_y : endY,
-                orig_end_x : origEndX,
-                orig_end_y : origEndY
-            };
-            ds_list_add(obj_shroud.debug_list, debug_data);
-            return false;
-        }*/
-        
         var coll = find_collider(startX, startY, endX, endY, _half_grid_size -0.5, _tilemap);
         if (coll == noone) {
             return false;
         }
-        /*if (coll == false) {
-            if (showDebug(endX, endY)) {
-                show_debug_message("check_vision: no collider");
-            }
-            var debug_data = {
-                visible : true,
-                has_collision : true,
-                has_collider : false,
-                start_x : startX,
-                start_y : startY,
-                coll_x : coll[0],
-                coll_y : coll[1],
-                end_x : endX,
-                end_y : endY,
-                orig_end_x : origEndX,
-                orig_end_y : origEndY
-            };
-            ds_list_add(obj_shroud.debug_list, debug_data);
-            return false;
-        }*/
         
         //calc grid, cuz collider might be on edge
         var _c_x = coll[0] div obj_shroud.grid_size;
         var _c_y = coll[1] div obj_shroud.grid_size;
      
         if (_c_x == endGlobalGridX && _c_y == endGlobalGridY) {
-            /*var debug_data = {
+            var debug_data = {
                 visible : true,
                 has_collision : true,
                 has_collider : true,
@@ -283,11 +208,11 @@ function check_vision(startX, startY, endX, endY, origEndX, origEndY, endGlobalG
                 orig_end_x : origEndX,
                 orig_end_y : origEndY
             };
-            ds_list_add(obj_shroud.debug_list, debug_data);*/
+            ds_list_add(obj_shroud.debug_list, debug_data);
             //ds_list_destroy(_check_points);
             return true;
         } else {
-           /* var debug_data = {
+            var debug_data = {
                 visible : false,
                 has_collision : true,
                 has_collider : false,
@@ -300,7 +225,7 @@ function check_vision(startX, startY, endX, endY, origEndX, origEndY, endGlobalG
                 orig_end_x : origEndX,
                 orig_end_y : origEndY
             };
-            ds_list_add(obj_shroud.debug_list, debug_data);*/
+            ds_list_add(obj_shroud.debug_list, debug_data);
         }
     }
     
@@ -328,132 +253,201 @@ function check_vision(startX, startY, endX, endY, origEndX, origEndY, endGlobalG
     }
 }*/
 
+function do_clear_shroud_cell(_current_sgrid_x, _current_sgrid_y, _current_cgrid_x, _current_cgrid_y, _sgrid_width, _sgrid_height, _half_tile_grid_size, shroud_clear_mask_grid, _tilemap,
+                            posX, posY, _nudge_amount)
+{
+    if (_current_sgrid_x < 0 || _current_sgrid_x >= _sgrid_width ||
+        _current_sgrid_y < 0 || _current_sgrid_y >= _sgrid_height) {
+        return {
+                checkNum: 0,
+                cleared: false    
+            };
+    }
+    
+    var _checkNum = 0;
+    var _cleared = false;
+    
+    var _shroud_clear_mask_value = shroud_clear_mask_grid[# _current_cgrid_x, _current_cgrid_y];
+    if (_shroud_clear_mask_value < DEFAULT_SHROUD_ALPHA) {
+        var _realX = (_current_sgrid_x * obj_shroud.grid_size) + _half_tile_grid_size-0.5;//center of tile
+        var _realY = (_current_sgrid_y * obj_shroud.grid_size) + _half_tile_grid_size-0.5;//center of tile
+        
+        var do_clear_shroud = false;
+        
+        if (check_vision(posX, posY, _realX, _realY, _realX, _realY, _current_sgrid_x, _current_sgrid_y, _tilemap, _half_tile_grid_size)) {
+            ++_checkNum;
+            do_clear_shroud = true;
+        }
+        
+        if (!do_clear_shroud) {
+            var dx = (posX - _realX);
+            var dy = (posY - _realY);
+            var checkLeft = false;
+            var checkRight = false;
+            var checkTop = false;
+            var checkBottom = false;
+            
+            if (dx <= -_half_tile_grid_size) {
+                //I'm left
+                checkLeft = true;
+            } else if (dx >= _half_tile_grid_size) {
+                //I'm right
+                checkRight = true;
+            }
+            if (dy <= -_half_tile_grid_size) {
+                //I'm above
+                checkTop = true;
+            } else if (dy >= _half_tile_grid_size) {
+                //I'm below
+                checkBottom = true;
+            }
+            
+            //if (abs(dx) > abs(dy)) 
+            if (checkLeft && !do_clear_shroud && check_vision(posX, posY, _realX - _nudge_amount, _realY, _realX, _realY, _current_sgrid_x, _current_sgrid_y, _tilemap, _half_tile_grid_size)) {
+                ++_checkNum;
+                do_clear_shroud = true;
+            }
+            if (checkRight && !do_clear_shroud && check_vision(posX, posY, _realX + _nudge_amount, _realY, _realX, _realY, _current_sgrid_x, _current_sgrid_y, _tilemap, _half_tile_grid_size)) {
+                ++_checkNum;
+                do_clear_shroud = true;
+            }
+            if (checkTop && !do_clear_shroud && check_vision(posX, posY, _realX, _realY - _nudge_amount, _realX, _realY, _current_sgrid_x, _current_sgrid_y, _tilemap, _half_tile_grid_size)) {
+                ++_checkNum;
+                do_clear_shroud = true;
+            }
+            if (checkBottom && !do_clear_shroud && check_vision(posX, posY, _realX, _realY + _nudge_amount, _realX, _realY, _current_sgrid_x, _current_sgrid_y, _tilemap, _half_tile_grid_size)) {
+                ++_checkNum;
+                do_clear_shroud = true;
+            }
+        }
+        
+        if (do_clear_shroud) {
+            obj_shroud.shroud_grid[# _current_sgrid_x, _current_sgrid_y] = _shroud_clear_mask_value;
+            _cleared = true;
+            //obj_shroud.shroud_grid[# globalGridX, globalGridY].debug = string_concat(_x, ",", _y, "\n", _shroud_clear_mask_value);
+            //show_debug_message($"Shroud [{_current_sgrid_x},{_current_sgrid_y}]={_shroud_clear_mask_value}");
+        }
+        //obj_shroud.shroud_grid[# globalGridX, globalGridY].checked = true;
+    }
+    return {
+                checkNum: _checkNum,
+                cleared: _cleared
+            };
+}
+
 /// @function Clear a portion of shroud around a point
 /// @param {Real}   posX  X coordinate of center of clear shroud
 /// @param {Real}   posY  Y coordinate of center of clear shroud
 function shroud_clear_position(posX, posY, _tilemap, shroud_clear_mask_grid){
+    //show_debug_message($"shroud_clear_position({posX}, {posY}, ...)");
     var _orig_x_grid = posX div obj_shroud.grid_size;
     var _orig_y_grid = posY div obj_shroud.grid_size;
     
-    var _sx = _orig_x_grid;
-    var _sy = _orig_y_grid;
+    var _clear_grid_half_size = obj_shroud.clear_grid_size div 2;
+    var _sgrid_clear_topleft_x = _orig_x_grid - _clear_grid_half_size;
+    var _sgrid_clear_topleft_y = _orig_y_grid - _clear_grid_half_size;
     
-    var _half_clear_grid = obj_shroud.clear_grid_size div 2;
-    //show_debug_message("{0}", _half_clear_grid);
-    
-    _sx -= _half_clear_grid;
-    _sy -= _half_clear_grid;
+    //show_debug_message($"sgrid=({_sgrid_clear_topleft_x}, {_sgrid_clear_topleft_y})");
     
     var checkNum = 0;
-    
-    var _half_tile_grid_size = (obj_shroud.grid_size / 2);
-    //show_debug_message("_half_tile_grid_size={0}", _half_tile_grid_size);
     ds_list_clear(obj_shroud.debug_list);
     ds_list_clear(obj_shroud.debug_points);
+    var _nudge_amount = (_clear_grid_half_size+1);
+    
+    var _half_tile_grid_size = (obj_shroud.grid_size / 2);
+    
+    var _sgrid_width = ds_grid_width(obj_shroud.shroud_grid);
+    var _sgrid_height = ds_grid_height(obj_shroud.shroud_grid);
+    
+    //Spiral traverse of clear_grid on shroud_grid, inside out
+    // (di, dj) is a vector - direction in which we move right now
+    var _dx = 1;
+    var _dy = 0;
+    // length of current segment
+    var segment_length = 1;
+
+    // current position (i, j) and how much of current segment we passed
+    var _current_sgrid_x = _orig_x_grid;
+    var _current_sgrid_y = _orig_y_grid;
+    var _current_cgrid_x = _clear_grid_half_size;
+    var _current_cgrid_y = _clear_grid_half_size;
+    
+    var _tmp_grid = ds_grid_create(obj_shroud.clear_grid_size, obj_shroud.clear_grid_size);
+    ds_grid_clear(_tmp_grid, 0);//0 not checked, 1 checked not cleared, 2 checked cleared
+    
+    var segment_passed = 0;
+    var NUMBER_OF_POINTS = power(obj_shroud.clear_grid_size, 2);
+    for (var k = 0; k < NUMBER_OF_POINTS; ++k) {
+        //do sth here
+        //_tmp_grid[#_current_cgrid_x, _current_cgrid_y] = 0;//0 not checked, 1 checked not cleared, 2 checked cleared
+        var _need_check = true;
+        var _clen = point_distance(_current_cgrid_x, _current_cgrid_y, _clear_grid_half_size, _clear_grid_half_size);
+        if (_clen > 1) {
+            var _cdir = point_direction(_current_cgrid_x, _current_cgrid_y, _clear_grid_half_size, _clear_grid_half_size);
+            var _tmp_x = floor(_current_cgrid_x + sign(lengthdir_x(1, _cdir)) );
+            var _tmp_y = floor(_current_cgrid_y + sign(lengthdir_y(1, _cdir)) );
+            
+            //show_debug_message($"Checking ({_current_cgrid_x},{_current_cgrid_y}) -> ({_tmp_x},{_tmp_y}) : {_tmp_grid[# _tmp_x, _tmp_y]}");
+            if (_tmp_grid[# _tmp_x, _tmp_y] == 1) {
+                _tmp_grid[# _current_cgrid_x, _current_cgrid_y] = 1;
+                //show_debug_message($"Optimization!");
+                _need_check = false;
+            }
+        } 
+        if (_need_check) {
+            var res = do_clear_shroud_cell(_current_sgrid_x, _current_sgrid_y, _current_cgrid_x, _current_cgrid_y, _sgrid_width, _sgrid_height, _half_tile_grid_size, shroud_clear_mask_grid, _tilemap, posX, posY, _nudge_amount);
+            checkNum += res.checkNum;
+            _tmp_grid[# _current_cgrid_x, _current_cgrid_y] = res.cleared?2:1;
+        }
+        
+        // make a step, add 'direction' vector (di, dj) to current position (i, j)
+        _current_sgrid_x += _dx;
+        _current_sgrid_y += _dy;
+        _current_cgrid_x += _dx;
+        _current_cgrid_y += _dy;
+        
+        ++segment_passed;
+        
+        if (segment_passed == segment_length) {
+            // done with current segment
+            segment_passed = 0;
+
+            // 'rotate' directions
+            var buffer = _dx;
+            _dx = -_dy;
+            _dy = buffer;
+
+            // increase segment length if necessary
+            if (_dy == 0) {
+                ++segment_length;
+            }
+        }
+    }
+    
+    ds_grid_destroy(_tmp_grid);
+    
+    /*
     
     for (var _x = 0; _x < obj_shroud.clear_grid_size; _x++)
     {
         for (var _y = 0; _y < obj_shroud.clear_grid_size; _y++)
         {
-            var globalGridX = (_sx + _x);
-            var globalGridY = (_sy + _y);
-            if (globalGridX >= 0 && globalGridX < ds_grid_width(obj_shroud.shroud_grid) &&
-                globalGridY >= 0 && globalGridY < ds_grid_height(obj_shroud.shroud_grid))
-            {
-            
-                var _shroud_clear_mask_value = shroud_clear_mask_grid[# _x, _y];
-                if (_shroud_clear_mask_value < DEFAULT_SHROUD_ALPHA) {
-                    var _realX = (globalGridX * obj_shroud.grid_size) + _half_tile_grid_size-0.5;//center of tile
-                    var _realY = (globalGridY * obj_shroud.grid_size) + _half_tile_grid_size-0.5;//center of tile
-                    
-                    /*var dir = point_direction(_realX, _realY, posX, posY);
-                    var len = obj_shroud.grid_size;
-                    var neighbour_x = _realX + lengthdir_x(len, dir);
-                    var neighbour_y = _realY + lengthdir_y(len, dir);
-                    var _neighbor_dist = point_distance(posX, posY, neighbour_x, neighbour_y);
-                    var neighbour_grid_x = neighbour_x div obj_shroud.grid_size;
-                    var neighbour_grid_y = neighbour_y div obj_shroud.grid_size;
-                    if (_neighbor_dist > obj_shroud.grid_size && obj_shroud.shroud_grid[# neighbour_grid_x, neighbour_grid_y] == (FOG_ALPHA-0.01)) {
-                        //not visible
-                        continue;
-                    }*/
-                    
-                    
-                    var do_clear_shroud = false;
-                    
-                    var nudgedX = _realX;
-                    var nudgedY = _realY;
-                    
-                    if (check_vision(posX, posY, nudgedX, nudgedY, _realX, _realY, globalGridX, globalGridY, _tilemap, _half_tile_grid_size)) {
-                        ++checkNum;
-                        do_clear_shroud = true;
-                    }
-                    
-                    if (!do_clear_shroud) {
-                        var dx = (posX - _realX);
-                        var dy = (posY - _realY);
-                        var checkLeft = false;
-                        var checkRight = false;
-                        var checkTop = false;
-                        var checkBottom = false;
-                        
-                        if (dx <= -_half_tile_grid_size) {
-                            //I'm left
-                            checkLeft = true;
-                        } else if (dx >= _half_tile_grid_size) {
-                            //I'm right
-                            checkRight = true;
-                        }
-                        if (dy <= -_half_tile_grid_size) {
-                            //I'm above
-                            checkTop = true;
-                        } else if (dy >= _half_tile_grid_size) {
-                            //I'm below
-                            checkBottom = true;
-                        }
-                        
-                        var nudge_amount = (_half_tile_grid_size+1);
-                        
-                        //if (abs(dx) > abs(dy)) 
-                        if (checkLeft && !do_clear_shroud && check_vision(posX, posY, nudgedX - nudge_amount, nudgedY, _realX, _realY, (_sx + _x), (_sy + _y), _tilemap, _half_tile_grid_size)) {
-                            ++checkNum;
-                            do_clear_shroud = true;
-                        }
-                        if (checkRight && !do_clear_shroud && check_vision(posX, posY, nudgedX + nudge_amount, nudgedY, _realX, _realY, (_sx + _x), (_sy + _y), _tilemap, _half_tile_grid_size)) {
-                            ++checkNum;
-                            do_clear_shroud = true;
-                        }
-                        if (checkTop && !do_clear_shroud && check_vision(posX, posY, nudgedX, nudgedY - nudge_amount, _realX, _realY, (_sx + _x), (_sy + _y), _tilemap, _half_tile_grid_size)) {
-                            ++checkNum;
-                            do_clear_shroud = true;
-                        }
-                        if (checkBottom && !do_clear_shroud && check_vision(posX, posY, nudgedX, nudgedY + nudge_amount, _realX, _realY, (_sx + _x), (_sy + _y), _tilemap, _half_tile_grid_size)) {
-                            ++checkNum;
-                            do_clear_shroud = true;
-                        }
-                        
-                        
-                    }
-                    
-                    if (do_clear_shroud) {
-                        obj_shroud.shroud_grid[# globalGridX, globalGridY] = _shroud_clear_mask_value;
-                        //obj_shroud.shroud_grid[# globalGridX, globalGridY].debug = string_concat(_x, ",", _y, "\n", _shroud_clear_mask_value);
-                        //show_debug_message("alpha: {0}, i: {1}", _shroud_clear_mask_value, i);
-                    }
-                    //obj_shroud.shroud_grid[# globalGridX, globalGridY].checked = true;
-                }
-            }   
+            var _current_sgrid_x = (_sgrid_center_x + _x);
+            var _current_sgrid_y = (_sgrid_center_y + _y);
+            checkNum += do_clear_shroud_cell(_current_sgrid_x, _current_sgrid_y, _x, _y, _sgrid_width, _sgrid_height, _half_tile_grid_size, shroud_clear_mask_grid, _tilemap, posX, posY, _nudge_amount);  
         }
-    }
+    }*/
     
     //show_debug_message("Checks: {0}", checkNum);
 }
 
 function shroud_set_fog(){
     
-    for (var _r = 0; _r < ds_grid_width(obj_shroud.shroud_grid); _r++)
+    var _sgrid_width = ds_grid_width(obj_shroud.shroud_grid);
+    var _sgrid_height = ds_grid_height(obj_shroud.shroud_grid);
+    for (var _r = 0; _r < _sgrid_width; _r++)
     {
-        for (var _c = 0; _c < ds_grid_height(obj_shroud.shroud_grid); _c++)
+        for (var _c = 0; _c < _sgrid_height; _c++)
         {
             if (obj_shroud.shroud_grid[#_r, _c] < FOG_ALPHA) {
                 obj_shroud.shroud_grid[#_r, _c] = FOG_ALPHA;
@@ -470,10 +464,14 @@ function shroud_set_fog_around(_x, _y, _range){
     var _y_grid = _y div obj_shroud.grid_size;
     var _range_grid = _range div obj_shroud.grid_size;
     
-    for (var _r = (_x_grid-_range_grid); _r < (_x_grid+_range_grid) && _r < ds_grid_width(obj_shroud.shroud_grid); _r++)
+    var _sgrid_width = ds_grid_width(obj_shroud.shroud_grid);
+    var _sgrid_height = ds_grid_height(obj_shroud.shroud_grid);
+    
+    for (var _r = max(0, _x_grid-_range_grid); _r < (_x_grid+_range_grid) && _r < _sgrid_width; _r++)
     {
-        for (var _c = (_y_grid-_range_grid); _c < (_y_grid+_range_grid) && _c < ds_grid_height(obj_shroud.shroud_grid); _c++)
+        for (var _c = max(0, _y_grid-_range_grid); _c < (_y_grid+_range_grid) && _c < _sgrid_height; _c++)
         {
+            
             if (obj_shroud.shroud_grid[#_r, _c] < FOG_ALPHA) {
                 obj_shroud.shroud_grid[#_r, _c] = FOG_ALPHA;
             }
@@ -483,10 +481,14 @@ function shroud_set_fog_around(_x, _y, _range){
     }
 }
 
-function shroud_add_fog(){
-    for (var _r = 0; _r < ds_grid_width(obj_shroud.shroud_grid); _r++)
+function shroud_add_fog()
+{
+    var _sgrid_width = ds_grid_width(obj_shroud.shroud_grid);
+    var _sgrid_height = ds_grid_height(obj_shroud.shroud_grid);
+    
+    for (var _r = 0; _r < _sgrid_width; _r++)
     {
-        for (var _c = 0; _c < ds_grid_height(obj_shroud.shroud_grid); _c++)
+        for (var _c = 0; _c < _sgrid_height; _c++)
         {
             if (obj_shroud.shroud_grid[#_r, _c] < DEFAULT_SHROUD_ALPHA && obj_shroud.shroud_grid[#_r, _c] >= FOG_ALPHA) {
                 obj_shroud.shroud_grid[#_r, _c] = clamp(obj_shroud.shroud_grid[#_r, _c] + (delta_time/10000000), 0, DEFAULT_SHROUD_ALPHA);

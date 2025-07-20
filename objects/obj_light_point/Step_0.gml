@@ -1,3 +1,5 @@
+if (paused) exit;
+
 time += frequency_seconds ;
 var _dv = sin(time);
 

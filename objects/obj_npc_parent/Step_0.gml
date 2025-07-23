@@ -1,5 +1,6 @@
 if (instance_exists(obj_dialog)) exit;
     
+    
 if (dialog != -1 && instance_exists(obj_player) && distance_to_object(obj_player) < talk_distance) {
     if (!can_talk) {
         can_talk = true;

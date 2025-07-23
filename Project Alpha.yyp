@@ -328,6 +328,7 @@
     {"id":{"name":"spr_battle_screen","path":"sprites/spr_battle_screen/spr_battle_screen.yy",},},
     {"id":{"name":"spr_battle_sleep","path":"sprites/spr_battle_sleep/spr_battle_sleep.yy",},},
     {"id":{"name":"spr_battle_stars","path":"sprites/spr_battle_stars/spr_battle_stars.yy",},},
+    {"id":{"name":"spr_black_16","path":"sprites/spr_black_16/spr_black_16.yy",},},
     {"id":{"name":"spr_blood_spill","path":"sprites/spr_blood_spill/spr_blood_spill.yy",},},
     {"id":{"name":"spr_book1","path":"sprites/spr_book1/spr_book1.yy",},},
     {"id":{"name":"spr_book2","path":"sprites/spr_book2/spr_book2.yy",},},

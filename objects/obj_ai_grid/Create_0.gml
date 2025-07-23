@@ -14,6 +14,7 @@ global.mp_grid = mp_grid_create(0, 0, w, h, cell_size, cell_size);
 refresh();
 
 function refresh() {
+    show_debug_message("Refreshing mp_grid");
     for (var i = 0; i < w; i++) {
         for (var j = 0; j < h; j++) {
             if (tilemap_get_at_pixel(map_id, i * cell_size, j * cell_size) > 0)

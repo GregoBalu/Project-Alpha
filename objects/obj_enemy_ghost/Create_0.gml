@@ -38,5 +38,7 @@ doEnemyAction = function(_selfData, _playerData) {
 }
 
 onBattleDamageReceived = function(_damaged_amount) {
-    audio_play_sound(snd_ghost_damaged, 4, false, 1.0, 0.3);
+    if (_damaged_amount > 0) {
+        audio_play_sound(snd_ghost_damaged, 4, false, 1.0, 0.3);
+    }
 }

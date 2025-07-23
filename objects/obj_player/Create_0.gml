@@ -238,6 +238,8 @@ add_corruption = function(_amount) {
 }
 
 onBattleDamageReceived = function(_damaged_amount) {
-    var _rand = choose(snd_player_hurt1, snd_player_hurt2, snd_player_hurt3);
-    audio_play_sound(_rand, 4, false, 1, 0, random_range(0.8, 1.1));
+    if (_damaged_amount > 0) {
+        var _rand = choose(snd_player_hurt1, snd_player_hurt2, snd_player_hurt3);
+        audio_play_sound(_rand, 4, false, 1, 0, random_range(0.8, 1.1));
+    }
 }

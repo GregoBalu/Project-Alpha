@@ -33,3 +33,5 @@ cam_cell_height = (cam_h div grid_size) + _soh;
 debug_level = 0;
 debug_list = ds_list_create();
 debug_points = ds_list_create();
+
+my_surf = undefined;

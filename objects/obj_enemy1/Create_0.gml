@@ -61,5 +61,7 @@ doEnemyAction = function(_selfData, _playerData) {
 }
 
 onBattleDamageReceived = function(_damaged_amount) {
-    audio_play_sound(snd_firetoad_hurt, 4, false, 1.0, 0, random_range(0.8, 1.1));
+    if(_damaged_amount > 0) {
+        audio_play_sound(snd_firetoad_hurt, 4, false, 1.0, 0, random_range(0.8, 1.1));
+    }
 }

@@ -41,7 +41,6 @@ if (debug_level > 0) {
         draw_circle_color(debug_points[| i].x, debug_points[| i].y, 1.5, c_yellow, c_yellow, true);
     }
     
-    
     //draw_set_alpha(orig_alpha);
     //display_set_gui_size(_orig_gui_w, _orig_gui_h);
 }

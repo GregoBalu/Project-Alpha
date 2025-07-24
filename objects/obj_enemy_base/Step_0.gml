@@ -38,3 +38,15 @@ if (hp <= 0) {
     obj_player.gain_experience(self);
     instance_destroy();
 }
+
+//scale enemy up with player a bit to be more exciting/challenging
+if (scale_level < obj_player.level) {
+    var level_up = obj_player.level - scale_level;
+    scale_level = obj_player.level;
+    var scale_amt = (1+0.1*level_up);
+    show_debug_message($"Enemy scaled up: {scale_amt}");
+    hp = hp*scale_amt;
+    hp_total = hp_total*scale_amt;
+    damage = damage*scale_amt;
+    
+}

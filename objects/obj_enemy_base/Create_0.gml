@@ -7,13 +7,15 @@ using_path = false;
 see_player = false;
 player_close = false;
 
+scale_level = level;
+
 check_player_close = function() {
     if (distance_to_object(obj_player) < camera_get_view_width(obj_player.camera.cam)*1.5) {
         player_close = true;
-        visible = false;
+        visible = true;
     } else {
         player_close = false;
-        visible = true;
+        visible = false;
     }
     alarm[11] = random_range(1.5,2.5)*TIME_SECOND;
 }

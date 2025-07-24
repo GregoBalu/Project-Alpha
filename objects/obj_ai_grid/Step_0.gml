@@ -1,8 +1,8 @@
 ++frame;
 if (frame > refresh_frame_count) {
     frame = 0;
-    mp_grid_clear_all(global.mp_grid);
-    refresh();
+    //mp_grid_clear_all(global.mp_grid);
+    //refresh();
 }
 
 /*with(obj_enemy_base) {

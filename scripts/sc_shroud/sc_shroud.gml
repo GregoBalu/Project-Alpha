@@ -147,8 +147,18 @@ function find_collider(startX, startY, endX, endY, stepDist, _tilemap){
         if (collision_line(begin_point_x, begin_point_y, half_point_x, half_point_y, _tilemap, false, true) != noone) {
             if (collision_line(half_point_x, half_point_y, end_point_x, end_point_y, _tilemap, false, true) != noone) {
                 if (collision_circle(half_point_x, half_point_y, 2, _tilemap, false, true) == noone) {
+                    if (obj_shroud.debug_level>0) {
+                        obj_shroud.debug_find_collider_count++;
+                        obj_shroud.debug_find_collider_iteration += _cnt;
+                    }
+                    //show_debug_message($"Found no collider in {_cnt} steps");
                     return noone;
                 } else {
+                    if (obj_shroud.debug_level>0) {
+                        obj_shroud.debug_find_collider_count++;
+                        obj_shroud.debug_find_collider_iteration += _cnt;
+                    }
+                    //show_debug_message($"Found collider in {_cnt} steps");
                     return [half_point_x,half_point_y];
                 }
             } else {
@@ -162,7 +172,12 @@ function find_collider(startX, startY, endX, endY, stepDist, _tilemap){
         }
         line_length = point_distance(begin_point_x, begin_point_y, end_point_x, end_point_y);
     }
+    //show_debug_message($"Found collider in {_cnt} steps");
 
+    if (obj_shroud.debug_level>0) {
+        obj_shroud.debug_find_collider_count++;
+        obj_shroud.debug_find_collider_iteration += _cnt;
+    }
     return [begin_point_x,begin_point_y];
 }
 
@@ -171,18 +186,20 @@ function check_vision(startX, startY, endX, endY, origEndX, origEndY, endGlobalG
     var _collide_line_id = collision_line(startX, startY, endX, endY, _tilemap, false, true);
     //var _collide_line_id = collision_rectangle(x1pos, y2pos, x2pos, y2pos, _tilemap, false, true);
     if (_collide_line_id == noone) {
-        var debug_data = {
-            visible : true,
-            has_collision : false,
-            has_collider : false,
-            start_x : startX,
-            start_y : startY,
-            end_x : endX,
-            end_y : endY,
-            orig_end_x : origEndX,
-            orig_end_y : origEndY
-        };
-        ds_list_add(obj_shroud.debug_list, debug_data);
+        if (obj_shroud.debug_level > 0) {
+            var debug_data = {
+                visible : true,
+                has_collision : false,
+                has_collider : false,
+                start_x : startX,
+                start_y : startY,
+                end_x : endX,
+                end_y : endY,
+                orig_end_x : origEndX,
+                orig_end_y : origEndY
+            };
+            ds_list_add(obj_shroud.debug_list, debug_data);
+        }
         return true;
     } else {
         var coll = find_collider(startX, startY, endX, endY, _half_grid_size -0.5, _tilemap);
@@ -195,37 +212,40 @@ function check_vision(startX, startY, endX, endY, origEndX, origEndY, endGlobalG
         var _c_y = coll[1] div obj_shroud.grid_size;
      
         if (_c_x == endGlobalGridX && _c_y == endGlobalGridY) {
-            var debug_data = {
-                visible : true,
-                has_collision : true,
-                has_collider : true,
-                start_x : startX,
-                start_y : startY,
-                coll_x : coll[0],
-                coll_y : coll[1],
-                end_x : endX,
-                end_y : endY,
-                orig_end_x : origEndX,
-                orig_end_y : origEndY
-            };
-            ds_list_add(obj_shroud.debug_list, debug_data);
-            //ds_list_destroy(_check_points);
+            if (obj_shroud.debug_level > 0) {
+                var debug_data = {
+                    visible : true,
+                    has_collision : true,
+                    has_collider : true,
+                    start_x : startX,
+                    start_y : startY,
+                    coll_x : coll[0],
+                    coll_y : coll[1],
+                    end_x : endX,
+                    end_y : endY,
+                    orig_end_x : origEndX,
+                    orig_end_y : origEndY
+                };
+                ds_list_add(obj_shroud.debug_list, debug_data);
+            }
             return true;
         } else {
-            var debug_data = {
-                visible : false,
-                has_collision : true,
-                has_collider : false,
-                start_x : startX,
-                start_y : startY,
-                coll_x : coll[0],
-                coll_y : coll[1],
-                end_x : endX,
-                end_y : endY,
-                orig_end_x : origEndX,
-                orig_end_y : origEndY
-            };
-            ds_list_add(obj_shroud.debug_list, debug_data);
+            if (obj_shroud.debug_level > 0) {
+                var debug_data = {
+                    visible : false,
+                    has_collision : true,
+                    has_collider : false,
+                    start_x : startX,
+                    start_y : startY,
+                    coll_x : coll[0],
+                    coll_y : coll[1],
+                    end_x : endX,
+                    end_y : endY,
+                    orig_end_x : origEndX,
+                    orig_end_y : origEndY
+                };
+                ds_list_add(obj_shroud.debug_list, debug_data);
+            }
         }
     }
     
@@ -335,6 +355,14 @@ function do_clear_shroud_cell(_current_sgrid_x, _current_sgrid_y, _current_cgrid
             };
 }
 
+function isPointValid(_x, _y) {
+    return _x >= 0 && _x < obj_shroud.clear_grid_size && _y >= 0 && _y < obj_shroud.clear_grid_size;
+}
+
+function checkPointBlocked(_x, _y, _grid) {
+    return (_grid[#_x, _y] == 1);
+};
+
 /// @function Clear a portion of shroud around a point
 /// @param {Real}   posX  X coordinate of center of clear shroud
 /// @param {Real}   posY  Y coordinate of center of clear shroud
@@ -352,6 +380,9 @@ function shroud_clear_position(posX, posY, _tilemap, shroud_clear_mask_grid){
     var checkNum = 0;
     ds_list_clear(obj_shroud.debug_list);
     ds_list_clear(obj_shroud.debug_points);
+    obj_shroud.debug_find_collider_count = 0;
+    obj_shroud.debug_find_collider_iteration = 0;
+    
     var _nudge_amount = (_clear_grid_half_size+1);
     
     var _half_tile_grid_size = (obj_shroud.grid_size / 2);
@@ -359,86 +390,139 @@ function shroud_clear_position(posX, posY, _tilemap, shroud_clear_mask_grid){
     var _sgrid_width = ds_grid_width(obj_shroud.shroud_grid);
     var _sgrid_height = ds_grid_height(obj_shroud.shroud_grid);
     
-    //Spiral traverse of clear_grid on shroud_grid, inside out
-    // (di, dj) is a vector - direction in which we move right now
-    var _dx = 1;
-    var _dy = 0;
-    // length of current segment
-    var segment_length = 1;
-
-    // current position (i, j) and how much of current segment we passed
-    var _current_sgrid_x = _orig_x_grid;
-    var _current_sgrid_y = _orig_y_grid;
-    var _current_cgrid_x = _clear_grid_half_size;
-    var _current_cgrid_y = _clear_grid_half_size;
+    var doSpiral = false;
     
-    var _tmp_grid = ds_grid_create(obj_shroud.clear_grid_size, obj_shroud.clear_grid_size);
-    ds_grid_clear(_tmp_grid, 0);//0 not checked, 1 checked not cleared, 2 checked cleared
+    if (doSpiral) {
+        //Spiral traverse of clear_grid on shroud_grid, inside out
+        // (di, dj) is a vector - direction in which we move right now
+        var _dx = 1;
+        var _dy = 0;
+        // length of current segment
+        var segment_length = 1;
     
-    var segment_passed = 0;
-    var NUMBER_OF_POINTS = power(obj_shroud.clear_grid_size, 2);
-    for (var k = 0; k < NUMBER_OF_POINTS; ++k) {
-        //do sth here
-        //_tmp_grid[#_current_cgrid_x, _current_cgrid_y] = 0;//0 not checked, 1 checked not cleared, 2 checked cleared
-        var _need_check = true;
-        var _clen = point_distance(_current_cgrid_x, _current_cgrid_y, _clear_grid_half_size, _clear_grid_half_size);
-        if (_clen > 1) {
-            var _cdir = point_direction(_current_cgrid_x, _current_cgrid_y, _clear_grid_half_size, _clear_grid_half_size);
-            var _tmp_x = floor(_current_cgrid_x + sign(lengthdir_x(1, _cdir)) );
-            var _tmp_y = floor(_current_cgrid_y + sign(lengthdir_y(1, _cdir)) );
+        // current position (i, j) and how much of current segment we passed
+        var _current_sgrid_x = _orig_x_grid;
+        var _current_sgrid_y = _orig_y_grid;
+        var _current_cgrid_x = _clear_grid_half_size;
+        var _current_cgrid_y = _clear_grid_half_size;
+        
+        var _tmp_grid = ds_grid_create(obj_shroud.clear_grid_size, obj_shroud.clear_grid_size);
+        ds_grid_clear(_tmp_grid, 0);//0 not checked, 1 checked not cleared, 2 checked cleared
+        
+        var _early_opt = 0;
+        
+        var segment_passed = 0;
+        var NUMBER_OF_POINTS = power(obj_shroud.clear_grid_size, 2);
+        for (var k = 0; k < NUMBER_OF_POINTS; ++k) {
+            //do sth here
+            //_tmp_grid[#_current_cgrid_x, _current_cgrid_y] = 0;//0 not checked, 1 checked not cleared, 2 checked cleared
+            var _need_check = true;
+            var _clen = point_distance(_current_cgrid_x, _current_cgrid_y, _clear_grid_half_size, _clear_grid_half_size);
+            if (_clen > 1) {
+                var _dh = _clear_grid_half_size - _current_cgrid_x; //vector of horizontal distance from current grid
+                var _dv = _clear_grid_half_size - _current_cgrid_y; //vector of vertical distance from current grid
+                
+                var _neighbour1_x = -1;
+                var _neighbour1_y = -1;
+                var _neighbour2_x = -1;
+                var _neighbour2_y = -1;
+                var _neighbour3_x = -1;
+                var _neighbour3_y = -1;
+                if (_dh == 0) {
+                    _neighbour1_x = _current_cgrid_x -1;
+                    _neighbour1_y = _current_cgrid_y;
+                    _neighbour2_x = _current_cgrid_x +1;
+                    _neighbour2_y = _current_cgrid_y;
+                    _neighbour3_x = _current_cgrid_x;
+                    _neighbour3_y = _current_cgrid_y + sign(_dv);
+                } else if (_dv == 0) {
+                    _neighbour1_x = _current_cgrid_x;
+                    _neighbour1_y = _current_cgrid_y+1;
+                    _neighbour2_x = _current_cgrid_x;
+                    _neighbour2_y = _current_cgrid_y-1;
+                    _neighbour3_x = _current_cgrid_x + sign(_dh);
+                    _neighbour3_y = _current_cgrid_y;
+                } else {
+                    _neighbour1_x = _current_cgrid_x + sign(_dh);
+                    _neighbour1_y = _current_cgrid_y;
+                    _neighbour2_x = _current_cgrid_x;
+                    _neighbour2_y = _current_cgrid_y + sign(_dv);
+                }
+                
+                var _res = true;
+                if (isPointValid(_neighbour1_x, _neighbour1_y)) {
+                    _res = _res && checkPointBlocked(_neighbour1_x, _neighbour1_y, _tmp_grid);
+                }
+                if (_res && isPointValid(_neighbour2_x, _neighbour2_y)) {
+                    _res = _res && checkPointBlocked(_neighbour2_x, _neighbour2_y, _tmp_grid);
+                }
+                if (_res && isPointValid(_neighbour3_x, _neighbour3_y)) {
+                    _res = _res && checkPointBlocked(_neighbour3_x, _neighbour3_y, _tmp_grid);
+                }
+                
+                if (_res) {
+                    _tmp_grid[# _current_cgrid_x, _current_cgrid_y] = 1;
+                    _early_opt++;
+                    _need_check = false;
+                }
+                
+                /*var _cdir = point_direction(_current_cgrid_x, _current_cgrid_y, _clear_grid_half_size, _clear_grid_half_size);
+                var _tmp_x = floor(_current_cgrid_x + sign(lengthdir_x(1, _cdir)) );
+                var _tmp_y = floor(_current_cgrid_y + sign(lengthdir_y(1, _cdir)) );*/
+                
+                //show_debug_message($"Checking ({_current_cgrid_x},{_current_cgrid_y}) -> ({_tmp_x},{_tmp_y}) : {_tmp_grid[# _tmp_x, _tmp_y]}");
+                /*if (_tmp_grid[# _tmp_x, _tmp_y] == 1) {
+                    _tmp_grid[# _current_cgrid_x, _current_cgrid_y] = 1;
+                    //show_debug_message($"Optimization!");
+                    _need_check = false;
+                }*/
+            } 
+            if (_need_check) {
+                var res = do_clear_shroud_cell(_current_sgrid_x, _current_sgrid_y, _current_cgrid_x, _current_cgrid_y, _sgrid_width, _sgrid_height, _half_tile_grid_size, shroud_clear_mask_grid, _tilemap, posX, posY, _nudge_amount);
+                checkNum += res.checkNum;
+                _tmp_grid[# _current_cgrid_x, _current_cgrid_y] = res.cleared?2:1;
+            }
             
-            //show_debug_message($"Checking ({_current_cgrid_x},{_current_cgrid_y}) -> ({_tmp_x},{_tmp_y}) : {_tmp_grid[# _tmp_x, _tmp_y]}");
-            if (_tmp_grid[# _tmp_x, _tmp_y] == 1) {
-                _tmp_grid[# _current_cgrid_x, _current_cgrid_y] = 1;
-                //show_debug_message($"Optimization!");
-                _need_check = false;
-            }
-        } 
-        if (_need_check) {
-            var res = do_clear_shroud_cell(_current_sgrid_x, _current_sgrid_y, _current_cgrid_x, _current_cgrid_y, _sgrid_width, _sgrid_height, _half_tile_grid_size, shroud_clear_mask_grid, _tilemap, posX, posY, _nudge_amount);
-            checkNum += res.checkNum;
-            _tmp_grid[# _current_cgrid_x, _current_cgrid_y] = res.cleared?2:1;
-        }
-        
-        // make a step, add 'direction' vector (di, dj) to current position (i, j)
-        _current_sgrid_x += _dx;
-        _current_sgrid_y += _dy;
-        _current_cgrid_x += _dx;
-        _current_cgrid_y += _dy;
-        
-        ++segment_passed;
-        
-        if (segment_passed == segment_length) {
-            // done with current segment
-            segment_passed = 0;
-
-            // 'rotate' directions
-            var buffer = _dx;
-            _dx = -_dy;
-            _dy = buffer;
-
-            // increase segment length if necessary
-            if (_dy == 0) {
-                ++segment_length;
+            // make a step, add 'direction' vector (di, dj) to current position (i, j)
+            _current_sgrid_x += _dx;
+            _current_sgrid_y += _dy;
+            _current_cgrid_x += _dx;
+            _current_cgrid_y += _dy;
+            
+            ++segment_passed;
+            
+            if (segment_passed == segment_length) {
+                // done with current segment
+                segment_passed = 0;
+    
+                // 'rotate' directions
+                var buffer = _dx;
+                _dx = -_dy;
+                _dy = buffer;
+    
+                // increase segment length if necessary
+                if (_dy == 0) {
+                    ++segment_length;
+                }
             }
         }
-    }
-    
-    ds_grid_destroy(_tmp_grid);
-    
-    /*
-    
-    for (var _x = 0; _x < obj_shroud.clear_grid_size; _x++)
-    {
-        for (var _y = 0; _y < obj_shroud.clear_grid_size; _y++)
+        
+        ds_grid_destroy(_tmp_grid);
+        //show_debug_message($"Checked {NUMBER_OF_POINTS}, early opt: {_early_opt}");
+    } else {
+        for (var _x = 0; _x < obj_shroud.clear_grid_size; _x++)
         {
-            var _current_sgrid_x = (_sgrid_center_x + _x);
-            var _current_sgrid_y = (_sgrid_center_y + _y);
-            checkNum += do_clear_shroud_cell(_current_sgrid_x, _current_sgrid_y, _x, _y, _sgrid_width, _sgrid_height, _half_tile_grid_size, shroud_clear_mask_grid, _tilemap, posX, posY, _nudge_amount);  
+            for (var _y = 0; _y < obj_shroud.clear_grid_size; _y++)
+            {
+                var _current_sgrid_x = (_sgrid_clear_topleft_x + _x);
+                var _current_sgrid_y = (_sgrid_clear_topleft_y + _y);
+                var _res = do_clear_shroud_cell(_current_sgrid_x, _current_sgrid_y, _x, _y, _sgrid_width, _sgrid_height, _half_tile_grid_size, shroud_clear_mask_grid, _tilemap, posX, posY, _nudge_amount);  
+                checkNum += _res.checkNum;
+            }
         }
-    }*/
-    
-    //show_debug_message("Checks: {0}", checkNum);
+        
+        //show_debug_message("Checks: {0}", checkNum);
+    }
 }
 
 function shroud_set_fog(){

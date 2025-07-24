@@ -46,3 +46,10 @@ if (show_corruption > 0) {
     var _corr_h = 64*3;
     draw_sprite_stretched(spr_corruption, clamp(9*show_corruption, 0, 8), 640 - 10 - _corr_w, 10, _corr_w, _corr_h);
 }
+
+if (show_fps) {
+    _x = 16;
+    _y = 16;
+    draw_rectangle_color(_x, _y, _x+80, _y+24, c_white, c_white, c_white, c_white, false);
+    draw_text_transformed(_x+2, _y, "FPS = " + string(fps), 1, 1, 0);
+}

@@ -28,6 +28,7 @@
   },
   "tileAnimationFrames":[
     {"$GMTileAnimation":"","%Name":"outflow_1","frames":[24,25,26,27,],"name":"outflow_1","resourceType":"GMTileAnimation","resourceVersion":"2.0",},
+    {"$GMTileAnimation":"","%Name":"outflow_2","frames":[32,33,34,35,],"name":"outflow_2","resourceType":"GMTileAnimation","resourceVersion":"2.0",},
   ],
   "tileAnimationSpeed":10.0,
   "tileHeight":16,

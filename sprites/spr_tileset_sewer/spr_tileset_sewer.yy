@@ -2,9 +2,9 @@
   "$GMSprite":"",
   "%Name":"spr_tileset_sewer",
   "bboxMode":0,
-  "bbox_bottom":95,
+  "bbox_bottom":191,
   "bbox_left":0,
-  "bbox_right":63,
+  "bbox_right":102,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"cae72ec1-3468-499c-a389-0ceb61f46521","name":"cae72ec1-3468-499c-a389-0ceb61f46521","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"f5db2539-240b-4e96-b42d-a8f8be54efd1","name":"f5db2539-240b-4e96-b42d-a8f8be54efd1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":192,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"ee2484bb-a9c5-4788-b72f-379c7b88dfee","blendMode":0,"displayName":"default","isLocked":false,"name":"ee2484bb-a9c5-4788-b72f-379c7b88dfee","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"c03dcc3b-ee12-4aa8-8cfd-cdd459d0e517","blendMode":0,"displayName":"default","isLocked":false,"name":"c03dcc3b-ee12-4aa8-8cfd-cdd459d0e517","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_tileset_sewer",
   "nineSlice":null,
@@ -71,8 +71,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"cae72ec1-3468-499c-a389-0ceb61f46521","path":"sprites/spr_tileset_sewer/spr_tileset_sewer.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"57373891-0987-429d-820a-ab9bfdeeda7c","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"f5db2539-240b-4e96-b42d-a8f8be54efd1","path":"sprites/spr_tileset_sewer/spr_tileset_sewer.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"cef49d79-8bdc-4133-8d5a-6adc793f9f30","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

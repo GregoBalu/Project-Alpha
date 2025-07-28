@@ -527,13 +527,13 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
+    {"roomId":{"name":"rm_sewer","path":"rooms/rm_sewer/rm_sewer.yy",},},
     {"roomId":{"name":"Menu","path":"rooms/Menu/Menu.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"rm_cave","path":"rooms/rm_cave/rm_cave.yy",},},
     {"roomId":{"name":"rm_battle","path":"rooms/rm_battle/rm_battle.yy",},},
     {"roomId":{"name":"rm_stat","path":"rooms/rm_stat/rm_stat.yy",},},
     {"roomId":{"name":"rm_fish","path":"rooms/rm_fish/rm_fish.yy",},},
-    {"roomId":{"name":"rm_sewer","path":"rooms/rm_sewer/rm_sewer.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

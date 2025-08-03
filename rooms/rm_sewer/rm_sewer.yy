@@ -10,8 +10,6 @@
     {"name":"inst_75174796","path":"rooms/rm_sewer/rm_sewer.yy",},
     {"name":"inst_5E610B2C","path":"rooms/rm_sewer/rm_sewer.yy",},
     {"name":"inst_39D47F9D","path":"rooms/rm_sewer/rm_sewer.yy",},
-    {"name":"inst_7B3FC916","path":"roomui/RoomUI/RoomUI.yy",},
-    {"name":"inst_4C3311D0","path":"roomui/RoomUI/RoomUI.yy",},
   ],
   "isDnd":false,
   "layers":[

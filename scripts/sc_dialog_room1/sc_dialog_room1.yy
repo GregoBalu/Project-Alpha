@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sc_dialog_room1",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sc_dialog_room1",
+  "parent":{
+    "name":"Dialogs",
+    "path":"folders/Scripts/Dialogs.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

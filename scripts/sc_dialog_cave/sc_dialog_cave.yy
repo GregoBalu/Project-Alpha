@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sc_dialog_cave",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sc_dialog_cave",
+  "parent":{
+    "name":"Dialogs",
+    "path":"folders/Scripts/Dialogs.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

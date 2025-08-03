@@ -13,3 +13,15 @@ if (is_on && !paused) {
     image_index = 1;
     image_speed = 1;
 }
+
+plug = function(_other) {
+    show_debug_message("Fountain plugged");
+    is_plugged = true;
+    plugged_by = _other;
+    image_index = 0;
+    image_speed = 0;
+    
+    if (instance_exists(activate_inst)) {
+        activate_inst.On(id);
+    }
+}

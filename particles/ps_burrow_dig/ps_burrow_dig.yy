@@ -1,0 +1,25 @@
+{
+  "$GMParticleSystem":"",
+  "%Name":"ps_burrow_dig",
+  "backdropHeight":768,
+  "backdropImageOpacity":0.5,
+  "backdropImagePath":"",
+  "backdropWidth":1366,
+  "backdropXOffset":0.0,
+  "backdropYOffset":0.0,
+  "drawOrder":0,
+  "emitters":[
+    {"$GMPSEmitter":"","%Name":"Emitter","additiveBlend":false,"directionIncrease":0.0,"directionMax":160.0,"directionMin":20.0,"directionWiggle":0.1,"distribution":0,"editorColour":1090519039,"editorDrawShape":true,"emitCount":5,"emitDelayMax":0.2,"emitDelayMin":0.0,"emitDelayUnits":0,"emitIntervalMax":0.05,"emitIntervalMin":0.0,"emitIntervalUnits":0,"enabled":true,"endColour":6710886,"GMPresetName":null,"gravityDirection":270.0,"gravityForce":0.01,"headPosition":0.0,"lifetimeMax":30.0,"lifetimeMin":10.0,"linkedEmitter":null,"locked":false,"midColour":4279450726,"mode":0,"name":"Emitter","orientationIncrease":0.0,"orientationMax":90.0,"orientationMin":-90.0,"orientationRelative":false,"orientationWiggle":10.0,"regionH":10.0,"regionW":10.0,"regionX":0.0,"regionY":0.0,"resourceType":"GMPSEmitter","resourceVersion":"2.0","scaleX":0.7,"scaleY":0.7,"shape":0,"sizeIncrease":-0.05,"sizeMax":1.5,"sizeMin":0.9,"sizeWiggle":0.1,"spawnOnDeathCount":1,"spawnOnDeathGMPreset":null,"spawnOnDeathId":null,"spawnOnUpdateCount":1,"spawnOnUpdateGMPreset":null,"spawnOnUpdateId":null,"speedIncrease":0.0,"speedMax":1.3,"speedMin":0.5,"speedWiggle":0.2,"spriteAnimate":false,"spriteId":{"name":"spr_burrow_dig","path":"sprites/spr_burrow_dig/spr_burrow_dig.yy",},"spriteRandom":false,"spriteStretch":true,"startColour":4294967295,"texture":-1,},
+  ],
+  "name":"ps_burrow_dig",
+  "parent":{
+    "name":"Particle Systems",
+    "path":"folders/Particle Systems.yy",
+  },
+  "resourceType":"GMParticleSystem",
+  "resourceVersion":"2.0",
+  "showBackdrop":true,
+  "showBackdropImage":false,
+  "xorigin":0,
+  "yorigin":0,
+}

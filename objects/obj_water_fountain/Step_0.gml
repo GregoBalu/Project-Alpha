@@ -1,5 +1,6 @@
 if (is_plugged) {
-    if (point_distance(x, y, plugged_by.x, plugged_by.y) > sprite_width/2) {
+    if (point_distance(x, y, plugged_by.x, plugged_by.y) > sprite_width*0.66) {
+        show_debug_message("Fountain unplugged");
         plugged_by = noone;
         is_plugged = false;
         

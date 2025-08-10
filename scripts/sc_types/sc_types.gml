@@ -48,6 +48,10 @@ function Vec2(_x, _y) constructor {
     distance = function(_other) {
         return point_distance(x, y, _other.x, _other.y);
     }
+    
+    toString = function() {
+        return $"({x},{y})";
+    }
 }
 
 enum Orientation { UP, UPRIGHT, RIGHT, DOWNRIGHT, DOWN, DOWNLEFT, LEFT, UPLEFT };

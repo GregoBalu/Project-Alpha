@@ -106,7 +106,9 @@ if (!immobilized) {
     MOVING = false;
 }
 
-camera.follow_point = new Vec2(x, y);
+if (camera.follow_player) {
+    camera.follow_point = new Vec2(x, y);
+}
 
 //var _vmat = camera_get_view_mat(view_camera[0]);
 audio_listener_set_position(0, x, y, 0);

@@ -10,8 +10,8 @@
   "name":"obj_cutscene_base",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Cutscene",
+    "path":"folders/Objects/Cutscene.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -43,8 +43,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_enemy_plant",
-    "path":"sprites/spr_enemy_plant/spr_enemy_plant.yy",
+    "name":"spr_cobra_idle",
+    "path":"sprites/spr_cobra_idle/spr_cobra_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

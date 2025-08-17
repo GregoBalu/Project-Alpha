@@ -93,7 +93,7 @@ function Camera_Transition_Sin(_dur) : Camera_Transition_Base(_dur) constructor 
         step_dir = start_point.direction(end_point); //point_direction(start_point.x, start_point.y, end_point.x, end_point.y);
         
         _cam.follow_point = start_point;
-        show_debug_message($"--Start progress={progress} -> {start_point}  totallen={total_len}");
+        //show_debug_message($"--Start progress={progress} -> {start_point}  totallen={total_len}");
     }
     tr_step = function(_cam) { 
         var _dt = tr_step_base(_cam);
@@ -101,12 +101,46 @@ function Camera_Transition_Sin(_dur) : Camera_Transition_Base(_dur) constructor 
         
         current_point = start_point.add(new Vec2(lengthdir_x(_sp*total_len, step_dir), lengthdir_y(_sp*total_len, step_dir) ) );
         _cam.follow_point = current_point;
-        show_debug_message($"transition progress={progress} -> {current_point}  mysin({progress*pi})={_sp}");
+        //show_debug_message($"transition progress={progress} -> {current_point}  mysin({progress*pi})={_sp}");
     }
     tr_end = function(_cam) {
         tr_end_base(_cam);
         _cam.follow_point = end_point;
-        show_debug_message($"--End progress={progress} -> {end_point}");
+        //show_debug_message($"--End progress={progress} -> {end_point}");
+    }
+}
+
+//\left(x-1\right)^{3}+1
+
+function Camera_Transition_CubicSlowing(_dur) : Camera_Transition_Base(_dur) constructor {
+    
+    total_len = 0;
+    step_dir = 0;
+    
+    f = function(_x) {
+        return power((_x-1), 3) +1;
+    }
+    
+    current_point = pointer_null;
+    
+    tr_start = function(_from, _to, _cam) {
+        tr_start_base(_from, _to, _cam);
+        
+        total_len = start_point.distance(end_point); // point_distance(start_point.x, start_point.y, end_point.x, end_point.y);
+        step_dir = start_point.direction(end_point); //point_direction(start_point.x, start_point.y, end_point.x, end_point.y);
+        
+        _cam.follow_point = start_point;
+    }
+    tr_step = function(_cam) { 
+        var _dt = tr_step_base(_cam);
+        var _sp = f(progress);
+        
+        current_point = start_point.add(new Vec2(lengthdir_x(_sp*total_len, step_dir), lengthdir_y(_sp*total_len, step_dir) ) );
+        _cam.follow_point = current_point;
+    }
+    tr_end = function(_cam) {
+        tr_end_base(_cam);
+        _cam.follow_point = end_point;
     }
 }
 

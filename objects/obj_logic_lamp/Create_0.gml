@@ -10,10 +10,12 @@ if (!instance_exists(activate_inst)) {
 On = function(_inst_id) {
     
     if (instance_exists(activate_inst)) {
-        activate_inst.Toggle();
+        activate_inst.SwitchOn();
     }
 };
 
 Off = function(_inst_id) {
-
+    if (instance_exists(activate_inst)) {
+        activate_inst.SwitchOff();
+    }
 };

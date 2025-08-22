@@ -1,3 +1,5 @@
+/// @description After moving, new target
+
 path_end();
 MOVING = false;
 

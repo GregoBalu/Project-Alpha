@@ -289,7 +289,7 @@ function enemyHeavyAttack(_obj) {
 function enemyInterruptAttack(_obj, _turns = 2) {
     obj_battle_enemy.data.charge_util -= 1;
             
-    var animTime = obj_battle_enemy.play_attack_animation(false);
+    var animTime = obj_battle_enemy.play_interrupt_animation();
     obj_battle_player.add_buff(new BattleBuff(_turns, 
                     {
                         sprite: spr_buff_stun,

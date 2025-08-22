@@ -49,6 +49,8 @@ battle = {
     animation_attack_fps: 1,
     animation_heavyattack: noone,
     animation_heavyattack_fps: 1,
+    animation_interrupt: noone,
+    animation_interrupt_fps: 1,
     animation_wait: noone,
     animation_wait_fps: 1,
     animation_cast: noone,

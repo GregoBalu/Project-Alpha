@@ -11,6 +11,8 @@ animation.walk_left = spr_firetoad_down;
 
 battle.animation_attack = spr_firetoad_attack;
 battle.animation_attack_fps = 20;
+battle.animation_interrupt = spr_firetoad_belch;
+battle.animation_interrupt_fps = 16;
 battle.animation_wait = spr_firetoad_wait;
 battle.animation_wait_fps = 8;
 battle.animation_cast = spr_firetoad_cast;

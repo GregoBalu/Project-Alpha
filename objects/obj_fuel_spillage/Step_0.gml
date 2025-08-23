@@ -1,3 +1,7 @@
+if (parent != noone) {
+    depth = parent.depth -1;
+}
+
 if (life_over) {
     image_alpha -= 0.05;
     image_xscale = image_xscale*0.98;

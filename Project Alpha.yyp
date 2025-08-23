@@ -289,6 +289,7 @@
     {"id":{"name":"sc_constants","path":"scripts/sc_constants/sc_constants.yy",},},
     {"id":{"name":"sc_dialog_cave","path":"scripts/sc_dialog_cave/sc_dialog_cave.yy",},},
     {"id":{"name":"sc_dialog_room1","path":"scripts/sc_dialog_room1/sc_dialog_room1.yy",},},
+    {"id":{"name":"sc_dialog_sewer","path":"scripts/sc_dialog_sewer/sc_dialog_sewer.yy",},},
     {"id":{"name":"sc_dialog","path":"scripts/sc_dialog/sc_dialog.yy",},},
     {"id":{"name":"sc_draw","path":"scripts/sc_draw/sc_draw.yy",},},
     {"id":{"name":"sc_effects","path":"scripts/sc_effects/sc_effects.yy",},},

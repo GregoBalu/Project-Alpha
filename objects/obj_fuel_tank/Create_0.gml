@@ -17,5 +17,6 @@ fill = function() {
 }
 
 use = function() {
-    //TODO
+    //TODO: audio
+    logic_trigger.On(id);
 }

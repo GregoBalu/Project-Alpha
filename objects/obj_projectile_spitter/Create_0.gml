@@ -16,4 +16,6 @@ shoot = function() {
     
 }
 
-alarm[ProjectileSpitterAlarms.ShootCycle] = cycleTimeSeconds*TIME_SECOND;
+var _start_delay = random_range(0, cycleTimeSeconds)*TIME_SECOND;
+
+alarm[ProjectileSpitterAlarms.ShootCycle] = _start_delay + cycleTimeSeconds*TIME_SECOND;

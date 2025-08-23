@@ -1,0 +1,1 @@
+if (DEBUG) show_debug_message($"Projectile destruction @ ({x},{y})");

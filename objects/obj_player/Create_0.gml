@@ -243,3 +243,12 @@ onBattleDamageReceived = function(_damaged_amount) {
         audio_play_sound(_rand, 4, false, 1, 0, random_range(0.8, 1.1));
     }
 }
+
+damage_receive = function(_amt) {
+    if (_amt > 0) {
+        var _rand = choose(snd_player_hurt1, snd_player_hurt2, snd_player_hurt3);
+        audio_play_sound(_rand, 4, false, 1, 0, random_range(0.8, 1.1));
+        hp -= _amt;
+        spawn_effect(spr_blood_spill, x, y, 0.7*sprite_width, 0.7*sprite_width, depth-1, 0, 0, 1);
+    }
+}

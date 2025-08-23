@@ -247,4 +247,44 @@ function draw_button_hint(_x, _y, _width, _height, _padding, _key){
     draw_textbox_color(_x+(_width/2), _y+(_height/2), _width-2*_padding, _height-2*_padding, key2str(_key), c_black, fa_center, fa_middle) ;
 }
 
+function draw_spline(_path, _sprite, _sprite_index, _segmentSize) {
+    
+    var _x0 = path_get_x(_path, 0);
+    var _y0 = path_get_y(_path, 0);
+    
+    var _len = path_get_length(_path);
+    var _smoothness = 1/(_len / _segmentSize)
+    
+    var _sh = _smoothness/2;
+    
+    var _w = sprite_get_width(_sprite);
+    var _h = sprite_get_height(_sprite);
+    var _w2hratio = _w / _h;
+    
+    var _xscale = _segmentSize/_w;
+    var _yscale = (_segmentSize/_w2hratio)/_h;
+    
+    var _cnt = 0;
+    for (var _i = _smoothness; _i < 1; _i += _smoothness) {
+        var _x = path_get_x(_path, _i);
+        var _y = path_get_y(_path, _i);
+        
+        var _dir = point_direction(_x0, _y0, _x, _y);
+        //var _dist = point_distance(_x0, _y0, _x, _y);
+        //show_debug_message($"dir={_dir} len={_dist}");
+        
+        var _xhalf = path_get_x(_path, _i - _sh);
+        var _yhalf = path_get_y(_path, _i - _sh);
+        
+        //var _xscale = _dist/_w;
+        //var _yscale = (_dist/_w2hratio)/_h;
+        
+        draw_sprite_ext(_sprite, _sprite_index, _xhalf, _yhalf, _xscale, _yscale, _dir, c_white, 1);
+        
+        _x0 = _x;
+        _y0 = _y;
+        _cnt++;
+    }
+    //show_debug_message($"Spline drawn with {_cnt} fragments")
+}
 

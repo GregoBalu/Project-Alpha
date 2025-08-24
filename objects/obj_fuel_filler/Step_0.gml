@@ -6,12 +6,17 @@ if (_id != noone /*&& point_distance(x, y, _id.x, _id.y) < 16*/) {
         image_index = 1;
         image_speed = original_image_speed;
         if (DEBUG) show_debug_message($"Fuel filling");
+            
+        audio = audio_play_sound(snd_fill, 6, false, 1, 0, 1);
     }
 } else {
     if (is_filling) {
         is_filling = false;
         image_index = 0;
         image_speed = 0;
+        if (audio_is_playing(audio)) {
+            audio_stop_sound(audio);
+        }
     }
 }
 

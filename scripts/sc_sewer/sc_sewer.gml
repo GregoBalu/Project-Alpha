@@ -32,6 +32,7 @@ function check_zapping(_alarm){
         exit;   
     }
     
+    
     for (var _i = 0; _i < ds_list_size(zapped); _i++)
     {
         if (point_distance(zapped[|_i].x, zapped[|_i].y, x, y) >= zap_length) {

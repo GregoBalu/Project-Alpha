@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_buzz2",
+  "audioGroupId":{
+    "name":"ag_sfx",
+    "path":"audiogroups/ag_sfx",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":5.5263267,
+  "name":"snd_buzz2",
+  "parent":{
+    "name":"sfx",
+    "path":"folders/Sounds/sfx.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_buzz2.wav",
+  "type":1,
+  "volume":1.0,
+}

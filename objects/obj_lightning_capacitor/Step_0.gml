@@ -12,12 +12,14 @@ if (energised && stored_energy < max_energy) {
     
 }
 
-if (!triggered && stored_energy > 0) {
-    logic_trigger.On(id);
-    triggered = true;
-} else if (triggered && stored_energy == 0) {
-    logic_trigger.Off(id);
-    triggered = false;
+if (logic_trigger != noone) {
+    if (!triggered && stored_energy > 0) {
+        logic_trigger.On(id);
+        triggered = true;
+    } else if (triggered && stored_energy == 0) {
+        logic_trigger.Off(id);
+        triggered = false;
+    }
 }
 
 var _energy_meter = stored_energy / max_energy;

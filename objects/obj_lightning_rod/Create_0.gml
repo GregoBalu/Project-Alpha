@@ -17,6 +17,7 @@ zap_frequency = 0.5*TIME_SECOND;
 zapped_by = noone;
 zapped = ds_list_create();
 paths = ds_list_create();
+zapping_audio = noone;
 
 alarm[2] = zap_frequency;
 

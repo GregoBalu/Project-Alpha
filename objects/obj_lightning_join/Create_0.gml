@@ -70,3 +70,27 @@ create_path = function(_x, _y) {
     
     return _path;
 }
+
+On = function(_id) {
+    if (!zapping) {
+        zapping = true;
+        image_speed = original_image_speed;
+        zapped_by = _id;
+        if (logic_trigger != noone) {
+            logic_trigger.On(id);
+        }
+    }
+}
+
+Off = function(_id) {
+    if (zapping && _id == zapped_by) {
+        zapping = false;
+        image_index = 0;
+        image_speed = 0;
+        clear_zapped();
+        zapped_by = noone;
+        if (logic_trigger != noone) {
+            logic_trigger.Off(id);
+        }
+    }
+}

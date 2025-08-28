@@ -8,6 +8,10 @@ door2 = tilemap_get_at_pixel(tilemap, x2, y2);
 
 
 On = function(_inst_id) {
+    if (only_off) {
+        exit;
+    }
+    
     tilemap_set_at_pixel(tilemap, 0, x1, y1);
     tilemap_set_at_pixel(tilemap, 0, x2, y2);
     
@@ -18,6 +22,10 @@ On = function(_inst_id) {
 };
 
 Off = function(_inst_id) {
+    if (only_on) {
+        exit;
+    }
+    
     tilemap_set_at_pixel(tilemap, door1, x1, y1);
     tilemap_set_at_pixel(tilemap, door2, x2, y2);
     

@@ -1,16 +1,16 @@
 {
   "$GMSound":"",
-  "%Name":"snd_battle_music",
+  "%Name":"snd_music_secrets",
   "audioGroupId":{
-    "name":"ag_music",
-    "path":"audiogroups/ag_music",
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
   },
   "bitDepth":1,
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.0,
-  "name":"snd_battle_music",
+  "duration":51.226124,
+  "name":"snd_music_secrets",
   "parent":{
     "name":"music",
     "path":"folders/Sounds/music.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_battle_music.mp3",
+  "soundFile":"snd_music_secrets.mp3",
   "type":0,
   "volume":1.0,
 }

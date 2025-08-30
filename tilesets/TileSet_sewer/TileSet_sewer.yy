@@ -1,7 +1,9 @@
 {
   "$GMTileSet":"v1",
   "%Name":"TileSet_sewer",
-  "autoTileSets":[],
+  "autoTileSets":[
+    {"$GMAutoTileSet":"","%Name":"Back_Detail","closed_edge":false,"name":"Back_Detail","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[86,75,76,78,91,85,84,77,92,83,87,79,94,93,95,1,],},
+  ],
   "macroPageTiles":{
     "SerialiseHeight":0,
     "SerialiseWidth":0,

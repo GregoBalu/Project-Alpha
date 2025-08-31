@@ -1,6 +1,9 @@
 if (opened) exit;
 
-if (distance_to_object(obj_player) <= 0) {
+var _dist = distance_to_object(obj_player);
+//var _dir = point_direction(x, y, obj_player.x, obj_player.y);
+
+if (_dist <= 0) {
     if (!showed_use) {
         showed_use = true;
         obj_gui.show_use++;

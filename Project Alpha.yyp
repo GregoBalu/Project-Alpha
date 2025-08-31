@@ -576,6 +576,7 @@
     {"id":{"name":"spr_trap_spear","path":"sprites/spr_trap_spear/spr_trap_spear.yy",},},
     {"id":{"name":"spr_water_arrow","path":"sprites/spr_water_arrow/spr_water_arrow.yy",},},
     {"id":{"name":"spr_water_drop_up","path":"sprites/spr_water_drop_up/spr_water_drop_up.yy",},},
+    {"id":{"name":"spr_water_drop","path":"sprites/spr_water_drop/spr_water_drop.yy",},},
     {"id":{"name":"spr_water_fountain","path":"sprites/spr_water_fountain/spr_water_fountain.yy",},},
     {"id":{"name":"spr_water_thing_lesser_end_cast","path":"sprites/spr_water_thing_lesser_end_cast/spr_water_thing_lesser_end_cast.yy",},},
     {"id":{"name":"spr_water_thing_lesser_end","path":"sprites/spr_water_thing_lesser_end/spr_water_thing_lesser_end.yy",},},

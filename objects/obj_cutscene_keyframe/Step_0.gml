@@ -12,14 +12,16 @@ if (state == Cutscene_KeyFrame_State.DuringTransition) {
     if (duration <= 0) {
         state = Cutscene_KeyFrame_State.Disabled;
         
+        shroud_set_fog_around(position.x, position.y, (shroud_radius+1)*obj_shroud.grid_size);
         if (next_keyframe != undefined) {
             next_keyframe.transitionTo();
         } else {
             obj_camera.follow_player = true;
             obj_player.immobilized = false;
+            
+            shroud_clear_position(obj_player.x, obj_player.y, obj_player.no_see_tilemaps, obj_player.current_shroud_mask);
         }
         
-        shroud_set_fog_around(position.x, position.y, (shroud_radius+1)*obj_shroud.grid_size);
         instance_destroy();
     }
 }

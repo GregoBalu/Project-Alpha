@@ -1,3 +1,5 @@
+if (distance_to_object(obj_player) > obj_player.camera.cam_w) exit;
+
 draw_self();
 
 if (zapping) {

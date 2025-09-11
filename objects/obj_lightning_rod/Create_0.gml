@@ -6,7 +6,7 @@ original_image_speed = image_speed;
 image_speed = 0;
 
 zapping = false;
-zap_length = 32;
+//zap_length = 32;
 if (zapping) {
     image_speed = original_image_speed;
 } else {

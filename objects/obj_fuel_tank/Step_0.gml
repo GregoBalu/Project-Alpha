@@ -1,6 +1,5 @@
 
-
-if (stage == max_stage) {
+if (!is_on && stage == max_stage) {
     
     if ( distance_to_object(obj_player) < 10) {
     

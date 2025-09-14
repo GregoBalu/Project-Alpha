@@ -1,6 +1,6 @@
-var _id = collision_point(x, y, obj_fuel_container, false, false);
+var _id = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_fuel_container, false, false);
 
-if (_id != noone /*&& point_distance(x, y, _id.x, _id.y) < 16*/) {
+if (_id != noone && _id.fill_level < _id.max_fill_level) {
     if (!is_filling) {
         is_filling = true;
         image_index = 1;

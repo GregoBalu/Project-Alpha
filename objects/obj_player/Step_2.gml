@@ -22,8 +22,11 @@ with (obj_collider)
 }
 
 var current_location = new Vec2(x, y);
-if (current_location.distance(previous_shroud_location) >= 0.5) {
-    
+var _gs = obj_shroud.grid_size /2;
+//if (current_location.distance(previous_shroud_location) >= 0.5) {
+if (current_location.x div _gs != previous_shroud_location.x div _gs ||
+    current_location.y div _gs != previous_shroud_location.y div _gs) {
+        
     //shroud_set_fog();
     shroud_set_fog_around(previous_shroud_location.x, previous_shroud_location.y, (shroud_radius+1)*obj_shroud.grid_size);
     

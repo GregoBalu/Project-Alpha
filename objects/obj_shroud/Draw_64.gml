@@ -21,37 +21,46 @@ if (FOG_ON) {
     
     /*if (!surface_exists(my_surf)) {
         my_surf = surface_create(cam_w, cam_h);
+    } else {
+        
     }
     
-    surface_
+    //surface_
     
     surface_set_target(my_surf);*/
     //draw_set_color(c_black);
     
+    var _rx = _off_x;
+    var _ry = _off_y;
     for (var _r = 0; _r < cam_cell_width; _r++)
     {
+        _ry = _off_y;
         for (var _c = 0; _c < cam_cell_height; _c++)
         {
             if (_pos_x + _r >= _sgrid_width || _pos_y + _c >= _sgrid_height) {
+                _ry += grid_size;
                 continue;
             }
             var _s = shroud_grid[# _pos_x + _r, _pos_y + _c];
             if (_s > 0) {
                 //draw_set_alpha(_s);
-                var _rx = (_r * grid_size) + _off_x;
-                var _ry = (_c * grid_size) + _off_y;
-                //draw_rectangle(_rx, _ry, _rx + _box_width, _ry + _box_height, false);
+                //var _rx = (_r * grid_size) + _off_x; //optimized out to bunch of addition around the cycle
+                //var _ry = (_c * grid_size) + _off_y;
+                //draw_rectangle(_rx, _ry, _rx + _box_width-1, _ry + _box_height-1, false);
                 draw_sprite_stretched_ext(spr_black_16, 0, _rx, _ry, _box_width, _box_height, c_white, _s);
                 /*if (debug_level > 0) {
                     draw_text_transformed_color(_rx, _ry, _s.debug, 0.25, 0.25, 0, c_red, c_red, c_red, c_red, _s.alpha);
                 }*/
             }
+            _ry += grid_size;
         }
+        _rx += grid_size;
     }
+    /*surface_reset_target()
     
-    /*surface_reset_target();
-    
-    draw_surface(my_surf, 0, 0);*/
+    draw_surface(my_surf, 0, 0);
+    surface_free(my_surf);
+    my_surf = undefined;*/
     
     //draw_set_alpha(1);
     display_set_gui_size(_orig_gui_w, _orig_gui_h);

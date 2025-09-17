@@ -3,7 +3,9 @@ event_inherited();
 
 previous_location = new Vec2(xstart, ystart);
 previous_shroud_location = new Vec2(xstart, ystart);
-shroud_radius = 7.5;
+shroud_radius = function() {
+    return 7 * (16/obj_shroud.grid_size) + 0.5;
+}
 default_shroud_mask = [];
 current_shroud_mask = undefined;
 

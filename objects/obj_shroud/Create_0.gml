@@ -16,7 +16,7 @@ ds_grid_clear(shroud_grid, DEFAULT_SHROUD_ALPHA);
 }*/
 
 
-clear_grid_size = 11;//should be odd
+clear_grid_size = 10 * (16/grid_size) +1;//should be odd
 
 var _sow = 1;
 var _soh = 1;

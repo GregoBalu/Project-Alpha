@@ -8,7 +8,7 @@ if (_id != noone && _id.carried_by != noone) {
     _id = noone;
 }
 if (_id == noone) {
-    _id = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_entity_base, false, true);
+    _id = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_player, false, true);
 }
 if (_id != noone) {
     //in collision

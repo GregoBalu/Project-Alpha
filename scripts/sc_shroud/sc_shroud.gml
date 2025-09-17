@@ -1,8 +1,9 @@
 
 #macro DEFAULT_SHROUD_ALPHA 1
 #macro FOG_ALPHA 0.9
+#macro SHROUD_ALWAYS_VISIBLE -1
 
-function shroud_clear_grid_setup(_sight_radius, _grid_size)
+function shroud_clear_grid_setup(_sight_radius, _grid_size, _no_shroud_value = 0, _see_max_shroud_value = 0.9, _max_shroud_value = DEFAULT_SHROUD_ALPHA)
 {
     if (_grid_size % 2 == 0) _grid_size++;
         
@@ -20,11 +21,11 @@ function shroud_clear_grid_setup(_sight_radius, _grid_size)
         {
             var _dist = point_distance(_cent, _cent, _x, _y);
             if (_dist == 0) {
-                _temp_grid[# _x, _y] = 0;
+                _temp_grid[# _x, _y] = _no_shroud_value;
             } else if (_dist <= _sight_radius) {
-                _temp_grid[# _x, _y] = (0.9 * power((_dist/_sight_radius), 3));
+                _temp_grid[# _x, _y] = (_see_max_shroud_value * power((_dist/_sight_radius), 3));
             } else {
-                _temp_grid[# _x, _y] = DEFAULT_SHROUD_ALPHA;
+                _temp_grid[# _x, _y] = _max_shroud_value;
             }
             //debug_row = string_concat(debug_row, " ", string_format(_temp_grid[# _x, _y], 2, 2) );
         }
@@ -284,6 +285,13 @@ function do_clear_shroud_cell(_current_sgrid_x, _current_sgrid_y, _current_cgrid
             };
     }
     
+    if (obj_shroud.shroud_grid[# _current_sgrid_x, _current_sgrid_y] < 0) {
+        return {
+            checkNum: 0,
+            cleared: false
+        };
+    }
+    
     var _checkNum = 0;
     var _cleared = false;
     
@@ -510,9 +518,9 @@ function shroud_clear_position(posX, posY, _tilemap, shroud_clear_mask_grid){
         ds_grid_destroy(_tmp_grid);
         //show_debug_message($"Checked {NUMBER_OF_POINTS}, early opt: {_early_opt}");
     } else {
-        for (var _x = 0; _x < obj_shroud.clear_grid_size; _x++)
+        for (var _x = 0; _x < ds_grid_width(shroud_clear_mask_grid); _x++)
         {
-            for (var _y = 0; _y < obj_shroud.clear_grid_size; _y++)
+            for (var _y = 0; _y < ds_grid_height(shroud_clear_mask_grid); _y++)
             {
                 var _current_sgrid_x = (_sgrid_clear_topleft_x + _x);
                 var _current_sgrid_y = (_sgrid_clear_topleft_y + _y);
@@ -525,6 +533,23 @@ function shroud_clear_position(posX, posY, _tilemap, shroud_clear_mask_grid){
     }
 }
 
+function shroud_clear_area(_topLeft, _bottomRight)
+{
+    
+    for (var _x = _topLeft.x; _x <= _bottomRight.x; ++_x)
+    {
+        var _sx = _x div obj_shroud.grid_size;
+        for (var _y = _topLeft.y; _y <= _bottomRight.y; ++_y)
+        {
+            var _sy = _y div obj_shroud.grid_size;
+            obj_shroud.shroud_grid[#_sx,_sy] = SHROUD_ALWAYS_VISIBLE;
+        }
+    }
+    
+    
+    
+}
+
 function shroud_set_fog(){
     
     var _sgrid_width = ds_grid_width(obj_shroud.shroud_grid);
@@ -533,7 +558,8 @@ function shroud_set_fog(){
     {
         for (var _c = 0; _c < _sgrid_height; _c++)
         {
-            if (obj_shroud.shroud_grid[#_r, _c] < FOG_ALPHA) {
+            if (obj_shroud.shroud_grid[#_r, _c] < FOG_ALPHA &&
+                obj_shroud.shroud_grid[#_r, _c] >= 0) {
                 obj_shroud.shroud_grid[#_r, _c] = FOG_ALPHA;
             }
             //obj_shroud.shroud_grid[#_r, _c].checked = false;
@@ -556,7 +582,8 @@ function shroud_set_fog_around(_x, _y, _range){
         for (var _c = max(0, _y_grid-_range_grid); _c < (_y_grid+_range_grid) && _c < _sgrid_height; _c++)
         {
             
-            if (obj_shroud.shroud_grid[#_r, _c] < FOG_ALPHA) {
+            if (obj_shroud.shroud_grid[#_r, _c] < FOG_ALPHA &&
+                obj_shroud.shroud_grid[#_r, _c] >= 0) {
                 obj_shroud.shroud_grid[#_r, _c] = FOG_ALPHA;
             }
             //obj_shroud.shroud_grid[#_r, _c].checked = false;

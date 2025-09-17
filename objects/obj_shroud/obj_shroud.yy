@@ -14,8 +14,8 @@
   "name":"obj_shroud",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"shroud",
+    "path":"folders/Objects/shroud.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -285,12 +285,12 @@ function do_clear_shroud_cell(_current_sgrid_x, _current_sgrid_y, _current_cgrid
             };
     }
     
-    if (obj_shroud.shroud_grid[# _current_sgrid_x, _current_sgrid_y] < 0) {
+    /*if (obj_shroud.shroud_grid[# _current_sgrid_x, _current_sgrid_y] < 0) {
         return {
             checkNum: 0,
             cleared: false
         };
-    }
+    }*/
     
     var _checkNum = 0;
     var _cleared = false;

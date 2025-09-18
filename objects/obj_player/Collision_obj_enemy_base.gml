@@ -1,4 +1,4 @@
-if (instance_exists(obj_battle_switcher)) exit;
+if (instance_exists(obj_dialog) || instance_exists(obj_battle_switcher)) exit;
     
 if (global.do_pause) exit;
     

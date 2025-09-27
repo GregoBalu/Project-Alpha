@@ -63,5 +63,44 @@ if (FOG_ON) {
     my_surf = undefined;*/
     
     //draw_set_alpha(1);
+    
+    
+    if (debug_level > 0) {
+        //display_set_gui_size(640, 384);
+        
+        var _dx = camera_get_view_x(view_camera[0]);
+        var _dy = camera_get_view_y(view_camera[0]);
+        //display_set_gui_size(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]));
+        //show_debug_message($"debug list size={ds_list_size(debug_sc_list)}")
+        /*for (var _i = 0; _i < ds_list_size(debug_sc_list);_i++) {
+            
+            var _item = debug_sc_list[|_i];
+            //show_debug_message($"{_item}")
+            
+            var _color = c_red;
+            if (!_item[3]) {
+                _color = c_green;
+            }
+            
+            draw_circle_color(_item[0]-_dx, _item[1]-_dy, _item[2], _color, _color, false);
+            
+        }*/
+        if (debug_bfs_max_dist > 0) {
+            var _color_step = 255 / debug_bfs_max_dist;
+            
+            draw_set_alpha(0.5);
+            for (var _i = 0; _i < ds_list_size(debug_bfs_list); _i++)
+            {
+                var _item = debug_bfs_list[|_i];
+                var _color = make_color_rgb(_item[2]*_color_step, 0, (debug_bfs_max_dist-_item[2])*_color_step);
+                
+                draw_circle_color(_item[0]-_dx, _item[1]-_dy, grid_size/4, _color, _color, false);
+            }
+            draw_set_alpha(1);
+            }
+    }
+    
+    
+    
     display_set_gui_size(_orig_gui_w, _orig_gui_h);
 }

@@ -5,4 +5,4 @@
 //instance_create_layer(0, 0, "Instances", obj_cutscene_base);
 
 //obj_cutscene_keyframe.transitionTo();
-test_join.x += 2;
+//test_join.x += 2;

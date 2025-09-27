@@ -1,9 +1,9 @@
 if (debug_level > 0) {
-    //var _orig_gui_w = display_get_gui_width();
-    //var _orig_gui_h = display_get_gui_height();
-    //display_set_gui_size(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]));
-    //var orig_alpha = draw_get_alpha();
-    //draw_set_alpha(1);
+    /*var _orig_gui_w = display_get_gui_width();
+    var _orig_gui_h = display_get_gui_height();
+    display_set_gui_size(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]));
+    var orig_alpha = draw_get_alpha();
+    draw_set_alpha(1);
     
     for (var i = 0; i < ds_list_size(debug_list); i++)
     {
@@ -41,6 +41,20 @@ if (debug_level > 0) {
         draw_circle_color(debug_points[| i].x, debug_points[| i].y, 1.5, c_yellow, c_yellow, true);
     }
     
+    show_debug_message($"debug list size={ds_list_size(debug_sc_list)}")
+    for (var _i = 0; _i < ds_list_size(debug_sc_list);_i++) {
+        
+        var _item = debug_sc_list[|_i];
+        //show_debug_message($"{_item}")
+        
+        var _color = c_red;
+        if (!_item[3]) {
+            _color = c_green;
+        }
+        draw_circle_color(_item[0], _item[1], _item[2], _color, _color, false);
+        
+    }
+    
     //draw_set_alpha(orig_alpha);
-    //display_set_gui_size(_orig_gui_w, _orig_gui_h);
+    //display_set_gui_size(_orig_gui_w, _orig_gui_h);*/
 }

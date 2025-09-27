@@ -1,5 +1,6 @@
-
-shroud_grid = ds_grid_create(room_width div grid_size, room_height div grid_size);
+shroud_grid_width = room_width div grid_size;
+shroud_grid_height = room_height div grid_size;
+shroud_grid = ds_grid_create(shroud_grid_width, shroud_grid_height);
 
 /*var default_shroud_data = {
     alpha: DEFAULT_SHROUD_ALPHA,
@@ -35,5 +36,10 @@ debug_list = ds_list_create();
 debug_points = ds_list_create();
 debug_find_collider_count = 0;
 debug_find_collider_iteration = 0;
+
+debug_sc_list = ds_list_create();
+
+debug_bfs_list = ds_list_create();
+debug_bfs_max_dist = 0;
 
 my_surf = undefined;

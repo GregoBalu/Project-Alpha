@@ -33,7 +33,7 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"FOG_ON","filters":[],"listItems":[],"multiselect":false,"name":"FOG_ON","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"true","varType":3,},
-    {"$GMObjectProperty":"v1","%Name":"grid_size","filters":[],"listItems":[],"multiselect":false,"name":"grid_size","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"16","varType":1,},
+    {"$GMObjectProperty":"v1","%Name":"grid_size","filters":[],"listItems":[],"multiselect":false,"name":"grid_size","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"8","varType":1,},
     {"$GMObjectProperty":"v1","%Name":"CONTINOUS_FOG","filters":[],"listItems":[],"multiselect":false,"name":"CONTINOUS_FOG","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
   ],
   "resourceType":"GMObject",

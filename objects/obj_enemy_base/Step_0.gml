@@ -32,9 +32,12 @@ if (player_close && wander_range > 0 && move_speed > 0 && !immobilized) {
     MOVING = false;
 }
 
-if (MOVING && particle_system != undefined) {
-    part_system_position(particle_system, x, y);
-    part_system_depth(particle_system, depth-1);
+if (MOVING && ds_list_size(particles) > 0) {
+    for (var _i = 0; _i < ds_list_size(particles); ++_i)
+    {
+        part_system_position(particles[|_i].ps, x, y);
+        part_system_depth(particles[|_i].ps, depth-1);
+    }
 }
 
 if (hp <= 0) {

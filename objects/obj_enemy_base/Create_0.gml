@@ -9,19 +9,22 @@ player_close = false;
 
 scale_level = level;
 
-particle_system = undefined;
+particles = ds_list_create();
 var len = array_length(battle_buff);
 if (len > 0 ) {
     for (var _i = 0;  _i < len; _i++)
     {
         if (battle_buff[_i] == "Frenzy") {
-            particle_system = part_system_create(ps_frenzy_effect);
-            part_emitter = part_emitter_create(particle_system);
-            part_system_depth(particle_system, depth-1);
+            var _dat = {
+                ps: part_system_create(ps_frenzy_effect),
+                pe: undefined
+            };
+            _dat.pe = part_emitter_create(_dat.ps);
+            part_system_depth(_dat.ps, depth-1);
             
-            
-            part_system_position(particle_system, x, y);
-            part_emitter_enable(particle_system, part_emitter, true);
+            part_system_position(_dat.ps, x, y);
+            part_emitter_enable(_dat.ps, _dat.pe, true);
+            ds_list_add(particles, _dat);
         }
     }
 }

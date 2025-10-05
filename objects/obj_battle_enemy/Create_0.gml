@@ -18,6 +18,8 @@ y -= sprite_height/2;
 attack_move = 2;
 attack_distance = 20;
 
+particles = undefined;
+
 battle_enemy_wait_noti.image_speed = battle_enemy_wait_noti.image_speed*(1.0/BattleEnemyWaitAnimationTime);
 
 if (data.battle.idle_sound != noone) {
@@ -141,4 +143,5 @@ play_cast_animation = function(_did_crit) {
     }
 }
 
+data.initBattleBuffs(self);
 data.initBattle(self);

@@ -4,7 +4,7 @@ is_stunned = false;
 
 /**
  *  Function to make entity take damage and display said damage.
- * @param {real} _amount  Amount of damage delt.
+ * @param {real} _amount  Amount of damage dealt.
  * @param {bool} _did_crit If the damage was a crit or not
  * @returns {real} The actual damage the entity took
  */
@@ -61,7 +61,7 @@ take_damage = function(_amount, _did_crit) {
         text : string("{0}", string_format(-_damaged_amount,1,1)),
         time_seconds : 1.2,
         width : 15,
-        heigth : 12,
+        height : 12,
         color : _color
     });
     return _damaged_amount;

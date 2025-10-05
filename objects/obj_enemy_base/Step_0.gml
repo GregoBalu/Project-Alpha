@@ -32,6 +32,11 @@ if (player_close && wander_range > 0 && move_speed > 0 && !immobilized) {
     MOVING = false;
 }
 
+if (MOVING && particle_system != undefined) {
+    part_system_position(particle_system, x, y);
+    part_system_depth(particle_system, depth-1);
+}
+
 if (hp <= 0) {
     show_debug_message("enemy dead");
     obj_loottable.generate_loot(self);

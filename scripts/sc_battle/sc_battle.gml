@@ -316,6 +316,8 @@ function get_xp_total(_level) {
     return _xp_table[_len-1];
 }
 
+global.BUFF_TURNS_PER_COMBAT_TURNS = 4;
+
 /**
  * Function to create a buff used in battle.
  * @param {real}    _turns Number of turns the buff is active (1 turn = player action/enemy action, 2 turns = player action -> enemy action -> )

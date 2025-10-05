@@ -9,6 +9,23 @@ player_close = false;
 
 scale_level = level;
 
+particle_system = undefined;
+var len = array_length(battle_buff);
+if (len > 0 ) {
+    for (var _i = 0;  _i < len; _i++)
+    {
+        if (battle_buff[_i] == "Frenzy") {
+            particle_system = part_system_create(ps_frenzy_effect);
+            part_emitter = part_emitter_create(particle_system);
+            part_system_depth(particle_system, depth-1);
+            
+            
+            part_system_position(particle_system, x, y);
+            part_emitter_enable(particle_system, part_emitter, true);
+        }
+    }
+}
+
 check_player_close = function() {
     if (distance_to_object(obj_player) < camera_get_view_width(obj_player.camera.cam)*1.5) {
         player_close = true;
@@ -79,6 +96,34 @@ if (room == Room1) {
     battle.battle_screen_animated = spr_battle_screen_splitted;
 }
 
+initBattleBuffs = function(_self) {
+    //Override me
+    var len = array_length(_self.data.battle_buff);
+    if (len > 0 ) {
+        for (var _i = 0;  _i < len; _i++)
+        {
+            if (_self.data.battle_buff[_i] == "Frenzy") {
+                _self.add_buff(buff_create_frenzy(10*global.BUFF_TURNS_PER_COMBAT_TURNS))
+                
+                if (_self.particles == undefined) {
+                    _self.particles = ds_list_create();
+                }
+                var _dat = {
+                    ps : part_system_create(ps_frenzy_effect),
+                    pe: undefined
+                };
+                _dat.pe = part_emitter_create(_dat.ps);
+                
+                //TODO: ? resize emitter?
+                
+                part_system_depth(_dat.ps, _self.depth-1);
+                part_system_position(_dat.ps, _self.x, _self.y);
+                part_emitter_enable(_dat.ps, _dat.pe, true);
+                ds_list_add(_self.particles, _dat);
+            }
+        }
+    }
+}
 initBattle = function(_self) {
     //Override me
 }
@@ -90,4 +135,14 @@ doEnemyAction = function(_selfData, _playerData) {
 
 battleDraw = function(_self) {
     //Override me
+}
+onBattleEnd = function(_self) {
+    if (_self.particles != undefined) {
+        for (var _i = 0; _i < ds_list_size(_self.particles); ++_i)
+        {
+            part_emitter_destroy(_self.particles[|_i].ps, _self.particles[|_i].pe);
+            part_system_destroy(_self.particles[|_i].ps);
+        }
+        ds_list_destroy(_self.particles);
+    }
 }

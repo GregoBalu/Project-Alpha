@@ -20,14 +20,15 @@ battle.battle_screen_sprite_speed = 4;
 
 
 initBattle = function(_self) {
-    obj_battle_enemy.base_stun_chance = 0.0;
-    obj_battle_enemy.stun_chance = 0.5;
+    
+    _self.base_stun_chance = 0.0;
+    _self.stun_chance = 0.5;
 }
 
 doEnemyAction = function(_selfData, _playerData) {
     
     var _rand = random_range(0, 1);
-    show_debug_message($"Stun rand: {_rand} < {obj_battle_enemy.stun_chance}");
+    //show_debug_message($"Stun rand: {_rand} < {obj_battle_enemy.stun_chance}");
     if (_rand < obj_battle_enemy.stun_chance) {
         _selfData.charge_util++;
         var _animTime = enemyInterruptAttack(obj_battle_enemy);
@@ -39,9 +40,9 @@ doEnemyAction = function(_selfData, _playerData) {
     }
     
     _rand = random_range(0, 1);
-    show_debug_message($"Attack rand: {_rand}");
+    //show_debug_message($"Attack rand: {_rand}");
     if (_rand < 0.3) {
-        show_debug_message("Squeeze!");
+        //show_debug_message("Squeeze!");
         //sqeeze
         var _enemy_damage = calc_damage(obj_battle_enemy.data.damage, 0);
       
@@ -57,13 +58,13 @@ doEnemyAction = function(_selfData, _playerData) {
                         },
                         function(_data){
                             //start
-                            show_debug_message($"Squeeze start");
+                            //show_debug_message($"Squeeze start");
                         }, function(_data) {
                             //end 
-                            show_debug_message($"Squeeze end {_data.did_free} {obj_battle_player.wait_used}");
+                            //show_debug_message($"Squeeze end {_data.did_free} {obj_battle_player.wait_used}");
                             if (_data.did_free) exit;
                             if (obj_battle_player.wait_used > _data.pre_wait_used) {
-                                show_debug_message("Free!");
+                                //show_debug_message("Free!");
                                 _data.did_free = true;
                                 exit;
                             }
@@ -75,11 +76,11 @@ doEnemyAction = function(_selfData, _playerData) {
                         }, function(_data) {
                            //player pre
                             _data.pre_wait_used = obj_battle_player.wait_used;
-                            show_debug_message($"Squeeze pre player {_data.pre_wait_used}");
+                            //show_debug_message($"Squeeze pre player {_data.pre_wait_used}");
                         }, function(_data) {
                             //player post
                             //check if waited, remove buff
-                            show_debug_message($"Squeeze post player {obj_battle_player.wait_used}");
+                            //show_debug_message($"Squeeze post player {obj_battle_player.wait_used}");
                             if (obj_battle_player.wait_used > _data.pre_wait_used) {
                                 _data.did_free = true;
                             }
@@ -89,17 +90,17 @@ doEnemyAction = function(_selfData, _playerData) {
         //TODO: sound
         return _animTime;
     } else if (_rand < 0.8) {
-        show_debug_message("Attack!");
+        //show_debug_message("Attack!");
         var _animTime = enemySimpleAttack(obj_battle_enemy);
         //TODO: sound
         return _animTime;
     } else if (_rand < 0.9) {
-        show_debug_message("Wait!");
+        //show_debug_message("Wait!");
         var _animTime = enemyWait(obj_battle_enemy);
         //TODO: sound
         return _animTime;
     } else {
-        show_debug_message("Refreshing Waters!");
+        //show_debug_message("Refreshing Waters!");
         //refreshing waters
         var _animTime = obj_battle_enemy.play_cast_animation(false);
         obj_battle_enemy.take_damage(-5, false);

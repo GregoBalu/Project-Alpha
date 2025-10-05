@@ -39,7 +39,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_black_16",
+    "path":"sprites/spr_black_16/spr_black_16.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

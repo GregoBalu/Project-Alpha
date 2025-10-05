@@ -329,6 +329,7 @@ function do_clear_shroud_cell(_current_sgrid_x, _current_sgrid_y, _current_cgrid
         
         if (do_clear_shroud) {
             obj_shroud.shroud_grid[# _current_sgrid_x, _current_sgrid_y] = _shroud_clear_mask_value;
+            obj_shroud.changed = true;
             _cleared = true;
             //obj_shroud.shroud_grid[# globalGridX, globalGridY].debug = string_concat(_x, ",", _y, "\n", _shroud_clear_mask_value);
             //show_debug_message($"Shroud [{_current_sgrid_x},{_current_sgrid_y}]={_shroud_clear_mask_value}");

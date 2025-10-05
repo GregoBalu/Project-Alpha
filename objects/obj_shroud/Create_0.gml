@@ -2,6 +2,8 @@ shroud_grid_width = room_width div grid_size;
 shroud_grid_height = room_height div grid_size;
 shroud_grid = ds_grid_create(shroud_grid_width, shroud_grid_height);
 
+changed = true;
+
 /*var default_shroud_data = {
     alpha: DEFAULT_SHROUD_ALPHA,
     checked:false,

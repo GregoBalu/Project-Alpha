@@ -31,9 +31,9 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"heal_per_tick","filters":[],"listItems":[],"multiselect":false,"name":"heal_per_tick","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.2","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"tick_seconds","filters":[],"listItems":[],"multiselect":false,"name":"tick_seconds","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.5","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"duration_seconds","filters":[],"listItems":[],"multiselect":false,"name":"duration_seconds","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"5","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"heal_per_tick","filters":[],"listItems":[],"multiselect":false,"name":"heal_per_tick","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.2","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"tick_seconds","filters":[],"listItems":[],"multiselect":false,"name":"tick_seconds","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.5","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"duration_seconds","filters":[],"listItems":[],"multiselect":false,"name":"duration_seconds","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"5","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

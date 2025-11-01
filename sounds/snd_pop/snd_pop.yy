@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"snd_pop",
   "audioGroupId":{
     "name":"ag_sfx",
     "path":"audiogroups/ag_sfx",
   },
   "bitDepth":1,
-  "bitRate":128,
+  "channelFormat":1,
   "compression":0,
+  "compressionQuality":4,
   "conversionMode":0,
   "duration":0.19736962,
+  "exportDir":"",
   "name":"snd_pop",
   "parent":{
     "name":"sfx",
@@ -20,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_pop.wav",
-  "type":1,
   "volume":1.0,
 }

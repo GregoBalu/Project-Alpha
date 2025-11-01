@@ -36,9 +36,9 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"corruption_amount","filters":[],"listItems":[],"multiselect":false,"name":"corruption_amount","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"2","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"prefilled","filters":[],"listItems":[],"multiselect":false,"name":"prefilled","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
-    {"$GMObjectProperty":"v1","%Name":"prefilled_ingredient","filters":[
+    {"$GMObjectProperty":"v2","%Name":"corruption_amount","filters":[],"listItems":[],"multiselect":false,"name":"corruption_amount","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"2","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"prefilled","filters":[],"listItems":[],"multiselect":false,"name":"prefilled","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
+    {"$GMObjectProperty":"v2","%Name":"prefilled_ingredient","filters":[
         "GMObject",
       ],"listItems":[],"multiselect":false,"name":"prefilled_ingredient","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":5,},
   ],

@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"snd_buzz1",
   "audioGroupId":{
     "name":"ag_sfx",
     "path":"audiogroups/ag_sfx",
   },
   "bitDepth":1,
-  "bitRate":128,
+  "channelFormat":1,
   "compression":0,
+  "compressionQuality":4,
   "conversionMode":0,
   "duration":0.5688889,
+  "exportDir":"",
   "name":"snd_buzz1",
   "parent":{
     "name":"sfx",
@@ -20,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_buzz1.wav",
-  "type":1,
   "volume":1.0,
 }

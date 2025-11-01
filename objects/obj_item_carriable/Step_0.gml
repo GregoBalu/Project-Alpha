@@ -8,6 +8,7 @@ if (can_pickup) {
         if (!lastShowState) {
             ++obj_gui.show_use;
             lastShowState = true;
+            show_debug_message("Show use")
         }
         //show_debug_message("Collision show use");
         
@@ -25,6 +26,7 @@ if (can_pickup) {
         if (lastShowState) {
             --obj_gui.show_use;
             lastShowState = false;
+            show_debug_message("Hide use")
         }
     }
 } else {
@@ -33,6 +35,7 @@ if (can_pickup) {
     if (lastShowState) {
         --obj_gui.show_use;
         lastShowState = false;
+        show_debug_message("Hide use")
     }
 }
 

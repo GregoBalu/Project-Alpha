@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_battle_screen_cave_water",
   "bboxMode":0,
   "bbox_bottom":179,
@@ -12,10 +12,10 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"9e513dbc-51b2-4e9c-9229-b5ce5894aee5","name":"9e513dbc-51b2-4e9c-9229-b5ce5894aee5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"1e55d45b-35ff-4ef2-9d8f-df33df307cda","name":"1e55d45b-35ff-4ef2-9d8f-df33df307cda","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"e5c8d911-be95-4633-a1af-936a8a6e6439","name":"e5c8d911-be95-4633-a1af-936a8a6e6439","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"1cd2a330-9299-449a-ad99-289a567175db","name":"1cd2a330-9299-449a-ad99-289a567175db","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"9e513dbc-51b2-4e9c-9229-b5ce5894aee5","name":"9e513dbc-51b2-4e9c-9229-b5ce5894aee5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"1e55d45b-35ff-4ef2-9d8f-df33df307cda","name":"1e55d45b-35ff-4ef2-9d8f-df33df307cda","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"e5c8d911-be95-4633-a1af-936a8a6e6439","name":"e5c8d911-be95-4633-a1af-936a8a6e6439","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"1cd2a330-9299-449a-ad99-289a567175db","name":"1cd2a330-9299-449a-ad99-289a567175db","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -73,18 +73,10 @@
     "timeUnits":1,
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"9e513dbc-51b2-4e9c-9229-b5ce5894aee5","path":"sprites/spr_battle_screen_cave_water/spr_battle_screen_cave_water.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"fa6aab8d-a3a8-4f5e-94f0-8cd844ccbe84","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"1e55d45b-35ff-4ef2-9d8f-df33df307cda","path":"sprites/spr_battle_screen_cave_water/spr_battle_screen_cave_water.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"9f835692-ab41-48f5-af29-386b1ebd528e","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"e5c8d911-be95-4633-a1af-936a8a6e6439","path":"sprites/spr_battle_screen_cave_water/spr_battle_screen_cave_water.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"3c68ffa7-1199-4aac-857c-9ee0709784bd","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"1cd2a330-9299-449a-ad99-289a567175db","path":"sprites/spr_battle_screen_cave_water/spr_battle_screen_cave_water.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"2c01514c-e2ad-4407-92f6-e688d5fefdc2","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"9e513dbc-51b2-4e9c-9229-b5ce5894aee5","path":"sprites/spr_battle_screen_cave_water/spr_battle_screen_cave_water.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"fa6aab8d-a3a8-4f5e-94f0-8cd844ccbe84","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"1e55d45b-35ff-4ef2-9d8f-df33df307cda","path":"sprites/spr_battle_screen_cave_water/spr_battle_screen_cave_water.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"9f835692-ab41-48f5-af29-386b1ebd528e","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"e5c8d911-be95-4633-a1af-936a8a6e6439","path":"sprites/spr_battle_screen_cave_water/spr_battle_screen_cave_water.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"3c68ffa7-1199-4aac-857c-9ee0709784bd","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"1cd2a330-9299-449a-ad99-289a567175db","path":"sprites/spr_battle_screen_cave_water/spr_battle_screen_cave_water.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"2c01514c-e2ad-4407-92f6-e688d5fefdc2","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

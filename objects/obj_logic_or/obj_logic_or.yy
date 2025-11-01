@@ -30,7 +30,7 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"activate_inst","filters":[],"listItems":[],"multiselect":false,"name":"activate_inst","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":4,},
+    {"$GMObjectProperty":"v2","%Name":"activate_inst","filters":[],"listItems":[],"multiselect":false,"name":"activate_inst","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":4,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

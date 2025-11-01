@@ -31,12 +31,12 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"music","filters":[
+    {"$GMObjectProperty":"v2","%Name":"music","filters":[
         "GMSound",
       ],"listItems":[],"multiselect":false,"name":"music","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":5,},
-    {"$GMObjectProperty":"v1","%Name":"volume","filters":[],"listItems":[],"multiselect":false,"name":"volume","rangeEnabled":true,"rangeMax":1.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.4","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"offset","filters":[],"listItems":[],"multiselect":false,"name":"offset","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"undefined","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"pitch","filters":[],"listItems":[],"multiselect":false,"name":"pitch","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"undefined","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"volume","filters":[],"listItems":[],"multiselect":false,"name":"volume","rangeEnabled":true,"rangeMax":1.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.4","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"offset","filters":[],"listItems":[],"multiselect":false,"name":"offset","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"undefined","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"pitch","filters":[],"listItems":[],"multiselect":false,"name":"pitch","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"undefined","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

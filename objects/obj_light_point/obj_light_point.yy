@@ -28,9 +28,9 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"max_pulse_scale","filters":[],"listItems":[],"multiselect":false,"name":"max_pulse_scale","rangeEnabled":true,"rangeMax":1.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.1","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"frequency_seconds","filters":[],"listItems":[],"multiselect":false,"name":"frequency_seconds","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"sync","filters":[],"listItems":[],"multiselect":false,"name":"sync","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
+    {"$GMObjectProperty":"v2","%Name":"max_pulse_scale","filters":[],"listItems":[],"multiselect":false,"name":"max_pulse_scale","rangeEnabled":true,"rangeMax":1.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.1","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"frequency_seconds","filters":[],"listItems":[],"multiselect":false,"name":"frequency_seconds","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"sync","filters":[],"listItems":[],"multiselect":false,"name":"sync","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

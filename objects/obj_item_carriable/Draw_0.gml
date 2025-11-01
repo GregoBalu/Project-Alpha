@@ -14,6 +14,14 @@ if (carried_by == noone) {
     
     
     draw_sprite_stretched_ext(spr_glow, 0, _x, _y, _w, _h, c_white, 0.5);
+    
+    if (lastShowState) {
+        //show_debug_message("alma")
+        //draw_sprite_stretched_ext(sprite_index, image_index, x-5, y-5, (bbox_left-bbox_right)+10, (bbox_bottom-bbox_top)+10, c_yellow, 1);
+        //draw_circle_colour(x, y, 2*sprite_width/6, c_yellow, c_yellow, false);
+    }
 }
+
+
 
 draw_self();

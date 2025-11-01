@@ -45,6 +45,7 @@ if (hp <= 0) {
     obj_loottable.generate_loot(self);
     obj_player.gain_experience(self);
     instance_destroy();
+    exit;
 }
 
 //scale enemy up with player a bit to be more exciting/challenging

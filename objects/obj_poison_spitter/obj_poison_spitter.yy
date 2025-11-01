@@ -31,9 +31,9 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"poison_duration_seconds","filters":[],"listItems":[],"multiselect":false,"name":"poison_duration_seconds","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"3","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"dot_damage","filters":[],"listItems":[],"multiselect":false,"name":"dot_damage","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.3","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"dot_tickrate_seconds","filters":[],"listItems":[],"multiselect":false,"name":"dot_tickrate_seconds","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.25","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"poison_duration_seconds","filters":[],"listItems":[],"multiselect":false,"name":"poison_duration_seconds","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"3","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"dot_damage","filters":[],"listItems":[],"multiselect":false,"name":"dot_damage","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.3","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"dot_tickrate_seconds","filters":[],"listItems":[],"multiselect":false,"name":"dot_tickrate_seconds","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.25","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

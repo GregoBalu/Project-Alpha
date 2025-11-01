@@ -36,12 +36,12 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"wander_range","filters":[],"listItems":[],"multiselect":false,"name":"wander_range","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"100","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"distance_to_player","filters":[],"listItems":[],"multiselect":false,"name":"distance_to_player","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"80","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"move_tickdelay_seconds","filters":[],"listItems":[],"multiselect":false,"name":"move_tickdelay_seconds","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":1,},
-    {"$GMObjectProperty":"v1","%Name":"base_xp","filters":[],"listItems":[],"multiselect":false,"name":"base_xp","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"5","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"loot_point","filters":[],"listItems":[],"multiselect":false,"name":"loot_point","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[0,0]","varType":4,},
-    {"$GMObjectProperty":"v1","%Name":"battle_buff","filters":[],"listItems":[
+    {"$GMObjectProperty":"v2","%Name":"wander_range","filters":[],"listItems":[],"multiselect":false,"name":"wander_range","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"100","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"distance_to_player","filters":[],"listItems":[],"multiselect":false,"name":"distance_to_player","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"80","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"move_tickdelay_seconds","filters":[],"listItems":[],"multiselect":false,"name":"move_tickdelay_seconds","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":1,},
+    {"$GMObjectProperty":"v2","%Name":"base_xp","filters":[],"listItems":[],"multiselect":false,"name":"base_xp","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"5","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"loot_point","filters":[],"listItems":[],"multiselect":false,"name":"loot_point","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[0,0]","varType":4,},
+    {"$GMObjectProperty":"v2","%Name":"battle_buff","filters":[],"listItems":[
         "\"Frenzy\"",
       ],"multiselect":true,"name":"battle_buff","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":6,},
   ],

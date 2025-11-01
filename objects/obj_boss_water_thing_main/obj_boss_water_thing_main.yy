@@ -45,8 +45,8 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"lesser_tentacles","filters":[],"listItems":[],"multiselect":false,"name":"lesser_tentacles","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[]","varType":4,},
-    {"$GMObjectProperty":"v1","%Name":"for_show_tentacles","filters":[],"listItems":[],"multiselect":false,"name":"for_show_tentacles","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[]","varType":4,},
+    {"$GMObjectProperty":"v2","%Name":"lesser_tentacles","filters":[],"listItems":[],"multiselect":false,"name":"lesser_tentacles","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[]","varType":4,},
+    {"$GMObjectProperty":"v2","%Name":"for_show_tentacles","filters":[],"listItems":[],"multiselect":false,"name":"for_show_tentacles","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[]","varType":4,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

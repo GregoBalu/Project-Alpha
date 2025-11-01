@@ -30,13 +30,13 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"cost_type","filters":[],"listItems":[
+    {"$GMObjectProperty":"v2","%Name":"cost_type","filters":[],"listItems":[
         "\"None\"",
         "\"AttackCharge\"",
         "\"UtilityCharge\"",
         "\"AttackAndUtilityCharge\"",
       ],"multiselect":false,"name":"cost_type","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"\"None\"","varType":6,},
-    {"$GMObjectProperty":"v1","%Name":"cost_amount","filters":[],"listItems":[],"multiselect":false,"name":"cost_amount","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"cost_amount","filters":[],"listItems":[],"multiselect":false,"name":"cost_amount","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

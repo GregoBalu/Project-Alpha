@@ -27,12 +27,12 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"duration","filters":[],"listItems":[],"multiselect":false,"name":"duration","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"transition","filters":[],"listItems":[],"multiselect":false,"name":"transition","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"new Camera_Transition_Instant()","varType":4,},
-    {"$GMObjectProperty":"v1","%Name":"next_keyframe","filters":[
+    {"$GMObjectProperty":"v2","%Name":"duration","filters":[],"listItems":[],"multiselect":false,"name":"duration","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"transition","filters":[],"listItems":[],"multiselect":false,"name":"transition","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"new Camera_Transition_Instant()","varType":4,},
+    {"$GMObjectProperty":"v2","%Name":"next_keyframe","filters":[
         "GMObject",
       ],"listItems":[],"multiselect":false,"name":"next_keyframe","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"undefined","varType":4,},
-    {"$GMObjectProperty":"v1","%Name":"shroud_radius","filters":[],"listItems":[],"multiselect":false,"name":"shroud_radius","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"7.5","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"shroud_radius","filters":[],"listItems":[],"multiselect":false,"name":"shroud_radius","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"7.5","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

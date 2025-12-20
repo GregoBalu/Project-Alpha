@@ -58,3 +58,6 @@ Temporary Items
 *.resource_order
 *.old
 sprites/aseprite/*.png
+
+# GMRT Build output files
+Build

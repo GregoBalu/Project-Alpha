@@ -10,8 +10,12 @@ On = function(_inst_id) {
             audio = noone;
         }
         show_debug_message($"On: Playing sound {sound_id}");
-        audio_falloff_set_model(audio_falloff_linear_distance);
-        audio = audio_play_sound_at(sound_id, x, y, 0, fallof_ref, fallof_max, fallof_factor, false, priority, gain, 0, pitch_shift?random_range(0.9,1.2):1);
+        if (is_global) {
+            audio = audio_play_sound(sound_id, priority, false, gain, 0, pitch_shift?random_range(0.9,1.2):1);
+        } else {
+            audio_falloff_set_model(audio_falloff_linear_distance);
+            audio = audio_play_sound_at(sound_id, x, y, 0, fallof_ref, fallof_max, fallof_factor, false, priority, gain, 0, pitch_shift?random_range(0.9,1.2):1);
+        }
     }
 }
 Off = function(_inst_id) {
@@ -21,7 +25,11 @@ Off = function(_inst_id) {
             audio = noone;
         }
         show_debug_message($"Off: Playing sound {sound_id}");
-        audio_falloff_set_model(audio_falloff_linear_distance);
-        audio = audio_play_sound_at(sound_id, x, y, 0, fallof_ref, fallof_max, fallof_factor, false, priority, gain, 0, pitch_shift?random_range(0.9,1.2):1);
+        if (is_global) {
+            audio = audio_play_sound(sound_id, priority, false, gain, 0, pitch_shift?random_range(0.9,1.2):1);
+        } else {
+            audio_falloff_set_model(audio_falloff_linear_distance);
+            audio = audio_play_sound_at(sound_id, x, y, 0, fallof_ref, fallof_max, fallof_factor, false, priority, gain, 0, pitch_shift?random_range(0.9,1.2):1);
+        }
     }
 }

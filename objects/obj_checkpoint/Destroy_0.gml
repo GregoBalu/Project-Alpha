@@ -1,0 +1,1 @@
+show_debug_message($"Checkpoint death: {id}, created {room_created}");

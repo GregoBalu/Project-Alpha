@@ -26,19 +26,13 @@ ds_map_add(blocking_shroud_mask_map, Orientation.UPRIGHT, shroud_clear_grid_setu
 if (instance_exists(obj_room_switcher)) {
     var _inst = instance_find(obj_room_switcher, 0);
     show_debug_message("Cloning player from room_switcher");
-    clone_from(_inst.player_data);
+    load_player_data_from(_inst);
     
-    xp = _inst.player_data.xp;
-    xp_total = _inst.player_data.xp_total;
-    corruption = _inst.player_data.corruption;
-    corruption_total = _inst.player_data.corruption_total;
-    ds_list_copy(talents, _inst.player_data.talents);
-    talent_points = _inst.player_data.talent_points;
-    ds_list_copy(unlocked_talents, _inst.player_data.unlocked_talents);
-    ds_map_copy(inventory, _inst.player_data.inventory);
-    ds_map_copy(equipped_items, _inst.player_data.equipped_items);
-    coins = _inst.player_data.coins;
-    statistic = _inst.player_data.statistic;
+    create_checkpoint();
+} else if (instance_exists(obj_checkpoint)) {
+    var _inst = instance_find(obj_checkpoint, 0);
+    show_debug_message("Cloning player from checkpoint");
+    load_player_data_from(_inst);
 } else {
     {
         ds_list_add(talents, instance_create_layer(0, 0, "GUI", obj_talent_heavy_cheap, {
@@ -118,4 +112,8 @@ if (instance_exists(obj_room_switcher)) {
             persistent: true
         }));
     }
+    
+    create_checkpoint();
 }
+
+

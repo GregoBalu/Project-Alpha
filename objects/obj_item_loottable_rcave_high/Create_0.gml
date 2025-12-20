@@ -9,6 +9,9 @@ table.add_entry(2, new ItemDrop(obj_talent_star, {}, false, true));
 table.add_entry(8, new ItemDrop(obj_item_pickup_inventory_base, {
     inventory_item: obj_robe_of_voices
 }, true, true));
+table.add_entry(5, new ItemDrop(obj_item_pickup_inventory_base, {
+    inventory_item: obj_ring_of_sorrow
+}, true, true));
 
 
 function generate_loot(_x, _y, _layer) {

@@ -6,3 +6,4 @@
 
 //obj_cutscene_keyframe.transitionTo();
 //test_join.x += 2;
+create_checkpoint();

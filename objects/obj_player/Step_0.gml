@@ -135,11 +135,23 @@ if (tilemap_hurt != -1) {
 }
 
 if (hp <= 0) {
-    show_debug_message("You dead");
-    log_stat($"obj_player [Step] dead");
-    
-    instance_create_layer(0,0, "Instances", obj_death, {
-        stat: self.statistic
-    });
-    room_goto(rm_stat);
+    immobilized = true;
+    if (divine_symbols > 0 && instance_exists(obj_checkpoint)) {
+        divine_symbols--;
+        show_debug_message("Restarting from checkpoint");
+        //TODO: revive animation
+        
+        obj_checkpoint.player_data.divine_symbols = divine_symbols;
+        
+        instance_create_layer(0,0, "Instances", obj_room_restart, {set_persistent:true});
+
+    } else {
+        show_debug_message("You dead");
+        log_stat($"obj_player [Step] dead");
+        
+        instance_create_layer(0,0, "Instances", obj_death, {
+            stat: self.statistic
+        });
+        room_goto(rm_stat);
+    }
 }

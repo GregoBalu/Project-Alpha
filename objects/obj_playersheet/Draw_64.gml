@@ -276,28 +276,43 @@ if (is_visible) {
         _hint_data = drawInventorySlot(InventorySlots.Slot3, _invX + _invGap+(_invGap + _invSlotW)*2, _invY, _invSlotW, _invSlotH, _invItemMargin) ?? _hint_data;
         _hint_data = drawInventorySlot(InventorySlots.Slot4, _invX + _invGap+(_invGap + _invSlotW)*3, _invY, _invSlotW, _invSlotH, _invItemMargin) ?? _hint_data;
         _hint_data = drawInventorySlot(InventorySlots.Slot5, _invX + _invGap+(_invGap + _invSlotW)*4, _invY, _invSlotW, _invSlotH, _invItemMargin) ?? _hint_data;
-        _invY += _invSlotH + _invGap;
-        draw_sprite_stretched_ext(spr_coin, 0, _invX + _invGap, _invY , _invSlotW, _invSlotH, #C0C0C0, 1);
-        var _footer_x = _invX + _invGap + _invSlotW + _invGap+_invGap;
-        draw_textbox(_footer_x, _invY+_invGap, _invSlotW-2*_invGap, _invSlotH-2*_invGap, $"x{obj_player.coins}");
         
-        _footer_x += _invSlotW + _invSlotW + _invGap*2;
-        var _key_x1 = _footer_x;
-        var _key_y1 = _invY;
-        draw_sprite_stretched_ext(spr_keyring, 0, _footer_x, _invY , _invSlotW, _invSlotH, #C0C0C0, 1);
-        _footer_x += _invSlotW + _invGap;
-        draw_textbox(_footer_x, _invY+_invGap, _invSlotW-2*_invGap, _invSlotH-2*_invGap, $"x{obj_player.key_ring.count()}");
-        if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _key_x1, _key_y1, _footer_x+_invSlotW-2*_invGap, _invY+_invSlotH-2*_invGap)) {
-            _do_draw_hint = true;
-            _draw_hint_data = {
-                hint_x : mouse_gui_x,
-                hint_y : mouse_gui_y,
-                hint : obj_player.key_ring.hint(),
-                halign : fa_right,
-                valign: fa_bottom
-            };
+        //coins
+        var _footer_x = _invX - _invGap*3 ;
+        {
+           _invY += _invSlotH + _invGap;
+           draw_sprite_stretched_ext(spr_coin, 0, _footer_x, _invY , _invSlotW, _invSlotH, #C0C0C0, 1);
+            _footer_x += _invSlotW + _invGap+_invGap;
+           draw_textbox(_footer_x, _invY+_invGap, _invSlotW-2*_invGap, _invSlotH-2*_invGap, $"x{obj_player.coins}");
         }
         
+        //divine symbols
+        {
+            _footer_x += _invSlotW + _invGap;
+            draw_sprite_stretched_ext(spr_divine_symbol, 0, _footer_x, _invY , _invSlotW, _invSlotH, #C0C0C0, 1);
+            _footer_x += _invSlotW + _invGap;
+            draw_textbox(_footer_x, _invY+_invGap, _invSlotW-2*_invGap, _invSlotH-2*_invGap, $"x{obj_player.divine_symbols}");
+        }
+        
+        //key ring
+        {
+            _footer_x += _invSlotW + _invGap;
+            var _key_x1 = _footer_x;
+            var _key_y1 = _invY;
+            draw_sprite_stretched_ext(spr_keyring, 0, _footer_x, _invY , _invSlotW, _invSlotH, #C0C0C0, 1);
+            _footer_x += _invSlotW + _invGap;
+            draw_textbox(_footer_x, _invY+_invGap, _invSlotW-2*_invGap, _invSlotH-2*_invGap, $"x{obj_player.key_ring.count()}");
+            if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _key_x1, _key_y1, _footer_x+_invSlotW-2*_invGap, _invY+_invSlotH-2*_invGap)) {
+                _do_draw_hint = true;
+                _draw_hint_data = {
+                    hint_x : mouse_gui_x,
+                    hint_y : mouse_gui_y,
+                    hint : obj_player.key_ring.hint(),
+                    halign : fa_right,
+                    valign: fa_bottom
+                };
+            }
+        }
         
         //draw_sprite_stretched_ext(spr_gui_slot, 0, _invX + _invGap + (_invGap + _invSlotW), _invY , _invSlotW, _invSlotH, #C0C0C0, 1);
         //draw_sprite_stretched_ext(spr_gui_slot, 0, _invX + _invGap + (_invGap + _invSlotW)*2, _invY , _invSlotW, _invSlotH, #C0C0C0, 1);

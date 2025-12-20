@@ -1,5 +1,8 @@
 if (next_room == noone) exit;
 
+with (obj_checkpoint) {
+    instance_destroy();
+}
 
 var switcher;
 if (!instance_exists(obj_room_switcher)) {

@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_npc1",
+  "%Name":"obj_npc_guard",
   "eventList":[],
   "managed":true,
-  "name":"obj_npc1",
+  "name":"obj_npc_guard",
   "overriddenProperties":[],
   "parent":{
     "name":"NPCs",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_npc1",
-    "path":"sprites/spr_npc1/spr_npc1.yy",
+    "name":"spr_npc_guard",
+    "path":"sprites/spr_npc_guard/spr_npc_guard.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -232,6 +232,7 @@
     {"id":{"name":"obj_npc_guard","path":"objects/obj_npc_guard/obj_npc_guard.yy",},},
     {"id":{"name":"obj_npc_note","path":"objects/obj_npc_note/obj_npc_note.yy",},},
     {"id":{"name":"obj_npc_parent","path":"objects/obj_npc_parent/obj_npc_parent.yy",},},
+    {"id":{"name":"obj_npc_princess","path":"objects/obj_npc_princess/obj_npc_princess.yy",},},
     {"id":{"name":"obj_npc_vendor","path":"objects/obj_npc_vendor/obj_npc_vendor.yy",},},
     {"id":{"name":"obj_painting_frog","path":"objects/obj_painting_frog/obj_painting_frog.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},

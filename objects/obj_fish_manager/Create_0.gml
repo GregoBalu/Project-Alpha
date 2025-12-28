@@ -15,7 +15,7 @@ obj_fish_switcher.fish_missed = 0;
 
 
 returnRoom = function() {
-    room_goto(obj_fish_switcher.original_room);
+    change_room_to(obj_fish_switcher.original_room, RoomTransition.Spiral);
 }
 
 fishBaited = function() {

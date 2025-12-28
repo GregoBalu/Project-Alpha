@@ -17,4 +17,4 @@ with (_enemy) {
 _switcher.original_room = room;
 
 show_debug_message($"Battle start go from {room}");
-room_goto(rm_battle);
+change_room_to(rm_battle, RoomTransition.Spiral);

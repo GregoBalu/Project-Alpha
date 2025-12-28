@@ -1,4 +1,4 @@
-if (FOG_ON) {
+if (FOG_ON && is_gui) {
     display_set_gui_size(cam_w, cam_h);
     
     var _orig_gui_w = display_get_gui_width();

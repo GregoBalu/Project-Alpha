@@ -1,4 +1,9 @@
 
+
+camera_set_view_size(cam, cam_w, cam_h);
+
+
+
 var _cam_x = (follow_point.x - cam_w2) ;
 _cam_x = clamp(_cam_x, 0, room_width-cam_w)+ offset.x;
 var _cam_y = (follow_point.y - cam_h2) ;

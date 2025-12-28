@@ -18,8 +18,6 @@
     {"name":"inst_789D0B2F","path":"rooms/Menu/Menu.yy",},
     {"name":"inst_7A4118E7","path":"rooms/Menu/Menu.yy",},
     {"name":"inst_7273E6A7","path":"rooms/Menu/Menu.yy",},
-    {"name":"inst_7B3FC916","path":"roomui/RoomUI/RoomUI.yy",},
-    {"name":"inst_4C3311D0","path":"roomui/RoomUI/RoomUI.yy",},
   ],
   "isDnd":false,
   "layers":[

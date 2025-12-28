@@ -9,7 +9,7 @@ if (collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_player
     if (keyboard_check_pressed(global.input_use)) {
         var _inst = instance_create_layer(0, 0, "Instances", obj_fish_switcher);
         _inst.original_room = room;
-        room_goto(rm_fish);
+        change_room_to(rm_fish, RoomTransition.Spiral);
     }
 } else {
     if (showUse) {

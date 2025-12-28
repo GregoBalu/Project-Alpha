@@ -12,5 +12,5 @@ if (!instance_exists(obj_room_switcher)) {
 }
 
 
-room_goto(next_room);
+change_room_to(next_room, RoomTransition.Fade);
 

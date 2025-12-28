@@ -1,4 +1,6 @@
 if (instance_exists(obj_dialog)) exit;
+    
+if (global.do_pause) exit;
 
 if (player_close && wander_range > 0 && move_speed > 0 && !immobilized) {
     if (path_index == -1) {

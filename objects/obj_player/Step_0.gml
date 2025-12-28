@@ -152,6 +152,6 @@ if (hp <= 0) {
         instance_create_layer(0,0, "Instances", obj_death, {
             stat: self.statistic
         });
-        room_goto(rm_stat);
+        change_room_to(rm_stat, RoomTransition.Spin);
     }
 }

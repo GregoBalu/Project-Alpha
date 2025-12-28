@@ -5,4 +5,4 @@ if (set_persistent) {
 }
 
 temp_room = room_add();
-room_goto(temp_room);
+change_room_to(temp_room, RoomTransition.Fade);

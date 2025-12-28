@@ -6,4 +6,6 @@
 
 //obj_cutscene_keyframe.transitionTo();
 //test_join.x += 2;
-create_checkpoint();
+//create_checkpoint();
+
+change_room_to(rm_cave, RoomTransition.Spin);

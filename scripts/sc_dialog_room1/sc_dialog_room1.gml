@@ -3,9 +3,9 @@ function initDialogRoom1(){
 }
 
 global.dialog_welcome = [
-    new dialog_entry("Geoff", c_aqua, spr_npc1, new dialog_text("Hey, I started to worry you wouldn't show up at all. What took you so long?")),
+    new dialog_entry("Geoff", c_aqua, spr_npc_guard, new dialog_text("Hey, I started to worry you wouldn't show up at all. What took you so long?")),
     new dialog_entry(dialog_player_name, dialog_player_color, spr_player_idle_down, new dialog_text("Sorry, I got held up by the guards at the city exit. So where is this Witch you were talking about?") ),
-    new dialog_entry("Geoff", c_aqua, spr_npc1, new dialog_text("She ... It went deep inside this dungeon of sort but it may know our plan. It started to prepare. Be on your guard!") ),
+    new dialog_entry("Geoff", c_aqua, spr_npc_guard, new dialog_text("She ... It went deep inside this dungeon of sort but it may know our plan. It started to prepare. Be on your guard!") ),
     new dialog_entry(dialog_player_name, dialog_player_color, spr_player_idle_down, new dialog_text("Will do. Any sign of corruption yet? ...") ),
     new dialog_entry("", c_white, undefined, new dialog_text("<A loud bang shakes the ground>", font_base_italic, c_ltgray), 
         function() {
@@ -16,7 +16,7 @@ global.dialog_welcome = [
     new dialog_entry(dialog_player_name, dialog_player_color, spr_player_idle_down, new dialog_text("Nevermind, I'll get started!") )
 ];
 global.dialog_welcome_alt = [
-    new dialog_entry("Geoff", c_aqua, spr_npc1, new dialog_text("Get in there and slay that Witch!") )
+    new dialog_entry("Geoff", c_aqua, spr_npc_guard, new dialog_text("Get in there and slay that Witch!") )
 ];
 
 global.dialog_hint_talent_star = [
@@ -48,28 +48,4 @@ global.dialog_hint_room1_leverpuzzle = [
 
 global.dialog_lore_room1_hiddensecret1 = [
     new dialog_entry("Note", c_white, spr_note, new dialog_text("Abandon all hope. Turn around while you can ..."))
-];
-
-global.dialog_room1_vendor = [
-    new dialog_entry(global.dialog_vendor_name, global.dialog_vendor_color, spr_npc_vendor, new dialog_text("I see you are persistent. Come take a look at my wares.")),
-    new dialog_choice_entry(global.dialog_vendor_name, global.dialog_vendor_color, spr_npc_vendor, new dialog_text($"Current coins: XXX. Options:"), [
-        new dialog_vendor_item("Healing potion", 2, 2, function() {
-            obj_player.hp = clamp(obj_player.hp + 5, 0, obj_player.hp_total);
-            return true;
-        }),
-        new dialog_vendor_item("Corruption removal", 5, 100, function() {
-            obj_player.add_corruption(-2);
-            return true;
-        }),
-        new dialog_vendor_item("Cane of wisdom", 10, 1, function() {
-            if (obj_player.addToInventory(obj_cane_of_wisdom)) {
-                return true;
-            }
-            return false;
-        }),
-        new dialog_vendor_item("Talent potential", 10, 2, function() {
-            obj_player.talent_points++;
-            return true;
-        })
-    ])
 ];

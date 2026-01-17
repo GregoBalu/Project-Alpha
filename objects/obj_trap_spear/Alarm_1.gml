@@ -1,4 +1,4 @@
-
+/// Retracting animation
 if (paused) {
     afterPauseUp = false;
     exit;

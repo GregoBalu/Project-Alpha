@@ -1,2 +1,2 @@
-//damage grace period countdown
+/// Damage grace period countdown
 doDamage = true;

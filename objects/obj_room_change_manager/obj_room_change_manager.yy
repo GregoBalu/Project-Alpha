@@ -37,6 +37,7 @@
         "GMRoom",
       ],"listItems":[],"multiselect":false,"name":"room_id","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":5,},
     {"$GMObjectProperty":"v2","%Name":"effect","filters":[],"listItems":[],"multiselect":false,"name":"effect","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"RoomTransition.Instant","varType":4,},
+    {"$GMObjectProperty":"v2","%Name":"do_out","filters":[],"listItems":[],"multiselect":false,"name":"do_out","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"True","varType":3,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

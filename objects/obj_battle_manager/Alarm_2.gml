@@ -1,4 +1,4 @@
-//After enemy attack
+/// After enemy attack
 
 obj_battle_player.tick_turn(true);
 obj_battle_enemy.tick_turn(true);

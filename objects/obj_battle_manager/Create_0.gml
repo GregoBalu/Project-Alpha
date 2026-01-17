@@ -3,8 +3,11 @@ enum BattleManagerEvents {
     AfterPlayerAttack = 0,
     EnemyAttack = 1,
     AfterEnemyAttack = 2,
-    BattleEnd = 3
+    BattleEnd = 3,
+    BackgroundAnim = 9
 };
+
+BackgroundAnimationDelaySeconds = 1.0*TIME_SECOND;
 
 turn = 0;
 time = 0;

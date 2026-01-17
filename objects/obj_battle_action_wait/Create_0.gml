@@ -42,20 +42,20 @@ action = function() {
     
     if (lifesteal_duration > 0) {
         obj_battle_player.add_buff(new BattleBuff(lifesteal_duration, 
-                                    {
-                                        lifesteal_amount : bonus_lifesteal,
-                                        sprite: spr_buff_lifesteal,
-                                        hint: global.hint_buff_lifesteal
-                                    },
-                                    function(_data){
-                                        //start
-                                        obj_battle_player.data.lifesteal += _data.lifesteal_amount;
-                                        //show_debug_message("New lifesteal is {0}", obj_battle_player.data.lifesteal);
-                                    }, function(_data) {
-                                        //end
-                                        obj_battle_player.data.lifesteal -= _data.lifesteal_amount;
-                                        //show_debug_message("New lifesteal is {0}", obj_battle_player.data.lifesteal);
-                                    }));
+            {
+                lifesteal_amount : bonus_lifesteal,
+                sprite: spr_buff_lifesteal,
+                hint: global.hint_buff_lifesteal
+            },
+            function(_data){
+                //start
+                obj_battle_player.data.lifesteal += _data.lifesteal_amount;
+                //show_debug_message("New lifesteal is {0}", obj_battle_player.data.lifesteal);
+            }, function(_data) {
+                //end
+                obj_battle_player.data.lifesteal -= _data.lifesteal_amount;
+                //show_debug_message("New lifesteal is {0}", obj_battle_player.data.lifesteal);
+            }));
     }
     if (unusable_turns_after_use>0) {
         used_at = obj_battle_manager.turn;

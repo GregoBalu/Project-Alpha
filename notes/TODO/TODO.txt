@@ -3,8 +3,6 @@ TODO AND IDEAS
 Music:
 [BeepBox](https://www.beepbox.co)
 
-- Changeable Ultimate ability
-    - Talent cost >=2
 
 - More Decor
 - Inventory

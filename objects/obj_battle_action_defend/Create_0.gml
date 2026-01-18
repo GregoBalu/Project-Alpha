@@ -1,6 +1,6 @@
 event_inherited();
 
-hotkey = global.input_battle_ultimate;
+hotkey = global.input_battle_defend;
 
 defense_increase = 2;
 buff_turns = 1;
@@ -26,7 +26,7 @@ action = function() {
     
     obj_battle_player.data.charge_util -= cost_amount;
     
-    obj_battle_player.ultimate_used++;
+    obj_battle_player.defend_used++;
     
     obj_battle_player.add_buff(new BattleBuff(buff_turns*2, 
         {
@@ -53,7 +53,7 @@ action = function() {
 }
 
 
-hint = $"Ultimate [{key2str(hotkey)}]\nHarden yourself for incoming attacks.\nGives a buff for {buff_turns} turns, that increase Defense by {defense_increase}.";
+hint = $"Defend [{key2str(hotkey)}]\nHarden yourself for incoming attacks.\nGives a buff for {buff_turns} turns, that increase Defense by {defense_increase}.";
 if (heal_blocked_percent > 0) {
     hint += $"\nHeal for {heal_blocked_percent*100}% of blocked damage.";
 }

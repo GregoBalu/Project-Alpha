@@ -17,7 +17,7 @@ light_attacks_used = 0;
 heavy_attack_used = 0;
 wait_used = 0;
 interrupt_used = 0;
-ultimate_used = 0;
+defend_used = 0;
 
 play_attack_animation = function(_did_crit) {
     if (_did_crit) {

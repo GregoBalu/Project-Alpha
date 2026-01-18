@@ -1,5 +1,6 @@
 
 is_stunned = false;
+blocked_damage = 0;
 
 
 /**
@@ -17,6 +18,7 @@ take_damage = function(_amount, _did_crit) {
     var _damaged_amount = _amount;
     if (_damaged_amount > 0) {
         _damaged_amount = clamp(_damaged_amount - data.defense, 0, 10*_amount);
+        blocked_damage += (_amount - _damaged_amount);
     } else {
         //heal
         _is_dmg = false;

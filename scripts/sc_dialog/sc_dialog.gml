@@ -1,7 +1,7 @@
 function initDialog() {
     initInput();
     
-    global.dialog_player_name = "Omar";
+    global.dialog_player_name = "Vhalyan";
     global.dialog_player_color = c_lime;
     
     global.dialog_vendor_name = "Sha'd Yvend'r";
@@ -83,39 +83,6 @@ function dialog_choice_text(_text, _on_click_action, _cond_action = function() {
     
     reset = function() {
         
-    }
-}
-
-/**
- * Create a new vendor item choice dialog entry
- * @param {string} _name Name of item to sell
- * @param {real} _price Price of the item
- * @param {real} _stock Number of items the vendor has of this type
- * @param {function} _on_click_action Function to call on this choice being clicked
- */
-function dialog_vendor_item(_name, _price, _stock, _on_click_action) : dialog_choice_text(string_concat(_name, " ... ", _price, "g"), _on_click_action, function() { return true; }, font_base_italic ) constructor {
-    
-    init_price = _price;
-    price = _price;
-    init_stock = _stock;
-    stock = _stock;
-    _condAction = function() {
-        return stock > 0 && obj_player.coins >= price;
-    }
-    
-    onClick = function() {
-        if (!_clickAction()) {
-            return false;
-        }
-        stock--;
-        obj_player.coins -= price;
-        audio_play_sound(snd_coin_drop, 5, false);
-        return true;
-    }
-    
-    reset = function() {
-        price = init_price;
-        stock = init_stock;
     }
 }
 

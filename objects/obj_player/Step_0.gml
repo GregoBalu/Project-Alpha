@@ -1,4 +1,4 @@
-if (instance_exists(obj_dialog) || global.do_pause) exit;
+if (instance_exists(obj_dialog) || instance_exists(obj_vendor) || global.do_pause) exit;
 
 if (!immobilized) {
     var _hor = (keyboard_check(global.input_right)?1:0) - (keyboard_check(global.input_left)?1:0);

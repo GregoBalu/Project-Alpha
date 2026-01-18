@@ -1,4 +1,4 @@
-if (instance_exists(obj_dialog)) exit;
+if (instance_exists(obj_dialog) || instance_exists(obj_vendor)) exit;
 
 display_set_gui_size(640, 480);
 

@@ -1,4 +1,4 @@
-if (instance_exists(obj_dialog)) exit;
+if (instance_exists(obj_dialog) || instance_exists(obj_vendor)) exit;
 
 var _hor = clamp(target_x - x, -1, 1);
 var _ver = clamp(target_y - y, -1, 1);

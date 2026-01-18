@@ -157,6 +157,24 @@ addToInventory = function(_obj, _slot = InventorySlots.Slot1) {
     return true;
 }
 
+
+/**
+ * Try to remove item from inventory slot
+ * @param {Asset.InventorySlots*} _slot Slot of the inventory to clear
+ * @returns {Id.Instance} Item Object instance previously stored in slot
+ */
+removeFromInventory = function(_slot) {
+    if (ds_map_exists(inventory, _slot)) {
+        var _item = inventory[?_slot];
+        ds_map_delete(inventory, _slot);
+        
+        return _item;
+        
+    } else {
+        return noone;
+    }
+}
+
 equipItem = function(_fromInventorySlot) {
     if (!ds_map_exists(inventory, _fromInventorySlot)) {
         return;

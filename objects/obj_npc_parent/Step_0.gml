@@ -1,4 +1,4 @@
-if (instance_exists(obj_dialog)) exit;
+if (instance_exists(obj_dialog) || instance_exists(obj_vendor)) exit;
     
     
 if (dialog != -1 && instance_exists(obj_player) && distance_to_object(obj_player) < talk_distance) {

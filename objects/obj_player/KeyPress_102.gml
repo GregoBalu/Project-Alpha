@@ -9,4 +9,5 @@ for (var _i = 0; _i < array_length(_keys); ++_i)
 //add_corruption(1);
 //show_debug_message($"Corruption: {corruption}/{corruption_total}");
 
-debug_visualize_mp_grid = !debug_visualize_mp_grid;
+//debug_visualize_mp_grid = !debug_visualize_mp_grid;
+coins++;

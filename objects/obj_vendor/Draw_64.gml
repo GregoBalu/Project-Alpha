@@ -18,17 +18,21 @@ draw_textbox(159, 19, 80, 32, $"Shop: {global.dialog_vendor_name}", fa_center, f
                 if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _x, _y, _x + 19, _y + 19)) {
                     _subimg = 1;
                     if (mouse_check_button_released(mb_left)) {
-                        dialog = instance_create_depth(0, 0, depth-1, obj_vendor_dialog, {
-                            dialog_text: string($"Sell item ({_item.name})?"),
-                            accept_func: function() {
-                                parent.sell(data.slot);
-                            },
-                            cancel_func: function() {},
-                            parent: id,
-                            data: {
-                                slot: _slot
-                            }
-                        });
+                        if (DO_DIALOG) {
+                            dialog = instance_create_depth(0, 0, depth-1, obj_vendor_dialog, {
+                                dialog_text: string($"Sell item ({_item.name})?"),
+                                accept_func: function() {
+                                    parent.sell(data.slot);
+                                },
+                                cancel_func: function() {},
+                                parent: id,
+                                data: {
+                                    slot: _slot
+                                }
+                            });
+                        } else {
+                            sell(_slot);
+                        }
                     }
                 }
                 
@@ -53,6 +57,16 @@ draw_textbox(159, 19, 80, 32, $"Shop: {global.dialog_vendor_name}", fa_center, f
 
 draw_textbox(15, 81, 60, 12, $"Gold: {obj_player.coins}");
 draw_textbox(15, 96, 60, 12, $"Corruption: {obj_player.corruption}");
+
+draw_sprite(spr_no_refund, 0, 80, 110);
+
+draw_textbox(23, 140, 60, 12, $"Health: {obj_player.hp} / {obj_player.hp_total}");
+
+if (show_gold_change) {
+
+    draw_textbox_color(gold_change_x, gold_change_y, 16, 16, $"{gold_change_value>=0?"+":""}{gold_change_value}g", (gold_change_value>=0)?c_green:c_red, fa_right);
+    draw_sprite_stretched(spr_coin, 0, gold_change_x, gold_change_y, 16, 16);
+}
 
 
 { // ***** Buy stock tab *****
@@ -85,17 +99,21 @@ draw_textbox(15, 96, 60, 12, $"Corruption: {obj_player.corruption}");
                 if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _buy_x, _buy_y, 309, _buy_y + 22)) {
                     _subimg = 1;
                     if (mouse_check_button_released(mb_left)) {
-                        dialog = instance_create_depth(0, 0, depth-1, obj_vendor_dialog, {
-                            dialog_text: string($"Buy item ({_item.name}) for {_item.price}g?"),
-                            accept_func: function() {
-                                parent.buy(data.ind);
-                            },
-                            cancel_func: function() {},
-                            parent: id,
-                            data: {
-                                ind: _i
-                            }
-                        });
+                        if (DO_DIALOG) {
+                            dialog = instance_create_depth(0, 0, depth-1, obj_vendor_dialog, {
+                                dialog_text: string($"Buy item ({_item.name}) for {_item.price}g?"),
+                                accept_func: function() {
+                                    parent.buy(data.ind);
+                                },
+                                cancel_func: function() {},
+                                parent: id,
+                                data: {
+                                    ind: _i
+                                }
+                            });
+                        } else {
+                            buy(_i);
+                        }
                     }
                 }
                 

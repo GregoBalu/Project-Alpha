@@ -11,3 +11,9 @@ if (show_gold_change) {
         show_gold_change = false;
     }
 }
+
+if (in_hold) {
+    if (mouse_check_button_released(mb_left)) {
+        stopHold();
+    }
+}

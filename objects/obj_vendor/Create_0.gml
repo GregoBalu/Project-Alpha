@@ -1,5 +1,6 @@
 initInput();
 
+MouseHoldAlarm = 1;
 
 //stock = [];
 
@@ -18,6 +19,20 @@ gold_change_x = 130;//105
 gold_change_y = 117;//81;
 gold_change_tick = 0;
 
+MaxMouseHoldAlarm = 0.5*TIME_SECOND;
+was_in_hold = false;
+in_hold = false;
+hold_region = {
+    x1: 0,
+    y1: 0,
+    x2: 0,
+    y2: 0
+};
+hold_action = {
+    func: function(_cont) {},
+    context: undefined
+};
+is_short_hold = false;
 
 close = function() {
     if (dialog != noone) {
@@ -61,4 +76,27 @@ showGoldChange = function(_amt) {
         gold_change_y -= 10;
     }
     show_gold_change = true;
+}
+
+startHold = function(_x1, _y1, _x2, _y2, _func, _cont) {
+    show_debug_message($"Hold Started");
+    in_hold = true;
+    alarm[MouseHoldAlarm] = MaxMouseHoldAlarm;
+    hold_region.x1 = _x1;
+    hold_region.y1 = _y1;
+    hold_region.x2 = _x2;
+    hold_region.y2 = _y2;
+    hold_action.func = _func
+    hold_action.context = _cont;
+}
+
+stopHold = function() {
+    if (MaxMouseHoldAlarm - alarm[MouseHoldAlarm] < 0.1*TIME_SECOND) {
+        is_short_hold = true;
+    } else {
+        is_short_hold = false;
+    }
+    in_hold = false;
+    alarm[MouseHoldAlarm] = 0;
+    show_debug_message("Hold Stopped!");
 }

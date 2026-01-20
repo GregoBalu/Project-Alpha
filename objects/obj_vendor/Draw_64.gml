@@ -17,7 +17,11 @@ draw_textbox(159, 19, 80, 32, $"Shop: {global.dialog_vendor_name}", fa_center, f
                 var _subimg = 0;
                 if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _x, _y, _x + 19, _y + 19)) {
                     _subimg = 1;
-                    if (mouse_check_button_released(mb_left)) {
+                    //show_debug_message($"released={mouse_check_button_released(mb_left)} in_hold={in_hold} alarmdiff={(MaxMouseHoldAlarm - alarm[MouseHoldAlarm])} treshold={0.2*TIME_SECOND}");
+                    if (mouse_check_button_pressed(mb_left)) {
+                        startHold(_x, _y, _x+19, _y+19, sell, _slot);
+                    } else if (mouse_check_button_released(mb_left) && ( (was_in_hold && is_short_hold ) || (!in_hold && !was_in_hold) ) ) {
+                        stopHold();
                         if (DO_DIALOG) {
                             dialog = instance_create_depth(0, 0, depth-1, obj_vendor_dialog, {
                                 dialog_text: string($"Sell item ({_item.name})?"),
@@ -34,6 +38,8 @@ draw_textbox(159, 19, 80, 32, $"Shop: {global.dialog_vendor_name}", fa_center, f
                             sell(_slot);
                         }
                     }
+                } else {
+                    
                 }
                 
                 if (_subimg == 1) {
@@ -98,7 +104,11 @@ if (show_gold_change) {
                 var _subimg = 0;
                 if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _buy_x, _buy_y, 309, _buy_y + 22)) {
                     _subimg = 1;
-                    if (mouse_check_button_released(mb_left)) {
+                    
+                    if (mouse_check_button_pressed(mb_left)) {
+                        startHold(_buy_x, _buy_y, 309, _buy_y + 22, buy, _i);
+                    } else if (mouse_check_button_released(mb_left) && ( (in_hold && is_short_hold ) || (!in_hold && !was_in_hold) ) ) {
+                        stopHold();
                         if (DO_DIALOG) {
                             dialog = instance_create_depth(0, 0, depth-1, obj_vendor_dialog, {
                                 dialog_text: string($"Buy item ({_item.name}) for {_item.price}g?"),
@@ -147,6 +157,19 @@ if (show_gold_change) {
     }
     
     draw_sprite(spr_vendor_back_button, _subimg, 147, 153);
+}
+
+if (in_hold) {
+    //show_debug_message($"point_in_rectangle({mouse_gui_x}, {mouse_gui_y}, {hold_region.x1}, {hold_region.y1}, {hold_region.x2}, {hold_region.y2})");
+    if (!point_in_rectangle(mouse_gui_x, mouse_gui_y, hold_region.x1, hold_region.y1, hold_region.x2, hold_region.y2)) {
+        show_debug_message("Hold interrupted!");
+        in_hold = false;
+        alarm[MouseHoldAlarm] = 0;
+    } else {
+        //good
+        var _progress_subimg = (1 -( alarm[MouseHoldAlarm] / MaxMouseHoldAlarm)) * 10;
+        draw_sprite(spr_progress_circle, _progress_subimg, mouse_gui_x, mouse_gui_y);
+    }
 }
 
 display_set_gui_size(_orig_w, _orig_h);

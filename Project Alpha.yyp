@@ -549,6 +549,7 @@
     {"id":{"name":"spr_poison","path":"sprites/spr_poison/spr_poison.yy",},},
     {"id":{"name":"spr_portcullis","path":"sprites/spr_portcullis/spr_portcullis.yy",},},
     {"id":{"name":"spr_pressure_plate","path":"sprites/spr_pressure_plate/spr_pressure_plate.yy",},},
+    {"id":{"name":"spr_progress_circle","path":"sprites/spr_progress_circle/spr_progress_circle.yy",},},
     {"id":{"name":"spr_projectile_spitter","path":"sprites/spr_projectile_spitter/spr_projectile_spitter.yy",},},
     {"id":{"name":"spr_projectile","path":"sprites/spr_projectile/spr_projectile.yy",},},
     {"id":{"name":"spr_radiate","path":"sprites/spr_radiate/spr_radiate.yy",},},

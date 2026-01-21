@@ -33,6 +33,7 @@ hold_action = {
     context: undefined
 };
 is_short_hold = false;
+hold_click = false;
 
 close = function() {
     if (dialog != noone) {
@@ -88,6 +89,7 @@ startHold = function(_x1, _y1, _x2, _y2, _func, _cont) {
     hold_region.y2 = _y2;
     hold_action.func = _func
     hold_action.context = _cont;
+    hold_click = true;
 }
 
 stopHold = function() {

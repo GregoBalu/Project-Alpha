@@ -16,6 +16,7 @@ hint_buff_lifesteal = "Lifesteal: dealing damage heals a portion of it";
 hint_buff_armor_shred = "Armor shred: defense reduced";
 global.hint_debuff_int_dmg_delay = "Delayed penetration: Deal enough damage";
 global.hint_buff_defend = "Increase Defense"
+global.hint_buff_critical_bleed = "Critical Bleed: small DoT damage,\n increase critical chance and critical damage for attacker";
 
 /**
  * Function to calculate crit.
@@ -37,11 +38,11 @@ function calc_crit(_crit_chance) {
  * @param {real} _crit_chance Crit chance (0-1)
  * @returns {struct} Struct containing the actual damage (increased with crit) and did_crit that indicates said crit event.
  */
-function calc_damage(_base_damage, _crit_chance){
+function calc_damage(_base_damage, _crit_chance, _crit_dmg = 2){
     var damage = _base_damage * random_range(0.9, 1.1);
     var didCrit = calc_crit(_crit_chance);
     if (didCrit) {
-        damage *= 2;
+        damage *= _crit_dmg;
         if (isBaamAddonEnabled()) {
             show_debug_message("BaaM: {0}", damage);
         }

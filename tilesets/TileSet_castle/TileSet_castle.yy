@@ -1,0 +1,43 @@
+{
+  "$GMTileSet":"v1",
+  "%Name":"TileSet_castle",
+  "autoTileSets":[
+    {"$GMAutoTileSet":"","%Name":"at_wood","closed_edge":false,"name":"at_wood","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[
+        69,106,105,119,93,71,83,143,94,107,95,131,59,141,142,128,68,164,152,126,57,138,139,102,70,153,165,127,
+        81,151,150,114,116,115,56,117,58,118,82,130,80,129,91,103,104,92,79,
+      ],},
+  ],
+  "macroPageTiles":{
+    "SerialiseHeight":0,
+    "SerialiseWidth":0,
+    "TileSerialiseData":[],
+  },
+  "name":"TileSet_castle",
+  "out_columns":14,
+  "out_tilehborder":2,
+  "out_tilevborder":2,
+  "parent":{
+    "name":"Tile Sets",
+    "path":"folders/Tile Sets.yy",
+  },
+  "resourceType":"GMTileSet",
+  "resourceVersion":"2.0",
+  "spriteId":{
+    "name":"spr_tileset_castle",
+    "path":"sprites/spr_tileset_castle/spr_tileset_castle.yy",
+  },
+  "spriteNoExport":false,
+  "textureGroupId":{
+    "name":"Default",
+    "path":"texturegroups/Default",
+  },
+  "tileAnimationFrames":[],
+  "tileAnimationSpeed":15.0,
+  "tileHeight":16,
+  "tilehsep":0,
+  "tilevsep":0,
+  "tileWidth":16,
+  "tilexoff":0,
+  "tileyoff":0,
+  "tile_count":192,
+}

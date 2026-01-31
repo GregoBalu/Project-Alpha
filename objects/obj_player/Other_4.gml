@@ -9,6 +9,13 @@ firstRoomEnter = false;
 
 log_stat($"obj_player [Room Start] {room}");
 
+if (room == rm_castle) {
+    shroud_radius_base += 1;
+    if (DEBUG) {
+        show_debug_message("Increasing shroud radius");
+    }
+}
+
 default_shroud_mask = shroud_clear_grid_setup(shroud_radius(), obj_shroud.clear_grid_size);
 current_shroud_mask = default_shroud_mask;
 

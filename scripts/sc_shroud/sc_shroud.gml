@@ -10,7 +10,7 @@ function shroud_clear_grid_setup(_sight_radius, _grid_size, _no_shroud_value = 0
     var _temp_grid = ds_grid_create(_grid_size, _grid_size);
     
     var _cent = _grid_size div 2;
-    
+    show_debug_message($"shroud_clear_grid_setup grid_size={_grid_size} sight_rad={_sight_radius} cent={_cent}");
     if (_sight_radius > (_cent+1)) _sight_radius = _cent+1;
     
     //show_debug_message("clear shroud mask {0}x{0}, r={1}", _grid_size, _sight_radius);

@@ -8,7 +8,9 @@ if (point_in_rectangle(obj_player.x, obj_player.y, bbox_left, bbox_top, bbox_rig
     
     if (keyboard_check_pressed(global.input_use)) {
         if (other_end != noone) {
-            show_debug_message($"{id} - Teleport to {other_end.x},{other_end.y}");
+            if (DEBUG) {
+                show_debug_message($"{id} - Teleport to {other_end.x},{other_end.y}");
+            }
             keyboard_clear(global.input_use);
             obj_player.x = other_end.cx;
             obj_player.y = other_end.cy;

@@ -96,7 +96,15 @@ if (room == Room1) {
 } else if (room == rm_cave) {
     battle.battle_screen_sprite = spr_battle_screen_cave;
     battle.battle_screen_sprite_speed = 4;
-    battle.battle_screen_animated = spr_battle_screen_splitted;
+    battle.battle_screen_animated = spr_battle_screen_cave_animated;
+    battle.battle_screen_animated_max_frames = 8;
+    battle.battle_screen_animated_fps = 6;
+} else if (room == rm_sewer) {
+    battle.battle_screen_sprite = spr_battle_screen_sewer;
+    battle.battle_screen_sprite_speed = 4;
+    //battle.battle_screen_animated = spr_battle_screen_cave_animated;
+    //battle.battle_screen_animated_max_frames = 8;
+    //battle.battle_screen_animated_fps = 6;
 }
 
 initBattleBuffs = function(_self) {

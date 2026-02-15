@@ -10,12 +10,12 @@
 /// @param {Constant.VAlign} _valign Vertical alignment of the textbox
 /// @param {Bool} _debug Whether to draw the debug bounding lines of the textbox or not. Default off.
 function draw_textbox(_anchor_x, _anchor_y, _box_width, _box_height, _text, 
-        _halign = fa_left, _valign = fa_top, _min_scale = 0.3, _max_scale = 0.6, _debug = false){
+        _halign = fa_left, _valign = fa_top, _min_scale = 0.3, _max_scale = 0.5, _debug = false){
     draw_textbox_background(_anchor_x, _anchor_y, _box_width, _box_height, _text, undefined, _halign, _valign, _min_scale, _max_scale, _debug);
 }
 
 function draw_textbox_color(_anchor_x, _anchor_y, _box_width, _box_height, _text, _color, 
-        _halign = fa_left, _valign = fa_top, _min_scale = 0.3, _max_scale = 0.6, _debug = false){
+        _halign = fa_left, _valign = fa_top, _min_scale = 0.3, _max_scale = 0.5, _debug = false){
     draw_textbox_background_color(_anchor_x, _anchor_y, _box_width, _box_height, _text, undefined, _color, _halign, _valign, _min_scale, _max_scale, _debug);
 }
 
@@ -26,7 +26,7 @@ function BackgroundData(_sprite, _sindex, _margin) constructor {
 }
 
 function draw_textbox_background(_anchor_x, _anchor_y, _box_width, _box_height, _text, _background_data, 
-        _halign = fa_left, _valign = fa_top, _min_scale = 0.3, _max_scale = 0.6, _debug = false) {
+        _halign = fa_left, _valign = fa_top, _min_scale = 0.3, _max_scale = 0.5, _debug = false) {
     draw_textbox_background_color(_anchor_x, _anchor_y, _box_width, _box_height, _text, _background_data, c_black, _halign, _valign, _min_scale, _max_scale, _debug);
 }
     
@@ -44,7 +44,7 @@ function draw_textbox_background(_anchor_x, _anchor_y, _box_width, _box_height, 
  * @param {bool} [_debug]=false Debug flag to show debug stuff
  */
 function draw_textbox_background_color(_anchor_x, _anchor_y, _box_width, _box_height, _text, _background_data, _color, 
-        _halign = fa_left, _valign = fa_top, _min_scale = 0.3, _max_scale = 0.6, _debug = false) {
+        _halign = fa_left, _valign = fa_top, _min_scale = 0.3, _max_scale = 0.5, _debug = false) {
     
     draw_set_halign(_halign);
     draw_set_valign(_valign);

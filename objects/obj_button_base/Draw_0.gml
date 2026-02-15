@@ -28,7 +28,7 @@ var _h = 2*_hrad;
 
 var defFont = draw_get_font();
 draw_set_font(font_menu);
-draw_textbox_color(_x, _y, _w, _h, text, text_color, fa_center, fa_middle);
+draw_textbox_color(_x, _y, _w, _h, text, text_color, fa_center, fa_middle, 0.3, 1);
 
 
 draw_set_font(defFont);

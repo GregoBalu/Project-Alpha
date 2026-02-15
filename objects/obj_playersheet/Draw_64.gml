@@ -64,7 +64,7 @@ if (is_visible) {
         _yshift += 6;
         draw_textbox(_x+10, _y + _yshift, 46, 6, string("Crit chance: {0}%", obj_player.crit_chance*100));
         _yshift += 6;
-        draw_textbox(_x+10, _y + _yshift, 46, 6, string("Lifesteal: {0}%", obj_player.lifesteal*100));
+        draw_textbox(_x+10, _y + _yshift, 46, 6, $"Lifesteal: {obj_player.lifesteal*100}%");
         _yshift += 6;
     }
     
@@ -280,18 +280,42 @@ if (is_visible) {
         //coins
         var _footer_x = _invX - _invGap*3 ;
         {
-           _invY += _invSlotH + _invGap;
-           draw_sprite_stretched_ext(spr_coin, 0, _footer_x, _invY , _invSlotW, _invSlotH, #C0C0C0, 1);
+            _invY += _invSlotH + _invGap;
+            var _coins_x = _footer_x;
+            var _coins_y = _invY;
+            draw_sprite_stretched_ext(spr_coin, 0, _footer_x, _invY , _invSlotW, _invSlotH, #C0C0C0, 1);
             _footer_x += _invSlotW + _invGap+_invGap;
-           draw_textbox(_footer_x, _invY+_invGap, _invSlotW-2*_invGap, _invSlotH-2*_invGap, $"x{obj_player.coins}");
+            draw_textbox(_footer_x, _invY+_invGap, _invSlotW-2*_invGap, _invSlotH-2*_invGap, $"x{obj_player.coins}");
+            if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _coins_x, _coins_y, _footer_x+_invSlotW-2*_invGap, _invY+_invSlotH-2*_invGap)) {
+                _do_draw_hint = true;
+                _draw_hint_data = {
+                    hint_x : mouse_gui_x,
+                    hint_y : mouse_gui_y,
+                    hint : "Coins",
+                    halign : fa_right,
+                    valign: fa_bottom
+                };
+            }
         }
         
         //divine symbols
         {
             _footer_x += _invSlotW + _invGap;
+            var _symbol_x = _footer_x;
+            var _symbol_y = _invY;
             draw_sprite_stretched_ext(spr_divine_symbol, 0, _footer_x, _invY , _invSlotW, _invSlotH, #C0C0C0, 1);
             _footer_x += _invSlotW + _invGap;
             draw_textbox(_footer_x, _invY+_invGap, _invSlotW-2*_invGap, _invSlotH-2*_invGap, $"x{obj_player.divine_symbols}");
+            if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _symbol_x, _symbol_y, _footer_x+_invSlotW-2*_invGap, _invY+_invSlotH-2*_invGap)) {
+                _do_draw_hint = true;
+                _draw_hint_data = {
+                    hint_x : mouse_gui_x,
+                    hint_y : mouse_gui_y,
+                    hint : "Divine symbols",
+                    halign : fa_right,
+                    valign: fa_bottom
+                };
+            }
         }
         
         //key ring
@@ -301,13 +325,14 @@ if (is_visible) {
             var _key_y1 = _invY;
             draw_sprite_stretched_ext(spr_keyring, 0, _footer_x, _invY , _invSlotW, _invSlotH, #C0C0C0, 1);
             _footer_x += _invSlotW + _invGap;
-            draw_textbox(_footer_x, _invY+_invGap, _invSlotW-2*_invGap, _invSlotH-2*_invGap, $"x{obj_player.key_ring.count()}");
+            var _keys_count = obj_player.key_ring.count();
+            draw_textbox(_footer_x, _invY+_invGap, _invSlotW-2*_invGap, _invSlotH-2*_invGap, $"x{_keys_count}");
             if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _key_x1, _key_y1, _footer_x+_invSlotW-2*_invGap, _invY+_invSlotH-2*_invGap)) {
                 _do_draw_hint = true;
                 _draw_hint_data = {
                     hint_x : mouse_gui_x,
                     hint_y : mouse_gui_y,
-                    hint : obj_player.key_ring.hint(),
+                    hint : _keys_count==0?"Key ring":obj_player.key_ring.hint(),
                     halign : fa_right,
                     valign: fa_bottom
                 };

@@ -125,7 +125,7 @@ if (talent3 != noone) {
     //Image:
     draw_sprite_stretched(talent3.sprite_index, talent3.image_index, _x+_image_offset_x, _y+_image_offset_y, _image_w, _image_h);
     //Name:
-    draw_textbox_color(_x + 54, _y + 90, 26, 18, talent3.name, c_yellow, fa_center, fa_middle, false);
+    draw_textbox_color(_x + 54, _y + 90, 26, 18, talent3.name, c_yellow, fa_center, fa_middle);
 } else {
     draw_sprite_stretched_ext(spr_talent_nothing, 0, _x, _y, _picker_w, _picker_h, c_white, 0.6);
 }

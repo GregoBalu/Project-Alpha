@@ -17,7 +17,7 @@ if (is_visible) {
     }
     
     if (opening_state-32 > 160+30) {
-        draw_textbox(160, _y + 4, 60, 20, "Player Sheet", fa_center);
+        draw_textbox(160, _y + 4, 60, 20, "Player Sheet", fa_center, fa_top);
     }
     
     var _yshift = 0;

@@ -3,7 +3,7 @@ if (!battle_started) {
     draw_sprite(obj_battle_enemy.data.battle.battle_screen_animated, background_subimg, 0, 0);
     
 } else {
-    display_set_gui_size(room_width, room_height);
+    display_set_gui_size(room_width, room_height);//320,180
     
     function draw_buffs_at(_buffs, _x, _y) {
         //draw_textbox(_x, _y, 16, 16, "BUFFS");
@@ -33,8 +33,8 @@ if (!battle_started) {
             
             draw_sprite_stretched(_sprite, 0, _tl.x, _tl.y, _w, _h);
             if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _tl.x, _tl.y, _tl.x + _w -1, _tl.y + _h -1)) {
-                draw_textbox_background(mouse_gui_x, mouse_gui_y, 128, 32, _buffs[|_i].data.hint, 
-                        new BackgroundData(spr_hint_back, 0, 2), (mouse_gui_x<=(room_width/2))?fa_left:fa_right);
+                draw_textbox_background(mouse_gui_x, mouse_gui_y, 160, 48, _buffs[|_i].data.hint, 
+                        new BackgroundData(spr_hint_back, 0, 8), (mouse_gui_x<=(room_width/2))?fa_left:fa_right, fa_top);
             }
         }
     }

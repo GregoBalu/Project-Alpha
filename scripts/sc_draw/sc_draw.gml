@@ -9,12 +9,14 @@
 /// @param {Constant.HAlign} _halign Horizontal alignment of textbox
 /// @param {Constant.VAlign} _valign Vertical alignment of the textbox
 /// @param {Bool} _debug Whether to draw the debug bounding lines of the textbox or not. Default off.
-function draw_textbox(_anchor_x, _anchor_y, _box_width, _box_height, _text, _halign = fa_left, _valign = fa_top, _debug = false){
-    draw_textbox_background(_anchor_x, _anchor_y, _box_width, _box_height, _text, undefined, _halign, _valign, _debug);
+function draw_textbox(_anchor_x, _anchor_y, _box_width, _box_height, _text, 
+        _halign = fa_left, _valign = fa_top, _min_scale = 0.3, _max_scale = 0.6, _debug = false){
+    draw_textbox_background(_anchor_x, _anchor_y, _box_width, _box_height, _text, undefined, _halign, _valign, _min_scale, _max_scale, _debug);
 }
 
-function draw_textbox_color(_anchor_x, _anchor_y, _box_width, _box_height, _text, _color, _halign = fa_left, _valign = fa_top, _debug = false){
-    draw_textbox_background_color(_anchor_x, _anchor_y, _box_width, _box_height, _text, undefined, _color, _halign, _valign, _debug);
+function draw_textbox_color(_anchor_x, _anchor_y, _box_width, _box_height, _text, _color, 
+        _halign = fa_left, _valign = fa_top, _min_scale = 0.3, _max_scale = 0.6, _debug = false){
+    draw_textbox_background_color(_anchor_x, _anchor_y, _box_width, _box_height, _text, undefined, _color, _halign, _valign, _min_scale, _max_scale, _debug);
 }
 
 function BackgroundData(_sprite, _sindex, _margin) constructor {
@@ -23,8 +25,9 @@ function BackgroundData(_sprite, _sindex, _margin) constructor {
     margin = _margin;
 }
 
-function draw_textbox_background(_anchor_x, _anchor_y, _box_width, _box_height, _text, _background_data, _halign = fa_left, _valign = fa_top, _debug = false) {
-    draw_textbox_background_color(_anchor_x, _anchor_y, _box_width, _box_height, _text, _background_data, c_black, _halign, _valign, _debug);
+function draw_textbox_background(_anchor_x, _anchor_y, _box_width, _box_height, _text, _background_data, 
+        _halign = fa_left, _valign = fa_top, _min_scale = 0.3, _max_scale = 0.6, _debug = false) {
+    draw_textbox_background_color(_anchor_x, _anchor_y, _box_width, _box_height, _text, _background_data, c_black, _halign, _valign, _min_scale, _max_scale, _debug);
 }
     
 /**
@@ -40,7 +43,9 @@ function draw_textbox_background(_anchor_x, _anchor_y, _box_width, _box_height, 
  * @param {Constant.VAlign} [_valign]=fa_top Vertical alignment of text in the textbox
  * @param {bool} [_debug]=false Debug flag to show debug stuff
  */
-function draw_textbox_background_color(_anchor_x, _anchor_y, _box_width, _box_height, _text, _background_data, _color, _halign = fa_left, _valign = fa_top, _debug = false) {
+function draw_textbox_background_color(_anchor_x, _anchor_y, _box_width, _box_height, _text, _background_data, _color, 
+        _halign = fa_left, _valign = fa_top, _min_scale = 0.3, _max_scale = 0.6, _debug = false) {
+    
     draw_set_halign(_halign);
     draw_set_valign(_valign);
     draw_set_alpha(1);
@@ -50,7 +55,164 @@ function draw_textbox_background_color(_anchor_x, _anchor_y, _box_width, _box_he
     }
     
     if (_debug) {
-        show_debug_message($"draw_textbox({_anchor_x}, {_anchor_y}, {_box_width}, {_box_height}, ..) @ {display_get_gui_width()}, {display_get_gui_height()}");
+        show_debug_message($"draw_textbox({_anchor_x}, {_anchor_y}, {_box_width}, {_box_height}, {_text}, ..) @ {display_get_gui_width()}, {display_get_gui_height()}");
+    }
+    
+    var _x = _anchor_x;
+    var _y = _anchor_y;
+    var _max_w = _box_width;
+    var _max_h = _box_height;
+    
+    //var _min_scale = 0.3;        // Don't shrink below this
+    //var _max_scale = 0.6;
+    var line_sep  = -1;          // Line spacing for wrapping
+    
+    var wrap_width = -1;        // -1 = no wrapping
+    
+    // --------------------------------------------------
+    // 1) Measure WITHOUT wrapping
+    // --------------------------------------------------
+    var base_w = string_width(_text);
+    var base_h = string_height(_text);
+
+    // Compute ideal scale
+    var scale_w = _max_w / base_w;
+    var scale_h = _max_h / base_h;
+
+    var scale = min(scale_w, scale_h);
+    
+    // --------------------------------------------------
+    // 2) Decide if we can scale only
+    // --------------------------------------------------
+    if (scale >= _min_scale)
+    {
+        if (_debug) {
+            show_debug_message($"Scaling text to {scale} (<{_min_scale})");
+        }
+        // Scale is acceptable — just clamp to max
+        scale = clamp(scale, _min_scale, _max_scale);
+    }
+    else
+    {
+        if (_debug) {
+            show_debug_message($"Wrapping text with scale {_min_scale}");
+        }
+        // Scaling would be too small → clamp scale
+        scale = _min_scale;
+
+        // Now enforce wrapping at scaled width
+        wrap_width = _max_w / scale;
+
+        base_w = string_width_ext(_text, line_sep, wrap_width);
+        base_h = string_height_ext(_text, line_sep, wrap_width);
+
+        
+    }
+
+    var _final_w = base_w * scale;
+    var _final_h = base_h * scale;
+    
+    var _orig_x = _anchor_x;
+    var _orig_y = _anchor_y;
+    
+    if (_halign == fa_center) {
+        _x -= (_final_w)/2;
+        _orig_x -= (_box_width)/2;
+    } else if (_halign == fa_right) {
+        _x -= (_final_w);
+        _orig_x -= (_box_width);
+    }
+    if (_valign == fa_middle) {
+        _y -= (_final_h)/2;
+        _orig_y -= (_box_height)/2;
+    } else if (_valign == fa_bottom) {
+        _y -= (_final_h);
+        _orig_y -= (_box_height);
+    }
+    
+    // -------------------------------------
+    // Draw background (optional)
+    // -------------------------------------
+    draw_set_color(c_black);
+    //draw_rectangle(_x, _y, _x + _max_w, _y + _max_h, false);
+    if (_background_data != undefined) {
+        draw_sprite_stretched(_background_data.sprite, _background_data.image_index, _x - _background_data.margin, _y - _background_data.margin, 
+                _final_w+2*_background_data.margin, 
+                _final_h+2*_background_data.margin);
+    }
+    if (_debug) {
+        draw_rectangle_color(_orig_x, _orig_y, _orig_x + _box_width-1, _orig_y + _box_height-1, c_yellow, c_yellow, c_yellow, c_yellow, true);
+        draw_circle_colour(_anchor_x, _anchor_y, 2, c_green, c_green, false);
+        draw_circle_colour(_x, _y, 2, c_red, c_red, true);
+        draw_rectangle_color(_x, _y, _x+_final_w-1, _y+_final_h-1, c_red, c_red, c_red, c_red, true);
+        {
+            var _arrow_x = _anchor_x;
+            var _arrow_y = _anchor_y;
+            if (_halign == fa_left) {
+                _arrow_x -= 10;
+            } else if (_halign == fa_center) {
+                
+            } else if (_halign == fa_right) {
+                _arrow_x += 10;
+            }
+            if (_valign == fa_top) {
+                _arrow_y -= 10;
+            } else if (_valign == fa_middle) {
+
+            } else if (_valign == fa_bottom) {
+                _arrow_y += 10;
+            }
+            
+            if (_anchor_x != _arrow_x && _anchor_y != _arrow_y) {
+                draw_arrow(_anchor_x, _anchor_y, _arrow_x, _arrow_y, 5);
+            }
+        }
+        if (wrap_width != -1) {
+            draw_circle_colour(_x+(wrap_width*scale), _y, 2, c_yellow, c_yellow, true);
+        }
+    }
+
+    // -------------------------------------
+    // Draw text
+    // -------------------------------------
+    draw_set_color(_color);
+
+    if (wrap_width == -1)
+    {
+        draw_text_transformed(_anchor_x, _anchor_y, _text, scale, scale, 0);
+    }
+    else
+    {
+        draw_text_ext_transformed(_anchor_x, _anchor_y, _text, line_sep, wrap_width, scale, scale, 0);
+    }
+
+    draw_set_color(c_black);
+    
+    draw_set_halign(fa_left);
+    draw_set_valign(fa_top);
+
+    
+    return;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    draw_set_halign(_halign);
+    draw_set_valign(_valign);
+    draw_set_alpha(1);
+    
+    if (draw_get_font() == noone) {
+        draw_set_font(font_base);
+    }
+    
+    if (_debug) {
+        show_debug_message($"draw_textbox({_anchor_x}, {_anchor_y}, {_box_width}, {_box_height}, {_text}, ..) @ {display_get_gui_width()}, {display_get_gui_height()}");
     }
     //draw_rectangle_color(_anchor_x, _anchor_y, _anchor_x+_box_width, _anchor_y+_box_height, c_black, c_black, c_black, c_black, false);
     //return;
@@ -82,25 +244,51 @@ function draw_textbox_background_color(_anchor_x, _anchor_y, _box_width, _box_he
         _scale_width = clamp(text_width_scale, 0.9*text_height_scale, 1.1*text_height_scale);
     }
     
+    //var _max_scale = 0.6;
+    if (_scale_width > _max_scale) {
+        var _reduction_ratio = _max_scale / _scale_width;
+        _scale_width = _scale_width * _reduction_ratio;
+        _scale_height = _scale_height * _reduction_ratio;
+    } else  if (_scale_height > _max_scale) {
+        var _reduction_ratio = _max_scale / _scale_height;
+        _scale_width = _scale_width * _reduction_ratio;
+        _scale_height = _scale_height * _reduction_ratio;
+    }
+    
     var _actual_text_width = text_width*_scale_width;
     var _actual_text_height = text_height*_scale_height;
     
-    var _min_scale = 0.25;
+    if (_debug) {
+        show_debug_message($"  Tw={text_width} Th={text_height} Lh={line_height} tws={text_width_scale} ths={text_height_scale} sw={_scale_width} sh={_scale_height} atw={_actual_text_width} ath={_actual_text_height}");
+    }
+    
+    //var _min_scale = 0.25;
     if (text_width_scale <= _min_scale || _actual_text_width > _box_width) {
         
+        var _old_scale = _scale_width;
         _scale_width = max(_min_scale, _scale_width);
+        var _scale_reduction_ratio = _scale_width / _old_scale;
+        _scale_height = _scale_height * _scale_reduction_ratio;
         _actual_text_width = text_width*_scale_width;
         
         var _wr = (text_width / _box_width)*_scale_width;
+        if (_debug) {
+            show_debug_message($"  wr=({text_width} / {_box_width}) * {_scale_width}");
+            show_debug_message($"  sw={_scale_width} sh={_scale_height}");
+        }
         if (_wr <= 1) {
             //ok
         } else {
             //increase height by _wr line
-            //show_debug_message($"wr={_wr} lh={line_height} ath={_actual_text_height}");
+            if (_debug) {
+                show_debug_message($" 1<wr={_wr} lh={line_height} ath={_actual_text_height}");
+            }
             var _old_height = _actual_text_height;
-            _actual_text_height += (line_height*_scale_width) * (ceil(_wr));
+            _actual_text_height = (line_height*_scale_height) * (ceil(_wr));
             //_actual_text_height = min(_actual_text_height, _box_height);
-            //show_debug_message($"wr={_wr} lh={line_height*_min_scale} old={_old_height} -> ath={_actual_text_height}");
+            if (_debug) {
+                show_debug_message($" wr={_wr} ceil(wr)={ceil(_wr)} lh={line_height*_scale_height} old={_old_height} -> ath={_actual_text_height}");
+            }
         }
         
         var topLeft = new Vec2(_anchor_x, _anchor_y);
@@ -126,8 +314,13 @@ function draw_textbox_background_color(_anchor_x, _anchor_y, _box_width, _box_he
             draw_circle_color(_anchor_x, _anchor_y, 2, c_green, c_green, false);
         }
         
+        //draw_text_transformed_color(_anchor_x, _anchor_y, "ERROR: Text size", _scale_width, _scale_height, 0, _color, _color, _color, _color, 1);
+        
         draw_set_color(_color);
-        draw_text_ext_transformed_color(_anchor_x, _anchor_y, _text, line_height, _box_width* (1/_scale_width), _scale_width, _scale_height, 0, _color, _color, _color, _color, 1);
+        if (_debug) {
+            show_debug_message($"  draw_text(w={_box_width} sw={_scale_width} sh={_scale_height}");
+        }
+        draw_text_ext_transformed_color(_anchor_x, _anchor_y, _text, line_height, _box_width/_scale_width, _scale_width, _scale_height, 0, _color, _color, _color, _color, 1);
         delete topLeft;
     } else {
         var topLeft = new Vec2(_anchor_x, _anchor_y);

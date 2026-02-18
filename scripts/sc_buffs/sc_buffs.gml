@@ -4,7 +4,7 @@ function buff_create_frenzy(_turns)
         { 
             prev_damage: 0,
             sprite: spr_buff_frenzy,
-            hint: "A raging frenzy affects the damage accorrding to unspent attack charge, but weakens damage based on unspent utility charge."
+            hint: "A raging frenzy affects the damage according to unspent attack charge, but weakens damage based on unspent utility charge."
         },
         function(_data){
             //start

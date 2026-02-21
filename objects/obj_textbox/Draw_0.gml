@@ -1,1 +1,2 @@
-draw_textbox(x, y, sprite_width, sprite_height, text);
+draw_set_font(font_base);
+draw_textbox(x, y, width, height, text);

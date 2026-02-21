@@ -17,5 +17,5 @@ function action() {
 bonus_defense = 0.3;
 minus_total_hp = 2;
 
-name = "Guards up!";
-hint = string("defense: +{0}\ntotal health: -{1}", bonus_defense, minus_total_hp);
+name = getText("Talent_def_hp_name");
+hint = string(getText("Talent_def_hp_hint"), bonus_defense, minus_total_hp);

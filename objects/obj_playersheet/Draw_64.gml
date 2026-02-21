@@ -17,7 +17,7 @@ if (is_visible) {
     }
     
     if (opening_state-32 > 160+30) {
-        draw_textbox(160, _y + 4, 60, 20, "Player Sheet", fa_center, fa_top);
+        draw_textbox(160, _y + 4, 60, 20, title, fa_center, fa_top);
     }
     
     var _yshift = 0;
@@ -29,42 +29,42 @@ if (is_visible) {
         } else if (_hp_percent <= .20) {
             _hp_color = c_red;
         }
-        draw_textbox(_x + 32, _y + 18, 42, 6, string("Health: {0} / {1}", obj_player.hp, obj_player.hp_total), fa_center);
+        draw_textbox(_x + 32, _y + 18, 42, 6, $"{hp_label}: {obj_player.hp} / {obj_player.hp_total}", fa_center);
         draw_progress_bar(_x + 8, _y + 24, 48, 6, _hp_percent, _hp_color);
     }
     _yshift += 30;
     if (opening_state-32 > (_x+8+48)) {
-        draw_textbox(_x + 32, _y + _yshift + 6, 42, 6, string("Attack charge"), fa_center);
+        draw_textbox(_x + 32, _y + _yshift + 6, 42, 6, atkchrg_label, fa_center);
         draw_progress_bar(_x + 8, _y + _yshift + 12, 48, 6, (obj_player.charge_attack/obj_player.charge_attack_total), Color_AttackCharge);
     }
     _yshift += 12;
     if (opening_state-32 > (_x+8+48)) {
-        draw_textbox(_x + 32, _y + _yshift + 6, 42, 6, string("Utility charge"), fa_center);
+        draw_textbox(_x + 32, _y + _yshift + 6, 42, 6, utlchrg_label, fa_center);
         draw_progress_bar(_x + 8, _y + _yshift + 12, 48, 6, (obj_player.charge_util/obj_player.charge_util_total), Color_UtilityCharge);
     }
     
     
     _yshift += 18;
     if (opening_state-32 > (_x+8+48)) {
-        draw_textbox(_x + 32, _y + _yshift + 6, 42, 6, string("Level: {0}", obj_player.level), fa_center);
+        draw_textbox(_x + 32, _y + _yshift + 6, 42, 6, $"{level_label}: {obj_player.level}", fa_center);
         _yshift += 6;
         var _xp_percent = (obj_player.xp/obj_player.xp_total);
-        draw_textbox(_x + 32, _y + _yshift + 6, 42, 6, string("XP: {0} / {1}", obj_player.xp, obj_player.xp_total), fa_center);
+        draw_textbox(_x + 32, _y + _yshift + 6, 42, 6, $"{xp_label}: {obj_player.xp} / {obj_player.xp_total}", fa_center);
         draw_progress_bar(_x + 8, _y + _yshift + 12, 48, 6, _xp_percent, Color_XP);
     }
     
     _yshift += 22;
     if (opening_state-32 > (_x+8+48)) {
         _yshift += 6;
-        draw_textbox(_x+10, _y + _yshift, 46, 6, string("Damage: {0}", obj_player.damage));
+        draw_textbox(_x+10, _y + _yshift, 46, 6, $"{dmg_label}: {obj_player.damage}");
         _yshift += 6;
-        draw_textbox(_x+10, _y + _yshift, 46, 6, string("Move speed: {0}", obj_player.move_speed));
+        draw_textbox(_x+10, _y + _yshift, 46, 6, $"{spd_label}: {obj_player.move_speed}");
         _yshift += 6;
-        draw_textbox(_x+10, _y + _yshift, 46, 6, string("Defense: {0}", obj_player.defense));
+        draw_textbox(_x+10, _y + _yshift, 46, 6, $"{def_label}: {obj_player.defense}");
         _yshift += 6;
-        draw_textbox(_x+10, _y + _yshift, 46, 6, string("Crit chance: {0}%", obj_player.crit_chance*100));
+        draw_textbox(_x+10, _y + _yshift, 46, 6, $"{crit_label}: {obj_player.crit_chance*100}%");
         _yshift += 6;
-        draw_textbox(_x+10, _y + _yshift, 46, 6, $"Lifesteal: {obj_player.lifesteal*100}%");
+        draw_textbox(_x+10, _y + _yshift, 46, 6, $"{lifesteal_label}: {obj_player.lifesteal*100}%");
         _yshift += 6;
     }
     
@@ -79,7 +79,7 @@ if (is_visible) {
     }
     
     if (opening_state-32 > (_x + 72 + 64) ) {
-        draw_textbox(_x + 72, _y + 18, 64, 8, string("Available talent points: {0}", obj_player.talent_points));
+        draw_textbox(_x + 72, _y + 18, 128, 8, $"{avail_talent_label}: {obj_player.talent_points}", undefined, undefined, 0.3);
     }
     
     var _talentSectionEndX = 205;
@@ -99,6 +99,7 @@ if (is_visible) {
     var _do_draw_hint = false;
     var _draw_hint_data = {};
 
+    //talents
     var _list = obj_player.unlocked_talents;
     for (var _i = 0; _i < ds_list_size(_list); _i++)
     {
@@ -141,7 +142,7 @@ if (is_visible) {
             draw_sprite_stretched_ext(spr_highlight, 0, _row-_gapX/4, _col-_gapY/4, _talentWidth+_gapX/2, _talentHeight+_gapY/2, c_white, 0.5);
         }
         
-        draw_textbox(_row + _talentWidth/2, _col+_talentHeight, _talentWidth+_gapX/2, _gapY, _list[|_i].name, fa_center);
+        draw_textbox(_row + _talentWidth/2, _col+_talentHeight, _talentWidth+_gapX/2, _gapY, _list[|_i].name, fa_center, undefined, 0.1);
         
         if (_talentMaxedOut) {
             draw_sprite_stretched_ext(spr_check, 0, _row+_talentWidth/2, _col+_talentHeight/2, _talentWidth/2, _talentHeight/2, c_green, 1);
@@ -180,7 +181,7 @@ if (is_visible) {
         draw_line_width_color(_x + _talentSectionEndX, _y + 16, _x + _talentSectionEndX, _y + _height - 16, 2, c_black, c_black);
     }
     
-    
+    //equipment
     if (opening_state-32 > (_x + _talentSectionEndX + 8 + 64) ) {
         var _invX = _x + _talentSectionEndX + 8;
         var _invY = _y + 24;
@@ -291,7 +292,7 @@ if (is_visible) {
                 _draw_hint_data = {
                     hint_x : mouse_gui_x,
                     hint_y : mouse_gui_y,
-                    hint : "Coins",
+                    hint : coins_hint,
                     halign : fa_right,
                     valign: fa_bottom
                 };
@@ -311,7 +312,7 @@ if (is_visible) {
                 _draw_hint_data = {
                     hint_x : mouse_gui_x,
                     hint_y : mouse_gui_y,
-                    hint : "Divine symbols",
+                    hint : symbols_hint,
                     halign : fa_right,
                     valign: fa_bottom
                 };
@@ -332,7 +333,7 @@ if (is_visible) {
                 _draw_hint_data = {
                     hint_x : mouse_gui_x,
                     hint_y : mouse_gui_y,
-                    hint : _keys_count==0?"Key ring":obj_player.key_ring.hint(),
+                    hint : _keys_count==0?keyring_hint:obj_player.key_ring.hint(),
                     halign : fa_right,
                     valign: fa_bottom
                 };
@@ -354,6 +355,6 @@ if (is_visible) {
     
     if (_do_draw_hint) { 
         //show_debug_message($"_hint_data={_hint_data}, _do_draw_hint={_do_draw_hint}, hint={_draw_hint_data.hint}");
-        draw_textbox_background(_draw_hint_data.hint_x, _draw_hint_data.hint_y, 64, 64, _draw_hint_data.hint, new BackgroundData(spr_hint_back, 0, 8), _draw_hint_data.halign, _draw_hint_data.valign);
+        draw_textbox_background(_draw_hint_data.hint_x, _draw_hint_data.hint_y, 64, 64, _draw_hint_data.hint, new BackgroundData(spr_hint_back, 0, 8), _draw_hint_data.halign, _draw_hint_data.valign, undefined, 0.6);
     }
 } 

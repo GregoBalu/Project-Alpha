@@ -4,6 +4,10 @@ if (object_exists(obj_playersheet)) {
 
 global.do_pause = true;
 
+init_localisation();
+title = getText("Talent_picker_title");
+talent_power_label = getText("Talent_power_label");
+
 talent1 = noone;
 talent2 = noone;
 talent3 = noone;

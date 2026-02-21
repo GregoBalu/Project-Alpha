@@ -2,7 +2,7 @@ event_inherited();
 
 texts = [ "Settings", "Back" ];
 //text_state = 0;
-text = texts[text_state];
+text = getText(texts[text_state]);
 
 function clicked() {
     var temp = view_camera[0];

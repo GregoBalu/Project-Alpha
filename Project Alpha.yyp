@@ -84,8 +84,11 @@
     {"link":"io.gamemaker.gm_filter_hard_drop_shadow-1.0.0","name":"io.gamemaker.gm_filter_hard_drop_shadow-1.0.0","path":"io.gamemaker.gm_filter_hard_drop_shadow-1.0.0.yyp",},
     {"link":"io.gamemaker.gm_effect_glow-1.0.0","name":"io.gamemaker.gm_effect_glow-1.0.0","path":"io.gamemaker.gm_effect_glow-1.0.0.yyp",},
     {"link":"io.gamemaker.gm_filter_underwater-1.0.0","name":"io.gamemaker.gm_filter_underwater-1.0.0","path":"io.gamemaker.gm_filter_underwater-1.0.0.yyp",},
+    {"link":"io.gamemaker.sdfshaders-1.0.0","name":"io.gamemaker.sdfshaders-1.0.0","path":"io.gamemaker.sdfshaders-1.0.0.yyp",},
   ],
-  "IncludedFiles":[],
+  "IncludedFiles":[
+    {"$GMIncludedFile":"","%Name":"local.csv","CopyToMask":-1,"filePath":"datafiles","name":"local.csv","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+  ],
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
@@ -329,6 +332,7 @@
     {"id":{"name":"sc_effects","path":"scripts/sc_effects/sc_effects.yy",},},
     {"id":{"name":"sc_input","path":"scripts/sc_input/sc_input.yy",},},
     {"id":{"name":"sc_inventory","path":"scripts/sc_inventory/sc_inventory.yy",},},
+    {"id":{"name":"sc_localisation","path":"scripts/sc_localisation/sc_localisation.yy",},},
     {"id":{"name":"sc_menu","path":"scripts/sc_menu/sc_menu.yy",},},
     {"id":{"name":"sc_overworld","path":"scripts/sc_overworld/sc_overworld.yy",},},
     {"id":{"name":"sc_playersheet","path":"scripts/sc_playersheet/sc_playersheet.yy",},},

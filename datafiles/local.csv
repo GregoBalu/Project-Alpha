@@ -1,0 +1,50 @@
+"CODE","en","hu"
+"New_Game","New Game","Új játék"
+"Settings","Settings","Beállítások"
+"Highscores","Highscores","Rekordok"
+"Quit","Quit","Kilépés"
+"Back","Back","Vissza"
+"Quit_confirm","Do you want to really quit?","Tényleg ki akarsz lépni?"
+"Music_volume","Music volume","Zene hangerő"
+"Sfx_volume","Sound effects volume","Effektusok hangerő"
+"Player_sheet_title","Player Sheet","Karakterlap"
+"Health_label","Health","Életerő"
+"Attack_charge_label","Attack charge","Támadási energia"
+"Utility_charge_label","Utility charge","Támogatói energia"
+"Level_label","Level","Szint"
+"XP_label","XP","TP"
+"Damage_label","Damage","Sebzés"
+"Speed_label","Move speed","Mozgási sebesség"
+"Defense_label","Defense","Védelem"
+"Crit_label","Crit chance","Kritikus ütés esély"
+"Lifesteal_label","Lifesteal","Életszívás"
+"Available_talent_label","Available talent points","Elérhető tehetség pontok"
+"Coins_hint","Coins","Érmék"
+"Symbols_hint","Divine symbols","Isteni medálok"
+"Keyring_hint","Key ring","Kulcstartó"
+"Talent_picker_title","Pick a talent!","Válassz tehetséget!"
+"Talent_power_label","Potential max talent power","Tehetség potenciális erőssége"
+"Talent_def_hp_name","Guards up!","Védekezz!"
+"Talent_def_hp_hint","defense: +{0}
+total health: -{1}","védelem: +{0}
+maximum életerő: -{1}"
+"Telnt_defend_heal_name","Healthy blocking","Életerős védelem"
+"Talent_defend_heal_hint","Modifies action: Defend
+Heal for {0}% of blocked damage.
+Decrease defense: -{1}","Vonatkozó képesség: Védekezés
+A kivédett sebzés {0}%-át gyógyítja.
+Bónusz védelem csökkentése: -{1}"
+"Talent_defend_lengthen_name","Lasting Defense","Kitartó védelem"
+"Talent_defend_lengthen_hint","Modifies action: Defend
+Buff lasts {0} more turns.
+Cost increase: {1}","Vonatkozó képesség: Védekezés
+A hatás {0} körrel tovább tart.
+Költség drágul: {1}"
+"","",""
+"","",""
+"","",""
+"","",""
+"","",""
+"","",""
+"Font_sample","abcd","ÁRVÍZTŰRŐ TÜKÖRFÚRÓGÉP árvíztűrő tükörfúrógép"
+"","",""

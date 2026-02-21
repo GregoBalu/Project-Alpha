@@ -11,6 +11,8 @@ height = bbox_bottom - bbox_top;
 image_index = 0;
 text_color = c_black;
 
+init_localisation();
+text = getText(text);
 
 enum ButtonState { Normal, Pressed, Hover };
 state = ButtonState.Normal;

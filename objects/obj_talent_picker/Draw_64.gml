@@ -2,8 +2,8 @@ display_set_gui_size(320, 180);
 draw_set_font(font_base);
 
 draw_sprite_stretched(spr_gui_back, 0, 10, 16, 300, 148);
-draw_textbox(160, 20, 80, 10, "Pick a talent!", fa_center, fa_top);
-draw_textbox(160, 30, 80, 10, $"Potential max talent power: {obj_player.talent_points}", fa_center, fa_top);
+draw_textbox(160, 20, 80, 10, title, fa_center, fa_top);
+draw_textbox(160, 30, 80, 10, $"{talent_power_label}: {obj_player.talent_points}", fa_center, fa_top);
 
 var _gap_w = 16;
 var _gap_w2 = 8;
@@ -140,5 +140,5 @@ if (_doDrawHint) {
         _halign = fa_right;
         _hint_x = mouse_gui_x-_margin
     }
-    draw_textbox_background(_hint_x, _hint_y, _picker_w, _picker_h, _hint_text, new BackgroundData(spr_hint_back, 0, _margin), _halign, _valign);
+    draw_textbox_background(_hint_x, _hint_y, _picker_w, _picker_h, _hint_text, new BackgroundData(spr_hint_back, 0, _margin), _halign, _valign, undefined, 0.6);
 }

@@ -9,6 +9,23 @@ max_open_state = 316;
 
 depth = 0;
 
+title = getText("Player_sheet_title");
+hp_label = getText("Health_label");
+atkchrg_label = getText("Attack_charge_label");
+utlchrg_label = getText("Utility_charge_label");
+level_label = getText("Level_label");
+xp_label = getText("XP_label");
+dmg_label = getText("Damage_label");
+spd_label = getText("Speed_label");
+def_label = getText("Defense_label");
+crit_label = getText("Crit_label");
+lifesteal_label = getText("Lifesteal_label");
+
+avail_talent_label = getText("Available_talent_label");
+
+coins_hint = getText("Coins_hint");
+symbols_hint = getText("Symbols_hint");
+keyring_hint = getText("Keyring_hint");
 
 openingSoundId = undefined;
 

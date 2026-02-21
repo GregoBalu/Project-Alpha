@@ -5,7 +5,7 @@ check_zapping(2);
 if (zapped_by != noone) {
     if (!audio_is_playing(zapping_audio)) {
         audio_falloff_set_model(audio_falloff_linear_distance);
-        zapping_audio = audio_play_sound_at(snd_buzz2, x, y, 0, 16, 64, 2, true, 5);
+        zapping_audio = audio_play_sound_at(snd_buzz2, x, y, 0, 16, 64, 2, true, AUDIO_PRIO_NOISE);
     }
 } else {
     if (audio_is_playing(zapping_audio)) {

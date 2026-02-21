@@ -1,5 +1,5 @@
 if (state == InterractItemState.Interracted) {
-    audio_play_sound(snd_splash, 5, false, 1.4);
+    audio_play_sound(snd_splash, AUDIO_PRIO_EFFECTS, false, 1.4);
     ingredient = other;
     ingredient.disable();
     state = InterractItemState.Undisturbed;

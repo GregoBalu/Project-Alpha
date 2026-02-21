@@ -39,16 +39,16 @@ doEnemyAction = function(_selfData, _playerData) {
     
     if (_select < 5) {
         var _animTime = enemySimpleAttack(obj_battle_enemy);
-        audio_play_sound(snd_firetoad_lick, 5, false, 1.0, 0, random_range(0.8, 1.3));
+        audio_play_sound(snd_firetoad_lick, AUDIO_PRIO_EFFECTS, false, 1.0, 0, random_range(0.8, 1.3));
         return _animTime;
     } else if (_selfData.charge_util >= 1) {
         if (_select < 7) {
             var _animTime = enemyInterruptAttack(obj_battle_enemy);
-            audio_play_sound(snd_firetoad_lick, 5, false, 1.0, 0, random_range(0.8, 1.1));
+            audio_play_sound(snd_firetoad_lick, AUDIO_PRIO_EFFECTS, false, 1.0, 0, random_range(0.8, 1.1));
             return _animTime;
         } else {
             var _animTime = enemyCastFireball(1.2, obj_battle_enemy, 1, 1, 0.6);
-            audio_play_sound(snd_firetoad_croak, 5, false, 1.3, 0, random_range(0.9, 1.1));
+            audio_play_sound(snd_firetoad_croak, AUDIO_PRIO_EFFECTS, false, 1.3, 0, random_range(0.9, 1.1));
             return _animTime;
         }
     } else if (_selfData.charge_attack >= 1) {
@@ -57,13 +57,13 @@ doEnemyAction = function(_selfData, _playerData) {
         return _animTime;
     } else {
         var _animTime = enemyWait(obj_battle_enemy);
-        audio_play_sound(snd_firetoad_wait, 5, false, 1.2, 0, random_range(0.8, 1.3));
+        audio_play_sound(snd_firetoad_wait, AUDIO_PRIO_EFFECTS, false, 1.2, 0, random_range(0.8, 1.3));
         return _animTime;
     }
 }
 
 onBattleDamageReceived = function(_damaged_amount) {
     if(_damaged_amount > 0) {
-        audio_play_sound(snd_firetoad_hurt, 4, false, 1.0, 0, random_range(0.8, 1.1));
+        audio_play_sound(snd_firetoad_hurt, AUDIO_PRIO_EFFECTS, false, 1.0, 0, random_range(0.8, 1.1));
     }
 }

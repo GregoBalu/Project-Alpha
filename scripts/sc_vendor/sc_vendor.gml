@@ -25,7 +25,7 @@ function VendorItem(_text, _sprite, _price, _stock, _on_click_action) constructo
         }
         stock--;
         obj_player.coins -= price;
-        audio_play_sound(snd_coin_drop, 5, false);
+        audio_play_sound(snd_coin_drop, AUDIO_PRIO_EFFECTS, false);
         return true;
     }
     

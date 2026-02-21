@@ -21,7 +21,7 @@ if (_id != noone) {
         image_index = 1;
         state = PressurePlateState.Pressed;
         audio_falloff_set_model(audio_falloff_linear_distance);
-        audio_play_sound_at(snd_click, x, y, 0, 0, 32, 2, false, 4, 1, 0, random_range(0.9,1.1));
+        audio_play_sound_at(snd_click, x, y, 0, 0, 32, 2, false, AUDIO_PRIO_NOISE, 1, 0, random_range(0.9,1.1));
     }
     
 } else {
@@ -34,6 +34,6 @@ if (_id != noone) {
         image_index = 0;
         state = PressurePlateState.NotPressed;
         audio_falloff_set_model(audio_falloff_linear_distance);
-        audio_play_sound_at(snd_clack, x, y, 0, 0, 32, 2, false, 4, 1, 0, random_range(0.9,1.1));
+        audio_play_sound_at(snd_clack, x, y, 0, 0, 32, 2, false, AUDIO_PRIO_NOISE, 1, 0, random_range(0.9,1.1));
     }
 }

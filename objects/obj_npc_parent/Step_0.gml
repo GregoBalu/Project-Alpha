@@ -7,7 +7,7 @@ if (dialog != -1 && instance_exists(obj_player) && distance_to_object(obj_player
         talk_index = 0;
         obj_gui.show_talk++;
         if (!is_silent) {
-            audio_play_sound_at(snd_huh, x, y, 0, 1, 16, 0.3, false, 5);
+            audio_play_sound_at(snd_huh, x, y, 0, 1, 16, 0.3, false, AUDIO_PRIO_NOISE);
         }
     }
     

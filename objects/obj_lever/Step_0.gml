@@ -11,14 +11,14 @@ if (distance_to_object(obj_player) < 8) {
             image_index = 1;
             
             audio_falloff_set_model(audio_falloff_linear_distance);
-            audio_play_sound_at(snd_click, x, y, 0, 0, 32, 2, false, 4, 1, 0, random_range(0.9,1.1));
+            audio_play_sound_at(snd_click, x, y, 0, 0, 32, 2, false, AUDIO_PRIO_EFFECTS, 1, 0, random_range(0.9,1.1));
             if (instance_exists(activate_inst)) {
                 activate_inst.On(id);
             }
         } else {
             image_index = 0;
             audio_falloff_set_model(audio_falloff_linear_distance);
-            audio_play_sound_at(snd_clack, x, y, 0, 0, 32, 2, false, 4, 1, 0, random_range(0.9,1.1));
+            audio_play_sound_at(snd_clack, x, y, 0, 0, 32, 2, false, AUDIO_PRIO_EFFECTS, 1, 0, random_range(0.9,1.1));
             if (instance_exists(activate_inst)) {
                 activate_inst.Off(id);
             }

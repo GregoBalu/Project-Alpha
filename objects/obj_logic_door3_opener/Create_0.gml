@@ -22,7 +22,7 @@ On = function(_inst_id) {
     
     if (distance_to_object(obj_player) < 128) {
         audio_falloff_set_model(audio_falloff_exponent_distance);
-        audio_play_sound_at(snd_sliding, x2, y2, 0, 0, 128, 2, false, 4, 0.3, 0, random_range(0.9, 1.1));
+        audio_play_sound_at(snd_sliding, x2, y2, 0, 0, 128, 2, false, AUDIO_PRIO_EFFECTS, 0.3, 0, random_range(0.9, 1.1));
     }
 };
 
@@ -44,6 +44,6 @@ Off = function(_inst_id) {
     
     if (distance_to_object(obj_player) < 128) {
         audio_falloff_set_model(audio_falloff_exponent_distance);
-        audio_play_sound_at(snd_sliding, x2, y2, 0, 0, 128, 2, false, 4, 0.3, 0, random_range(0.9, 1.1));
+        audio_play_sound_at(snd_sliding, x2, y2, 0, 0, 128, 2, false, AUDIO_PRIO_EFFECTS, 0.3, 0, random_range(0.9, 1.1));
     }
 };

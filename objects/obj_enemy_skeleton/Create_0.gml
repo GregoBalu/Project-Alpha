@@ -114,11 +114,11 @@ doEnemyAction = function(_selfData, _playerData) {
         return _animTime;
     } else if (_selfData.charge_util >= 1) {
         var _animTime = enemyInterruptAttack(obj_battle_enemy);
-        //TODO audio_play_sound(snd_firetoad_lick, 5, false, 1.0, 0, random_range(0.8, 1.1));
+        //TODO audio_play_sound(snd_firetoad_lick, AUDIO_PRIO_EFFECTS, false, 1.0, 0, random_range(0.8, 1.1));
         return _animTime;
     } else {
         var _animTime = enemyWait(obj_battle_enemy);
-        //TODO audio_play_sound(snd_firetoad_wait, 5, false, 1.2, 0, random_range(0.8, 1.3));
+        //TODO audio_play_sound(snd_firetoad_wait, AUDIO_PRIO_EFFECTS, false, 1.2, 0, random_range(0.8, 1.3));
         return _animTime;
     }
 }

@@ -9,7 +9,7 @@ scaling = random_range(0.9, 1.2);
 image_xscale = scaling*0.5;
 image_yscale = scaling*0.5;
 
-audio_play_sound(snd_pop, 4, false);
+audio_play_sound(snd_pop, AUDIO_PRIO_NOISE, false);
 
 alarm[FuelSpillageAlarms.LifeTime] = timeSeconds*TIME_SECOND;
 alarm[FuelSpillageAlarms.SizeIncresae] = 10;

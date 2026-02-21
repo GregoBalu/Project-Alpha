@@ -146,7 +146,7 @@ function enemyCastCorruptionBolt(_damage_modifier, _obj, _dot_dmg_modifier = 1.0
         obj_battle_enemy.take_damage(-_actual_dmg*obj_battle_enemy.data.lifesteal, _enemy_damage.did_crit);
     }
     
-    audio_play_sound(snd_ghost_special, 5, false, 1.0, 0.5);
+    audio_play_sound(snd_ghost_special, AUDIO_PRIO_EFFECTS, false, 1.0, 0.5);
     obj_battle_player.add_buff(new BattleBuff((_enemy_damage.did_crit?4:2)*_dot_len_modifier, 
                                 {
                                     original_damage : _enemy_damage.damage,
@@ -184,7 +184,7 @@ function enemyCastInferno(_obj) {
     
     obj_battle_full_screen_efect.display_screen_effect(spr_full_flames, 6, 0.8, 2);
     
-    audio_play_sound(snd_fire, 5, false, 0.7*global.audio_master_volume*global.audio_sfx_volume, undefined, 0.6);
+    audio_play_sound(snd_fire, AUDIO_PRIO_EFFECTS, false, 0.7*global.audio_master_volume*global.audio_sfx_volume, undefined, 0.6);
     
     var _actual_dmg = obj_battle_player.take_damage(_enemy_damage.damage, _enemy_damage.did_crit);
     if (obj_battle_enemy.data.lifesteal > 0) {

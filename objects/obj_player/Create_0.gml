@@ -72,7 +72,7 @@ gain_experience = function(_enemy) {
         
         log_stat($"obj_player [gain_experience] level up -> {level}");
         _level_gained++;
-        audio_play_sound(snd_achieve, 8, false);
+        audio_play_sound(snd_achieve, AUDIO_PRIO_UNIQUE, false);
         
         hp_total += 2;
         var _hp_begin = hp;
@@ -246,14 +246,14 @@ add_corruption = function(_amount) {
     show_debug_message($"Corruption: {corruption}/{corruption_total}");
     if (corruption == corruption_total) {
         if (!spawn_ghost(tilemap_normal, collision_tilemaps)) {
-            audio_play_sound(snd_ghost_whoosh, 6, false);
+            audio_play_sound(snd_ghost_whoosh, AUDIO_PRIO_UNIQUE, false);
         }
     } else if (corruption >= corruption_total*0.8) {
         var _rand = random_range(0, 10);
         if (_rand < 2) {
             spawn_ghost(tilemap_normal, collision_tilemaps);
         } else {
-            audio_play_sound(snd_ghost_whoosh, 6, false);
+            audio_play_sound(snd_ghost_whoosh, AUDIO_PRIO_UNIQUE, false);
         }
     }
 }
@@ -261,14 +261,14 @@ add_corruption = function(_amount) {
 onBattleDamageReceived = function(_damaged_amount) {
     if (_damaged_amount > 0) {
         var _rand = choose(snd_player_hurt1, snd_player_hurt2, snd_player_hurt3);
-        audio_play_sound(_rand, 4, false, 1, 0, random_range(0.8, 1.1));
+        audio_play_sound(_rand, AUDIO_PRIO_EFFECTS, false, 1, 0, random_range(0.8, 1.1));
     }
 }
 
 damage_receive = function(_amt) {
     if (_amt > 0) {
         var _rand = choose(snd_player_hurt1, snd_player_hurt2, snd_player_hurt3);
-        audio_play_sound(_rand, 4, false, 1, 0, random_range(0.8, 1.1));
+        audio_play_sound(_rand, AUDIO_PRIO_EFFECTS, false, 1, 0, random_range(0.8, 1.1));
         hp -= _amt;
         spawn_effect(spr_blood_spill, x, y, 0.7*sprite_width, 0.7*sprite_width, depth-1, 0, 0, 1);
     }

@@ -63,7 +63,7 @@ sell = function(_slot) {
         obj_player.coins += _price;
         showGoldChange(_price);
         //TODO: animation
-        audio_play_sound(snd_coin_drop, 4, false, 1, 0, random_range(0.9, 1.1));
+        audio_play_sound(snd_coin_drop, AUDIO_PRIO_EFFECTS, false, 1, 0, random_range(0.9, 1.1));
         instance_destroy(_inventoryItem);
     }
 }

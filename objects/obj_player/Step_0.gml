@@ -26,7 +26,7 @@ if (!immobilized) {
     
     if (_distTravelled > 0 && last_footstep_frame != round(image_index) && (round(image_index) mod 2) == 1) {
         var _rand = choose(snd_player_footstep1, snd_player_footstep2);
-        footstep_audio = audio_play_sound(_rand, 4, false, 0.3, 0, random_range(0.5, 0.6));
+        footstep_audio = audio_play_sound(_rand, AUDIO_PRIO_NOISE, false, 0.3, 0, random_range(0.5, 0.6));
         last_footstep_frame = round(image_index);
     }
     

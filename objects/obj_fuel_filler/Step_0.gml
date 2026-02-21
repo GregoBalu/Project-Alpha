@@ -7,7 +7,7 @@ if (_id != noone && _id.fill_level < _id.max_fill_level) {
         image_speed = original_image_speed;
         if (DEBUG) show_debug_message($"Fuel filling");
             
-        audio = audio_play_sound(snd_fill, 6, false, 1, 0, 1);
+        audio = audio_play_sound(snd_fill, AUDIO_PRIO_EFFECTS, false, 1, 0, 1);
     }
 } else {
     if (is_filling) {

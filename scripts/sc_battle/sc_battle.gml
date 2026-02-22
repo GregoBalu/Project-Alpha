@@ -8,15 +8,6 @@ function isBaamAddonEnabled() {
 #macro Battle_Text_Roll_Heal_Normal #22FF22
 #macro Battle_Text_Roll_Heal_Crit #A0DD30
 
-hint_buff_fire = "Ignited: lowers defense and take DoT each turn";
-hint_buff_corruption = "Corruption: significant DoT each turn";
-hint_buff_acid = "Acid spit: lowers defense and take DoT each turn";
-hint_buff_stun = "Stun: cannot take action";
-hint_buff_lifesteal = "Lifesteal: dealing damage heals a portion of it";
-hint_buff_armor_shred = "Armor shred: defense reduced";
-global.hint_debuff_int_dmg_delay = "Delayed penetration: Deal enough damage";
-global.hint_buff_defend = "Increase Defense"
-global.hint_buff_critical_bleed = "Critical Bleed: small DoT damage,\n increase critical chance and critical damage for attacker";
 
 /**
  * Function to calculate crit.
@@ -106,7 +97,7 @@ function enemyCastFireball(_damage_modifier, _obj, _dot_dmg_modifier = 1.0, _dot
                                     did_crit : _enemy_damage.did_crit,
                                     dot_dmg_mod : _dot_dmg_modifier,
                                     sprite: spr_buff_fire,
-                                    hint: global.hint_buff_fire
+                                    hint: getText("Buff_fire_hint")
                                 },
                                 function(_data){
                                     //start
@@ -153,7 +144,7 @@ function enemyCastCorruptionBolt(_damage_modifier, _obj, _dot_dmg_modifier = 1.0
                                     did_crit : _enemy_damage.did_crit,
                                     dot_dmg_mod : _dot_dmg_modifier,
                                     sprite: spr_buff_corruption,
-                                    hint: global.hint_buff_corruption
+                                    hint: getText("Buff_corruption_hint")
                                 },
                                 function(_data){
                                     //start
@@ -196,7 +187,7 @@ function enemyCastInferno(_obj) {
                                     original_damage : _enemy_damage.damage,
                                     did_crit : _enemy_damage.did_crit,
                                     sprite: spr_buff_fire,
-                                    hint: global.hint_buff_fire
+                                    hint: getText("Buff_fire_hint")
                                 },
                                 function(_data){
                                     //start
@@ -237,7 +228,7 @@ function enemyCastAcid(_damage_modifier, _obj) {
                                     original_damage : _enemy_damage.damage,
                                     did_crit : _enemy_damage.did_crit,
                                     sprite: spr_buff_acid,
-                                    hint: global.hint_buff_acid
+                                    hint: getText("Buff_acid_hint")
                                 },
                                 function(_data){
                                     //start
@@ -295,7 +286,7 @@ function enemyInterruptAttack(_obj, _turns = 2) {
     obj_battle_player.add_buff(new BattleBuff(_turns, 
                     {
                         sprite: spr_buff_stun,
-                        hint: global.hint_buff_stun
+                        hint: getText("Buff_stun_hint")
                     },
                     function(_data){
                         //start

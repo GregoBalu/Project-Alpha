@@ -1,6 +1,6 @@
 // Inherit the parent event
 event_inherited();
-
+init_localisation();
 
 name = "Equipable Name";
 description = "Description of the equipable item";

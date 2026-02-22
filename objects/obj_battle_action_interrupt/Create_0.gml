@@ -1,4 +1,5 @@
 event_inherited();
+init_localisation();
 
 hotkey = global.input_battle_interrup;
 
@@ -36,7 +37,7 @@ action = function() {
         obj_battle_enemy.add_buff(new BattleBuff(4, 
                 {
                     sprite: spr_buff_stun,
-                    hint: global.hint_buff_stun
+                    hint: getText("Buff_stun_hint")
                 },
                 function(_data){
                     //start
@@ -49,7 +50,7 @@ action = function() {
             obj_battle_enemy.add_buff(new BattleBuff(_did_crit?6:3, 
                     {
                         sprite:spr_buff_armor_shred,
-                        hint: global.hint_buff_armor_shred
+                        hint: getText("Buff_armor_shred_hint")
                     }, 
                     function(_data) {
                         //start
@@ -65,7 +66,7 @@ action = function() {
             obj_battle_enemy.add_buff(new BattleBuff(debuff_stats.effect_turns,
                     {
                         sprite: spr_debug_16,
-                        hint: global.hint_debuff_int_dmg_delay,
+                        hint: getText("Buff_int_dmg_delay_hint"),
                         min_dmg: debuff_stats.min_dmg,
                         additional_dmg: debuff_stats.additional_dmg,
                         additional_enemy_armor: debuff_stats.additional_enemy_armor,

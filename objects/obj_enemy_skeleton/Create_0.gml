@@ -1,6 +1,6 @@
 // Inherit the parent event
 event_inherited();
-
+init_localisation();
 
 animation.walk_down = spr_enemy_skeleton;
 animation.walk_up = spr_enemy_skeleton;
@@ -36,7 +36,7 @@ addCriticalBleed = function(_selfData, _playerData) {
                                     dot_base_dmg: 1,
                                     stack: 1,
                                     sprite: spr_buff_bleed,
-                                    hint: global.hint_buff_critical_bleed
+                                    hint: getText("Buff_crit_bleed_hint")
                                 },
                                 function(_data){
                                     //start

@@ -1,7 +1,7 @@
 // Inherit the parent event
 event_inherited();
 
-_pickupText = $"+restoration potion ({heal_per_tick})"
+_pickupText = $"+{getText("Restoration_potion_pickup")} ({heal_per_tick})"
 _pickupColor = c_red;
 
 onPickup = function(othr) {

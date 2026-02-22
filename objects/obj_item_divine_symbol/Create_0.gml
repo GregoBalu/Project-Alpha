@@ -1,7 +1,7 @@
 // Inherit the parent event
 event_inherited();
 
-_pickupText = $"+divine symbol"
+_pickupText = $"+{getText("Divine_symbol_pickup")}"
 _pickupColor = c_aqua;
 
 onPickup = function(othr) {

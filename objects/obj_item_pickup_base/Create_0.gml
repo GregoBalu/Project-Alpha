@@ -1,8 +1,10 @@
 #macro DESPAWN_ALARM 0
 #macro PICKUP_ALARM 1
 
+init_localisation();
+
 can_pickup = false;
-_pickupText = "+1 item";
+_pickupText = $"+1 {getText("Item_pickup")}";
 _pickupColor = c_orange;
 
 back_glow_color = c_white;

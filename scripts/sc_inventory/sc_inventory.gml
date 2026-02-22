@@ -143,17 +143,17 @@ function keyColor2Color(_kc) {
 function keyColor2Str(_kc) {
     switch (_kc) {
         case KeyColor.Red:
-            return "red";
+            return getText("Red_key_pickup");
         case KeyColor.Blue:
-            return "blue";
+            return getText("Blue_key_pickup");
         case KeyColor.Green:
-            return "green";
+            return getText("Green_key_pickup");
         case KeyColor.Yellow:
-            return "yellow";
+            return getText("Yellow_key_pickup");
         case KeyColor.Purple:
-            return "purple";
+            return getText("Purple_key_pickup");
         default:
-            return "no";
+            return getText("No_key_pickup");
     }
 }
 
@@ -235,23 +235,23 @@ function KeyRing() constructor {
     hint = function() {
         var _res = "";
         if (hasRed) {
-            _res += "Red key";
+            _res += getText("Red_key_hint");
         }
         if (hasBlue) {
             if (string_length(_res) > 0) { _res += "\n"}
-            _res += "Blue key";
+            _res += getText("Blue_key_hint");
         }
         if (hasGreen) {
             if (string_length(_res) > 0) { _res += "\n"}
-            _res += "Green key";
+            _res += getText("Green_key_hint");
         }
         if (hasYellow) {
             if (string_length(_res) > 0) { _res += "\n"}
-            _res += "Yellow key";
+            _res += getText("Yellow_key_hint");
         }
         if (hasPurple) {
             if (string_length(_res) > 0) { _res += "\n"}
-            _res += "Purple key";
+            _res += getText("Purple_key_hint");
         }
         return _res;
     }

@@ -27,6 +27,30 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZ","ÁRVÍZTŰRŐ TÜKÖRFÚRÓGÉP
 "Coins_hint","Coins","Érmék"
 "Symbols_hint","Divine symbols","Isteni medálok"
 "Keyring_hint","Key ring","Kulcstartó"
+"Red_key_hint","Red key","Piros kulcs"
+"Red_key_pickup","red","piros"
+"Blue_key_hint","Blue key","Kék kulcs"
+"Blue_key_pickup","blue","kék"
+"Green_key_hint","Green key","Zöld kulcs"
+"Green_key_pickup","green","zöld"
+"Yellow_key_hint","Yellow key","Sárga kulcs"
+"Yellow_key_pickup","yellow","sárga"
+"Purple_key_hint","Purple key","Lila kulcs"
+"Purple_key_pickup","purple","lila"
+"No_key_pickup","no","nincs"
+"Key_pickup","key","kulcs"
+"Coins_pickup","coins","érmék"
+"Item_pickup","item","tárgy"
+"Divine_symbol_pickup","divine symbol","isteni medál"
+"Health_potion_pickup","health potion","gyógyító főzet"
+"Restoration_potion_pickup","restoration potion","regeneráló főzet"
+"Speed_potion_pickup","speed potion","gyorsítő főzet"
+"***** ITEMS *****",,
+"Item_helm_of_horns_name","Helm of Horns",
+"Item_helm_of_horns_desc","This horny cap is ready for some action if you want to.
+Lifesteal: +{0}%
+Defense: -{1}",
+,,
 "***** BATTLE ACTIONS *****","*****","*****"
 "Battle_act_defend_hint","Defend [{0}]
 Harden yourself for incoming attacks.
@@ -122,6 +146,18 @@ All charge gain: x{0}
 Cannot use for turns: {1}",
 "Talent_wait_pick_name","Delay","Késleltetés"
 "Talent_wait_pick_hint","Delay the choice so maybe you can get stronger, later.","Hagyd későbbre a választást, hogy később még erősebb lehess."
+"***** BUFFS *****",,
+"Buff_frenzy_hint","A raging frenzy affects the damage according to unspent attack charge, but weakens damage based on unspent utility charge.",
+"Buff_fire_hint","Ignited: lowers defense and take DoT each turn",
+"Buff_corruption_hint","Corruption: significant DoT each turn",
+"Buff_acid_hint","Acid spit: lowers defense and take DoT each turn",
+"Buff_stun_hint","Stun: cannot take action",
+"Buff_lifesteal_hint","Lifesteal: dealing damage heals a portion of it",
+"Buff_armor_shred_hint","Armor shred: defense reduced",
+"Buff_int_dmg_delay_hint","Delayed penetration: Deal enough damage",
+"Buff_defend_hint","Increase Defense",
+"Buff_crit_bleed_hint","Critical Bleed: small DoT damage,\n increase critical chance and critical damage for attacker",
+"Buff_water_tentacle_squeeze_hint","You are being squeezed, you cannot breathe. You have to relax somehow ...",
 "***** DIALOGS *****",,
 "Dialog_r1_w1_l1","Hey, I started to worry you wouldn't show up at all. What took you so long?","Végre, azt hittem már sose érsz ide. Mi tartott ennyi ideig?"
 "Dialog_r1_w1_l2","Sorry, I got held up by the guards at the city exit. So where is this Witch you were talking about?","Elnézést, az őrök feltartottak a városkapunál. Szóval merre van ez a Boszorkány amit említettél?"

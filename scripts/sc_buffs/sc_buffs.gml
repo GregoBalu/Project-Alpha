@@ -1,10 +1,11 @@
 function buff_create_frenzy(_turns)
 {
+    init_localisation();
     return new BattleBuff(_turns, 
         { 
             prev_damage: 0,
             sprite: spr_buff_frenzy,
-            hint: "A raging frenzy affects the damage according to unspent attack charge, but weakens damage based on unspent utility charge."
+            hint: getText("Buff_frenzy_hint")
         },
         function(_data){
             //start

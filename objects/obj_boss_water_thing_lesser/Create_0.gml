@@ -1,6 +1,6 @@
 // Inherit the parent event
 event_inherited();
-
+init_localisation();
 
 //battle.animation_attack: noone,
 //battle.animation_attack_fps: 1,
@@ -57,7 +57,7 @@ doEnemyAction = function(_selfData, _playerData) {
                             did_free: false,
                             pre_wait_used: 0,
                             sprite: spr_buff_squeeze,
-                            hint: "You are being squeezed, you cannot breathe. You have to relax somehow ..."
+                            hint: getText("Buff_water_tentacle_squeeze_hint")
                         },
                         function(_data){
                             //start

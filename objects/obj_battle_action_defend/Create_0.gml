@@ -1,4 +1,5 @@
 event_inherited();
+init_localisation();
 
 hotkey = global.input_battle_defend;
 
@@ -34,7 +35,7 @@ action = function() {
             heal_blocked: heal_blocked_percent,
             blocked_damage: obj_battle_player.blocked_damage,
             sprite: spr_buff_defend,
-            hint: global.hint_buff_defend
+            hint: getText("Buff_defend_hint")
         },
         function(_data){
             //start

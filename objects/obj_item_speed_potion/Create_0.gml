@@ -1,7 +1,7 @@
 // Inherit the parent event
 event_inherited();
 
-_pickupText = $"+speed potion ({speed_boost})"
+_pickupText = $"+{getText("Speed_potion_pickup")} ({speed_boost})"
 _pickupColor = c_aqua;
 
 onPickup = function(othr) {

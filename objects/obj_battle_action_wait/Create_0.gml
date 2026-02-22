@@ -1,4 +1,5 @@
 event_inherited();
+init_localisation();
 
 hotkey = global.input_battle_wait;
 
@@ -45,7 +46,7 @@ action = function() {
             {
                 lifesteal_amount : bonus_lifesteal,
                 sprite: spr_buff_lifesteal,
-                hint: global.hint_buff_lifesteal
+                hint: getText("Buff_lifesteal_hint")
             },
             function(_data){
                 //start

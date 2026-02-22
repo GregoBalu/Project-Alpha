@@ -1,4 +1,8 @@
 "CODE","en","hu"
+"Font_sample","abcdefghijklmnopqrstuvwxyz 
+ABCDEFGHIJKLMNOPQRSTUVWXYZ","ÁRVÍZTŰRŐ TÜKÖRFÚRÓGÉP 
+árvíztűrő tükörfúrógép"
+"***** MENU *****",,
 "New_Game","New Game","Új játék"
 "Settings","Settings","Beállítások"
 "Highscores","Highscores","Rekordok"
@@ -7,6 +11,7 @@
 "Quit_confirm","Do you want to really quit?","Tényleg ki akarsz lépni?"
 "Music_volume","Music volume","Zene hangerő"
 "Sfx_volume","Sound effects volume","Effektusok hangerő"
+"***** PLAYER SHEET *****",,
 "Player_sheet_title","Player Sheet","Karakterlap"
 "Health_label","Health","Életerő"
 "Attack_charge_label","Attack charge","Támadási energia"
@@ -22,6 +27,31 @@
 "Coins_hint","Coins","Érmék"
 "Symbols_hint","Divine symbols","Isteni medálok"
 "Keyring_hint","Key ring","Kulcstartó"
+"***** BATTLE ACTIONS *****","*****","*****"
+"Battle_act_defend_hint","Defend [{0}]
+Harden yourself for incoming attacks.
+Gives a buff for {1} turns, that increase Defense by {2}.",
+"Battle_act_defend_hint_blockedheal","
+Heal for {0}% of blocked damage.",
+"Battle_act_heavy_hint","Heavy Attack [{0}]
+A charged up heavy attack.
+Cost: {1}
+Damage modifier: {2}
+Charge gain: {3} attack",
+"Battle_act_interrupt_hint","Interrupt [{0}]
+Interrupt the enemy stunning it for 2 rounds and angering it.
+Cost: {1}
+Increase enemy utility charge by: {2}",
+"Battle_act_light_hint","Light Attack [{0}]
+A light attack.
+Damage: {1}
+Crit chance: {2}%
+Charge gain: {3} attack",
+"Battle_act_run_hint","Escape from battle","Menekülés a csatából"
+"Battle_act_wait_hint","Wait [{0}]
+Wait a turn and gain charge.
+Charge gain: {1} attack, {2} utility",
+"***** TALENTS *****","*****","*****"
 "Talent_picker_title","Pick a talent!","Válassz tehetséget!"
 "Talent_power_label","Potential max talent power","Tehetség potenciális erőssége"
 "Talent_def_hp_name","Guards up!","Védekezz!"
@@ -40,11 +70,55 @@ Buff lasts {0} more turns.
 Cost increase: {1}","Vonatkozó képesség: Védekezés
 A hatás {0} körrel tovább tart.
 Költség drágul: {1}"
-"","",""
-"","",""
-"","",""
-"","",""
-"","",""
-"","",""
-"Font_sample","abcd","ÁRVÍZTŰRŐ TÜKÖRFÚRÓGÉP árvíztűrő tükörfúrógép"
-"","",""
+"Talent_heavy_cheap_name","Cheap Heavy",
+"Talent_heavy_cheap_hint","Modifies action: Heavy attack
+cost: -{0}
+damage modifier: {1}%",
+"Talent_hp_dmg_name","Healthy but weak",
+"Talent_hp_dmg_hint","health: +{0}
+damage: -{1}",
+"Talen_interrupt_armor_breaker_name","Armor breaker",
+"Talen_interrupt_armor_breaker_hint","Modifies action: Interrupt
+action gains armor shredding: -{0}",
+"Talent_interrupt_damage_name","Delayed penetration","Késleltetett döfés"
+"Talent_interrupt_damage_hint","Modifies action: Interrupt
+Create a buff on target for {0} turns.
+If target receives at least {1} damage it takes an additional {2} damage.
+Otherwise the target gains {3} defense.","Vonatkozó képesség: Megszakítás
+Egy hatást helyez a célpontra {0} körig.
+Ha a célpont legalább {1} sebzést szenved el, akkor további {2} sebzést sérül.
+Ellenkező esetben a célpont védelme megnő ennyivel: {3}."
+"Talent_light_crit_name","Light crit",
+"Talent_light_crit_hint","Modifies action: Light attack
+crit increase: +{0}%
+charge gain decrease: -{1}",
+"Talent_light_rng_name","Hit by chance",
+"Talent_light_rng_hint","Modifies action: Light attack
+{0}% chance: damage x{1}
+{2}% chance: damage x{3}",
+"Talent_st_atk_chrg_name","Tense muscles",
+"Talent_st_atk_chrg_hint","Max attack charge: +{0}",
+"Talent_st_crit_name","Lucky day",
+"Talent_st_crit_hint","Crit chance: +{0}%",
+"Talent_st_life_name","Empowered life",
+"Talent_st_life_hint","Total health: +{0}",
+"Talent_st_lifesteal_name","Leeching essence",
+"Talent_st_lifesteal_hint","Lifesteal: +{0}%",
+"Talent_st_speed_name","Sure foot",
+"Talent_st_speed_hint","Speed: +{0}",
+"Talent_st_util_chrg_name","Third Eye",
+"Talent_st_util_chrg_hint","Max Utility charge: +{0}",
+"Talent_wait_charge_name","Tip of balance",
+"Talent_wait_charge_hint","Modifies action: Wait
+attack charge gain: +{0}
+utility charge gain: -{1}",
+"Talent_wait_lifesteal_name","Worth the wait",
+"Talent_wait_lifesteal_hint","Modifies action: Wait
+lifesteal buff (1rnd): +{0}%
+charge gain decrease: -{1}",
+"Talent_wait_more_name","Cannot wait more",
+"Talent_wait_more_hint","Modifies action: Wait
+All charge gain: x{0}
+Cannot use for turns: {1}",
+"Talent_wait_pick_name","Delay",
+"Talent_wait_pick_hint","Delay the choice so maybe you can get stronger, later.",

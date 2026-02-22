@@ -9,5 +9,5 @@ function effect() {
 bonus_hp = 5;
 minus_damage = 0.5;
 
-name = "Healthy but weak";
-hint = string("health: +{0}\ndamage: -{1}", bonus_hp, minus_damage);
+name = getText("Talent_hp_dmg_name");
+hint = string(getText("Talent_hp_dmg_hint"), bonus_hp, minus_damage);

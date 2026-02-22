@@ -14,7 +14,7 @@ for (var _i = 0; _i < ds_list_size(obj_battle_switcher.player_data.unlocked_tale
     }
 }
 
-hint = $"Heavy Attack [{key2str(hotkey)}]\nA charged up heavy attack.\nCost: {cost_amount}\nDamage modifier: {damage_modifier}\nCharge gain: {charge_gain} attack";
+hint = string(getText("Battle_act_heavy_hint"), key2str(hotkey), cost_amount, damage_modifier, charge_gain);
 
 action = function() {
     if (checkCost(cost_type, cost_amount)) {

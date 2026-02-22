@@ -38,7 +38,7 @@ function loadLocale(_lang) {
     var _count = 0;
     for (var _i = 0; _i < hh; ++_i)
     {
-        show_debug_message($"{file_grid[# 0, _i]} , {file_grid[# 1, _i]}")
+        //show_debug_message($"{file_grid[# 0, _i]} , {file_grid[# 1, _i]}")
         global.localisation[? file_grid[# 0, _i]] = file_grid[# _langCol, _i];
         ++_count;
     }

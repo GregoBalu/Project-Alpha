@@ -9,5 +9,5 @@ function effect() {
     //Nothing
 }
 
-name = "Delayed penetration"
-hint = $"Modifies action: Interrupt\nCreate a buff on target for {effect_turns/2} turns.\nIf target receives at least {min_dmg} damage it takes an additional {additional_dmg} damage.\nOtherwise the target gains {additional_armor} defense";
+name = getText("Talent_interrupt_damage_name");
+hint = string(getText("Talent_interrupt_damage_hint"), effect_turns/2, min_dmg, additional_dmg, additional_armor);

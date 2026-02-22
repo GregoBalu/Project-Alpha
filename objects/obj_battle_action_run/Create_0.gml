@@ -5,4 +5,4 @@ action = function() {
     obj_battle_manager.alarm[3] = 10;
 }
 
-hint = "Escape from battle";
+hint = getText("Battle_act_run_hint");

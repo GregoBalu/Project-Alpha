@@ -4,8 +4,8 @@ event_inherited();
 max_utility_charge_increase = 0.3;
 
 max_stacks = 5;
-name = "Third Eye";
-hint = $"Max Utility charge: +{max_utility_charge_increase}";
+name = getText("Talent_st_util_chrg_name");
+hint = string(getText("Talent_st_util_chrg_hint"), max_utility_charge_increase);
 
 function effect() {
 

@@ -4,8 +4,8 @@ event_inherited();
 health_increase = 1;
 
 max_stacks = 5;
-name = "Empowered life";
-hint = $"Total health: +{health_increase}";
+name = getText("Talent_st_life_name");
+hint = string(getText("Talent_st_life_hint"), health_increase);
 
 function effect() {
 

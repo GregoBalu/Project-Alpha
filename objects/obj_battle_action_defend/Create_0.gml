@@ -53,7 +53,7 @@ action = function() {
 }
 
 
-hint = $"Defend [{key2str(hotkey)}]\nHarden yourself for incoming attacks.\nGives a buff for {buff_turns} turns, that increase Defense by {defense_increase}.";
+hint = string(getText("Battle_act_defend_hint"), key2str(hotkey), buff_turns, defense_increase);
 if (heal_blocked_percent > 0) {
-    hint += $"\nHeal for {heal_blocked_percent*100}% of blocked damage.";
+    hint += string(getText("Battle_act_defend_hint_blockedheal"), heal_blocked_percent*100);
 }

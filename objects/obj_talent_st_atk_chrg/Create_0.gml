@@ -4,8 +4,8 @@ event_inherited();
 max_charge_increase = 0.2;
 
 max_stacks = 5;
-name = "Tense muscles";
-hint = $"Max attack charge: +{max_charge_increase}";
+name = getText("Talent_st_atk_chrg_name");
+hint = string(getText("Talent_st_atk_chrg_hint"), max_charge_increase);
 
 function effect() {
 

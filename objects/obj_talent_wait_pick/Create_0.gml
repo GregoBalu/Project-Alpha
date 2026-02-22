@@ -4,5 +4,5 @@ function action() {
     //nothing
 }
 
-name = "Delay"
-hint = $"Delay the choice so maybe you can get stronger, later.";
+name = getText("Talent_wait_pick_name");
+hint = getText("Talent_wait_pick_hint");

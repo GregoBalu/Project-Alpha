@@ -71,4 +71,4 @@ function canUse() {
     return obj_battle_manager.battle_started && !obj_battle_manager.enemy_turn && checkCost(cost_type, cost_amount);
 }
 
-hint = $"Wait [{key2str(hotkey)}]\nWait a turn and gain charge.\nCharge gain: {attack_charge_gain*attack_charge_gain_multiplier} attack, {utility_charge_gain*utility_charge_gain_multiplier} utility";
+hint = string(getText("Battle_act_wait_hint"), key2str(hotkey), attack_charge_gain*attack_charge_gain_multiplier, utility_charge_gain*utility_charge_gain_multiplier);

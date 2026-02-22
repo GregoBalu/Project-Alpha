@@ -4,8 +4,8 @@ event_inherited();
 crit_increase = 0.3 / 100; //0.3%
 
 max_stacks = 5;
-name = "Lucky day";
-hint = $"Crit chance: +{crit_increase*100}%";
+name = getText("Talent_st_crit_name");
+hint = string(getText("Talent_st_crit_hint"), crit_increase*100);
 
 function effect() {
 

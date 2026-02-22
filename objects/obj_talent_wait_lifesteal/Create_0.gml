@@ -14,5 +14,5 @@ bonus_lifesteal = 0.3;
 lifesteal_turns = 4;
 minus_charge = 0.1;
 
-name = "Worth the wait";
-hint = string("Modifies action: Wait\nlifesteal buff (1rnd): +{0}%\ncharge gain decrease: -{1}", bonus_lifesteal*100, minus_charge);
+name = getText("Talent_wait_lifesteal_name");
+hint = string(getText("Talent_wait_lifesteal_hint"), bonus_lifesteal*100, minus_charge);

@@ -79,10 +79,9 @@ if (random_range(0, 1) < delay_talent_chance) {
 var _i3 = get_random_talent(_i1, _i2);
 talent3 = (_i3==-1?noone:obj_player.talents[|_i3]);
 
-if (talent1 == noone && (talent2 == noone || _i2==-1) && talent3 == noone) {
+if (talent1 == noone && talent2 == noone && talent3 == noone) {
     show_debug_message("No talents generated");
-    instance_destroy();
-    exit;
+    talent2 = instance_create_layer(0, 0, "GUI", obj_talent_wait_pick);
 }
 
 //TODO: sound

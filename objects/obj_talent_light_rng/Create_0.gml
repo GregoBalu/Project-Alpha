@@ -3,5 +3,5 @@ event_inherited();
 good_percent = 0.6;
 damage_modifier = 1.8;
 
-name = "Hit by chance"
-hint = $"Modifies action: Light attack\n{good_percent*100}% chance: damage x{damage_modifier}\n{(1-good_percent)*100}% chance: damage x{1/damage_modifier}";
+name = getText("Talent_light_rng_name");
+hint = string(getText("Talent_light_rng_hint"), good_percent*100, damage_modifier, (1-good_percent)*100, 1/damage_modifier);

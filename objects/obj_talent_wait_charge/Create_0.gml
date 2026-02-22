@@ -13,5 +13,5 @@ function action() {
 bonus_attack_charge = 0.2;
 minus_utility_charge = 0.2;
 
-name = "Tip of balance";
-hint = string($"Modifies action: Wait\nattack charge gain: +{bonus_attack_charge}\nutility charge gain: -{minus_utility_charge}");
+name = getText("Talent_wait_charge_name");
+hint = string(getText("Talent_wait_charge_hint"), bonus_attack_charge, minus_utility_charge);

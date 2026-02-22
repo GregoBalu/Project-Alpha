@@ -38,4 +38,4 @@ action = function() {
     alarm[0] = (animTime + getBattleAfterActionCooldownSeconds()) * TIME_SECOND;
 }
 
-hint = $"Light Attack [{key2str(hotkey)}]\nA light attack.\nDamage: {obj_battle_switcher.player_data.damage}\nCrit chance: {crit_chance*100}%\nCharge gain: {charge_gain} attack";
+hint = string(getText("Battle_act_light_hint"), key2str(hotkey), obj_battle_switcher.player_data.damage, crit_chance*100, charge_gain);

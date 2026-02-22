@@ -9,8 +9,8 @@ equip_slot = EquipSlot.Weapon;
 lifesteal_bonus = 0.15;
 speed_decrease = 0.3;
 
-name = "Saber of many edges";
-description = $"This saber is a potent and sharp weapon for those who know how to use it.\nLifesteal: +{lifesteal_bonus*100}%\nSpeed: -{speed_decrease}";
+name = getText("Item_saber_of_many_edges_name");
+description = string(getText("Item_saber_of_many_edges_desc"), lifesteal_bonus*100, speed_decrease);
 
 
 

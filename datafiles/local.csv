@@ -54,38 +54,82 @@ Lifesteal: +{0}%
 Defense: -{1}","Ez a felszarvazott sisak bevethető bármilyen akcióban.
 Életszívás: +{0}%
 Védelem: -{1}"
-"Item_cane_of_wisdom_name","Cane of Wisdom",
+"Item_cane_of_wisdom_name","Cane of Wisdom","Bölcsesség pálcája"
 "Item_cane_of_wisdom_desc","This short staff is making you think like a wizard.
 Total utility charges: +{0}
-Damage: -{1}",
-,,
-,,
-,,
-,,
+Damage: -{1}","Ez a rövid bot mágus módjára gondolkodtat el.
+Maximális támogatói energia: +{0}
+Sebzés: -{1}"
+"Item_ring_of_erityc_name","Ring of Erityc","Erityc gyűrűje"
+"Item_ring_of_erityc_desc","This ring was thought to be unobtainable.
+Health: +{0}
+Attack charge max gain: -{1}","Ezt a gyűrűt mindig is megtalálhatatlannak gondolták.
+Életerő: +{0}
+Maximális támadási energia: -{1}"
+"Item_ring_of_sorrow_name","Ring of Sorrow","Bánalom gyűrűje"
+"Item_ring_of_sorrow_desc","This ring brings great sadness.
+Crit chance: +{0}%
+Damage: -{1}","Ez a gyűrű nagy szomorúságot hoz.
+Kritikus találalt esély: +{0}%
+Sebzés: -{1}"
+"Item_robe_of_voices_name","Robe of Voices","Hangok csuhája"
+"Item_robe_of_voices_desc","This robe is woven of soft fabric that ripples in a way that almost sound as soft voices speaking.
+Corruption resistance: +{0}%
+Move speed: -{1}","A finom anyagból szőtt ruha lengése olyan halk suttogás szerű hangot hallat.
+Rontás elleni védelem: +{0}%
+Mozgási sebesség: -{1}"
+"Item_saber_of_many_edges_name","Saber of many edges","Sokpengés szablya"
+"Item_saber_of_many_edges_desc","This saber is a potent and sharp weapon for those who know how to use it.
+Lifesteal: +{0}%
+Speed: -{1}","Ez a kard egy erős és éles fegyver azok számára, akik tudják, hogyan kell használni.
+Életszívás: +{0}%
+Mozgási sebesség: -{1}"
+"Item_sword_of_misery_name","Sword of Misery","Nyomorúság kardja"
+"Item_sword_of_misery_desc","This light blade has caused a lot of suffering on either end of it.
+Damage: +{0}
+Crit chance: -{1}%","Ez a könnyű penge mindkét végén sok szenvedést okozott.
+Sebzés: +{0}
+Kritikus találat esélye: -{1}%"
 "***** BATTLE ACTIONS *****","*****","*****"
 "Battle_act_defend_hint","Defend [{0}]
 Harden yourself for incoming attacks.
-Gives a buff for {1} turns, that increase Defense by {2}.",
+Gives a buff for {1} turns, that increase Defense by {2}.","Védekezés [{0}]
+Megfeszíted magad és felkészülsz a támadásokra.
+Ad egy áldást {1} körre, amely növeli a Védelmet ennyivel: {2}"
 "Battle_act_defend_hint_blockedheal","
-Heal for {0}% of blocked damage.",
+Heal for {0}% of blocked damage.","A kivédett sebzés {0}%-ának megfelelően gyógyulsz."
 "Battle_act_heavy_hint","Heavy Attack [{0}]
 A charged up heavy attack.
 Cost: {1}
 Damage modifier: {2}
-Charge gain: {3} attack",
+Charge gain: {3} attack","Erős ütés [{0}]
+Egy jól meglendített erős ütés.
+Költség: {1}
+Sebzés módosító: {2}
+Támadási energiát kapsz: {3}"
 "Battle_act_interrupt_hint","Interrupt [{0}]
 Interrupt the enemy stunning it for 2 rounds and angering it.
 Cost: {1}
-Increase enemy utility charge by: {2}",
+Increase enemy utility charge by: {2}","Megszakítás [{0}]
+Megszakítod az ellenfeled, elkábítva 2 körig, de ezzel biztosan fel is bosszantod.
+Költség: {1}
+Ellenség támogatói energiájának növelésének mértéke: {2}"
 "Battle_act_light_hint","Light Attack [{0}]
 A light attack.
 Damage: {1}
 Crit chance: {2}%
-Charge gain: {3} attack",
+Charge gain: {3} attack","Könnyű ütés [{0}]
+Egy gyors ütés.
+Sebzés: {1}
+Kritikus találat esélye: {2}
+Támadási energiát kapsz: {3}"
 "Battle_act_run_hint","Escape from battle","Menekülés a csatából"
 "Battle_act_wait_hint","Wait [{0}]
 Wait a turn and gain charge.
-Charge gain: {1} attack, {2} utility",
+Charge gain: {1} attack, {2} utility","Várakozás [{0}]
+Vársz egy kört és energiát gyűjtessz.
+Támadási energiát kapsz: {1}
+Támogatói energiát kapsz: {2}"
 "***** TALENTS *****","*****","*****"
 "Talent_picker_title","Pick a talent!","Válassz tehetséget!"
 "Talent_power_label","Potential max talent power","Tehetség potenciális erőssége"
@@ -93,7 +137,7 @@ Charge gain: {1} attack, {2} utility",
 "Talent_def_hp_hint","defense: +{0}
 total health: -{1}","védelem: +{0}
 maximum életerő: -{1}"
-"Telnt_defend_heal_name","Healthy blocking","Életerős védelem"
+"Talent_defend_heal_name","Healthy blocking","Életerős védelem"
 "Talent_defend_heal_hint","Modifies action: Defend
 Heal for {0}% of blocked damage.
 Decrease defense: -{1}","Vonatkozó képesség: Védekezés
@@ -112,8 +156,8 @@ damage modifier: {1}%",
 "Talent_hp_dmg_name","Healthy but weak",
 "Talent_hp_dmg_hint","health: +{0}
 damage: -{1}",
-"Talen_interrupt_armor_breaker_name","Armor breaker",
-"Talen_interrupt_armor_breaker_hint","Modifies action: Interrupt
+"Talent_interrupt_armor_breaker_name","Armor breaker",
+"Talent_interrupt_armor_breaker_hint","Modifies action: Interrupt
 action gains armor shredding: -{0}",
 "Talent_interrupt_damage_name","Delayed penetration","Késleltetett döfés"
 "Talent_interrupt_damage_hint","Modifies action: Interrupt

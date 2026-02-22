@@ -53,5 +53,6 @@ function getText(_code) {
     if (ds_map_exists(global.localisation, _code)) {
         return global.localisation[? _code];
     }
+    show_debug_message("!!!! Did not find localisation({1}) for : {0}", _code, global.language);
     return "[Unknown: " + _code + "]";
 }

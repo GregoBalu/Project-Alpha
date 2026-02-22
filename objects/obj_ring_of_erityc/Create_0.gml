@@ -10,8 +10,8 @@ hp_increase = 5;
 original_charge_attack_reduction = 1;
 charge_attack_reduction = original_charge_attack_reduction;
 
-name = "Ring of Erityc";
-description = $"This ring was thought to be unobtainable.\nHealth: +{hp_increase}\nAttack charge max gain: -{original_charge_attack_reduction}";
+name = getText("Item_ring_of_erityc_name");
+description = string(getText("Item_ring_of_erityc_desc"), hp_increase, original_charge_attack_reduction);
 
 
 

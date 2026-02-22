@@ -10,9 +10,8 @@ bonus_damage = 2;
 original_crit_reduction = 0.1;
 crit_reduction = original_crit_reduction;
 
-name = "Sword of Misery";
-description = $"This light blade has caused a lot of suffering on either end of it.\nDamage: +{bonus_damage}\nCrit chance: -{original_crit_reduction*100}%";
-
+name = getText("Item_sword_of_misery_name");
+description = string(getText("Item_sword_of_misery_desc"), bonus_damage, original_crit_reduction*100);
 
 
 function equip() {

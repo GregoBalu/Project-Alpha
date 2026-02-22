@@ -10,8 +10,8 @@ crit_increase = 0.3;
 dmg_decrease = 4;
 
 
-name = "Ring of Sorrow";
-description = $"This ring brings great sadness\nCrit chance: +{crit_increase*100}%\nDamage: -{dmg_decrease}";
+name = getText("Item_ring_of_sorrow_name");
+description = string(getText("Item_ring_of_sorrow_desc"), crit_increase*100, dmg_decrease);
 
 
 

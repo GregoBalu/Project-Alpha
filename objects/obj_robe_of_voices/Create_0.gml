@@ -9,8 +9,8 @@ equip_slot = EquipSlot.Armor;
 bonus_corruption_resistance = 0.4;
 minus_move_speed = 0.4;
 
-name = "Robe of Voices";
-description = $"This robe is woven of soft fabric what's ripples almost sound as soft voices speaking.\nCorruption resistance: +{bonus_corruption_resistance*100}%\Move speed: -{minus_move_speed}";
+name = getText("Item_robe_of_voices_name");
+description = string(getText("Item_robe_of_voices_desc"), bonus_corruption_resistance*100, minus_move_speed);
 
 
 

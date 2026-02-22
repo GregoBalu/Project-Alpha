@@ -120,5 +120,29 @@ charge gain decrease: -{1}",
 "Talent_wait_more_hint","Modifies action: Wait
 All charge gain: x{0}
 Cannot use for turns: {1}",
-"Talent_wait_pick_name","Delay",
-"Talent_wait_pick_hint","Delay the choice so maybe you can get stronger, later.",
+"Talent_wait_pick_name","Delay","Késleltetés"
+"Talent_wait_pick_hint","Delay the choice so maybe you can get stronger, later.","Hagyd későbbre a választást, hogy később még erősebb lehess."
+"***** DIALOGS *****",,
+"Dialog_r1_w1_l1","Hey, I started to worry you wouldn't show up at all. What took you so long?","Végre, azt hittem már sose érsz ide. Mi tartott ennyi ideig?"
+"Dialog_r1_w1_l2","Sorry, I got held up by the guards at the city exit. So where is this Witch you were talking about?","Elnézést, az őrök feltartottak a városkapunál. Szóval merre van ez a Boszorkány amit említettél?"
+"Dialog_r1_w1_l3","She ... It went deep inside this dungeon of sort but it may know our plan. It started to prepare. Be on your guard!","Hát ... ez az izé lement mélyre a barlangjába, de van egy olyan selytésem, hogy ismeri a tervünket. Vigyázz magadra!"
+"Dialog_r1_w1_l4","Will do. Any sign of corruption yet? ...","Rendben úgy lesz. Van már bármi jele a rontásnak?"
+"Dialog_r1_w1_l5","<A loud bang shakes the ground>","<Egy hangos dörrenés rázza meg a talajt>"
+"Dialog_r1_w1_l6","Nevermind, I'll get started!","Hagyjuk, úgy látom igyekeznem kell!"
+"Dialog_r1_w2_l1","Get in there and slay that Witch!","Menj és öld meg azt a Boszorkányt!"
+"Dialog_r1_hint_star_name","Talent Star","Tehetség csillag"
+"Dialog_r1_hint_star","This is a talent star. You can pick it up to to gain a talent point and be able to choose a talent just like when you would level up.","Ez egy tehetség csillag. Ha felveszed kapsz egy tehetség pontot és választhatsz egy tehetséget pont úgy, mint amikor szintet lépnél."
+"Dialog_r1_hint_key_name","Yellow key","Sárga kulcs"
+"Dialog_r1_hint_key","This is a yellow key. It opens the yellow door. Now where might that door be ...","Ez egy sárga kulcs, amely a sárga ajtót nyitja. Már csak meg kellene találni ..."
+"Dialog_r1_hint_cauldron_name","Cauldron","Üst"
+"Dialog_r1_hint_cauldron1","This is a cauldron. It's used by witches to brew potions and soup.","Ez egy üst, amelyet a boszorkányok előszeretettel használnak főzetek készítésére."
+"Dialog_r1_hint_cauldron2","Most potions brewed in them are beneficial to you but they also make you slightly more prone to corruption.","A legtöbb főzet valamilyen pozitív hatással van rád, azonban mind egyre érzékenyebbé és kitetté tesz téged a rontásnak."
+"Dialog_r1_hint_cauldron3","The exact effects are determined by the ingredient used to brew, for example a potion of the roots of Chaka bush heals you.","A pontos hatások mindig a hozzávalókon múlnak, például a Chaka bokor gyökeréből készített főzet gyógyító hatású."
+"Dialog_r1_hint_healing_potion_name","Healing Potion","Gyógyító főzet"
+"Dialog_r1_hint_healing_potion","This is a healing potion loot. If you pick it up you instantly drink it healing your current HP.","Ez egy gyógyító főzet. Ha felveszed egyből megiszod és gyógyulni fogsz: az aktuális életerőd megnő."
+"Dialog_r1_hint_playersheet_name","Player sheet","Karakterlap"
+"Dialog_r1_hint_playersheet","Open your player sheet with your {0} key to get more information or equip gear.","Meg tudod nyitni a karakterlapodat a {0} gombbal. A karakterlapodon több információt találsz a karakteredről, és akár a felszerelésedet is rendezheted."
+"Dialog_r1_note_name","Note","Jegyzet"
+"Dialog_r1_lever1","You find a hastely scribbled note describing a room on fire with strange vibrant colors.","Egy gyorsan firkált jegyzetet találsz, amely egy lángoló szobáról és furcsa éles fényekről ír."
+"Dialog_r1_lever2","You cannot make out most of the text just a small drawing on the bottom, which depicts four colors in a row: yellow, green, green, yellow.","Az írás nagy részét nem tudod kivenni rendesen, de a papír alján egy ábrát látsz - négy szín egy sorban: sárga, zöld, zöld, sárga."
+"Dialog_r1_hidden_note","Abandon all hope. Turn around while you can ...","Hagyj fel minden reménnyel! Fordulj vissza, amíg megteheted ..."

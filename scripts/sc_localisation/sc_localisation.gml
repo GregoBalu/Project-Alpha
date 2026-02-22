@@ -1,13 +1,16 @@
+global.language = "en";
+global.localisation = undefined;
+
 function init_localisation(){
+    if (!variable_global_exists("localisation")) {
+        global.localisation = undefined;
+    }
     
     if (global.localisation == undefined) {
-        loadLocale("en");
+        loadLocale("hu");
     }
     
 }
-
-global.language = "en";
-global.localisation = undefined;
 
 function loadLocale(_lang) {
     show_debug_message($"Loading localisation for: {_lang}");

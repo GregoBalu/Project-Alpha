@@ -5,22 +5,24 @@ var _dy = gui_h - dialog_height;
 var _boxw = gui_w;
 var _boxh = gui_h - _dy;
 
-if (messages[current_message].name == global.dialog_player_name && messages[current_message].spr != undefined && messages[current_message].spr != noone) {
-    var _w = sprite_get_width(messages[current_message].spr);
-    var _h = sprite_get_height(messages[current_message].spr);
+var _msg = messages[current_message];
+
+if (_msg.name == global.dialog_player_name && _msg.spr != undefined && _msg.spr != noone) {
+    var _w = sprite_get_width(_msg.spr);
+    var _h = sprite_get_height(_msg.spr);
     
     var _spr_w = speaker_sprite_width;
     var _spr_h = _spr_w * (_h / _w);
     
-    draw_sprite_stretched(messages[current_message].spr, 0, 0-sprite_animate_x, gui_h*0.3, _spr_w, _spr_h);
-} else if (messages[current_message].spr != undefined) {
-    var _w = sprite_get_width(messages[current_message].spr);
-    var _h = sprite_get_height(messages[current_message].spr);
+    draw_sprite_stretched_ext(_msg.spr, 0, 0-sprite_animate_x, gui_h*0.3, _spr_w, _spr_h, _msg.spr_tint, 1);
+} else if (_msg.spr != undefined) {
+    var _w = sprite_get_width(_msg.spr);
+    var _h = sprite_get_height(_msg.spr);
     
     var _spr_w = speaker_sprite_width;
     var _spr_h = _spr_w * (_h / _w);
     
-    draw_sprite_stretched(messages[current_message].spr, 0, gui_w-speaker_sprite_width+sprite_animate_x, gui_h*0.3, _spr_w, _spr_h);
+    draw_sprite_stretched_ext(_msg.spr, 0, gui_w-speaker_sprite_width+sprite_animate_x, gui_h*0.3, _spr_w, _spr_h, _msg.spr_tint, 1);
 }
 
 draw_sprite_stretched(spr_box, 0, _dx, _dy, _boxw, _boxh);
@@ -29,37 +31,37 @@ _dx += 16;
 _dy += 16;
 
 draw_set_font(font_base);
-var _name = messages[current_message].name;
-draw_set_color(messages[current_message].color);
+var _name = _msg.name;
+draw_set_color(_msg.color);
 draw_text(_dx, _dy, _name);
 draw_set_color(c_black);
 
-//draw_text(_dx + 100, _dy, $"{current_char}/ {string_length(messages[current_message].msg)}");
+//draw_text(_dx + 100, _dy, $"{current_char}/ {string_length(_msg.msg)}");
 
 _dx += 4;
 _dy += 40;
 
 var _text_width = _boxw - _dx*2;
 
-draw_set_color(messages[current_message].msg.color);
-draw_set_font(messages[current_message].msg.font);
+draw_set_color(_msg.msg.color);
+draw_set_font(_msg.msg.font);
 draw_text_ext(_dx, _dy, draw_message, -1, _text_width);
 
 draw_set_font(font_base);
 draw_set_color(c_ltgray);
 
-if (messages[current_message].type == DialogType.Chat) {
+if (_msg.type == DialogType.Chat) {
     
 } else {
     if (at_end) {
         var _choice_start_y = _dy;
         var _last_drawn = choice_scroll;
-        var _choices_count = array_length(messages[current_message].choices);
+        var _choices_count = array_length(_msg.choices);
         _dy += string_height_ext(draw_message, -1, _text_width) + 4;
         
         var _lastHeight = 0;
-        for (var _c = choice_scroll; _c < array_length(messages[current_message].choices); _c++)  {
-            if (!messages[current_message].choices[_c].condition()) { 
+        for (var _c = choice_scroll; _c < array_length(_msg.choices); _c++)  {
+            if (!_msg.choices[_c].condition()) { 
                 _choices_count--;
                 continue;
             }
@@ -69,18 +71,18 @@ if (messages[current_message].type == DialogType.Chat) {
                 continue;
             }
             _last_drawn = _c;
-            draw_set_color(messages[current_message].choices[_c].color);
-            draw_set_font(messages[current_message].choices[_c].font);
-            draw_text_ext(_dx, _dy, messages[current_message].choices[_c].text, -1, _text_width);
-            var _width = string_width_ext(messages[current_message].choices[_c].text, -1, _text_width);
-            _lastHeight = string_height_ext(messages[current_message].choices[_c].text, -1, _text_width);
+            draw_set_color(_msg.choices[_c].color);
+            draw_set_font(_msg.choices[_c].font);
+            draw_text_ext(_dx, _dy, _msg.choices[_c].text, -1, _text_width);
+            var _width = string_width_ext(_msg.choices[_c].text, -1, _text_width);
+            _lastHeight = string_height_ext(_msg.choices[_c].text, -1, _text_width);
             draw_rectangle(_dx, _dy, _dx+_width, _dy+_lastHeight, true);
             if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _dx, _dy, _dx+_width, _dy+_lastHeight)) {
                 draw_set_alpha(0.4);
                 draw_rectangle_color(_dx, _dy, _dx+_width, _dy+_lastHeight-1, c_gray, c_gray, c_gray, c_gray, false);
                 draw_set_alpha(1);
                 if (mouse_check_button_pressed(mb_left)) {
-                    messages[current_message].choices[_c].onClick();
+                    _msg.choices[_c].onClick();
                     choice_need_scroll = false;
                     choice_scroll = 0;
                 }

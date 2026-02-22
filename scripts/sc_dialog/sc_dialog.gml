@@ -9,6 +9,12 @@ function initDialog() {
 }
 initInput();
 
+global.dialog_player_name = "Vhalyan";
+global.dialog_player_color = c_lime;
+
+global.dialog_vendor_name = "Sha'd Yvend'r";
+global.dialog_vendor_color = c_orange;
+
 function NOOP() {}
 
 function create_dialog(_messages, _fullscreen = false){
@@ -47,12 +53,13 @@ function dialog_text(_msg, _msg_font = font_base, _msg_color = c_ltgray) constru
  * @returns {struct}  Dialog struct
  */
 function dialog_entry(_name, _color, _sprite, _msg, 
-        _on_start_action = function(){}, _on_end_action = function(){}) constructor {
+        _on_start_action = function(){}, _on_end_action = function(){}, _sprite_tint = c_white) constructor {
     
     type = DialogType.Chat;
     name = _name;
     color = _color;
     spr = _sprite;
+    spr_tint = _sprite_tint;
     msg = _msg;
             
     _startAction = _on_start_action;
@@ -105,10 +112,5 @@ function dialog_choice_entry(_name, _color, _sprite, _msg, _choices,
     choices = _choices;
 }
 
-global.dialog_player_name = "Omar";
-global.dialog_player_color = c_lime;
-
-global.dialog_vendor_name = "Sha'd Yvend'r";
-global.dialog_vendor_color = c_orange;
 
 

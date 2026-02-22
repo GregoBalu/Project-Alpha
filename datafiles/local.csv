@@ -1,6 +1,8 @@
 "CODE","en","hu"
 "Font_sample","abcdefghijklmnopqrstuvwxyz 
-ABCDEFGHIJKLMNOPQRSTUVWXYZ","ÁRVÍZTŰRŐ TÜKÖRFÚRÓGÉP 
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+0123456789
+.,:?-_+!%/=()","ÁRVÍZTŰRŐ TÜKÖRFÚRÓGÉP 
 árvíztűrő tükörfúrógép"
 "***** MENU *****",,
 "New_Game","New Game","Új játék"
@@ -46,10 +48,19 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZ","ÁRVÍZTŰRŐ TÜKÖRFÚRÓGÉP
 "Restoration_potion_pickup","restoration potion","regeneráló főzet"
 "Speed_potion_pickup","speed potion","gyorsítő főzet"
 "***** ITEMS *****",,
-"Item_helm_of_horns_name","Helm of Horns",
+"Item_helm_of_horns_name","Helm of Horns","Felszarvalt sisak"
 "Item_helm_of_horns_desc","This horny cap is ready for some action if you want to.
 Lifesteal: +{0}%
-Defense: -{1}",
+Defense: -{1}","Ez a felszarvazott sisak bevethető bármilyen akcióban.
+Életszívás: +{0}%
+Védelem: -{1}"
+"Item_cane_of_wisdom_name","Cane of Wisdom",
+"Item_cane_of_wisdom_desc","This short staff is making you think like a wizard.
+Total utility charges: +{0}
+Damage: -{1}",
+,,
+,,
+,,
 ,,
 "***** BATTLE ACTIONS *****","*****","*****"
 "Battle_act_defend_hint","Defend [{0}]

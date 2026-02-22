@@ -5,7 +5,7 @@
   "managed":true,
   "name":"obj_item_health_potion_pickup",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_item_pickup_inventory_base","path":"objects/obj_item_pickup_inventory_base/obj_item_pickup_inventory_base.yy",},"propertyId":{"name":"inventory_item","path":"objects/obj_item_pickup_inventory_base/obj_item_pickup_inventory_base.yy",},"resource":{"name":"obj_inv_item_health_potion","path":"objects/obj_inv_item_health_potion/obj_inv_item_health_potion.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"obj_inv_item_health_potion",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_item_pickup_inventory_base","path":"objects/obj_item_pickup_inventory_base/obj_item_pickup_inventory_base.yy",},"propertyId":{"name":"inventory_item","path":"objects/obj_item_pickup_inventory_base/obj_item_pickup_inventory_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"obj_inv_item_health_potion",},
   ],
   "parent":{
     "name":"Items",

@@ -121,3 +121,4 @@ function Triangle(_p1, _p2, _p3) constructor {
         delete c;
     }
 }
+

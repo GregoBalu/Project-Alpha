@@ -8,4 +8,5 @@ for (var _i = 0; _i < ds_list_size(scores); _i++)
     
     
     _dy += 16;
+    if (_dy > bbox_bottom) break;
 }

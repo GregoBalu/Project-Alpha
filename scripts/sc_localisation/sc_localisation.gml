@@ -7,7 +7,7 @@ function init_localisation(){
     }
     
     if (global.localisation == undefined) {
-        loadLocale("hu");
+        loadLocale("en");
     }
     
 }
@@ -18,17 +18,19 @@ function loadLocale(_lang) {
     var ww = ds_grid_width(file_grid);
     var hh = ds_grid_height(file_grid);
     
-    var _langCol = 1;
-    if (_lang == "en") {
-        _langCol = 1;
-    } else if (_lang == "hu") {
-        _langCol = 2;
+    var _langCol = ww;
+    for (var _i = 1; _i < ww; ++_i)
+    {
+        if (_lang == file_grid[# _i, 0]) {
+            _langCol = _i;
+            break;
+        }
     }
     
     global.language = _lang;
     
-    if (ww < _langCol) {
-        show_debug_message($"Csv too narrow, defaulting to en");
+    if (ww <= _langCol) {
+        show_debug_message("lang ({0}) not found, defaulting to en", _lang);
         _langCol = 1;
         global.language = "en";
     }
@@ -39,7 +41,7 @@ function loadLocale(_lang) {
     
     global.localisation = ds_map_create();
     var _count = 0;
-    for (var _i = 0; _i < hh; ++_i)
+    for (var _i = 1; _i < hh; ++_i)
     {
         //show_debug_message($"{file_grid[# 0, _i]} , {file_grid[# 1, _i]}")
         global.localisation[? file_grid[# 0, _i]] = file_grid[# _langCol, _i];

@@ -13,6 +13,7 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZ
 "Quit_confirm","Do you want to really quit?","Tényleg ki akarsz lépni?"
 "Music_volume","Music volume","Zene hangerő"
 "Sfx_volume","Sound effects volume","Effektusok hangerő"
+"Menu_language","Language","Nyelv"
 "***** PLAYER SHEET *****",,
 "Player_sheet_title","Player Sheet","Karakterlap"
 "Health_label","Health","Életerő"

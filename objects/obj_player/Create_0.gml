@@ -10,6 +10,7 @@ default_shroud_mask = [];
 current_shroud_mask = undefined;
 
 blocking_shroud_mask_map = ds_map_create();
+outside_shroud_mask = undefined;
 firstRoomEnter = true;
 
 

@@ -18,6 +18,7 @@ if (room == rm_castle) {
 
 default_shroud_mask = shroud_clear_grid_setup(shroud_radius(), obj_shroud.clear_grid_size);
 current_shroud_mask = default_shroud_mask;
+outside_shroud_mask = shroud_clear_grid_setup(shroud_radius()*1.5, obj_shroud.clear_grid_size);
 
 shroud_clear_position(x, y, no_see_tilemaps, default_shroud_mask);
 

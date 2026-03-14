@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_music_cozy",
+  "audioGroupId":{
+    "name":"ag_music",
+    "path":"audiogroups/ag_music",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":51.2,
+  "exportDir":"",
+  "name":"snd_music_cozy",
+  "parent":{
+    "name":"music",
+    "path":"folders/Sounds/music.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_music_cozy.wav",
+  "volume":1.0,
+}

@@ -236,10 +236,10 @@ Nem lehet használni a képességet {1} körig."
 "Vendor_corruption","Corruption: {0}","Rontás: {0}"
 "Vendor_health","Health: {0} / {1}","Életerő: {0}/{1}"
 "Vendor_buy_confirm","Buy item ({0}) for {1}g?","Valóban megveszed ezt: {0}, ennyiért: {1}g?"
-"Vendor_hp_potion","Healing Potion",
-"Vendor_corruption_remove","Corruption removal",
-"Vendor_cane","Cane of wisdom",
-"Vendor_talent","Talent potential",
+"Vendor_hp_potion","Healing Potion","Gyógyító főzet"
+"Vendor_corruption_remove","Corruption removal","Rontás feloldozás"
+"Vendor_cane","Cane of wisdom","Bölcsesség pálcája"
+"Vendor_talent","Talent potential","Tehetség potenciál"
 ,,
 "***** DIALOGS *****",,
 "Dialog_r1_w1_l1","Hey, I started to worry you wouldn't show up at all. What took you so long?","Végre, azt hittem már sose érsz ide. Mi tartott ennyi ideig?"
@@ -278,26 +278,26 @@ Nem lehet használni a képességet {1} körig."
 "Death_secret","Secrets found: {0}/{1}","Titkos helyek felfedezve: {0}/{1}"
 "Death_healing","Total healing: {0}","Összes gyógyulás: {0}"
 "Death_healing_cauldron","Healing from cauldrons: {0}, {1} times","Gyógyulás üstökből: {0}, ennyiszer: {1}"
-"Death_healing_potions","Healing from potions: {0}, {1} times",
-"Death_healing_levelup","Healing from leveling up: {0}, {1} times",
-"Death_healing_lifesteal","Healing from lifesteal: {0}, {1} times",
-"Death_healing_other","Healing from other: {0}, {1} times",
-"Death_damage","Total damage dealt: {0}",
-"Death_damage_enemy","Damage dealt to enemies: {0}, {1} times",
-"Death_damage_crit","Critical hits: {0}, {1}%",
-"Death_dmgtaken","Total damage taken: {0}",
-"Death_dmgtaken_enemy","Damage dealt by enemies: {0}, {1} times, crits: {2}, {3}%",
-"Death_dmgtaken_spike","Damage dealt by spikes: {0}, {1} times",
-"Death_dmgtaken_poisontrap","Damage dealt by poison: {0}, {1} times",
-"Death_dmgtaken_speartrap","Damage dealt by spear: {0}, {1} times",
-"Death_dmgtaken_balltrap","Damage dealt by rolling ball: {0}, {1} times",
-"Death_dmgtaken_tnt","Damage dealt by tnt: {0}, {1} times",
-"Death_distance","Total distance travelled: {0} units",
-"Death_distance_walk","Distance walked: {0} units, {1}%",
-"Death_distance_run","Distance ran: {0} units, {1}%",
-"Death_corruption","Corruption",
-"Death_corruption_gain","Total corruption gained: {0}",
-"Death_corruption_lost","Total corruption lost: {0}",
+"Death_healing_potions","Healing from potions: {0}, {1} times","Gyógyulás főzetekből: {0}, ennyiszer: {1}"
+"Death_healing_levelup","Healing from leveling up: {0}, {1} times","Gyógyulás szintlépésből: {0}, ennyiszer: {1}"
+"Death_healing_lifesteal","Healing from lifesteal: {0}, {1} times","Gyógyulás életszívásból: {0}, ennyiszer: {1}"
+"Death_healing_other","Healing from other: {0}, {1} times","Gyógyulás egyéb módon: {0}, ennyiszer: {1}"
+"Death_damage","Total damage dealt: {0}","Összes sebzés: {0}"
+"Death_damage_enemy","Damage dealt to enemies: {0}, {1} times","Sebzés ellenfelekre: {0}, ennyiszer: {1}"
+"Death_damage_crit","Critical hits: {0}, {1}%","Kritikus találatok: {0}, {1}%"
+"Death_dmgtaken","Total damage taken: {0}","Összes sérülés: {0}"
+"Death_dmgtaken_enemy","Damage dealt by enemies: {0}, {1} times, crits: {2}, {3}%","Sérülés ellenfelektől: {0}, ennyiszer: {1}, kritikus találat: {2}, {3}%"
+"Death_dmgtaken_spike","Damage dealt by spikes: {0}, {1} times","Sérülés tüskékből: {0}, ennyiszer: {1}"
+"Death_dmgtaken_poisontrap","Damage dealt by poison: {0}, {1} times","Sérülés méregtől: {0}, ennyiszer: {1}"
+"Death_dmgtaken_speartrap","Damage dealt by spear: {0}, {1} times","Sérülés lándzsáktól: {0}, ennyiszer: {1}"
+"Death_dmgtaken_balltrap","Damage dealt by rolling ball: {0}, {1} times","Sérülés guruló golyótól: {0}, ennyiszer: {1}"
+"Death_dmgtaken_tnt","Damage dealt by tnt: {0}, {1} times","Sérülés TNT-től: {0}, ennyiszer: {1}"
+"Death_distance","Total distance travelled: {0} units","Teljes megtett táv: {0} egység"
+"Death_distance_walk","Distance walked: {0} units, {1}%","Távolság gyalog: {0} egység, {1}%"
+"Death_distance_run","Distance ran: {0} units, {1}%","Távolság futva: {0} egység, {1}%"
+"Death_corruption","Corruption","Rontás"
+"Death_corruption_gain","Total corruption gained: {0}","Összes rontás begyűjtve: {0}"
+"Death_corruption_lost","Total corruption lost: {0}","Összes rontás feloldozás: {0}"
 "Death_fish","Total fish lured: {0}","Pecázások száma: {0}"
-"Death_fish_caught","Total fish caught: {0}",
-"Death_fish_gotaway","Total fish got away: {0}",
+"Death_fish_caught","Total fish caught: {0}","Kifogott halak száma: {0}"
+"Death_fish_gotaway","Total fish got away: {0}","Elszalasztott halak száma: {0}"

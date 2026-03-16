@@ -14,6 +14,7 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZ
 "Music_volume","Music volume","Zene hangerő"
 "Sfx_volume","Sound effects volume","Effektusok hangerő"
 "Menu_language","Language","Nyelv"
+"Back_to_menu","Back to Menu","Vissza a Főmenübe"
 "***** PLAYER SHEET *****",,
 "Player_sheet_title","Player Sheet","Karakterlap"
 "Health_label","Health","Életerő"
@@ -228,6 +229,13 @@ Nem lehet használni a képességet {1} körig."
 "Buff_defend_hint","Increase Defense",
 "Buff_crit_bleed_hint","Critical Bleed: small DoT damage,\n increase critical chance and critical damage for attacker",
 "Buff_water_tentacle_squeeze_hint","You are being squeezed, you cannot breathe. You have to relax somehow ...",
+"***** VENDOR *****",,
+"Vendor_title","Shop: {0}","Árus: {0}"
+"Vendor_sell_confirm","Sell item ({0})?","Valóban eladod ezt: {0}?"
+"Vendor_gold","Gold: {0}","Érmék: {0}"
+"Vendor_corruption","Corruption: {0}","Rontás: {0}"
+"Vendor_health","Health: {0} / {1}","Életerő: {0}/{1}"
+"Vendor_buy_confirm","Buy item ({0}) for {1}g?","Valóban megveszed ezt: {0}, ennyiért: {1}g?"
 "***** DIALOGS *****",,
 "Dialog_r1_w1_l1","Hey, I started to worry you wouldn't show up at all. What took you so long?","Végre, azt hittem már sose érsz ide. Mi tartott ennyi ideig?"
 "Dialog_r1_w1_l2","Sorry, I got held up by the guards at the city exit. So where is this Witch you were talking about?","Elnézést, az őrök feltartottak a városkapunál. Szóval merre van ez a Boszorkány amit említettél?"
@@ -252,3 +260,39 @@ Nem lehet használni a képességet {1} körig."
 "Dialog_r1_lever1","You find a hastely scribbled note describing a room on fire with strange vibrant colors.","Egy gyorsan firkált jegyzetet találsz, amely egy lángoló szobáról és furcsa éles fényekről ír."
 "Dialog_r1_lever2","You cannot make out most of the text just a small drawing on the bottom, which depicts four colors in a row: yellow, green, green, yellow.","Az írás nagy részét nem tudod kivenni rendesen, de a papír alján egy ábrát látsz - négy szín egy sorban: sárga, zöld, zöld, sárga."
 "Dialog_r1_hidden_note","Abandon all hope. Turn around while you can ...","Hagyj fel minden reménnyel! Fordulj vissza, amíg megteheted ..."
+,,
+"***** Death screen *****",,
+"Death_welcome","You have died. Let's see what you have achieved in your short life:","Meghaltál. Lássuk mit tudtál elérni amíg még éltél:"
+"Death_name","Death","Halál"
+"Death_score","Score: {0}  (Highscore: {1})","Teljesítmény: {0} (Csúcs: {1})"
+"Death_playtime","Total time played: {0}m {1}s","Teljes játékidő: {0}p {1}mp"
+"Death_xp","Total XP earned: {0}","Összes megszerzett TP: {0}"
+"Death_levelup","Total level ups: {0}","Szintlépések száma: {0}"
+"Death_talents","Total talent points gained: {0}","Tehetségpontok száma: {0}"
+"Death_room","Total levels started: {0}","Megkezdett pályák száma: {0}"
+"Death_secret","Secrets found: {0}/{1}","Titkos helyek felfedezve: {0}/{1}"
+"Death_healing","Total healing: {0}","Összes gyógyulás: {0}"
+"Death_healing_cauldron","Healing from cauldrons: {0}, {1} times","Gyógyulás üstökből: {0}, ennyiszer: {1}"
+"Death_healing_potions","Healing from potions: {0}, {1} times",
+"Death_healing_levelup","Healing from leveling up: {0}, {1} times",
+"Death_healing_lifesteal","Healing from lifesteal: {0}, {1} times",
+"Death_healing_other","Healing from other: {0}, {1} times",
+"Death_damage","Total damage dealt: {0}",
+"Death_damage_enemy","Damage dealt to enemies: {0}, {1} times",
+"Death_damage_crit","Critical hits: {0}, {1}%",
+"Death_dmgtaken","Total damage taken: {0}",
+"Death_dmgtaken_enemy","Damage dealt by enemies: {0}, {1} times, crits: {2}, {3}%",
+"Death_dmgtaken_spike","Damage dealt by spikes: {0}, {1} times",
+"Death_dmgtaken_poisontrap","Damage dealt by poison: {0}, {1} times",
+"Death_dmgtaken_speartrap","Damage dealt by spear: {0}, {1} times",
+"Death_dmgtaken_balltrap","Damage dealt by rolling ball: {0}, {1} times",
+"Death_dmgtaken_tnt","Damage dealt by tnt: {0}, {1} times",
+"Death_distance","Total distance travelled: {0} units",
+"Death_distance_walk","Distance walked: {0} units, {1}%",
+"Death_distance_run","Distance ran: {0} units, {1}%",
+"Death_corruption","Corruption",
+"Death_corruption_gain","Total corruption gained: {0}",
+"Death_corruption_lost","Total corruption lost: {0}",
+"Death_fish","Total fish lured: {0}","Pecázások száma: {0}"
+"Death_fish_caught","Total fish caught: {0}",
+"Death_fish_gotaway","Total fish got away: {0}",

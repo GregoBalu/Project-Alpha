@@ -6,21 +6,21 @@ stock = [];
 
 if (room == Room1) {
     stock = [
-        new VendorItem("Healing potion", spr_heal_bottle, 2, 3, function() {
+        new VendorItem(getText("Vendor_hp_potion"), spr_heal_bottle, 2, 3, function() {
             obj_player.hp = clamp(obj_player.hp + 5, 0, obj_player.hp_total);
             return true;
         }),
-        new VendorItem("Corruption removal", spr_debug_16, 5, 3, function() {
+        new VendorItem(getText("Vendor_corruption_remove"), spr_debug_16, 5, 3, function() {
             obj_player.add_corruption(-2);
             return true;
         }),
-        new VendorItem("Cane of wisdom", spr_crane_of_wisdom, 10, 1, function() {
+        new VendorItem(getText("Vendor_cane"), spr_crane_of_wisdom, 10, 1, function() {
             if (obj_player.addToInventory(obj_cane_of_wisdom)) {
                 return true;
             }
             return false;
         }),
-        new VendorItem("Talent potential", spr_star, 10, 1, function() {
+        new VendorItem(getText("Vendor_talent"), spr_star, 10, 1, function() {
             obj_player.talent_points++;
             return true;
         })
@@ -28,21 +28,21 @@ if (room == Room1) {
     
 } else if (room == rm_cave) {
     stock = [
-         new VendorItem("Healing potion", spr_heal_bottle, 2, 2, function() {
+         new VendorItem(getText("Vendor_hp_potion"), spr_heal_bottle, 2, 2, function() {
             obj_player.hp = clamp(obj_player.hp + 5, 0, obj_player.hp_total);
             return true;
         }),
-        new VendorItem("Corruption removal", spr_debug_16, 5, 3, function() {
+        new VendorItem(getText("Vendor_corruption_remove"), spr_debug_16, 5, 3, function() {
             obj_player.add_corruption(-2);
             return true;
         }),
-        new VendorItem("Cane of wisdom", spr_crane_of_wisdom, 10, 1, function() {
+        new VendorItem(getText("Vendor_cane"), spr_crane_of_wisdom, 10, 1, function() {
             if (obj_player.addToInventory(obj_cane_of_wisdom)) {
                 return true;
             }
             return false;
         }),
-        new VendorItem("Talent Star", spr_star, 20, 1, function() {
+        new VendorItem(getText("Vendor_talent"), spr_star, 20, 1, function() {
             instance_create_layer(obj_npc_vendor.x, obj_npc_vendor.y, "Items", obj_talent_star);
             return true;
         })

@@ -236,6 +236,11 @@ Nem lehet használni a képességet {1} körig."
 "Vendor_corruption","Corruption: {0}","Rontás: {0}"
 "Vendor_health","Health: {0} / {1}","Életerő: {0}/{1}"
 "Vendor_buy_confirm","Buy item ({0}) for {1}g?","Valóban megveszed ezt: {0}, ennyiért: {1}g?"
+"Vendor_hp_potion","Healing Potion",
+"Vendor_corruption_remove","Corruption removal",
+"Vendor_cane","Cane of wisdom",
+"Vendor_talent","Talent potential",
+,,
 "***** DIALOGS *****",,
 "Dialog_r1_w1_l1","Hey, I started to worry you wouldn't show up at all. What took you so long?","Végre, azt hittem már sose érsz ide. Mi tartott ennyi ideig?"
 "Dialog_r1_w1_l2","Sorry, I got held up by the guards at the city exit. So where is this Witch you were talking about?","Elnézést, az őrök feltartottak a városkapunál. Szóval merre van ez a Boszorkány amit említettél?"

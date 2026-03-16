@@ -19,7 +19,7 @@ if (in_hold) {
 
 draw_sprite_stretched(spr_vendor_back, 0, 0, 0, vendor_w, vendor_h)
 
-draw_textbox(159, 19, 80, 32, $"Shop: {global.dialog_vendor_name}", fa_center, fa_middle);
+draw_textbox(159, 19, 80, 32, string(getText("Vendor_title"), global.dialog_vendor_name), fa_center, fa_middle);
 
 
 { // ***** Inventory *****
@@ -39,7 +39,7 @@ draw_textbox(159, 19, 80, 32, $"Shop: {global.dialog_vendor_name}", fa_center, f
                         stopHold();
                         if (DO_DIALOG) {
                             dialog = instance_create_depth(0, 0, depth-1, obj_vendor_dialog, {
-                                dialog_text: string($"Sell item ({_item.name})?"),
+                                dialog_text: string(getText("Vendor_sell_confirm"), _item.name),
                                 accept_func: function() {
                                     parent.sell(data.slot);
                                 },
@@ -74,12 +74,12 @@ draw_textbox(159, 19, 80, 32, $"Shop: {global.dialog_vendor_name}", fa_center, f
 
 // ***** list gold, other useful stats *****
 
-draw_textbox(15, 81, 60, 12, $"Gold: {obj_player.coins}");
-draw_textbox(15, 96, 60, 12, $"Corruption: {obj_player.corruption}");
+draw_textbox(15, 81, 60, 12, string(getText("Vendor_gold"), obj_player.coins));
+draw_textbox(15, 96, 60, 12, string(getText("Vendor_corruption"), obj_player.corruption));
 
 draw_sprite(spr_no_refund, 0, 80, 110);
 
-draw_textbox(23, 140, 60, 12, $"Health: {obj_player.hp} / {obj_player.hp_total}");
+draw_textbox(23, 140, 60, 12, string(getText("Vendor_health"), obj_player.hp, obj_player.hp_total) );
 
 if (show_gold_change) {
 
@@ -124,7 +124,7 @@ if (show_gold_change) {
                         stopHold();
                         if (DO_DIALOG) {
                             dialog = instance_create_depth(0, 0, depth-1, obj_vendor_dialog, {
-                                dialog_text: string($"Buy item ({_item.name}) for {_item.price}g?"),
+                                dialog_text: string(getText("Vendor_buy_confirm"), _item.name, _item.price),
                                 accept_func: function() {
                                     parent.buy(data.ind);
                                 },

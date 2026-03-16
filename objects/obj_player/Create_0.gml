@@ -54,7 +54,7 @@ audio_listener_orientation(0,1,0,0,0,1);
 * @param {Id.Instance} _enemy Enemy that is killed.
 */
 gain_experience = function(_enemy) {
-    show_debug_message("gain_experience()");
+    if (DEBUG) show_debug_message("gain_experience()");
     
     var _level_difference = _enemy.level - level;
     var _modifier = power(1.25, _level_difference);

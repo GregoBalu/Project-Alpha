@@ -1,7 +1,7 @@
 /// Spin effect tick handler
 
 effectData.progress += SpinTickAmount;
-show_debug_message($"Room change manager effect spin progress {effectData.progress} -> {7.2*effectData.progress}");
+//show_debug_message($"Room change manager effect spin progress {effectData.progress} -> {7.2*effectData.progress}");
 
 camera_set_view_angle(obj_camera.cam, 7.2*effectData.progress);
 if (changed_room) {

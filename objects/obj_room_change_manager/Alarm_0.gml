@@ -1,7 +1,7 @@
 ///Fade handler alarm
 
 effectData.progress += FadeTickAmount;
-show_debug_message($"Room change manager effect fade progress {effectData.progress}");
+//show_debug_message($"Room change manager effect fade progress {effectData.progress}");
 
 if (effectData.progress >= 100 && !changed_room) {
     //After fade out

@@ -14,6 +14,10 @@ if (prefilled) {
         show_debug_message($"No prefill ingredient set for {id}");
     }
     ingredient = prefilled_ingredient;
+    if (!instance_exists(ingredient)) {
+        var _inst = instance_create_depth(0, 0, 0, ingredient);
+        _inst.visible = false;
+    }
 } else {
     state = InterractItemState.Interracted;
 }

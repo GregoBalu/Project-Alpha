@@ -2,7 +2,7 @@
 
 effectData.progress += SpiralTickAmount;
 effectData.subimg = (effectData.subimg + 1) % 3;
-show_debug_message($"Room change manager effect spiral progress {effectData.progress}");
+//show_debug_message($"Room change manager effect spiral progress {effectData.progress}");
 
 if (effectData.progress >= 100 && !changed_room) {
     //After spiral full

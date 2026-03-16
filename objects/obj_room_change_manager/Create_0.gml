@@ -27,7 +27,7 @@ switch (effect) {
     case RoomTransition.Instant:
         doEffect = function() {
             if (!changed_room) {
-                show_debug_message("Room change manager effect instant");
+                //show_debug_message("Room change manager effect instant");
                 alarm[RoomChangerManagerAlarms.ChangeRoom] = 1;
             }
         };
@@ -38,7 +38,7 @@ switch (effect) {
             progress : 0
         };
         doEffect = function() {
-            show_debug_message("Room change manager effect start fade");
+            //show_debug_message("Room change manager effect start fade");
             alarm[RoomChangerManagerAlarms.Fade] = FadeTick;
         }
         
@@ -49,7 +49,7 @@ switch (effect) {
             subimg : 0
         };
         doEffect = function() {
-            show_debug_message("Room change manager effect start spiral");
+            //show_debug_message("Room change manager effect start spiral");
             alarm[RoomChangerManagerAlarms.Spiral] = SpiralTick;
         };
         break;
@@ -58,12 +58,12 @@ switch (effect) {
             progress : 0
         };
         doEffect = function() {
-            show_debug_message("Room change manager effect start spin");
+            //show_debug_message("Room change manager effect start spin");
             alarm[RoomChangerManagerAlarms.Spin] = SpinTick;
         };
         break;
     default:
-        show_debug_message($"Unknown effect: {effect}");
+        //show_debug_message($"Unknown effect: {effect}");
         instance_destroy();
 }
 

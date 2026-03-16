@@ -16,6 +16,8 @@ if (room == rm_castle) {
     }
 }
 
+statistic.rooms_started++;
+
 default_shroud_mask = shroud_clear_grid_setup(shroud_radius(), obj_shroud.clear_grid_size);
 current_shroud_mask = default_shroud_mask;
 outside_shroud_mask = shroud_clear_grid_setup(shroud_radius()*1.5, obj_shroud.clear_grid_size);
@@ -33,13 +35,13 @@ ds_map_add(blocking_shroud_mask_map, Orientation.UPRIGHT, shroud_clear_grid_setu
 
 if (instance_exists(obj_room_switcher)) {
     var _inst = instance_find(obj_room_switcher, 0);
-    show_debug_message("Cloning player from room_switcher");
+    if (DEBUG) show_debug_message("Cloning player from room_switcher");
     load_player_data_from(_inst);
     
     create_checkpoint();
 } else if (instance_exists(obj_checkpoint)) {
     var _inst = instance_find(obj_checkpoint, 0);
-    show_debug_message("Cloning player from checkpoint");
+    if (DEBUG) show_debug_message("Cloning player from checkpoint");
     load_player_data_from(_inst);
 } else {
     {

@@ -53,7 +53,12 @@ function loadLocale(_lang) {
 
 function getText(_code) {
     if (ds_map_exists(global.localisation, _code)) {
-        return global.localisation[? _code];
+        var _text = global.localisation[? _code];
+        if (string_length(_text) == 0) {
+            show_debug_message("!!!! Empty localisation({1}) for : {0}", _code, global.language);
+            return "[Unknown: " + global.language + "/" + _code + "]";
+        }
+        return _text;
     }
     show_debug_message("!!!! Did not find localisation({1}) for : {0}", _code, global.language);
     return "[Unknown: " + _code + "]";

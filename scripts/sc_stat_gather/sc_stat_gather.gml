@@ -31,7 +31,7 @@ function close_stats_gather_file() {
 
 function log_stat(_str) {
     
-    show_debug_message(_str);
+    if (DEBUG) show_debug_message(_str);
     
     /*if (!global.do_gather_stat) {
         exit;
@@ -145,6 +145,10 @@ function Statistic() constructor {
     
     fish_caught = 0;
     fish_missed = 0;
+    
+    rooms_started = 0;
+    secrets_all = 0;
+    secrets_found = 0;
     
     start_time = date_current_datetime();
 }

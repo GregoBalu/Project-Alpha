@@ -103,13 +103,13 @@ play_wait_animation = function() {
 play_interrupt_animation = function() {
     alarm[5] = 0;
     
-    if (data.battle.animation_attack == noone) {
+    if (data.battle.animation_interrupt == noone) {
         attack_move = 2;
         attack_distance = 20;
         alarm[BattleEnemyEvents.AttackStart] = 0.1 * TIME_SECOND;
         return 0.333;
     } else {
-        sprite_index = data.battle.animation_attack;
+        sprite_index = data.battle.animation_interrupt;
         image_index = 0;
         var _total_frames = sprite_get_number(data.battle.animation_interrupt);
         var _speed = data.battle.animation_interrupt_fps;

@@ -27,6 +27,7 @@ initBattle = function(_self) {
 
 doEnemyAction = function(_selfData, _playerData) {
     //Override me
+    show_debug_message($"battle_state={battle_state} lesser_tentacles_remaining={lesser_tentacles_remaining}");
     if (lesser_tentacles_remaining > 0) {
         if (battle_state == 0) {
             ++battle_state;
@@ -43,19 +44,42 @@ doEnemyAction = function(_selfData, _playerData) {
             var _animTime = enemySimpleAttack(obj_battle_enemy);
             //TODO: audio
             return _animTime;
+        } else if (charge_attack >= 1) {
+            battle_state = 0;
+            var _animTime = enemyHeavyAttack(obj_battle_enemy);
+            //TODO: audio
+            return _animTime;
         } else {
             battle_state = 0;
-            //TODO
             var _animTime = enemyWait(obj_battle_enemy);
             //TODO: audio
             return _animTime;
         }
+    } else {
+        
+        if (charge_attack >= 1) {
+            var _animTime = enemyHeavyAttack(obj_battle_enemy);
+            //TODO: audio
+            return _animTime;
+        } else if (charge_util >= 1.5) {
+            var _animTime = enemyInterruptAttack(obj_battle_enemy, global.BUFF_TURNS_PER_COMBAT_TURNS*2);
+            //TODO: audio
+            return _animTime;
+        }
+        
+        var _act = random_range(0, 5);
+        if (_act < 4) {
+            var _animTime = enemyWait(obj_battle_enemy);
+            //TODO: audio
+            return _animTime;
+        } else {
+            var _animTime = enemySimpleAttack(obj_battle_enemy);
+            //TODO: audio
+            return _animTime;
+        }
+        
+        
     }
-    
-    //TODO
-    
-    
-    return enemyWait(obj_battle_enemy);
 }
 
 battleDraw = function(_self) {

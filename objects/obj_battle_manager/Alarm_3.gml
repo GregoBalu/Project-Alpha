@@ -3,7 +3,7 @@
 obj_battle_player.tick_stop();
 obj_battle_enemy.tick_stop();
 
-show_debug_message($"Battle end, back to {obj_battle_switcher.original_room}")
+if (debug_mode) show_debug_message($"Battle end, back to {obj_battle_switcher.original_room}")
 
 obj_battle_enemy.data.onBattleEnd(obj_battle_enemy);
 

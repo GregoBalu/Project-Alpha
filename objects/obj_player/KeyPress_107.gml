@@ -1,6 +1,6 @@
 //gain_experience(obj_enemy1);
 //coins++;
-gain_talent(1);
+//gain_talent(1);
 //immobilized = !immobilized;
 //instance_create_layer(0, 0, "Instances", obj_cutscene_base);
 
@@ -8,4 +8,4 @@ gain_talent(1);
 //test_join.x += 2;
 //create_checkpoint();
 
-//change_room_to(rm_cave, RoomTransition.Spin);
+change_room_to(rm_cave, RoomTransition.Spin);

@@ -27,11 +27,11 @@ initBattle = function(_self) {
 
 doEnemyAction = function(_selfData, _playerData) {
     //Override me
-    show_debug_message($"battle_state={battle_state} lesser_tentacles_remaining={lesser_tentacles_remaining}");
+    if (DEBUG) show_debug_message($"battle_state={battle_state} lesser_tentacles_remaining={lesser_tentacles_remaining}");
     if (lesser_tentacles_remaining > 0) {
         if (battle_state == 0) {
             ++battle_state;
-            var _animTime = enemyInterruptAttack(obj_battle_enemy, 2*lesser_tentacles_remaining);
+            var _animTime = enemyInterruptAttack(obj_battle_enemy, 2*lesser_tentacles_remaining*global.BUFF_TURNS_PER_COMBAT_TURNS);
             //TODO: audio
             return _animTime;
         } else if (battle_state == 1) {

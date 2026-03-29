@@ -43,7 +43,7 @@ if (MOVING && ds_list_size(particles) > 0) {
 }
 
 if (hp <= 0) {
-    show_debug_message("enemy dead");
+    if (DEBUG) show_debug_message("enemy dead");
     obj_loottable.generate_loot(self);
     obj_player.gain_experience(self);
     instance_destroy();
@@ -55,7 +55,7 @@ if (scale_level < obj_player.level) {
     var level_up = obj_player.level - scale_level;
     scale_level = obj_player.level;
     var scale_amt = (1+0.1*level_up);
-    show_debug_message($"Enemy scaled up: {scale_amt}");
+    if (DEBUG) show_debug_message($"Enemy scaled up: {scale_amt}");
     hp = hp*scale_amt;
     hp_total = hp_total*scale_amt;
     damage = damage*scale_amt;

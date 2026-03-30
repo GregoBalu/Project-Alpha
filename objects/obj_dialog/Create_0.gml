@@ -1,7 +1,7 @@
 initDialog();
 
-messages = [];
-current_message = -1;
+//messages = [];
+//current_message = -1;
 current_char = 0;
 draw_message = "";
 has_more = false;
@@ -25,3 +25,6 @@ sprite_animate_x = speaker_sprite_width;
 choice_need_scroll = false;
 choice_scroll = 0;
 
+if (current_message != -1) {
+    messages[current_message].onStart();
+}

@@ -8,7 +8,10 @@ global.guard_friend_name = "Geoff";
 global.guard_friend_color = c_aqua
 
 global.dialog_welcome = [
-    new dialog_entry(global.guard_friend_name, global.guard_friend_color, spr_npc_guard, new dialog_text(getText("Dialog_r1_w1_l1"))),
+    new dialog_entry(global.guard_friend_name, global.guard_friend_color, spr_npc_guard, new dialog_text(getText("Dialog_r1_w1_l1")), 
+        function() {
+            audio_play_sound(snd_huh, AUDIO_PRIO_UNIQUE, false, 1.2);
+        } ),
     new dialog_entry(dialog_player_name, dialog_player_color, spr_player_idle_down, new dialog_text(getText("Dialog_r1_w1_l2")) ),
     new dialog_entry(global.guard_friend_name, global.guard_friend_color, spr_npc_guard, new dialog_text(getText("Dialog_r1_w1_l3")) ),
     new dialog_entry(dialog_player_name, dialog_player_color, spr_player_idle_down, new dialog_text(getText("Dialog_r1_w1_l4")) ),

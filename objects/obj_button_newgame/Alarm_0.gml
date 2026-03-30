@@ -1,5 +1,5 @@
 if (audio_group_is_loaded(ag_sfx)) {
-    change_room_to(Room1, RoomTransition.Fade);
+    change_room_to(rm_dungeon, RoomTransition.Fade);
 } else {
     alarm[0] = 10
 }

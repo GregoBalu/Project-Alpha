@@ -87,7 +87,7 @@ battle = {
     battle_screen_animated_max_frames: 14,
     battle_screen_animated_fps: 10
 };
-if (room == Room1) {
+if (room == rm_dungeon) {
     battle.battle_screen_sprite = spr_battle_screen_dungeon;
     battle.battle_screen_sprite_speed = 4;
     battle.battle_screen_animated = spr_battle_screen_dungeon_animated;

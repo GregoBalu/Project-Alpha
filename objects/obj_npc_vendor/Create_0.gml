@@ -4,7 +4,7 @@ event_inherited();
 vendor_dialog = noone;
 stock = [];
 
-if (room == Room1) {
+if (room == rm_dungeon) {
     stock = [
         new VendorItem(getText("Vendor_hp_potion"), spr_heal_bottle, 2, 3, function() {
             obj_player.hp = clamp(obj_player.hp + 5, 0, obj_player.hp_total);

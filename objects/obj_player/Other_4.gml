@@ -14,6 +14,8 @@ if (room == rm_castle) {
     if (DEBUG) {
         show_debug_message("Increasing shroud radius");
     }
+} else if (room == rm_end) {
+    immobilized = true;
 }
 
 statistic.rooms_started++;

@@ -318,6 +318,7 @@
     {"id":{"name":"rm_castle","path":"rooms/rm_castle/rm_castle.yy",},},
     {"id":{"name":"rm_cave","path":"rooms/rm_cave/rm_cave.yy",},},
     {"id":{"name":"rm_dungeon","path":"rooms/rm_dungeon/rm_dungeon.yy",},},
+    {"id":{"name":"rm_end","path":"rooms/rm_end/rm_end.yy",},},
     {"id":{"name":"rm_fish","path":"rooms/rm_fish/rm_fish.yy",},},
     {"id":{"name":"rm_sewer","path":"rooms/rm_sewer/rm_sewer.yy",},},
     {"id":{"name":"rm_stat","path":"rooms/rm_stat/rm_stat.yy",},},
@@ -334,6 +335,7 @@
     {"id":{"name":"sc_dialog","path":"scripts/sc_dialog/sc_dialog.yy",},},
     {"id":{"name":"sc_draw","path":"scripts/sc_draw/sc_draw.yy",},},
     {"id":{"name":"sc_effects","path":"scripts/sc_effects/sc_effects.yy",},},
+    {"id":{"name":"sc_end","path":"scripts/sc_end/sc_end.yy",},},
     {"id":{"name":"sc_input","path":"scripts/sc_input/sc_input.yy",},},
     {"id":{"name":"sc_inventory","path":"scripts/sc_inventory/sc_inventory.yy",},},
     {"id":{"name":"sc_localisation","path":"scripts/sc_localisation/sc_localisation.yy",},},
@@ -695,6 +697,7 @@
     {"roomId":{"name":"rm_battle","path":"rooms/rm_battle/rm_battle.yy",},},
     {"roomId":{"name":"rm_stat","path":"rooms/rm_stat/rm_stat.yy",},},
     {"roomId":{"name":"rm_fish","path":"rooms/rm_fish/rm_fish.yy",},},
+    {"roomId":{"name":"rm_end","path":"rooms/rm_end/rm_end.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

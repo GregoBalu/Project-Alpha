@@ -5,3 +5,10 @@ function menu_show_highscores() {
     view_camera[0] = view_camera[2];
     view_camera[2] = temp;
 }
+
+function onNewGame() {
+    
+    global.divine_items = undefined;
+    
+    
+}

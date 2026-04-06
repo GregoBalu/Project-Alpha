@@ -269,6 +269,9 @@ Nem lehet használni a képességet {1} körig."
 "Dialog_r1_lever1","You find a hastely scribbled note describing a room on fire with strange vibrant colors.","Egy gyorsan firkált jegyzetet találsz, amely egy lángoló szobáról és furcsa éles fényekről ír."
 "Dialog_r1_lever2","You cannot make out most of the text just a small drawing on the bottom, which depicts four colors in a row: yellow, green, green, yellow.","Az írás nagy részét nem tudod kivenni rendesen, de a papír alján egy ábrát látsz - négy szín egy sorban: sárga, zöld, zöld, sárga."
 "Dialog_r1_hidden_note","Abandon all hope. Turn around while you can ...","Hagyj fel minden reménnyel! Fordulj vissza, amíg megteheted ..."
+"Dialog_s_fuel1","This is a fuel filling station. It can fill a container with fuel. Fuel is useful for a handful of machines.",
+"Dialog_s_fuel2","This container is a bit wrecked, it has holes and cracks. It can barely hold anything. You need to be quick transporting anything in this.",
+,,
 ,,
 "***** Death screen *****",,
 "Death_welcome","You have died. Let's see what you have achieved in your short life:","Meghaltál. Lássuk mit tudtál elérni amíg még éltél:"
@@ -296,6 +299,7 @@ Nem lehet használni a képességet {1} körig."
 "Death_dmgtaken_speartrap","Damage dealt by spear: {0}, {1} times","Sérülés lándzsáktól: {0}, ennyiszer: {1}"
 "Death_dmgtaken_balltrap","Damage dealt by rolling ball: {0}, {1} times","Sérülés guruló golyótól: {0}, ennyiszer: {1}"
 "Death_dmgtaken_tnt","Damage dealt by tnt: {0}, {1} times","Sérülés TNT-től: {0}, ennyiszer: {1}"
+"Death_dmgtaken_rockshower","Damage dealt by rock shower: {0}, {1} times","Sérülés kőomlástól: {0}, ennyiszer: {1}"
 "Death_distance","Total distance travelled: {0} units","Teljes megtett táv: {0} egység"
 "Death_distance_walk","Distance walked: {0} units, {1}%","Távolság gyalog: {0} egység, {1}%"
 "Death_distance_run","Distance ran: {0} units, {1}%","Távolság futva: {0} egység, {1}%"

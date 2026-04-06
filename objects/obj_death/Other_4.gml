@@ -47,6 +47,7 @@ if (room == rm_stat) {
                 new dialog_choice_text(string("  |-" + getText("Death_dmgtaken_speartrap"), stat.damage_by_speartrap, stat.damage_by_speartrap_count), NOOP), 
                 new dialog_choice_text(string("  |-" + getText("Death_dmgtaken_balltrap"), stat.damage_by_balltrap, stat.damage_by_balltrap_count), NOOP), 
                 new dialog_choice_text(string("  |-" + getText("Death_dmgtaken_tnt"), stat.damage_by_tnt, stat.damage_by_tnt_count), NOOP),
+                new dialog_choice_text(string("  |-" + getText("Death_dmgtaken_rockshower"), stat.damage_by_rockshower, stat.damage_by_rockshower_count), NOOP),
             new dialog_choice_text(string(getText("Death_distance"), _total_distance), NOOP),
                 new dialog_choice_text(string("  |-" + getText("Death_distance_walk"), stat.distance_walked, (_total_distance==0)?(0):round(stat.distance_walked / _total_distance *100)), NOOP),
                 new dialog_choice_text(string("  |-" + getText("Death_distance_run"), stat.distance_ran, (_total_distance==0)?(0):round(stat.distance_ran / _total_distance *100)), NOOP),

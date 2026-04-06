@@ -128,6 +128,8 @@ function Statistic() constructor {
     damage_by_balltrap_count = 0;
     damage_by_tnt = 0;
     damage_by_tnt_count = 0;
+    damage_by_rockshower = 0;
+    damage_by_rockshower_count = 0;
     
     damage_by_enemies = 0;
     damage_by_enemies_count = 0;

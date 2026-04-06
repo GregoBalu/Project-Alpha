@@ -92,7 +92,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.4.221",
+    "IDEVersion":"2024.14.4.222",
   },
   "name":"Project Alpha",
   "resources":[
@@ -256,6 +256,8 @@
     {"id":{"name":"obj_ring_of_erityc","path":"objects/obj_ring_of_erityc/obj_ring_of_erityc.yy",},},
     {"id":{"name":"obj_ring_of_sorrow","path":"objects/obj_ring_of_sorrow/obj_ring_of_sorrow.yy",},},
     {"id":{"name":"obj_robe_of_voices","path":"objects/obj_robe_of_voices/obj_robe_of_voices.yy",},},
+    {"id":{"name":"obj_rockshower_manager","path":"objects/obj_rockshower_manager/obj_rockshower_manager.yy",},},
+    {"id":{"name":"obj_rockshower","path":"objects/obj_rockshower/obj_rockshower.yy",},},
     {"id":{"name":"obj_rolling_ball","path":"objects/obj_rolling_ball/obj_rolling_ball.yy",},},
     {"id":{"name":"obj_room_change_manager","path":"objects/obj_room_change_manager/obj_room_change_manager.yy",},},
     {"id":{"name":"obj_room_restart","path":"objects/obj_room_restart/obj_room_restart.yy",},},
@@ -592,7 +594,9 @@
     {"id":{"name":"spr_resto","path":"sprites/spr_resto/spr_resto.yy",},},
     {"id":{"name":"spr_ring","path":"sprites/spr_ring/spr_ring.yy",},},
     {"id":{"name":"spr_robe_of_voices","path":"sprites/spr_robe_of_voices/spr_robe_of_voices.yy",},},
+    {"id":{"name":"spr_rock_manager_icon","path":"sprites/spr_rock_manager_icon/spr_rock_manager_icon.yy",},},
     {"id":{"name":"spr_rock","path":"sprites/spr_rock/spr_rock.yy",},},
+    {"id":{"name":"spr_rockshower","path":"sprites/spr_rockshower/spr_rockshower.yy",},},
     {"id":{"name":"spr_rug1","path":"sprites/spr_rug1/spr_rug1.yy",},},
     {"id":{"name":"spr_saber","path":"sprites/spr_saber/spr_saber.yy",},},
     {"id":{"name":"spr_sewer_lamp","path":"sprites/spr_sewer_lamp/spr_sewer_lamp.yy",},},

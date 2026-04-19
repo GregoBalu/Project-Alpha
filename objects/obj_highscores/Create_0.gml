@@ -2,6 +2,8 @@ scores = get_highscores();
 
 scr_list_quicksort = function(_list, _left, _right, _ascending)
 {
+    if (ds_list_size(_list) <= 1) return;
+    
     var i = _left;
     var j = _right;
     var pivot = _list[| (_left + _right) div 2].hscore;

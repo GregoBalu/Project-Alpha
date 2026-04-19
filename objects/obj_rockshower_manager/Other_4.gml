@@ -4,6 +4,6 @@ with (obj_rockshower) {
         ds_list_add(other.targets, self);
     }
 }
-show_debug_message($"Collected {ds_list_size(targets)} rockshowers");
+if (DEBUG) show_debug_message($"Collected {ds_list_size(targets)} rockshowers");
 
 alarm[0] = random_range(new_target_min, new_target_max);

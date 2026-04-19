@@ -231,7 +231,7 @@ Nem lehet használni a képességet {1} körig."
 "Buff_armor_shred_hint","Armor shred: defense reduced",
 "Buff_int_dmg_delay_hint","Delayed penetration: Deal enough damage",
 "Buff_defend_hint","Increase Defense",
-"Buff_crit_bleed_hint","Critical Bleed: small DoT damage,\n increase critical chance and critical damage for attacker",
+"Buff_crit_bleed_hint","Critical Bleed: small DoT damage, increase critical chance and critical damage for attacker",
 "Buff_water_tentacle_squeeze_hint","You are being squeezed, you cannot breathe. You have to relax somehow ...",
 "***** VENDOR *****",,
 "Vendor_title","Shop: {0}","Árus: {0}"

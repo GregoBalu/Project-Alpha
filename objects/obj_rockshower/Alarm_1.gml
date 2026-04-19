@@ -1,1 +1,2 @@
+/// @description Disable timer
 disable();

@@ -1,4 +1,4 @@
-function action() {
+action = function() {
     if (checkTalentCost(self)) {
         if (!unlocked) {
             unlocked = true;
@@ -11,7 +11,7 @@ function action() {
     }
 }
 
-function effect() {
+effect = function() {
     //TODO: override this
 }
 

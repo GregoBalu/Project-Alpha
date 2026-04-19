@@ -7,7 +7,7 @@ max_stacks = 5;
 name = getText("Talent_st_atk_chrg_name");
 hint = string(getText("Talent_st_atk_chrg_hint"), max_charge_increase);
 
-function effect() {
+effect = function() {
 
     obj_player.charge_attack_total += max_charge_increase;
 }

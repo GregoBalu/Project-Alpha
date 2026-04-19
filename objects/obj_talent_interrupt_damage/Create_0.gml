@@ -5,7 +5,7 @@ min_dmg = 8;
 additional_dmg = 4;
 additional_armor = 2;
 
-function effect() {
+effect = function() {
     //Nothing
 }
 

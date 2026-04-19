@@ -1,6 +1,6 @@
 event_inherited();
 
-function action() {
+action = function() {
     if (checkTalentCost(self)) {
         unlocked = true;
         

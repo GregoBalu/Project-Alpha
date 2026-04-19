@@ -6,7 +6,7 @@ stackable = true;
 current_stack = 0;
 max_stacks = 2;
 
-function action() {
+action = function() {
     if (checkTalentCost(self)) {
         obj_player.talent_points -= cost_amount;
         ++current_stack;

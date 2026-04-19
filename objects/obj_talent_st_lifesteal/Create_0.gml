@@ -7,7 +7,7 @@ max_stacks = 5;
 name = getText("Talent_st_lifesteal_name");
 hint = string(getText("Talent_st_lifesteal_hint"), lifesteal_increase*100);
 
-function effect() {
+effect = function() {
 
     obj_player.lifesteal += lifesteal_increase;
 }

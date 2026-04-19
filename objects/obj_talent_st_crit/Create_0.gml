@@ -7,7 +7,7 @@ max_stacks = 5;
 name = getText("Talent_st_crit_name");
 hint = string(getText("Talent_st_crit_hint"), crit_increase*100);
 
-function effect() {
+effect = function() {
 
     obj_player.crit_chance += crit_increase;
 }

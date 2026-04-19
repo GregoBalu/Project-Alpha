@@ -7,7 +7,7 @@ max_stacks = 5;
 name = getText("Talent_st_speed_name");
 hint = string(getText("Talent_st_speed_hint"), speed_increase);
 
-function effect() {
+effect = function() {
 
     obj_player.move_speed += speed_increase;
 }

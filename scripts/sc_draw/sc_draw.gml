@@ -139,6 +139,7 @@ function draw_textbox_background_color(_anchor_x, _anchor_y, _box_width, _box_he
     draw_set_color(c_black);
     //draw_rectangle(_x, _y, _x + _max_w, _y + _max_h, false);
     if (_background_data != undefined) {
+        draw_set_alpha(1);
         draw_sprite_stretched(_background_data.sprite, _background_data.image_index, _x - _background_data.margin, _y - _background_data.margin, 
                 _final_w+2*_background_data.margin, 
                 _final_h+2*_background_data.margin);

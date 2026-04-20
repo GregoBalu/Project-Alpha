@@ -1,4 +1,5 @@
-
+//var _feet_y = y + 8;
+//depth = 5500;
 
 with (obj_entity_base)
 {
@@ -20,6 +21,8 @@ with (obj_collider)
         depth = other.depth + 1;
     }
 }
+
+
 
 var current_location = new Vec2(x, y);
 var _gs = obj_shroud.grid_size /2;

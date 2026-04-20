@@ -96,6 +96,7 @@ gain_talent = function(_num) {
 }
 
 change_shroud_mask = function(other_mask) {
+    show_debug_message($"change_shroud_mask {other_mask}")
     log_stat($"obj_player [change_shroud_mask] {other_mask}");
     current_shroud_mask = other_mask;
     shroud_set_fog();
@@ -103,6 +104,7 @@ change_shroud_mask = function(other_mask) {
 }
 
 change_orientation = function(_ori) {
+    if (DEBUG) show_debug_message($"change_orientation {_ori}")
     if (orientation != _ori) {
         orientation = _ori;
         if (is_holding_item) {

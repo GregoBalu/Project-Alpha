@@ -21,9 +21,17 @@ draw_sprite_stretched(spr_vendor_back, 0, 0, 0, vendor_w, vendor_h)
 
 draw_textbox(159, 19, 80, 32, string(getText("Vendor_title"), global.dialog_vendor_name), fa_center, fa_middle);
 
+var _hint = {
+    has: false,
+    x: 0,
+    y: 0,
+    text: "",
+    halign: fa_left,
+    valign: fa_top
+};
 
 { // ***** Inventory *****
-    drawInventory = function(_slot, _x, _y) {
+    drawInventory = function(_slot, _x, _y, _hint) {
     
         if (ds_map_exists(obj_player.inventory, _slot) ) {
             var _item = obj_player.inventory[?_slot];
@@ -52,6 +60,18 @@ draw_textbox(159, 19, 80, 32, string(getText("Vendor_title"), global.dialog_vend
                         } else {
                             sell(_slot);
                         }
+                    } else {
+                        _hint.has = true;
+                        
+                        if (mouse_gui_x < vendor_w/2) {
+                            _hint.x = mouse_gui_x + 5;
+                            _hint.halign = fa_left;
+                        } else {
+                            _hint.x = mouse_gui_x - 5;
+                            _hint.halign = fa_right;
+                        }
+                        _hint.y = mouse_gui_y + 5;
+                        _hint.text = string("{0}\n\n{1}", _item.name, _item.description);
                     }
                 }
                 
@@ -64,11 +84,11 @@ draw_textbox(159, 19, 80, 32, string(getText("Vendor_title"), global.dialog_vend
         }
     }
     
-    drawInventory(InventorySlots.Slot1, 22, 40);
-    drawInventory(InventorySlots.Slot2, 47, 40);
-    drawInventory(InventorySlots.Slot3, 72, 40);
-    drawInventory(InventorySlots.Slot4, 97, 40);
-    drawInventory(InventorySlots.Slot5, 122, 40);
+    drawInventory(InventorySlots.Slot1, 22, 40, _hint);
+    drawInventory(InventorySlots.Slot2, 47, 40, _hint);
+    drawInventory(InventorySlots.Slot3, 72, 40, _hint);
+    drawInventory(InventorySlots.Slot4, 97, 40, _hint);
+    drawInventory(InventorySlots.Slot5, 122, 40, _hint);
 
 }
 
@@ -137,6 +157,18 @@ if (show_gold_change) {
                         } else {
                             buy(_i);
                         }
+                    } else {
+                        _hint.has = true;
+                        
+                        if (mouse_gui_x < vendor_w/2) {
+                            _hint.x = mouse_gui_x + 5;
+                            _hint.halign = fa_left;
+                        } else {
+                            _hint.x = mouse_gui_x - 5;
+                            _hint.halign = fa_right;
+                        }
+                        _hint.y = mouse_gui_y + 5;
+                        _hint.text = string("{0}\n\n{1}", _item.name, _item.description);
                     }
                 }
                 
@@ -172,9 +204,13 @@ if (show_gold_change) {
     draw_sprite(spr_vendor_back_button, _subimg, 147, 153);
 }
 
+
+
 if (draw_progress_bar) {
     var _progress_subimg = (1 -( alarm[MouseHoldAlarm] / MaxMouseHoldAlarm)) * 10;
     draw_sprite(spr_progress_circle, _progress_subimg, mouse_gui_x, mouse_gui_y);
+} else if (_hint.has) {
+    draw_textbox_background(_hint.x, _hint.y, 100, 50, _hint.text, new BackgroundData(spr_gui_back, 0, 5), _hint.halign, _hint.valign);
 }
 
 display_set_gui_size(_orig_w, _orig_h);

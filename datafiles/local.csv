@@ -241,9 +241,13 @@ Nem lehet használni a képességet {1} körig."
 "Vendor_health","Health: {0} / {1}","Életerő: {0}/{1}"
 "Vendor_buy_confirm","Buy item ({0}) for {1}g?","Valóban megveszed ezt: {0}, ennyiért: {1}g?"
 "Vendor_hp_potion","Healing Potion","Gyógyító főzet"
+"Vendor_hp_potion_desc","Instantly heal a fixed amount of lost health points.","Azonnal felgyógyít egy megadott mennyiségű életerő pontot."
 "Vendor_corruption_remove","Corruption removal","Rontás feloldozás"
+"Vendor_corruption_remove_desc","Removes a portion of applied corruption.","Eltávolítja a jelenlévő rontás egy részét."
 "Vendor_cane","Cane of wisdom","Bölcsesség pálcája"
+"Vendor_cane_desc","A weapon of great power.","Egy nagy erejű fegyver."
 "Vendor_talent","Talent potential","Tehetség potenciál"
+"Vendor_talent_desc","Gain 1 talent potential.","Egy tehetség potenciált ad."
 ,,
 "***** DIALOGS *****",,
 "Dialog_r1_w1_l1","Hey, I started to worry you wouldn't show up at all. What took you so long?","Végre, azt hittem már sose érsz ide. Mi tartott ennyi ideig?"

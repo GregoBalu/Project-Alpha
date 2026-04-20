@@ -3,9 +3,10 @@
 
 
 
-function VendorItem(_text, _sprite, _price, _stock, _on_click_action) constructor {
+function VendorItem(_text, _desc, _sprite, _price, _stock, _on_click_action) constructor {
 
     name = _text;
+    description = _desc;
     spr = _sprite;
     price = _price;
     stock = _stock;

@@ -1,5 +1,7 @@
-init_localisation();
-text = getText(text);
+if (!literal) {
+    init_localisation();
+    text = getText(text);
+}
 
 width = bbox_right - bbox_left;
 width_half = width*0.5;

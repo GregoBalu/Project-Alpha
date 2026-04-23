@@ -19,7 +19,7 @@ function explode(){
             collision_list[|_i].image_alpha = 0.5;
         }
     }
-    if (distance_to_object(obj_player) < explosion_radius) {
+    if (distance_to_object(obj_player_hitbox) < explosion_radius) {
         obj_player.hp = clamp(obj_player.hp - damage, 0, obj_player.hp_total);
         obj_player.statistic.damage_by_tnt += damage;
         obj_player.statistic.damage_by_tnt_count++;

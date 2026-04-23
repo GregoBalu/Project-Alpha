@@ -13,12 +13,12 @@ blocking_shroud_mask_map = ds_map_create();
 outside_shroud_mask = undefined;
 firstRoomEnter = true;
 
-
 xp_total = get_xp_total(level);
 
 unlocked_talents = ds_list_create();
 
 sprite_index = spr_player_idle_down;
+hitbox = instance_create_layer(x, y, layer, obj_player_hitbox);
 
 tilemap_hurt=layer_tilemap_get_id("Tiles_Back_Hurt");
 tilemap_normal=layer_tilemap_get_id("Tiles_Back");

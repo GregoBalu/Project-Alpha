@@ -9,8 +9,6 @@ if (!doExtending) {
 if (doDamage) {
     //if (do_damage_entity)
     
-    if (only_player && other.object_index != obj_player) exit;
-        
     var _progress = (state/State_EXTENDED);
     var _spear_tip_offset = sprite_width*_progress;
     if ( image_angle>45&&image_angle<135 ) {
@@ -33,13 +31,11 @@ if (doDamage) {
     
     
     doDamage = false;
-    other.hp -= damage;
-    if (other.object_index == obj_player) {
-        obj_player.statistic.damage_by_speartrap += damage;
-        obj_player.statistic.damage_by_speartrap_count++;
-    }
+    obj_player.hp -= damage;
+    obj_player.statistic.damage_by_speartrap += damage;
+    obj_player.statistic.damage_by_speartrap_count++;
     
-    spawn_effect(spr_blood_spill, other.x, other.y, 0.7*other.sprite_width, 0.7*other.sprite_width, other.depth-1, 0, 0, 1);
+    spawn_blood_on(obj_player);
     //sprite_add_ext()
     alarm[Alarm_Damage_CD] = 0.2 * TIME_SECOND;
 }

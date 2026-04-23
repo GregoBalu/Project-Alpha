@@ -27,3 +27,9 @@ function screenshake_stop()
         shake = false;
     }
 }
+
+function spawn_blood_on(_obj) {
+    //TODO: sound
+    spawn_effect(spr_blood_spill, random_range(_obj.x-2, _obj.x+2), random_range(_obj.y-2, _obj.y+2), 0.7*_obj.sprite_width, 0.7*_obj.sprite_width, _obj.depth-1, 0, 0, 1);
+    
+}

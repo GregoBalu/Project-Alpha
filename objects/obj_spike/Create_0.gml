@@ -19,7 +19,7 @@ if (is_on) {
 }
 
 
-function reset() {
+reset = function() {
     state = is_on?State_UP:State_DOWN;
     alarm[1] = 0;
     alarm[2] = 0;
@@ -32,7 +32,7 @@ function reset() {
     }
 }
 
-function pause() {
+pause = function() {
     paused = !paused;
     if (!paused) {
         if (afterPauseUp) {
@@ -43,7 +43,7 @@ function pause() {
     }
 }
 
-function up() {
+up = function() {
     state -= 1;
     image_index = state;
     if ( state == State_UP) {
@@ -53,7 +53,7 @@ function up() {
     }
 }
 
-function down() {
+down = function() {
     state += 1;
     image_index = state;
     if ( state == State_DOWN ) {
@@ -61,4 +61,33 @@ function down() {
     } else {
         alarm[1] = 0.25 * TIME_SECOND;
     }
+}
+
+doEffect = function(_other) {
+    if (DEBUG) show_debug_message($"doEffect({_other.id})");
+    if (!is_on || paused) {
+        if (DEBUG) show_debug_message($"exit1");
+        exit;
+    }
+    
+    if (state >= State_DOWN-1 /*|| state == State_DOWN*/) {
+        if (DEBUG) show_debug_message($"exit2");
+        exit;
+    }
+    
+    if (!doDamage) {
+        if (DEBUG) show_debug_message($"exit3");
+        exit;
+    }
+        
+    
+    if (DEBUG) show_debug_message($"doing damage");
+    
+    doDamage = false;
+    obj_player.hp -= damage;
+    obj_player.statistic.damage_by_spiketrap += damage;
+    obj_player.statistic.damage_by_spiketrap_count++;
+    
+    spawn_blood_on(obj_player);
+    alarm[3] = 0.2 * TIME_SECOND;
 }

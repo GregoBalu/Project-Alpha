@@ -1,0 +1,2 @@
+
+doEffect(other);

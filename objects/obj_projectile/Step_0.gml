@@ -2,7 +2,7 @@ if (!immune) {
     var _id = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, collision_array, false, true);
     if (_id != noone) {
         if (DEBUG) show_debug_message($"Projectile collision @ ({x},{y}) with {_id}");
-        if (_id == obj_player.id) {
+        if (_id == obj_player_hitbox.id) {
             //damage player
             obj_player.damage_receive(damageToPlayer);
         }

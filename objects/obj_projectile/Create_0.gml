@@ -1,7 +1,7 @@
 alarm[11] = 0;
 //No optim. needed
 
-collision_array = [obj_collider, obj_player, layer_tilemap_get_id("Tiles_Col")];
+collision_array = [obj_collider, obj_player_hitbox, layer_tilemap_get_id("Tiles_Col")];
 
 if (DEBUG) show_debug_message($"Projectile created @ ({x},{y}) -> {direction}");
     

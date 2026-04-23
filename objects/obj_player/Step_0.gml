@@ -34,34 +34,42 @@ if (!immobilized) {
         MOVING = true;
         if (_ver > 0 && _hor == 0) {
             sprite_index = spr_player_walk_down; 
+            hitbox.sprite_index = spr_player_collision_front;
             change_orientation(Orientation.DOWN);
         }
         else if (_ver > 0 && _hor < 0) {
-            sprite_index = spr_player_walk_down_left; 
+            sprite_index = spr_player_walk_down_left;
+            hitbox.sprite_index = spr_player_collision_front;
             change_orientation(Orientation.DOWNLEFT);
         }
         else if (_ver > 0 && _hor > 0) {
             sprite_index = spr_player_walk_down_right; 
+            hitbox.sprite_index = spr_player_collision_front;
             change_orientation(Orientation.DOWNRIGHT);
         }
         else if (_ver < 0 && _hor == 0) {
             sprite_index = spr_player_walk_up;
+            hitbox.sprite_index = spr_player_collision_front;
             change_orientation(Orientation.UP);
         }
         else if (_ver < 0 && _hor < 0) {
             sprite_index = spr_player_walk_up_left;
+            hitbox.sprite_index = spr_player_collision_front;
             change_orientation(Orientation.UPLEFT);
         }
         else if (_ver < 0 && _hor > 0) {
             sprite_index = spr_player_walk_up_right;
+            hitbox.sprite_index = spr_player_collision_front;
             change_orientation(Orientation.UPRIGHT);
         }
         else if (_hor > 0) {
             sprite_index = spr_player_walk_right;
+            hitbox.sprite_index = spr_player_collision_side_right;
             change_orientation(Orientation.RIGHT);
         }
         else if (_hor < 0) {
             sprite_index = spr_player_walk_left;
+            hitbox.sprite_index = spr_player_collision_side_left;
             change_orientation(Orientation.LEFT);
         }
     }
@@ -71,34 +79,42 @@ if (!immobilized) {
         MOVING = false;
         if (sprite_index == spr_player_walk_down) {
             sprite_index = spr_player_idle_down;
+            hitbox.sprite_index = spr_player_collision_front;
             change_orientation(Orientation.DOWN);
         }
         else if (sprite_index == spr_player_walk_down_left) {
             sprite_index = spr_player_idle_down_left;
+            hitbox.sprite_index = spr_player_collision_front;
             change_orientation(Orientation.DOWNLEFT);
         }
         else if (sprite_index == spr_player_walk_down_right) {
             sprite_index = spr_player_idle_down_right;
+            hitbox.sprite_index = spr_player_collision_front;
             change_orientation(Orientation.DOWNRIGHT);
         }
         else if (sprite_index == spr_player_walk_up_left) {
             sprite_index = spr_player_idle_up_left;
+            hitbox.sprite_index = spr_player_collision_front;
             change_orientation(Orientation.UPLEFT);
         }
         else if (sprite_index == spr_player_walk_up_right) {
             sprite_index = spr_player_idle_up_right;
+            hitbox.sprite_index = spr_player_collision_front;
             change_orientation(Orientation.UPRIGHT);
         }
         else if (sprite_index == spr_player_walk_up) {
             sprite_index = spr_player_idle_up;
+            hitbox.sprite_index = spr_player_collision_front;
             change_orientation(Orientation.UP);
         }
         else if (sprite_index == spr_player_walk_right) {
             sprite_index = spr_player_idle_right;
+            hitbox.sprite_index = spr_player_collision_side_right;
             change_orientation(Orientation.RIGHT);
         }
         else if (sprite_index == spr_player_walk_left) {
             sprite_index = spr_player_idle_left;
+            hitbox.sprite_index = spr_player_collision_side_left;
             change_orientation(Orientation.LEFT);
         }
     }

@@ -31,9 +31,15 @@ _w -=9;
 
 var chargeAttackFactor = data.charge_attack div 1.0;
 var remAttackCharge = data.charge_attack mod 1.0;
+var _chargeAttackCap = false;
+if (data.charge_attack == data.charge_attack_total) {
+    chargeAttackFactor--;
+    remAttackCharge++;
+    _chargeAttackCap = true;
+}
 
 draw_sprite_stretched(spr_box, 0, _x, _y, _w, _h);
-draw_sprite_stretched_ext(spr_box, 1, _x, _y, _w * remAttackCharge, _h, Color_AttackCharge, 1);
+draw_sprite_stretched_ext(spr_box, _chargeAttackCap?2:1, _x, _y, _w * remAttackCharge, _h, Color_AttackCharge, 1);
 
 _x += _w;
 
@@ -45,9 +51,15 @@ _y += _h + 2;
 
 var chargeUtilFactor = data.charge_util div 1.0;
 var remUtilCharge = data.charge_util mod 1.0;
+var _chargeUtilCap = false;
+if (data.charge_util == data.charge_util_total) {
+    chargeUtilFactor--;
+    remUtilCharge++;
+    _chargeUtilCap = true;
+}
 
 draw_sprite_stretched(spr_box, 0, _x, _y, _w, _h);
-draw_sprite_stretched_ext(spr_box, 1, _x, _y, _w * remUtilCharge, _h, Color_UtilityCharge, 1);
+draw_sprite_stretched_ext(spr_box, _chargeUtilCap?2:1, _x, _y, _w * remUtilCharge, _h, Color_UtilityCharge, 1);
 
 _x += _w;
 

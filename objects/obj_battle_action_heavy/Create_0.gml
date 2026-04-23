@@ -4,6 +4,7 @@ hotkey = global.input_battle_heavy;
 
 damage_modifier = 2;
 charge_gain = 0.2;
+charge_util_gain = 0.2;
 
 for (var _i = 0; _i < ds_list_size(obj_battle_switcher.player_data.unlocked_talents); _i++)
 {
@@ -14,7 +15,7 @@ for (var _i = 0; _i < ds_list_size(obj_battle_switcher.player_data.unlocked_tale
     }
 }
 
-hint = string(getText("Battle_act_heavy_hint"), key2str(hotkey), cost_amount, damage_modifier, charge_gain);
+hint = string(getText("Battle_act_heavy_hint"), key2str(hotkey), cost_amount, damage_modifier, charge_gain, charge_util_gain);
 
 action = function() {
     if (checkCost(cost_type, cost_amount)) {

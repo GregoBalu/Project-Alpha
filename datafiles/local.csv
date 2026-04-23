@@ -109,11 +109,12 @@ Heal for {0}% of blocked damage.","A kivédett sebzés {0}%-ának megfelelően g
 A charged up heavy attack.
 Cost: {1}
 Damage modifier: {2}
-Charge gain: {3} attack","Erős ütés [{0}]
+Charge gain: {3} attack, {4} utility","Erős ütés [{0}]
 Egy jól meglendített erős ütés.
 Költség: {1}
 Sebzés módosító: {2}
-Támadási energiát kapsz: {3}"
+Támadási energiát kapsz: {3}
+Támogatói energiát kapsz: {4}"
 "Battle_act_interrupt_hint","Interrupt [{0}]
 Interrupt the enemy stunning it for 2 rounds and angering it.
 Cost: {1}

@@ -13,3 +13,7 @@ if (is_on) {
 alarm[0] = TIME_SECOND;
 
 is_near = false;
+
+_background_sprite_time = 0;
+_background_sprite_fps = 6;
+_background_sprite_refresh_rate = TIME_SECOND/_background_sprite_fps;

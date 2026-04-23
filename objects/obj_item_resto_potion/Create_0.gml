@@ -5,6 +5,8 @@ _pickupText = $"+{getText("Restoration_potion_pickup")} ({heal_per_tick})"
 _pickupColor = c_red;
 
 onPickup = function(othr) {
+    if (othr.hp >= othr.hp_total) return false;
+    
     data = {
         targetObject : othr,
         hot_amount : heal_per_tick,

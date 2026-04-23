@@ -5,5 +5,5 @@ state = InterractItemState.Undisturbed;
 show_use = false;
 
 onInterract = function() {
-    
+    //override me
 }

@@ -1,4 +1,6 @@
 if (opened) exit;
+    
+_background_sprite_time++;
 
 var _dist = distance_to_object(obj_player);
 //var _dir = point_direction(x, y, obj_player.x, obj_player.y);

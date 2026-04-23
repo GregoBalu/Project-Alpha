@@ -1,3 +1,5 @@
+++_background_sprite_time;
+
 if (distance_to_object(obj_player) < 8) {
     if (!is_near) {
         obj_gui.show_use++;

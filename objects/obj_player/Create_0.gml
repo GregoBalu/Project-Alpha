@@ -13,6 +13,7 @@ current_shroud_mask = undefined;
 
 blocking_shroud_mask_map = ds_map_create();
 outside_shroud_mask = undefined;
+is_inside_shroud = true;
 firstRoomEnter = true;
 
 xp_total = get_xp_total(level);
@@ -284,13 +285,19 @@ generate_shroud_masks = function() {
         ds_grid_destroy(default_shroud_mask);
     }
     default_shroud_mask = shroud_clear_grid_setup(shroud_radius(), obj_shroud.clear_grid_size);
-    current_shroud_mask = default_shroud_mask;
     if (outside_shroud_mask != undefined) {
         ds_grid_destroy(outside_shroud_mask);
     }
     outside_shroud_mask = shroud_clear_grid_setup(shroud_radius()*1.5, obj_shroud.clear_grid_size);
     
-    shroud_clear_position(x, y, no_see_tilemaps, default_shroud_mask);
+    if (is_inside_shroud) {
+        current_shroud_mask = default_shroud_mask;
+    } else {
+        current_shroud_mask = outside_shroud_mask
+    }
+    
+    shroud_set_fog_around(previous_shroud_location.x, previous_shroud_location.y, obj_shroud.clear_grid_size*obj_shroud.grid_size);
+    shroud_clear_position(x, y, no_see_tilemaps, current_shroud_mask);
     ds_map_clear(blocking_shroud_mask_map);
     
     ds_map_add(blocking_shroud_mask_map, Orientation.RIGHT, shroud_clear_grid_setup_blocked(shroud_radius(), obj_shroud.clear_grid_size, Orientation.RIGHT));

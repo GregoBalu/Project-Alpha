@@ -2,6 +2,7 @@
 #macro DEFAULT_SHROUD_ALPHA 1
 #macro FOG_ALPHA 0.9
 #macro SHROUD_ALWAYS_VISIBLE -1
+#macro SHROUD_CLEAR_SIZE_CELLS 15
 
 function shroud_clear_grid_setup(_sight_radius, _grid_size, _no_shroud_value = 0, _see_max_shroud_value = 0.9, _max_shroud_value = DEFAULT_SHROUD_ALPHA)
 {

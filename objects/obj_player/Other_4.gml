@@ -20,20 +20,7 @@ if (room == rm_castle) {
 
 statistic.rooms_started++;
 
-default_shroud_mask = shroud_clear_grid_setup(shroud_radius(), obj_shroud.clear_grid_size);
-current_shroud_mask = default_shroud_mask;
-outside_shroud_mask = shroud_clear_grid_setup(shroud_radius()*1.5, obj_shroud.clear_grid_size);
-
-shroud_clear_position(x, y, no_see_tilemaps, default_shroud_mask);
-
-ds_map_add(blocking_shroud_mask_map, Orientation.RIGHT, shroud_clear_grid_setup_blocked(shroud_radius(), obj_shroud.clear_grid_size, Orientation.RIGHT));
-ds_map_add(blocking_shroud_mask_map, Orientation.DOWNRIGHT, shroud_clear_grid_setup_blocked(shroud_radius(), obj_shroud.clear_grid_size, Orientation.DOWNRIGHT));
-ds_map_add(blocking_shroud_mask_map, Orientation.DOWN, shroud_clear_grid_setup_blocked(shroud_radius(), obj_shroud.clear_grid_size, Orientation.DOWN));
-ds_map_add(blocking_shroud_mask_map, Orientation.DOWNLEFT, shroud_clear_grid_setup_blocked(shroud_radius(), obj_shroud.clear_grid_size, Orientation.DOWNLEFT));
-ds_map_add(blocking_shroud_mask_map, Orientation.LEFT, shroud_clear_grid_setup_blocked(shroud_radius(), obj_shroud.clear_grid_size, Orientation.LEFT));
-ds_map_add(blocking_shroud_mask_map, Orientation.UPLEFT, shroud_clear_grid_setup_blocked(shroud_radius(), obj_shroud.clear_grid_size, Orientation.UPLEFT));
-ds_map_add(blocking_shroud_mask_map, Orientation.UP, shroud_clear_grid_setup_blocked(shroud_radius(), obj_shroud.clear_grid_size, Orientation.UP));
-ds_map_add(blocking_shroud_mask_map, Orientation.UPRIGHT, shroud_clear_grid_setup_blocked(shroud_radius(), obj_shroud.clear_grid_size, Orientation.UPRIGHT));
+generate_shroud_masks();
 
 if (instance_exists(obj_room_switcher)) {
     var _inst = instance_find(obj_room_switcher, 0);
@@ -133,6 +120,11 @@ if (instance_exists(obj_room_switcher)) {
             persistent: true
         }));
         ds_list_add(talents, instance_create_layer(0, 0, "GUI", obj_talent_st_lifesteal, {
+            visible : false,
+            depth : depth+10,
+            persistent: true
+        }));
+        ds_list_add(talents, instance_create_layer(0, 0, "GUI", obj_talent_st_torch, {
             visible : false,
             depth : depth+10,
             persistent: true

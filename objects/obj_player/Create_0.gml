@@ -3,10 +3,12 @@ event_inherited();
 
 previous_location = new Vec2(xstart, ystart);
 previous_shroud_location = new Vec2(xstart, ystart);
+shroud_radius_extra = 0;
+shroud_radius_extra_max = 3;
 shroud_radius = function() {
-    return shroud_radius_base * (16/obj_shroud.grid_size) + 0.5;
+    return (shroud_radius_base+shroud_radius_extra) * (16/obj_shroud.grid_size) + 0.5;
 }
-default_shroud_mask = [];
+default_shroud_mask = undefined;
 current_shroud_mask = undefined;
 
 blocking_shroud_mask_map = ds_map_create();
@@ -275,4 +277,28 @@ damage_receive = function(_amt) {
         hp -= _amt;
         spawn_effect(spr_blood_spill, x, y, 0.7*sprite_width, 0.7*sprite_width, depth-1, 0, 0, 1);
     }
+}
+
+generate_shroud_masks = function() {
+    if (default_shroud_mask != undefined) {
+        ds_grid_destroy(default_shroud_mask);
+    }
+    default_shroud_mask = shroud_clear_grid_setup(shroud_radius(), obj_shroud.clear_grid_size);
+    current_shroud_mask = default_shroud_mask;
+    if (outside_shroud_mask != undefined) {
+        ds_grid_destroy(outside_shroud_mask);
+    }
+    outside_shroud_mask = shroud_clear_grid_setup(shroud_radius()*1.5, obj_shroud.clear_grid_size);
+    
+    shroud_clear_position(x, y, no_see_tilemaps, default_shroud_mask);
+    ds_map_clear(blocking_shroud_mask_map);
+    
+    ds_map_add(blocking_shroud_mask_map, Orientation.RIGHT, shroud_clear_grid_setup_blocked(shroud_radius(), obj_shroud.clear_grid_size, Orientation.RIGHT));
+    ds_map_add(blocking_shroud_mask_map, Orientation.DOWNRIGHT, shroud_clear_grid_setup_blocked(shroud_radius(), obj_shroud.clear_grid_size, Orientation.DOWNRIGHT));
+    ds_map_add(blocking_shroud_mask_map, Orientation.DOWN, shroud_clear_grid_setup_blocked(shroud_radius(), obj_shroud.clear_grid_size, Orientation.DOWN));
+    ds_map_add(blocking_shroud_mask_map, Orientation.DOWNLEFT, shroud_clear_grid_setup_blocked(shroud_radius(), obj_shroud.clear_grid_size, Orientation.DOWNLEFT));
+    ds_map_add(blocking_shroud_mask_map, Orientation.LEFT, shroud_clear_grid_setup_blocked(shroud_radius(), obj_shroud.clear_grid_size, Orientation.LEFT));
+    ds_map_add(blocking_shroud_mask_map, Orientation.UPLEFT, shroud_clear_grid_setup_blocked(shroud_radius(), obj_shroud.clear_grid_size, Orientation.UPLEFT));
+    ds_map_add(blocking_shroud_mask_map, Orientation.UP, shroud_clear_grid_setup_blocked(shroud_radius(), obj_shroud.clear_grid_size, Orientation.UP));
+    ds_map_add(blocking_shroud_mask_map, Orientation.UPRIGHT, shroud_clear_grid_setup_blocked(shroud_radius(), obj_shroud.clear_grid_size, Orientation.UPRIGHT));
 }

@@ -3,7 +3,7 @@ event_inherited();
 
 health_increase = 1;
 
-max_stacks = 5;
+max_stacks = 10;
 name = getText("Talent_st_life_name");
 hint = string(getText("Talent_st_life_hint"), health_increase);
 

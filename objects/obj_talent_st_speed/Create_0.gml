@@ -3,7 +3,7 @@ event_inherited();
 
 speed_increase = 0.1;
 
-max_stacks = 5;
+max_stacks = 10;
 name = getText("Talent_st_speed_name");
 hint = string(getText("Talent_st_speed_hint"), speed_increase);
 

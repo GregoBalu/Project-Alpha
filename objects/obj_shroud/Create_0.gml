@@ -21,7 +21,7 @@ ds_grid_clear(shroud_grid, DEFAULT_SHROUD_ALPHA);
 }*/
 
 
-clear_grid_size = 12 * (16/grid_size) +1;//should be odd
+clear_grid_size = SHROUD_CLEAR_SIZE_CELLS * (16/grid_size) +1;//should be odd
 
 var _orig_gui_w = camera_get_view_width(view_camera[0]);
 var _orig_gui_h = camera_get_view_height(view_camera[0]);

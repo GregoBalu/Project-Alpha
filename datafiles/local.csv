@@ -142,10 +142,10 @@ Támogatói energiát kapsz: {2}"
 "***** TALENTS *****","*****","*****"
 "Talent_picker_title","Pick a talent!","Válassz tehetséget!"
 "Talent_power_label","Potential max talent power","Tehetség potenciális erőssége"
-"Talent_picker_reroll_hint","Reroll talents: +{0} corruption","Tehetségek újra osztása: +{0} ártás"
+"Talent_picker_reroll_hint","Reroll talents: +{0} corruption","Tehetségek újra osztása: +{0} rontás"
 "Talent_picker_force_delay","Force delay the choice and store the talent potential, increasing the power of talents available next time.
 Corruption: +{0}","Hagyd későbbre a választást, növelve a tehetség potenciálodat, hogy később erősebb tehetségek közül választhass.
-Ártás: +{0}"
+Rontás: +{0}"
 "Talent_def_hp_name","Guards up!","Védekezz!"
 "Talent_def_hp_hint","defense: +{0}
 total health: -{1}","védelem: +{0}
@@ -246,7 +246,7 @@ Nem lehet használni a képességet {1} körig."
 "Vendor_title","Shop: {0}","Árus: {0}"
 "Vendor_sell_confirm","Sell item ({0})?","Valóban eladod ezt: {0}?"
 "Vendor_gold","Gold: {0}","Érmék: {0}"
-"Vendor_corruption","Corruption: {0}","Rontás: {0}"
+"Vendor_corruption","Corruption: {0}%","Rontás: {0}%"
 "Vendor_health","Health: {0} / {1}","Életerő: {0}/{1}"
 "Vendor_buy_confirm","Buy item ({0}) for {1}g?","Valóban megveszed ezt: {0}, ennyiért: {1}g?"
 "Vendor_hp_potion","Healing Potion","Gyógyító főzet"

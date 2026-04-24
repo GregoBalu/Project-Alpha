@@ -95,7 +95,7 @@ var _hint = {
 // ***** list gold, other useful stats *****
 
 draw_textbox(15, 81, 60, 12, string(getText("Vendor_gold"), obj_player.coins));
-draw_textbox(15, 96, 60, 12, string(getText("Vendor_corruption"), obj_player.corruption));
+draw_textbox(15, 96, 60, 12, string(getText("Vendor_corruption"), (obj_player.corruption/obj_player.corruption_total)*100 ));
 
 draw_sprite(spr_no_refund, 0, 80, 110);
 

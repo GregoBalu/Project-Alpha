@@ -1,3 +1,5 @@
+instance_destroy(hitbox);
+
 ds_grid_destroy(default_shroud_mask);
 
 for (var k = ds_map_find_first(blocking_shroud_mask_map); !is_undefined(k); k = ds_map_find_next(blocking_shroud_mask_map, k)) {

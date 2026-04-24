@@ -12,8 +12,19 @@ talent1 = noone;
 talent2 = noone;
 talent3 = noone;
 
-no_talent_chance = 0.1;
-delay_talent_chance = 0.4;
+no_talent_chance = 0.1; //10%
+delay_talent_chance = 0.3; //30%
+
+reroll_cost = 5;
+can_reroll = function() {
+    return obj_player.coins >= reroll_cost;
+}
+
+has_delay = false;
+force_delay_cost = 5;
+can_force_delay = function() {
+    return obj_player.coins >= force_delay_cost;
+}
 
 randomize();
 
@@ -34,7 +45,7 @@ if (_all_unlocked) {
     exit;
 }
 
-function get_random_talent(_ignore1=-1, _ignore2=-1) {
+get_random_talent = function(_ignore1=-1, _ignore2=-1) {
     if (random_range(0, 1) < no_talent_chance) {
         //show_debug_message($"No talent early");
         return -1;
@@ -67,33 +78,43 @@ function get_random_talent(_ignore1=-1, _ignore2=-1) {
     return -1;
 }
 
-var _i1 = get_random_talent();
-talent1 = (_i1==-1?noone:obj_player.talents[|_i1]);
-var _i2 = -1;
-if (random_range(0, 1) < delay_talent_chance) {
-    talent2 = instance_create_layer(0, 0, "GUI", obj_talent_wait_pick);
-} else {
-    _i2 = get_random_talent(_i1);
-    talent2 = (_i2==-1?noone:obj_player.talents[|_i2]);
+reroll = function(_is_free) {
+    if (!_is_free) {
+        obj_player.coins -= reroll_cost;
+    }
+    
+    var _i1 = get_random_talent();
+    talent1 = (_i1==-1?noone:obj_player.talents[|_i1]);
+    var _i2 = -1;
+    if (random_range(0, 1) < delay_talent_chance) {
+        talent2 = instance_create_layer(0, 0, "GUI", obj_talent_wait_pick);
+        has_delay = true;
+    } else {
+        _i2 = get_random_talent(_i1);
+        talent2 = (_i2==-1?noone:obj_player.talents[|_i2]);
+        has_delay = false;
+    }
+    var _i3 = get_random_talent(_i1, _i2);
+    talent3 = (_i3==-1?noone:obj_player.talents[|_i3]);
+    
+    if (talent1 == noone && talent2 == noone && talent3 == noone) {
+        show_debug_message("No talents generated");
+        talent2 = instance_create_layer(0, 0, "GUI", obj_talent_wait_pick);
+    }
 }
-var _i3 = get_random_talent(_i1, _i2);
-talent3 = (_i3==-1?noone:obj_player.talents[|_i3]);
 
-if (talent1 == noone && talent2 == noone && talent3 == noone) {
-    show_debug_message("No talents generated");
-    talent2 = instance_create_layer(0, 0, "GUI", obj_talent_wait_pick);
+force_delay = function() {
+    obj_player.coins -= force_delay_cost;
+    
+    var _inst = instance_create_layer(0, 0, "GUI", obj_talent_wait_pick);
+    _inst.action();
+    instance_destroy(_inst);
+    instance_destroy();
+    return;
 }
+
+reroll(true);
 
 //TODO: sound
 
 
-
-/*if (talent1 == noone) {
-    talent1 = instance_create_layer(0, 0, "GUI", obj_talent_dummy);
-}
-if (talent2 == noone) {
-    talent2 = instance_create_layer(0, 0, "GUI", obj_talent_dummy);
-}
-if (talent3 == noone) {
-    talent3 = instance_create_layer(0, 0, "GUI", obj_talent_dummy);
-}*/

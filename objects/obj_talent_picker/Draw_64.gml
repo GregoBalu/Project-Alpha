@@ -63,14 +63,16 @@ if (talent1 != noone) {
     draw_sprite_stretched(_spr, 0, _x+_cost_offset_x, _y+_cost_offset_y, _cost_w, _cost_h);
     if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _x, _y, _x+_picker_w, _y+_picker_h) ) {
         draw_sprite_stretched_ext(spr_talent_engraving, 0, _x, _y, _picker_w, _picker_h, c_ltgray, 1);
-        if (mouse_check_button_pressed(mb_left)) {
+        if (clickable && mouse_check_button_pressed(mb_left)) {
             talent1.action();
             //TODO: sound
             instance_destroy();
             exit;
         }
-        _doDrawHint = true;
-        _hint_text = talent1.hint;
+        if (clickable) {
+            _doDrawHint = true;
+            _hint_text = talent1.hint;
+        }
     } else {
         draw_sprite_stretched(spr_talent_engraving, 0, _x, _y, _picker_w, _picker_h);
     }
@@ -90,14 +92,16 @@ if (talent2 != noone) {
     draw_sprite_stretched(_spr, 0, _x+_cost_offset_x, _y+_cost_offset_y, _cost_w, _cost_h);
     if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _x, _y, _x+_picker_w, _y+_picker_h) ) {
         draw_sprite_stretched_ext(spr_talent_engraving, 0, _x, _y, _picker_w, _picker_h, c_ltgray, 1);
-        if (mouse_check_button_pressed(mb_left)) {
+        if (clickable && mouse_check_button_pressed(mb_left)) {
             talent2.action();
             //TODO: sound
             instance_destroy();
             exit;
         }
-        _doDrawHint = true;
-        _hint_text = talent2.hint;
+        if (clickable) {
+            _doDrawHint = true;
+            _hint_text = talent2.hint;
+        }
     } else {
         draw_sprite_stretched(spr_talent_engraving, 0, _x, _y, _picker_w, _picker_h);
     }
@@ -119,14 +123,16 @@ if (talent3 != noone) {
     //Backdrop:
     if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _x, _y, _x+_picker_w, _y+_picker_h) ) {
         draw_sprite_stretched_ext(spr_talent_engraving, 0, _x, _y, _picker_w, _picker_h, c_ltgray, 1);
-        if (mouse_check_button_pressed(mb_left)) {
+        if (clickable && mouse_check_button_pressed(mb_left)) {
             talent3.action();
             //TODO: sound
             instance_destroy();
             exit;
         }
-        _doDrawHint = true;
-        _hint_text = talent3.hint;
+        if (clickable) {
+            _doDrawHint = true;
+            _hint_text = talent3.hint;
+        }
     } else {
         draw_sprite_stretched(spr_talent_engraving, 0, _x, _y, _picker_w, _picker_h);
     }
@@ -145,82 +151,77 @@ if (talent3 != noone) {
 
 _x = _left + _gap_w;
 _y += _picker_h + 4;
-var _reroll_width = 16+8;
-var _reroll_height = 16+8;
-var _reroll_icon_gap = 2;
-var _reroll_icon_w = _reroll_width-8-_reroll_icon_gap;
-var _reroll_icon_h = _reroll_height-8-_reroll_icon_gap;
-var _reroll_icon_margin_x = 4 + _reroll_icon_gap/2;
-var _reroll_icon_margin_y = 4 + _reroll_icon_gap/2;
 
-if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _x, _y, _x+(_reroll_width-1), _y+(_reroll_height-1))) {
-    _doDrawHint = true;
-    _hint_text = string(getText("Talent_picker_reroll_hint"), reroll_cost);
+
+draw_my_button = function(_x, _y, _width, _height, _icon, _icon_color, _is_enabled, _do_action) {
+
+    var _icon_gap = 2;
+    var _icon_w = _width-8-_icon_gap;
+    var _icon_h = _height-8-_icon_gap;
+    var _icon_margin_x = 4 + _icon_gap/2;
+    var _icon_margin_y = 4 + _icon_gap/2;
     
-    if (can_reroll() && mouse_check_button(mb_left)) {
-        draw_sprite_stretched(spr_button, 2, _x, _y, _reroll_width, _reroll_height);
-        draw_sprite_stretched_ext(spr_recycle, 0, _x+_reroll_icon_margin_x, _y+_reroll_icon_margin_y, _reroll_icon_w, _reroll_icon_h, c_yellow, 0.8);
+    if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _x, _y, _x+(_width-1), _y+(_height-1))) {
+        
+        if (_is_enabled() && mouse_check_button(mb_left)) {
+            draw_sprite_stretched(spr_button, 2, _x, _y, _width, _height);
+            draw_sprite_stretched_ext(_icon, 0, _x+_icon_margin_x, _y+_icon_margin_y, _icon_w, _icon_h, _icon_color, 0.8);
+        } else {
+            var _alpha = 1;
+            if (!_is_enabled()) {
+                _alpha = 0.5;
+                draw_set_alpha(_alpha);
+            }
+            draw_sprite_stretched(spr_button, 1, _x, _y, _width, _height);
+            draw_sprite_stretched_ext(_icon, 0, _x+_icon_margin_x, _y+_icon_margin_y, _icon_w, _icon_h, _icon_color, _alpha);
+            draw_set_alpha(1);
+        }
+        
+        if (_is_enabled() && mouse_check_button_released(mb_left)) {
+            _do_action();
+        }
+        return true;
     } else {
         var _alpha = 1;
         if (!can_reroll()) {
             _alpha = 0.5;
             draw_set_alpha(_alpha);
         }
-        draw_sprite_stretched(spr_button, 1, _x, _y, _reroll_width, _reroll_height);
-        draw_sprite_stretched_ext(spr_recycle, 0, _x+_reroll_icon_margin_x, _y+_reroll_icon_margin_y, _reroll_icon_w, _reroll_icon_h, c_yellow, _alpha);
+        draw_sprite_stretched(spr_button, 0, _x, _y, _width, _height);
+        draw_sprite_stretched_ext(_icon, 0, _x+_icon_margin_x, _y+_icon_margin_y, _icon_w, _icon_h, _icon_color, _alpha);
         draw_set_alpha(1);
     }
-    
-    if (can_reroll() && mouse_check_button_released(mb_left)) {
-        reroll(false);
-        return;
-    }
-} else {
-    var _alpha = 1;
-    if (!can_reroll()) {
-        _alpha = 0.5;
-        draw_set_alpha(_alpha);
-    }
-    draw_sprite_stretched(spr_button, 0, _x, _y, _reroll_width, _reroll_height);
-    draw_sprite_stretched_ext(spr_recycle, 0, _x+_reroll_icon_margin_x, _y+_reroll_icon_margin_y, _reroll_icon_w, _reroll_icon_h, c_yellow, _alpha);
-    draw_set_alpha(1);
+    return false;
 }
 
-_x = _right - _reroll_width - _gap_w;
+var _button_w = 16+8;
+if (draw_my_button(_x, _y, _button_w, 16+8, spr_recycle, c_yellow, can_reroll, function() { reroll(false);} ) ) {
+    _doDrawHint = true;
+    _hint_text = string(getText("Talent_picker_reroll_hint"), reroll_cost)
+}
+
 if (!has_delay) {
-    if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _x, _y, _x+(_reroll_width-1), _y+(_reroll_height-1))) {
+    _x = _right - _button_w - _gap_w;
+    if (draw_my_button(_x, _y, _button_w, 16+8, spr_talent_delay, c_white, can_force_delay, force_delay ) ) {
         _doDrawHint = true;
-        _hint_text = string(getText("Talent_picker_force_delay"), force_delay_cost);
-        
-        if (can_force_delay() && mouse_check_button(mb_left)) {
-            draw_sprite_stretched(spr_button, 2, _x, _y, _reroll_width, _reroll_height);
-            draw_sprite_stretched_ext(spr_talent_delay, 0, _x+_reroll_icon_margin_x, _y+_reroll_icon_margin_y, _reroll_icon_w, _reroll_icon_h, c_white, 0.8);
-        } else {
-            var _alpha = 1;
-            if (!can_reroll()) {
-                _alpha = 0.5;
-                draw_set_alpha(_alpha);
-            }
-            draw_sprite_stretched(spr_button, 1, _x, _y, _reroll_width, _reroll_height);
-            draw_sprite_stretched_ext(spr_talent_delay, 0, _x+_reroll_icon_margin_x, _y+_reroll_icon_margin_y, _reroll_icon_w, _reroll_icon_h, c_white, _alpha);
-            draw_set_alpha(1);
-        }
-        
-        if (can_force_delay() && mouse_check_button_released(mb_left)) {
-            force_delay();
-            return;
-        }
-    } else {
-        var _alpha = 1;
-        if (!can_force_delay()) {
-            _alpha = 0.5;
-            draw_set_alpha(_alpha);
-        }
-        draw_sprite_stretched(spr_button, 0, _x, _y, _reroll_width, _reroll_height);
-        draw_sprite_stretched_ext(spr_talent_delay, 0, _x+_reroll_icon_margin_x, _y+_reroll_icon_margin_y, _reroll_icon_w, _reroll_icon_h, c_white, _alpha);
-        draw_set_alpha(1);
+        _hint_text = string(getText("Talent_picker_force_delay"), force_delay_cost)
     }
+}
+
+if (obj_player.corruption > 0) {
+    display_set_gui_size(640, 480);
+    var _corr_w = 24*2;
+    var _corr_h = 64*3;
+    var _corr_x = 640 - 10 - _corr_w;
+    var _corr_y = 10;
+    var _corr_percent = obj_player.corruption/obj_player.corruption_total;
+    draw_sprite_stretched(spr_corruption, clamp(9*_corr_percent, 0, 8), _corr_x, _corr_y, _corr_w, _corr_h);
+    if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _corr_x, _corr_y, _corr_x+_corr_w-1, _corr_y+_corr_h-1)) {
+        _doDrawHint = true;
+        _hint_text = string(getText("Corruption_progress"), _corr_percent*100);
     }
+    display_set_gui_size(320, 180);
+}
 
 if (_doDrawHint) {
     var _halign = fa_left;

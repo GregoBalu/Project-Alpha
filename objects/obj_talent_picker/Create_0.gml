@@ -15,15 +15,20 @@ talent3 = noone;
 no_talent_chance = 0.1; //10%
 delay_talent_chance = 0.3; //30%
 
-reroll_cost = 5;
+clickable = false;
+do_die = false;
+
+reroll_cost = 2;
 can_reroll = function() {
-    return obj_player.coins >= reroll_cost;
+    //return obj_player.coins >= reroll_cost;
+    return clickable && obj_player.corruption < obj_player.corruption_total;
 }
 
 has_delay = false;
 force_delay_cost = 5;
 can_force_delay = function() {
-    return obj_player.coins >= force_delay_cost;
+    //return obj_player.coins >= force_delay_cost;
+    return clickable && obj_player.corruption < obj_player.corruption_total;
 }
 
 randomize();
@@ -80,7 +85,8 @@ get_random_talent = function(_ignore1=-1, _ignore2=-1) {
 
 reroll = function(_is_free) {
     if (!_is_free) {
-        obj_player.coins -= reroll_cost;
+        //obj_player.coins -= reroll_cost;
+        obj_player.add_corruption(reroll_cost);
     }
     
     var _i1 = get_random_talent();
@@ -104,16 +110,20 @@ reroll = function(_is_free) {
 }
 
 force_delay = function() {
-    obj_player.coins -= force_delay_cost;
+    //obj_player.coins -= force_delay_cost;
+    obj_player.add_corruption(force_delay_cost);
     
     var _inst = instance_create_layer(0, 0, "GUI", obj_talent_wait_pick);
     _inst.action();
     instance_destroy(_inst);
-    instance_destroy();
+    do_die = true;
     return;
 }
 
+dice_rolls = 5;
+dice_roll_delay = 10;
 reroll(true);
+alarm[0] = dice_roll_delay;
 
 //TODO: sound
 

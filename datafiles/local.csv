@@ -54,6 +54,7 @@ Kérlek küldj visszajelzést a játékkal kapcsolatban."
 "Health_potion_pickup","health potion","gyógyító főzet"
 "Restoration_potion_pickup","restoration potion","regeneráló főzet"
 "Speed_potion_pickup","speed potion","gyorsítő főzet"
+"Corruption_progress","Corruption: {0}%","Átok: {0}%"
 "***** ITEMS *****",,
 "Item_helm_of_horns_name","Helm of Horns","Felszarvalt sisak"
 "Item_helm_of_horns_desc","This horny cap is ready for some action if you want to.
@@ -141,10 +142,10 @@ Támogatói energiát kapsz: {2}"
 "***** TALENTS *****","*****","*****"
 "Talent_picker_title","Pick a talent!","Válassz tehetséget!"
 "Talent_power_label","Potential max talent power","Tehetség potenciális erőssége"
-"Talent_picker_reroll_hint","Reroll talents: {0}g","Tehetségek újra osztása: {0}g"
+"Talent_picker_reroll_hint","Reroll talents: +{0} corruption","Tehetségek újra osztása: +{0} ártás"
 "Talent_picker_force_delay","Force delay the choice and store the talent potential, increasing the power of talents available next time.
-Cost: {0}g","Hagyd későbbre a választást, növelve a tehetség potenciálodat, hogy később erősebb tehetségek közül választhass.
-Költség: {0}g"
+Corruption: +{0}","Hagyd későbbre a választást, növelve a tehetség potenciálodat, hogy később erősebb tehetségek közül választhass.
+Ártás: +{0}"
 "Talent_def_hp_name","Guards up!","Védekezz!"
 "Talent_def_hp_hint","defense: +{0}
 total health: -{1}","védelem: +{0}

@@ -1,9 +1,11 @@
 if (instance_exists(obj_battle_switcher)) exit;
 if (!other.valid()) exit;
 if (global.do_pause) exit;
+    
 
 var _enemy = other.enemy;
 
+if (hp <= 0 || _enemy.hp <= 0) exit;
     
 show_debug_message($"obj_player [Collision] obj_enemy_battle_trigger {_enemy}");
 log_stat($"obj_player [Collision] obj_enemy_battle_trigger {_enemy}");

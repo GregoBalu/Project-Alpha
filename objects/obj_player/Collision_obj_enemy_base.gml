@@ -2,6 +2,8 @@ if (instance_exists(obj_dialog) || instance_exists(obj_vendor) || instance_exist
     
 if (global.do_pause) exit;
     
+if (hp <= 0 || other.hp <= 0) exit;
+    
 show_debug_message($"obj_player [Collision] obj_enemy_base {other}");
 log_stat($"obj_player [Collision] obj_enemy_base {other}");
 

@@ -1,6 +1,8 @@
 // Inherit the parent event
 event_inherited();
 
+resize_to(Loot_Size);
+
 _pickupText = $"+{getText("Speed_potion_pickup")} ({speed_boost})"
 _pickupColor = c_aqua;
 

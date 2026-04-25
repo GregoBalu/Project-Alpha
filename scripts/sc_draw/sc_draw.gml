@@ -485,7 +485,8 @@ function draw_spline(_path, _sprite, _sprite_index, _segmentSize) {
     //show_debug_message($"Spline drawn with {_cnt} fragments")
 }
 
-function draw_glow(_background_sprite_time, _background_sprite_refresh_rate) {
+function draw_glow(_background_sprite_time, _background_sprite_refresh_rate)
+{
     var _edge_x = sprite_width/16;
     var _edge_y = sprite_height/16;
     
@@ -501,4 +502,15 @@ function draw_glow(_background_sprite_time, _background_sprite_refresh_rate) {
     
     
     draw_sprite_stretched_ext(spr_glow, 0, _x, _y, _w, _h, c_white, 0.5);
+}
+
+function resize_to(_size)
+{
+    if (sprite_width != _size && sprite_height != _size) {
+        
+        var _ratio = min(_size/sprite_width, _size/sprite_height);
+        image_xscale = _ratio;
+        image_yscale = _ratio;
+        
+    }
 }

@@ -1,6 +1,8 @@
 // Inherit the parent event
 event_inherited();
 
+resize_to(Loot_Size);
+
 onBrew = function() {
     var _rand = floor(random_range(0, 6.999));//7seed on bush
     show_debug_message($"gregseed rand={_rand}");

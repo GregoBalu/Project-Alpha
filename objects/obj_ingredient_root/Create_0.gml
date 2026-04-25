@@ -3,8 +3,7 @@ event_inherited();
 
 healing_amount = 6;
 
-image_xscale = 0.8;
-image_yscale = 0.8;
+resize_to(Loot_Size);
 
 onBrew = function() {
     var _hp_begin = obj_player.hp;

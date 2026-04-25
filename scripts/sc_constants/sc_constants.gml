@@ -5,4 +5,4 @@
 #macro Color_UtilityCharge c_aqua
 #macro Color_XP c_teal
 
-
+#macro Loot_Size 12

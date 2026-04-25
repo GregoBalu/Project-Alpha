@@ -1,6 +1,8 @@
 // Inherit the parent event
 event_inherited();
 
+resize_to(Loot_Size);
+
 _pickupText = $"+{getText("Restoration_potion_pickup")} ({heal_per_tick})"
 _pickupColor = c_red;
 

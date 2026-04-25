@@ -1,6 +1,8 @@
 // Inherit the parent event
 event_inherited();
 
+resize_to(Loot_Size);
+
 onPickup = function(othr) {
     data = {
         targetObject : othr,

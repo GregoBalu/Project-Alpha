@@ -2,8 +2,7 @@
 event_inherited();
 init_localisation();
 
-image_xscale = .5;
-image_yscale = .5;
+resize_to(Loot_Size);
 
 _pickupText = $"+{coin_amount} {getText("Coins_pickup")}"
 _pickupColor = c_yellow;

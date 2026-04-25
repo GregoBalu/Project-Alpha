@@ -2,6 +2,8 @@
 event_inherited();
 init_localisation();
 
+resize_to(Loot_Size);
+
 _pickupText = $"+{getText("Health_potion_pickup")} ({healing_amount})"
 _pickupColor = c_green;
 

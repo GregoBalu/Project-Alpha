@@ -22,8 +22,7 @@ battle.idle_sound_min_seconds = 5;
 battle.idle_sound_max_seconds = 8;
 battle.cast_source_delta = new Vec2(0, 0);
 
-
-alarm[5] = random_range(5, 10) * TIME_SECOND;
+idle_sound = snd_firetoad_idle;
 
 initBattle = function(_self) {
     _self.image_blend = color;

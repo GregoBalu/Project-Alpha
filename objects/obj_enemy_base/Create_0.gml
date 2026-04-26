@@ -49,6 +49,8 @@ animation = {
     walk_down: sprite_index,
     walk_left: sprite_index
 };
+idle_sound = noone;
+alarm[5] = random_range(5, 10) * TIME_SECOND;
 
 
 loot_point_offset = array_create(2);

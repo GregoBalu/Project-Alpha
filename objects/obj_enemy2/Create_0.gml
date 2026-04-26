@@ -12,15 +12,18 @@ battle.animation_attack_fps = 20;
 battle.animation_wait = spr_firetoad_wait;
 battle.animation_wait_fps = 8;
 battle.animation_cast = spr_firetoad_cast;
-battle.animation_cast_fps = 12;
-battle.idle_sound = snd_firetoad_idle;
+battle.animation_cast_fps = 12;*/
+idle_sound = snd_cobra_idle;
+battle.idle_sound = snd_cobra_idle;
 battle.idle_sound_min_seconds = 5;
 battle.idle_sound_max_seconds = 8;
-battle.cast_source_delta = new Vec2(0, 0);*/
+/*battle.cast_source_delta = new Vec2(0, 0);*/
 
 doEnemyAction = function(_selfData, _playerData) {
     if (_selfData.charge_util >= 1) {
-        return enemyCastAcid(1.1, obj_battle_enemy);
+        var _animTime = enemyCastAcid(1.1, obj_battle_enemy);
+        audio_play_sound(snd_cobra_spit, AUDIO_PRIO_EFFECTS, false, 1.0, 0, random_range(0.9, 1.1));
+        return _animTime;
     }
     _selfData.charge_util += 0.2;
     return enemySimpleAttack(obj_battle_enemy);

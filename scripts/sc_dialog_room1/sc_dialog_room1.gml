@@ -4,9 +4,6 @@ function initDialogRoom1(){
 }
 init_localisation();
 
-global.guard_friend_name = "Geoff";
-global.guard_friend_color = c_aqua
-
 global.dialog_welcome = [
     new dialog_entry(global.guard_friend_name, global.guard_friend_color, spr_npc_guard, new dialog_text(getText("Dialog_r1_w1_l1")), 
         function() {

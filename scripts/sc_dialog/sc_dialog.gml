@@ -6,6 +6,9 @@ function initDialog() {
     
     global.dialog_vendor_name = "Sha'd Yvend'r";
     global.dialog_vendor_color = c_orange;
+    
+    global.guard_friend_name = "Geoff";
+    global.guard_friend_color = c_aqua
 }
 initInput();
 
@@ -14,6 +17,9 @@ global.dialog_player_color = c_lime;
 
 global.dialog_vendor_name = "Sha'd Yvend'r";
 global.dialog_vendor_color = c_orange;
+
+global.guard_friend_name = "Geoff";
+global.guard_friend_color = c_aqua
 
 function NOOP() {}
 

@@ -21,11 +21,13 @@ if (!previous_mouse_click && _is_mouse_clicked) {
     if (previous_click_indicator) {
         var new_current_value = (indicator_pos.x - x) / sprite_width;
         current_value = new_current_value;
+        audio_play_sound(snd_click, AUDIO_PRIO_EFFECTS, false, 0.3, 0, 1.5);
         onValueChanged(current_value);
     } else {
         indicator_pos.x = clamp(mouse_x, x, x+sprite_width);
         var new_current_value = (indicator_pos.x - x) / sprite_width;
         current_value = new_current_value;
+        audio_play_sound(snd_click, AUDIO_PRIO_EFFECTS, false, 0.3, 0, 1.5);
         onValueChanged(current_value);
     }
     

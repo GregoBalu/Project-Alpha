@@ -80,5 +80,9 @@ battleDraw = function(_obj) {
         draw_set_color(_defColor);
         
         draw_circle_color(_x, _y, _r, c_black, c_black, true);
+        
+        if (point_in_circle(mouse_x, mouse_y, _x, _y, _r)) {
+            draw_textbox_background(mouse_x, mouse_y, 100, 100, getText("Battle_boss1_charge_hint"), new BackgroundData(spr_hint_back, 0, 8), fa_right, fa_top);
+        }
     }
 }

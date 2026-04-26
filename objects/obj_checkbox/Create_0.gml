@@ -12,4 +12,5 @@ refresh_image();
 
 onChanged = function() {
     // override me
+    
 }

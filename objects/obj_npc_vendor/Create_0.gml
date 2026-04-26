@@ -10,7 +10,7 @@ if (room == rm_dungeon) {
             obj_player.hp = clamp(obj_player.hp + 5, 0, obj_player.hp_total);
             return true;
         }),
-        new VendorItem(getText("Vendor_corruption_remove"), getText("Vendor_corruption_remove_desc"), spr_debug_16, 5, 3, function() {
+        new VendorItem(getText("Vendor_corruption_remove"), getText("Vendor_corruption_remove_desc"), spr_debug_16, 5, 20, function() {
             obj_player.add_corruption(-2);
             return true;
         }),
@@ -32,12 +32,18 @@ if (room == rm_dungeon) {
             obj_player.hp = clamp(obj_player.hp + 5, 0, obj_player.hp_total);
             return true;
         }),
-        new VendorItem(getText("Vendor_corruption_remove"), getText("Vendor_corruption_remove_desc"), spr_debug_16, 5, 3, function() {
+        new VendorItem(getText("Vendor_corruption_remove"), getText("Vendor_corruption_remove_desc"), spr_debug_16, 5, 20, function() {
             obj_player.add_corruption(-2);
             return true;
         }),
         new VendorItem(getText("Vendor_cane"), getText("Vendor_cane_desc"), spr_crane_of_wisdom, 10, 1, function() {
             if (obj_player.addToInventory(obj_cane_of_wisdom)) {
+                return true;
+            }
+            return false;
+        }),
+        new VendorItem(getText("Vendor_platearmor"), getText("Vendor_platearmor_desc"), spr_plate_armor, 10, 1, function() {
+            if (obj_player.addToInventory(obj_plate_armor)) {
                 return true;
             }
             return false;

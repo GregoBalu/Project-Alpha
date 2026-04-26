@@ -100,6 +100,12 @@ Damage: +{0}
 Crit chance: -{1}%","Ez a könnyű penge mindkét végén sok szenvedést okozott.
 Sebzés: +{0}
 Kritikus találat esélye: -{1}%"
+"Item_plate_armor_name","Plate Armor","Lemez páncél"
+"Item_plate_armor_desc","A heavy plate armor.
+Defense: +{0}
+Életszívás: -{1}","Egy nehéz mellvért páncél.
+Védelem: +{0}
+Életszívás: -{1}"
 
 "***** BATTLE ACTIONS *****","*****","*****"
 "Battle_act_defend_hint","Defend [{0}]
@@ -167,6 +173,12 @@ Buff lasts {0} more turns.
 Cost increase: {1}","Vonatkozó képesség: Védekezés
 A hatás {0} körrel tovább tart.
 Költség drágul: {1}"
+"Talent_defend_charge_name","Charge into defense","Ugorj neki a védekezésnek"
+"Talent_defend_charge_hint","Modifies action: Defend
+On use adds attack charge: +{0}
+Decrease buff duration by: {1} turn(s)","Vonatkozó képesség: Védelem
+Használatkor támadási energiát kapsz: +{0}
+Csökkenti a hatás hosszát: {1} körrel."
 "Talent_heavy_cheap_name","Cheap Heavy","Olcsó erős"
 "Talent_heavy_cheap_hint","Modifies action: Heavy attack
 cost: -{0}
@@ -183,7 +195,7 @@ action gains armor shredding: -{0}","Vonatkozó képesség: Megszakítás
 A képesség páncélcsökkentő hatással bír: -{0}"
 "Talent_interrupt_damage_name","Delayed penetration","Késleltetett döfés"
 "Talent_interrupt_damage_hint","Modifies action: Interrupt
-Create a buff on target for {0} turns.
+Create a debuff on target for {0} turns.
 If target receives at least {1} damage it takes an additional {2} damage.
 Otherwise the target gains {3} defense.","Vonatkozó képesség: Megszakítás
 Egy hatást helyez a célpontra {0} körig.
@@ -262,6 +274,8 @@ Nem lehet használni a képességet {1} körig."
 "Vendor_corruption_remove_desc","Removes a portion of applied corruption.","Eltávolítja a jelenlévő rontás egy részét."
 "Vendor_cane","Cane of wisdom","Bölcsesség pálcája"
 "Vendor_cane_desc","A weapon of great power.","Egy nagy erejű fegyver."
+"Vendor_platearmor","Plate armor","Lemez páncél"
+"Vendor_platearmor_desc","Armor for the weak.","Páncél a gyengéknek."
 "Vendor_talent","Talent potential","Tehetség potenciál"
 "Vendor_talent_desc","Gain 1 talent potential.","Egy tehetség potenciált ad."
 

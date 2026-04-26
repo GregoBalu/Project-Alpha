@@ -8,6 +8,8 @@ buff_turns = 1;
 
 heal_blocked_percent = 0;
 
+attack_charge_gain = 0;
+
 for (var _i = 0; _i < ds_list_size(obj_battle_switcher.player_data.unlocked_talents); _i++)
 {
     var _talent = obj_battle_switcher.player_data.unlocked_talents[|_i];
@@ -17,6 +19,9 @@ for (var _i = 0; _i < ds_list_size(obj_battle_switcher.player_data.unlocked_tale
     } else if (_talent.object_index == obj_talent_defend_heal) {
         defense_increase -= _talent.decrease_defense;
         heal_blocked_percent = _talent.blocked_heal_percent;
+    } else if (_talent.object_index == obj_talent_defend_charge) {
+        attack_charge_gain += _talent.add_attack_charge_on_use;
+        buff_turns -= _talent.decrease_buff_duration;
     }
 }
 
@@ -26,6 +31,7 @@ action = function() {
     }
     
     obj_battle_player.data.charge_util -= cost_amount;
+    obj_battle_player.data.charge_attack = clamp(obj_battle_player.data.charge_attack + attack_charge_gain, 0, obj_battle_player.data.charge_attack_total);
     
     obj_battle_player.defend_used++;
     

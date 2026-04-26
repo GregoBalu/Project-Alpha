@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_debug_32",
-    "path":"sprites/spr_debug_32/spr_debug_32.yy",
+    "name":"spr_red_area",
+    "path":"sprites/spr_red_area/spr_red_area.yy",
   },
   "spriteMaskId":null,
   "visible":true,

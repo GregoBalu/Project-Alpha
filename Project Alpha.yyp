@@ -471,6 +471,7 @@
     {"id":{"name":"spr_cobra_up","path":"sprites/spr_cobra_up/spr_cobra_up.yy",},},
     {"id":{"name":"spr_coin","path":"sprites/spr_coin/spr_coin.yy",},},
     {"id":{"name":"spr_collision","path":"sprites/spr_collision/spr_collision.yy",},},
+    {"id":{"name":"spr_corner_ornament","path":"sprites/spr_corner_ornament/spr_corner_ornament.yy",},},
     {"id":{"name":"spr_corruption_bolt_explosion","path":"sprites/spr_corruption_bolt_explosion/spr_corruption_bolt_explosion.yy",},},
     {"id":{"name":"spr_corruption_bolt","path":"sprites/spr_corruption_bolt/spr_corruption_bolt.yy",},},
     {"id":{"name":"spr_corruption_decal","path":"sprites/spr_corruption_decal/spr_corruption_decal.yy",},},

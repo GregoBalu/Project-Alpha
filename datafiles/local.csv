@@ -12,7 +12,7 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZ
 "Back","Back","Vissza"
 "Quit_confirm","Do you want to really quit?","Tényleg ki akarsz lépni?"
 "Music_volume","Music volume","Zene hangerő"
-"Sfx_volume","Sound effects volume","Effektusok hangerő"
+"Sfx_volume","Sound effects volume","Hanghatás hangerő"
 "Menu_language","Language","Nyelv"
 "Menu_show_hints","Show hints","Tippek mutatása"
 "Back_to_menu","Back to Menu","Vissza a Főmenübe"
@@ -20,6 +20,7 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZ
 "End_text","Thanks for playing the Demo.
 Please feel free to give any feedback on the game.","Köszönöm, hogy játszottál a Demoval.
 Kérlek küldj visszajelzést a játékkal kapcsolatban."
+
 "***** PLAYER SHEET *****",,
 "Player_sheet_title","Player Sheet","Karakterlap"
 "Health_label","Health","Életerő"
@@ -55,6 +56,7 @@ Kérlek küldj visszajelzést a játékkal kapcsolatban."
 "Restoration_potion_pickup","restoration potion","regeneráló főzet"
 "Speed_potion_pickup","speed potion","gyorsítő főzet"
 "Corruption_progress","Corruption: {0}%","Átok: {0}%"
+
 "***** ITEMS *****",,
 "Item_helm_of_horns_name","Helm of Horns","Felszarvalt sisak"
 "Item_helm_of_horns_desc","This horny cap is ready for some action if you want to.
@@ -98,6 +100,7 @@ Damage: +{0}
 Crit chance: -{1}%","Ez a könnyű penge mindkét végén sok szenvedést okozott.
 Sebzés: +{0}
 Kritikus találat esélye: -{1}%"
+
 "***** BATTLE ACTIONS *****","*****","*****"
 "Battle_act_defend_hint","Defend [{0}]
 Harden yourself for incoming attacks.
@@ -139,6 +142,8 @@ Charge gain: {1} attack, {2} utility","Várakozás [{0}]
 Vársz egy kört és energiát gyűjtessz.
 Támadási energiát kapsz: {1}
 Támogatói energiát kapsz: {2}"
+"Battle_boss1_charge_hint","The boss seems to be charging up a big attack.","Úgy tűnik a főellenség valamilyen nagy támadást készít elő."
+
 "***** TALENTS *****","*****","*****"
 "Talent_picker_title","Pick a talent!","Válassz tehetséget!"
 "Talent_power_label","Potential max talent power","Tehetség potenciális erőssége"
@@ -230,18 +235,20 @@ Energia töltés: x{0}
 Nem lehet használni a képességet {1} körig."
 "Talent_wait_pick_name","Delay","Késleltetés"
 "Talent_wait_pick_hint","Delay the choice and store the talent potential, increasing the power of talents available next time.","Hagyd későbbre a választást, növelve a tehetség potenciálodat, hogy később erősebb tehetségek közül választhass."
+
 "***** BUFFS *****",,
-"Buff_frenzy_hint","A raging frenzy affects the damage according to unspent attack charge, but weakens damage based on unspent utility charge.","A tomboló őrület hatással van a sebzésre az elérhető támadási energia szint alapján, de csökkenti a sebzést az elérhető támogatói energia alaőján."
-"Buff_fire_hint","Ignited: lowers defense and take DoT each turn",
-"Buff_corruption_hint","Corruption: significant DoT each turn",
-"Buff_acid_hint","Acid spit: lowers defense and take DoT each turn",
-"Buff_stun_hint","Stun: cannot take action",
-"Buff_lifesteal_hint","Lifesteal: dealing damage heals a portion of it",
-"Buff_armor_shred_hint","Armor shred: defense reduced",
-"Buff_int_dmg_delay_hint","Delayed penetration: Deal enough damage",
-"Buff_defend_hint","Increase Defense",
-"Buff_crit_bleed_hint","Critical Bleed: small DoT damage, increase critical chance and critical damage for attacker",
-"Buff_water_tentacle_squeeze_hint","You are being squeezed, you cannot breathe. You have to relax somehow ...",
+"Buff_frenzy_hint","A raging frenzy affects the damage according to unspent attack charge, but weakens damage based on unspent utility charge.","A tomboló őrület hatással van a sebzésre az elérhető támadási energia szint alapján, de csökkenti a sebzést az elérhető támogatói energia alapján."
+"Buff_fire_hint","Ignited: lowers defense and take DoT each turn.","Meggyulladva: csökkenti a védelmet és minden körben periodikus sebzést okoz."
+"Buff_corruption_hint","Corruption: significant DoT each turn.","Rontás: jelentős periodikus sebzés körönként."
+"Buff_acid_hint","Acid spit: lowers defense and take DoT each turn.","Sav köpet: csökkenti a védelmet és körönként sebzést okoz."
+"Buff_stun_hint","Stun: cannot take action","Elkábítva: magatehetetlen."
+"Buff_lifesteal_hint","Lifesteal: dealing damage heals a portion of it.","Életszívás: okozott sebzés egy részét visszagyógytja."
+"Buff_armor_shred_hint","Armor shred: defense reduced.","Tört páncél: védelem csökkentve."
+"Buff_int_dmg_delay_hint","Delayed penetration: Deal enough damage.","Késleltetett döfés: Okozz kellő sebzést."
+"Buff_defend_hint","Increase Defense.","Megnövelt védelem."
+"Buff_crit_bleed_hint","Critical Bleed: small DoT damage, increase critical chance and critical damage for attacker.","Súlyos vérzés: apró sebzés körönként, növeli a bejövő krikitus találatok esélyét és mértékét."
+"Buff_water_tentacle_squeeze_hint","You are being squeezed, you cannot breathe. You have to relax somehow ...","Szorongatva vagy, alig kapsz levegőt. Valahogy el kellene lazulnod ..."
+
 "***** VENDOR *****",,
 "Vendor_title","Shop: {0}","Árus: {0}"
 "Vendor_sell_confirm","Sell item ({0})?","Valóban eladod ezt: {0}?"
@@ -257,7 +264,7 @@ Nem lehet használni a képességet {1} körig."
 "Vendor_cane_desc","A weapon of great power.","Egy nagy erejű fegyver."
 "Vendor_talent","Talent potential","Tehetség potenciál"
 "Vendor_talent_desc","Gain 1 talent potential.","Egy tehetség potenciált ad."
-,,
+
 "***** DIALOGS *****",,
 "Dialog_r1_w1_l1","Hey, I started to worry you wouldn't show up at all. What took you so long?","Végre, azt hittem már sose érsz ide. Mi tartott ennyi ideig?"
 "Dialog_r1_w1_l2","Sorry, I got held up by the guards at the city exit. So where is this Witch you were talking about?","Elnézést, az őrök feltartottak a városkapunál. Szóval merre van ez a Boszorkány amit említettél?"
@@ -284,8 +291,7 @@ Nem lehet használni a képességet {1} körig."
 "Dialog_r1_hidden_note","Abandon all hope. Turn around while you can ...","Hagyj fel minden reménnyel! Fordulj vissza, amíg megteheted ..."
 "Dialog_s_fuel1","This is a fuel filling station. It can fill a container with fuel. Fuel is useful for a handful of machines.",
 "Dialog_s_fuel2","This container is a bit wrecked, it has holes and cracks. It can barely hold anything. You need to be quick transporting anything in this.",
-,,
-,,
+
 "***** Death screen *****",,
 "Death_welcome","You have died. Let's see what you have achieved in your short life:","Meghaltál. Lássuk mit tudtál elérni amíg még éltél:"
 "Death_name","Death","Halál"

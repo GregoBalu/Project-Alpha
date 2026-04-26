@@ -124,6 +124,7 @@ dice_rolls = 5;
 dice_roll_delay = 10;
 reroll(true);
 alarm[0] = dice_roll_delay;
+audio_play_sound(snd_roll, AUDIO_PRIO_EFFECTS, false);
 
 //TODO: sound
 

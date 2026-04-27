@@ -12,6 +12,8 @@ if (check_for_end()) {
 
 ++turn;
 
+battle_player_turn_noti.show();
+
 if (obj_battle_player.is_stunned) {
     if (debug_mode) show_debug_message("Player is stunned");
     damage_to_enemy = {damage:0,did_crit:false};

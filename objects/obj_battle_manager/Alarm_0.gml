@@ -8,8 +8,12 @@ if (damage_to_enemy.damage > 0) {
     }
 }
 
+battle_player_turn_noti.fade_out();
+
 obj_battle_player.tick_turn(false);
 obj_battle_enemy.tick_turn(false);
+
+battle_enemy_turn_noti.show();
 
 if (check_for_end()) {
     alarm[BattleManagerEvents.BattleEnd] = TIME_SECOND;

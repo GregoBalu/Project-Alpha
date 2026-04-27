@@ -1,4 +1,4 @@
-if (visible) {
+if (visible && doJiggle) {
     time_start += delta_time;
     
     if (time_start % (jiggle_frequency * TIME_SECOND) == 0) {

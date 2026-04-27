@@ -4,4 +4,5 @@ if (background_subimg < obj_battle_enemy.data.battle.battle_screen_animated_max_
     alarm[BattleManagerEvents.BackgroundAnim] =  (TIME_SECOND/obj_battle_enemy.data.battle.battle_screen_animated_fps);
 } else {
     battle_started = true;
+    battle_player_turn_noti.visible = true;
 }

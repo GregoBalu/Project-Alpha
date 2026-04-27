@@ -18,6 +18,9 @@ background_subimg = 0;
 enemy_turn = false;
 damage_to_enemy = { damage:0,did_crit:false};
 
+battle_player_turn_noti.visible = false;
+battle_enemy_turn_noti.visible = false;
+
 player_turn = function(_damage, _player_animation_seconds) {
     if (_damage != undefined) {
         damage_to_enemy = _damage;

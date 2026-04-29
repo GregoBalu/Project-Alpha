@@ -20,8 +20,13 @@ getBuffData = function(_othr) {
     };
 }
 
-ds_list_add(no_effect_frames, 0);
-ds_list_add(no_effect_frames, 1);
+hitboxes_len = image_number;
+hitboxes = array_create(hitboxes_len, undefined);
+hitboxes[2] = new Hitbox(x, y, 8, 10, 26, 19);
+hitboxes[3] = new Hitbox(x, y, 8, 7, 43, 22);
+hitboxes[4] = new Hitbox(x, y, 8, 7, 43, 22);
+hitboxes[5] = new Hitbox(x, y, 21, 7, 43, 21);
+hitboxes[6] = new Hitbox(x, y, 32, 11, 39, 19);
 
-ds_list_add(no_effect_frames, 7);
-ds_list_add(no_effect_frames, 8);
+
+

@@ -100,7 +100,19 @@ function spawn_ghost(ok_tilemap, collision_tilemap) {
     return false;
 }
 
-
+function Hitbox(_x, _y, _x1, _y1, _x2, _y2) constructor
+{
+    x = _x;
+    y = _y;
+    left = _x1;
+    top = _y1;
+    right = _x2;
+    bottom = _y2;
+    
+    isColliding = function(_other) {
+        return collision_rectangle(x+left, y+top, x+right, y+bottom, _other, false, true);
+    }
+}
 
 
 

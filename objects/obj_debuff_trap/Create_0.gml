@@ -11,6 +11,7 @@ function applyEffect(_buff_obj, _buff_data) {
 
 getBuffData = function(_othr) {};
 
-no_effect_frames = ds_list_create();
+hitboxes = [];
+hitboxes_len = 0;
 
 alarm[0] = (start_delay_seconds + 1) * TIME_SECOND;

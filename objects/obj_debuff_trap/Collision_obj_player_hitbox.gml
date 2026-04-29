@@ -1,8 +1,10 @@
 if (!is_on || paused) exit;
 
-if (ds_list_find_index(no_effect_frames, image_index) >= 0) {
-    return;
-}
+if (hitboxes_len <= image_index) exit;
+    
+if (hitboxes[image_index] == undefined) exit;
+    
+if (!hitboxes[image_index].isColliding(other)) exit;
 
 for (var _i = 0; _i < ds_list_size(debuffedTargets); _i++)
 {

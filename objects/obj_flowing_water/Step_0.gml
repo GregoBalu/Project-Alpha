@@ -1,3 +1,6 @@
+if (force == 0 && visible) visible = false; 
+if (force > 0 && !visible) visible = true; 
+
 if (!is_on || paused) exit;
 
 

@@ -713,8 +713,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"rm_test","path":"rooms/rm_test/rm_test.yy",},},
     {"roomId":{"name":"Menu","path":"rooms/Menu/Menu.yy",},},
+    {"roomId":{"name":"rm_test","path":"rooms/rm_test/rm_test.yy",},},
     {"roomId":{"name":"rm_dungeon","path":"rooms/rm_dungeon/rm_dungeon.yy",},},
     {"roomId":{"name":"rm_cave","path":"rooms/rm_cave/rm_cave.yy",},},
     {"roomId":{"name":"rm_sewer","path":"rooms/rm_sewer/rm_sewer.yy",},},

@@ -20,7 +20,7 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZ
 "End_text","Thanks for playing the Demo.
 Please feel free to give any feedback on the game.","Köszönöm, hogy játszottál a Demoval.
 Kérlek küldj visszajelzést a játékkal kapcsolatban."
-
+,,
 "***** PLAYER SHEET *****","*****","*****"
 "Player_sheet_title","Player Sheet","Karakterlap"
 "Health_label","Health","Életerő"
@@ -56,7 +56,7 @@ Kérlek küldj visszajelzést a játékkal kapcsolatban."
 "Restoration_potion_pickup","restoration potion","regeneráló főzet"
 "Speed_potion_pickup","speed potion","gyorsítő főzet"
 "Corruption_progress","Corruption: {0}%","Átok: {0}%"
-
+,,
 "***** ITEMS *****","*****","*****"
 "Item_helm_of_horns_name","Helm of Horns","Felszarvalt sisak"
 "Item_helm_of_horns_desc","This horny cap is ready for some action if you want to.
@@ -106,7 +106,7 @@ Defense: +{0}
 Lifesteal: -{1}","Egy nehéz mellvért páncél.
 Védelem: +{0}
 Életszívás: -{1}"
-
+,,
 "***** BATTLE ACTIONS *****","*****","*****"
 "Battle_act_defend_hint","Defend [{0}]
 Harden yourself for incoming attacks.
@@ -149,7 +149,7 @@ Vársz egy kört és energiát gyűjtessz.
 Támadási energiát kapsz: {1}
 Támogatói energiát kapsz: {2}"
 "Battle_boss1_charge_hint","The boss seems to be charging up a big attack.","Úgy tűnik a főellenség valamilyen nagy támadást készít elő."
-
+,,
 "***** TALENTS *****","*****","*****"
 "Talent_picker_title","Pick a talent!","Válassz tehetséget!"
 "Talent_power_label","Potential max talent power","Tehetség potenciális erőssége"
@@ -247,7 +247,7 @@ Energia töltés: x{0}
 Nem lehet használni a képességet {1} körig."
 "Talent_wait_pick_name","Delay","Késleltetés"
 "Talent_wait_pick_hint","Delay the choice and store the talent potential, increasing the power of talents available next time.","Hagyd későbbre a választást, növelve a tehetség potenciálodat, hogy később erősebb tehetségek közül választhass."
-
+,,
 "***** BUFFS *****","*****","*****"
 "Buff_frenzy_hint","A raging frenzy affects the damage according to unspent attack charge, but weakens damage based on unspent utility charge.","A tomboló őrület hatással van a sebzésre az elérhető támadási energia szint alapján, de csökkenti a sebzést az elérhető támogatói energia alapján."
 "Buff_fire_hint","Ignited: lowers defense and take DoT each turn.","Meggyulladva: csökkenti a védelmet és minden körben periodikus sebzést okoz."
@@ -260,7 +260,7 @@ Nem lehet használni a képességet {1} körig."
 "Buff_defend_hint","Increase Defense.","Megnövelt védelem."
 "Buff_crit_bleed_hint","Critical Bleed: small DoT damage, increase critical chance and critical damage for attacker.","Súlyos vérzés: apró sebzés körönként, növeli a bejövő krikitus találatok esélyét és mértékét."
 "Buff_water_tentacle_squeeze_hint","You are being squeezed, you cannot breathe. You have to relax somehow ...","Szorongatva vagy, alig kapsz levegőt. Valahogy el kellene lazulnod ..."
-
+,,
 "***** VENDOR *****","*****","*****"
 "Vendor_title","Shop: {0}","Árus: {0}"
 "Vendor_sell_confirm","Sell item ({0})?","Valóban eladod ezt: {0}?"
@@ -278,7 +278,7 @@ Nem lehet használni a képességet {1} körig."
 "Vendor_platearmor_desc","Armor for the weak.","Páncél a gyengéknek."
 "Vendor_talent","Talent potential","Tehetség potenciál"
 "Vendor_talent_desc","Gain 1 talent potential.","Egy tehetség potenciált ad."
-
+,,
 "***** DIALOGS *****","*****","*****"
 "Dialog_r1_w1_l1","Hey, I started to worry you wouldn't show up at all. What took you so long?","Végre, azt hittem már sose érsz ide. Mi tartott ennyi ideig?"
 "Dialog_r1_w1_l2","Sorry, I got held up by the guards at the city exit. So where is this Witch you were talking about?","Elnézést, az őrök feltartottak a városkapunál. Szóval merre van ez a Boszorkány amit említettél?"
@@ -303,15 +303,15 @@ Nem lehet használni a képességet {1} körig."
 "Dialog_r1_lever1","You find a hastely scribbled note describing a room on fire with strange vibrant colors.","Egy gyorsan firkált jegyzetet találsz, amely egy lángoló szobáról és furcsa éles fényekről ír."
 "Dialog_r1_lever2","You cannot make out most of the text just a small drawing on the bottom, which depicts four colors in a row: yellow, green, green, yellow.","Az írás nagy részét nem tudod kivenni rendesen, de a papír alján egy ábrát látsz - négy szín egy sorban: sárga, zöld, zöld, sárga."
 "Dialog_r1_hidden_note","Abandon all hope. Turn around while you can ...","Hagyj fel minden reménnyel! Fordulj vissza, amíg megteheted ..."
-"Dialog_s_fuel1","This is a fuel filling station. It can fill a container with fuel. Fuel is useful for a handful of machines.",
-"Dialog_s_fuel2","This container is a bit wrecked, it has holes and cracks. It can barely hold anything. You need to be quick transporting anything in this.",
+"Dialog_s_fuel1","This is a fuel filling station. It can fill a container with fuel. Fuel is useful for a handful of machines.","Ez egy üzemanyagtöltő pont, ahol feltölthetsz tartályokat. Az üzemanyag rengeteg gépnek kell a működéshez."
+"Dialog_s_fuel2","This container is a bit wrecked, it has holes and cracks. It can barely hold anything. You need to be quick transporting anything in this.","Ez a tartály repedt, lyukak vannak benne, alig tud magában tartani bármit. Ha ezzel szeretnél valamit szállítani, akkor nagyon gyorsan kell azt tenned."
 "Dialog_cave_g_l1","I believe you are the one that made possible to cross that bridge with the strong current on it before?","Ha jól sejtem te vagy az oka, hogy át tudtam kelni azon a hídon ahol korábban az erős sodrás megakadályozott."
 "Dialog_cave_g_l2","I am, I think there is something big in here in the water.","Igen, azt hiszem van valami nagy a vízben."
 "Dialog_cave_g_l3","You are right, check out ahead, there is a huge octopus thing blocking the way forward with two massive tentacles.","Ha tudnád milyen igazad van. Ha egy kicsit tovább mész látni fogod azt a hatalmas polip szerű szörnyet két hatalmas csáppal."
 "Dialog_cave_g_l4","There must be a way to deal with those separately ...","Kell lennie valami megoldásnak, hogy külön kezeljük őket ..."
 "Dialog_cave_g_a1","There is a huge octopus thing blocking the way forward with two massive tentacles.","Ott egy hatalmas polip szerű szörny két hatalmas csáppal."
 "Dialog_cave_g_a2","There must be a way to deal with those separately ...","Kell lennie valami megoldásnak, hogy külön kezeljük őket ..."
-
+,,
 "***** Death screen *****","*****","*****"
 "Death_welcome","You have died. Let's see what you have achieved in your short life:","Meghaltál. Lássuk mit tudtál elérni amíg még éltél:"
 "Death_name","Death","Halál"

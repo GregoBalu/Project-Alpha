@@ -346,6 +346,7 @@
     {"id":{"name":"sc_draw","path":"scripts/sc_draw/sc_draw.yy",},},
     {"id":{"name":"sc_effects","path":"scripts/sc_effects/sc_effects.yy",},},
     {"id":{"name":"sc_end","path":"scripts/sc_end/sc_end.yy",},},
+    {"id":{"name":"sc_fish","path":"scripts/sc_fish/sc_fish.yy",},},
     {"id":{"name":"sc_input","path":"scripts/sc_input/sc_input.yy",},},
     {"id":{"name":"sc_inventory","path":"scripts/sc_inventory/sc_inventory.yy",},},
     {"id":{"name":"sc_localisation","path":"scripts/sc_localisation/sc_localisation.yy",},},
@@ -712,8 +713,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"Menu","path":"rooms/Menu/Menu.yy",},},
     {"roomId":{"name":"rm_test","path":"rooms/rm_test/rm_test.yy",},},
+    {"roomId":{"name":"Menu","path":"rooms/Menu/Menu.yy",},},
     {"roomId":{"name":"rm_dungeon","path":"rooms/rm_dungeon/rm_dungeon.yy",},},
     {"roomId":{"name":"rm_cave","path":"rooms/rm_cave/rm_cave.yy",},},
     {"roomId":{"name":"rm_sewer","path":"rooms/rm_sewer/rm_sewer.yy",},},

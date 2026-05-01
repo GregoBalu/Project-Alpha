@@ -13,8 +13,14 @@ if (collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_fish_f
 var _hor = clamp(mouse_x-x, -1, 1); //(keyboard_check(global.input_right)?1:0) - (keyboard_check(global.input_left)?1:0);
 var _ver = clamp(mouse_y-y, -1, 1);//(keyboard_check(global.input_down)?1:0) - (keyboard_check(global.input_up)?1:0);
 
+var _dist = point_distance(x, y, mouse_x, mouse_y);
+var _speed = slow_speed;
+if (_dist > slow_range) {
+    _speed = fast_speed;
+}
+
 if (_hor != 0 || _ver != 0) {
-    move_and_collide(_hor, _ver, collision_array, undefined, undefined, undefined, 1, 1);
+    move_and_collide(_hor*_speed, _ver*_speed, collision_array, undefined, undefined, undefined, _speed, _speed);
     x = clamp(x, obj_fish_manager.room_margin, room_width-obj_fish_manager.room_margin);
     y = clamp(y, obj_fish_manager.room_margin, room_height-obj_fish_manager.room_margin);
 }

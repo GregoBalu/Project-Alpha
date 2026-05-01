@@ -100,17 +100,87 @@ function spawn_ghost(ok_tilemap, collision_tilemap) {
     return false;
 }
 
-function Hitbox(_x, _y, _x1, _y1, _x2, _y2) constructor
+function Hitbox(_inst, _x1, _y1, _x2, _y2) constructor
 {
-    x = _x;
-    y = _y;
-    left = _x1;
-    top = _y1;
-    right = _x2;
-    bottom = _y2;
+    show_debug_message($"object {_inst.object_index} id={_inst.id} pos={_inst.x},{_inst.y} ang={_inst.image_angle}");
+    hitbox_get_points = function(_inst, left, top, right, bottom) {
+
+        var ang = _inst.image_angle;
+        var cosA = dcos(ang);
+        var sinA = dsin(ang);
     
-    isColliding = function(_other) {
-        return collision_rectangle(x+left, y+top, x+right, y+bottom, _other, false, true);
+        var sx = sprite_get_xoffset(_inst.sprite_index);
+        var sy = sprite_get_yoffset(_inst.sprite_index);
+        pivot_x = _inst.x-sx;
+        pivot_y = _inst.y-sy;
+    
+        transform = function(_inst, px, py, _relx, _rely, cosA, sinA) {
+            // convert from sprite space -> origin-relative space
+            var lx = px - _relx;
+            var ly = py - _rely;
+    
+            // rotate
+            //var rx = lx * cosA - ly * sinA;
+            //var ry = lx * sinA + ly * cosA;
+            var rx = lx * cosA + ly * sinA;
+            var ry = -lx * sinA + ly * cosA;
+            show_debug_message($"  rx={rx} ry={ry}");
+    
+            // translate to world
+            return [ _inst.x + rx, _inst.y + ry ];
+        }
+    
+        return [
+            transform(_inst, left,  top, sx, sy, cosA, sinA),
+            transform(_inst, right, top, sx, sy, cosA, sinA),
+            transform(_inst, right, bottom, sx, sy, cosA, sinA),
+            transform(_inst, left,  bottom, sx, sy, cosA, sinA)
+        ];
+    }
+
+    show_debug_message($"  {_x1},{_y1} {_x2},{_y2}");
+    pivot_x = 0;
+    pivot_y = 0;
+    points = hitbox_get_points(_inst, _x1, _y1, _x2, _y2);
+    show_debug_message($"  points={points}");
+    fast = true;
+    
+    isColliding = function(_host, _other) {
+        //return collision_rectangle(origin_x+left, origin_y+top, origin_x+right, origin_y+bottom, _other, false, true);
+        
+        if (fast) {
+            var minx = points[0][0];
+            var maxx = minx;
+            var miny = points[0][1];
+            var maxy = miny;
+        
+            for (var i = 1; i < 4; i++) {
+                var px = points[i][0];
+                var py = points[i][1];
+        
+                minx = min(minx, px);
+                maxx = max(maxx, px);
+                miny = min(miny, py);
+                maxy = max(maxy, py);
+            }
+        
+            //return [minx, miny, maxx, maxy];
+            return collision_rectangle(minx, miny, maxx, maxy, _other, false, true);
+        } else {
+            
+        }
+    }
+    
+    draw = function(_host) {
+
+        //draw_circle(_inst.x, _inst.y, 3, false);
+        draw_circle(pivot_x, pivot_y, 2, false);
+        draw_arrow(_host.x, _host.y, pivot_x, pivot_y, 2);
+        
+        for (var i = 0; i < 4; i++) {
+            var j = (i + 1) mod 4;
+            draw_line(points[i][0], points[i][1], points[j][0], points[j][1]);
+        }
     }
 }
 

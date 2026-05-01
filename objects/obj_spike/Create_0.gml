@@ -63,12 +63,8 @@ down = function() {
     }
 }
 
-doEffect = function(_other) {
+onPlayerCollide = function(_other) {
     if (DEBUG) show_debug_message($"doEffect({_other.id})");
-    if (!is_on || paused) {
-        if (DEBUG) show_debug_message($"exit1");
-        exit;
-    }
     
     if (state >= State_DOWN-1 /*|| state == State_DOWN*/) {
         if (DEBUG) show_debug_message($"exit2");

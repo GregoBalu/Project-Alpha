@@ -22,11 +22,11 @@ getBuffData = function(_othr) {
 
 hitboxes_len = image_number;
 hitboxes = array_create(hitboxes_len, undefined);
-hitboxes[2] = new Hitbox(x, y, 8, 10, 26, 19);
-hitboxes[3] = new Hitbox(x, y, 8, 7, 43, 22);
-hitboxes[4] = new Hitbox(x, y, 8, 7, 43, 22);
-hitboxes[5] = new Hitbox(x, y, 21, 7, 43, 21);
-hitboxes[6] = new Hitbox(x, y, 32, 11, 39, 19);
+hitboxes[2] = new Hitbox(self, 8, 10, 26, 19);
+hitboxes[3] = new Hitbox(self, 8, 7, 43, 22);
+hitboxes[4] = new Hitbox(self, 8, 7, 43, 22);
+hitboxes[5] = new Hitbox(self, 21, 7, 43, 21);
+hitboxes[6] = new Hitbox(self, 32, 11, 39, 19);
 
 
 

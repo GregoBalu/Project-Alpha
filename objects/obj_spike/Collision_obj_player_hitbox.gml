@@ -1,2 +1,0 @@
-
-doEffect(other);

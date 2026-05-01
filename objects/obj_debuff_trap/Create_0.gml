@@ -11,7 +11,18 @@ function applyEffect(_buff_obj, _buff_data) {
 
 getBuffData = function(_othr) {};
 
-hitboxes = [];
-hitboxes_len = 0;
+onPlayerCollide = function() {
+    for (var _i = 0; _i < ds_list_size(debuffedTargets); _i++)
+    {
+        if ( instance_exists(debuffedTargets[|_i].effect) && 
+                debuffedTargets[|_i].effect.targetObject == obj_player) {
+            return;
+        }
+    }
+
+    var _buff_data = getBuffData(obj_player);
+    applyEffect(_buff_data.obj, _buff_data.data);
+}
+
 
 alarm[0] = (start_delay_seconds + 1) * TIME_SECOND;

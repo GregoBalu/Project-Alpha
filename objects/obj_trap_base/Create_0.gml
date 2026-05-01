@@ -10,5 +10,11 @@ checkPlayerTooFar = function() {
     
     alarm[11] = random_range(1.5, 2.5)*TIME_SECOND;
 }
+onPlayerCollide = function() {
+    //override me
+}
 
 checkPlayerTooFar();
+
+hitboxes = [];
+hitboxes_len = 0;

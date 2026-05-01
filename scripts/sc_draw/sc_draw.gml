@@ -508,7 +508,7 @@ function resize_to(_size)
 {
     if (sprite_width != _size && sprite_height != _size) {
         
-        var _ratio = min(_size/sprite_width, _size/sprite_height);
+        var _ratio = min(_size/sprite_get_width(sprite_index), _size/sprite_get_height(sprite_index));
         image_xscale = _ratio;
         image_yscale = _ratio;
         

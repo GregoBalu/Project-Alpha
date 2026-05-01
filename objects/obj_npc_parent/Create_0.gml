@@ -2,6 +2,7 @@ event_inherited();
 
 enum NPCAlarms { Wandering_Update = 1, CheckPlayerDistance = 11 };
 
+
 input_key = global.input_talk;
 can_talk = false;
 
@@ -18,20 +19,6 @@ wander_origin_y = ystart;
 
 alarm[NPCAlarms.Wandering_Update] = random_range(TIME_SECOND, 2*TIME_SECOND);
 
-checkPlayerTooFar = function() {
-    
-    if (distance_to_object(obj_player) > camera_get_view_width(obj_player.camera.cam)) {
-        paused = true;
-        visible = false;
-    } else {
-        paused = false;
-        visible = true;
-    }
-    
-    alarm[NPCAlarms.CheckPlayerDistance] = random_range(1.5, 2.5)*TIME_SECOND;
-}
-
-checkPlayerTooFar();
 
 npc_move_towards_point = function(_target_x, _target_y) {
     var _hor = clamp(_target_x - x, -1, 1);

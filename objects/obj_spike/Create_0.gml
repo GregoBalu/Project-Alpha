@@ -88,3 +88,10 @@ onPlayerCollide = function(_other) {
     spawn_blood_on(obj_player);
     alarm[3] = 0.2 * TIME_SECOND;
 }
+onPauseChanged = function() {
+    if (afterPauseUp) {
+        up();
+    } else {
+        down();
+    }
+}

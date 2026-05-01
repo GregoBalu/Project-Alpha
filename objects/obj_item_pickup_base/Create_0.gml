@@ -3,6 +3,7 @@
 
 init_localisation();
 
+paused = false;
 can_pickup = false;
 _pickupText = $"+1 {getText("Item_pickup")}";
 _pickupColor = c_orange;
@@ -40,11 +41,15 @@ onPickup = function(othr) {
 checkPlayerTooFar = function() {
     
     if (distance_to_object(obj_player) > camera_get_view_width(obj_player.camera.cam)) {
-        paused = true;
-        visible = false;
+        if (!paused) {
+            paused = true;
+            visible = false;
+        }
     } else {
-        paused = false;
-        visible = true;
+        if (paused) {
+            paused = false;
+            visible = true;
+        }
     }
     
     alarm[11] = random_range(1.5, 2.5)*TIME_SECOND;

@@ -103,7 +103,7 @@ Kritikus találat esélye: -{1}%"
 "Item_plate_armor_name","Plate Armor","Lemez páncél"
 "Item_plate_armor_desc","A heavy plate armor.
 Defense: +{0}
-Életszívás: -{1}","Egy nehéz mellvért páncél.
+Lifesteal: -{1}","Egy nehéz mellvért páncél.
 Védelem: +{0}
 Életszívás: -{1}"
 

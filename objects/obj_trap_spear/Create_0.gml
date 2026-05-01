@@ -112,3 +112,10 @@ onPlayerCollide = function() {
 		alarm[Alarm_Damage_CD] = 0.2 * TIME_SECOND;
 	}
 }
+onPauseChanged = function() {
+    if (afterPauseUp) {
+        extend();
+    } else {
+        retract();
+    }
+}

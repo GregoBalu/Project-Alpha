@@ -1,0 +1,1 @@
+show_debug_message($"NPC dead {object_index} {id}");

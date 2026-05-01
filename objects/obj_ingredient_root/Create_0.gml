@@ -1,7 +1,7 @@
 // Inherit the parent event
 event_inherited();
 
-healing_amount = 6;
+healing_amount = clamp(obj_player.hp_total/2, 6, 15);
 
 resize_to(Loot_Size);
 

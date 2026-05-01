@@ -4,6 +4,7 @@ state = FishState.PreBait;
 bait = noone;
 fish = noone;
 target = noone;
+fish_time = 0;
 
 room_margin = 8;
 
@@ -27,6 +28,7 @@ fishBaited = function() {
     target = instance_create_layer(random_range(16, room_width-16), random_range(16, room_height-16), "Instances", obj_fish_target);
     
     state = FishState.PreDrop;
+    fish_time = 0;
     
     alarm[2] = random_range(1, 4)*TIME_SECOND;
 }

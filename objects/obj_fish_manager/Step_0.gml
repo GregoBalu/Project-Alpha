@@ -8,4 +8,6 @@ if (state == FishState.PreBait) {
         });
         state = FishState.PostBait;
     }
+} else if (state == FishState.PreDrop) {
+    fish_time++;
 }

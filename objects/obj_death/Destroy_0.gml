@@ -1,1 +1,1 @@
-show_debug_message("Death instance destroyed");
+//show_debug_message("Death instance destroyed");

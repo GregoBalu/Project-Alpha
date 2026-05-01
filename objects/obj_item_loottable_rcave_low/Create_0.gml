@@ -14,7 +14,7 @@ table.add_entry(5, new ItemDrop(obj_item_pickup_inventory_base, {
 }, true, true));
 
 
-function generate_loot(_x, _y, _layer) {
+generate_loot = function(_x, _y, _layer) {
     
     show_debug_message("generate_loot(rcave_low)");
         

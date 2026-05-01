@@ -1,1 +1,1 @@
-show_debug_message($"Room switcher End: {id}, {room}");
+//show_debug_message($"Room switcher End: {id}, {room}");

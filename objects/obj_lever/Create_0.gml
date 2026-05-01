@@ -1,6 +1,8 @@
 // Inherit the parent event
 event_inherited();
 
+checkPlayerTooFar = function() {}
+
 image_speed = 0;
 
 if (!instance_exists(activate_inst)) {

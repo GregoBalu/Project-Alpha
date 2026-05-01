@@ -1,3 +1,5 @@
+// Inherit the parent event
+event_inherited();
 
 damaged_recently = false;
 can_start = true;

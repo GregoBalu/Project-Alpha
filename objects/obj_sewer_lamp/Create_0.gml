@@ -1,3 +1,6 @@
+// Inherit the parent event
+event_inherited();
+
 is_on = false;
 glow_obj = noone;
 

@@ -1,3 +1,6 @@
+// Inherit the parent event
+event_inherited();
+
 prev_frame_collision = false;
 cd_to_teleport = 0;
 teleport_at_frames = 2.0*TIME_SECOND;

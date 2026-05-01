@@ -1,3 +1,6 @@
+// Inherit the parent event
+event_inherited();
+
 explosion_id = -1;
 audio_id = -1;
 collision_list = ds_list_create();

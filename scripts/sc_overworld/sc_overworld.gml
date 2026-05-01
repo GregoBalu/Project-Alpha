@@ -100,9 +100,65 @@ function spawn_ghost(ok_tilemap, collision_tilemap) {
     return false;
 }
 
+function sat_project(points, ax, ay) {
+    var _min = points[0][0] * ax + points[0][1] * ay;
+    var _max = _min;
+
+    for (var i = 1; i < 4; i++) {
+        var p = points[i];
+        var proj = p[0] * ax + p[1] * ay;
+
+        _min = min(_min, proj);
+        _max = max(_max, proj);
+    }
+
+    return [_min, _max];
+}
+
+function sat_get_axis(p1, p2) {
+    var dx = p2[0] - p1[0];
+    var dy = p2[1] - p1[1];
+
+    // perpendicular (normal)
+    return [-dy, dx];
+}
+
+function sat_normalize(ax, ay) {
+    var len = sqrt(ax*ax + ay*ay);
+    return [ax / len, ay / len];
+}
+
+function collision_rectangle_in_rectangle(polyA, polyB) {
+
+    var polys = [polyA, polyB];
+
+    for (var p = 0; p < 2; p++) {
+
+        var poly = polys[p];
+
+        for (var i = 0; i < 4; i++) {
+
+            var j = (i + 1) mod 4;
+
+            var axis = sat_get_axis(poly[i], poly[j]);
+            axis = sat_normalize(axis[0], axis[1]);
+
+            var projA = sat_project(polyA, axis[0], axis[1]);
+            var projB = sat_project(polyB, axis[0], axis[1]);
+
+            // separation test
+            if (projA[1] < projB[0] || projB[1] < projA[0]) {
+                return false; // no collision
+            }
+        }
+    }
+
+    return true; // collision
+}
+
 function Hitbox(_inst, _x1, _y1, _x2, _y2) constructor
 {
-    show_debug_message($"object {_inst.object_index} id={_inst.id} pos={_inst.x},{_inst.y} ang={_inst.image_angle}");
+    //show_debug_message($"object {_inst.object_index} id={_inst.id} pos={_inst.x},{_inst.y} ang={_inst.image_angle}");
     hitbox_get_points = function(_inst, left, top, right, bottom) {
 
         var ang = _inst.image_angle;
@@ -124,7 +180,7 @@ function Hitbox(_inst, _x1, _y1, _x2, _y2) constructor
             //var ry = lx * sinA + ly * cosA;
             var rx = lx * cosA + ly * sinA;
             var ry = -lx * sinA + ly * cosA;
-            show_debug_message($"  rx={rx} ry={ry}");
+            //show_debug_message($"  rx={rx} ry={ry}");
     
             // translate to world
             return [ _inst.x + rx, _inst.y + ry ];
@@ -138,37 +194,49 @@ function Hitbox(_inst, _x1, _y1, _x2, _y2) constructor
         ];
     }
 
-    show_debug_message($"  {_x1},{_y1} {_x2},{_y2}");
+    //show_debug_message($"  {_x1},{_y1} {_x2},{_y2}");
     pivot_x = 0;
     pivot_y = 0;
     points = hitbox_get_points(_inst, _x1, _y1, _x2, _y2);
-    show_debug_message($"  points={points}");
-    fast = true;
+    //show_debug_message($"  points={points}");
+    fast_collision = ((_inst.image_angle mod 90) == 0);
     
     isColliding = function(_host, _other) {
         //return collision_rectangle(origin_x+left, origin_y+top, origin_x+right, origin_y+bottom, _other, false, true);
         
-        if (fast) {
-            var minx = points[0][0];
-            var maxx = minx;
-            var miny = points[0][1];
-            var maxy = miny;
-        
-            for (var i = 1; i < 4; i++) {
-                var px = points[i][0];
-                var py = points[i][1];
-        
-                minx = min(minx, px);
-                maxx = max(maxx, px);
-                miny = min(miny, py);
-                maxy = max(maxy, py);
-            }
-        
-            //return [minx, miny, maxx, maxy];
-            return collision_rectangle(minx, miny, maxx, maxy, _other, false, true);
+        if (fast_collision) {
+            return collision_bounding_box(_host, _other);
         } else {
-            
+            if (collision_bounding_box(_host, _other)) {
+                var otherPoints = [
+                    [_other.bbox_left, _other.bbox_top],
+                    [_other.bbox_right, _other.bbox_top],
+                    [_other.bbox_right, _other.bbox_bottom],
+                    [_other.bbox_left, _other.bbox_bottom]
+                ];
+                return collision_rectangle_in_rectangle(points, otherPoints);
+            }
+            return false;
         }
+    }
+    collision_bounding_box = function(_host, _other) {
+        var minx = points[0][0];
+        var maxx = minx;
+        var miny = points[0][1];
+        var maxy = miny;
+    
+        for (var i = 1; i < 4; i++) {
+            var px = points[i][0];
+            var py = points[i][1];
+    
+            minx = min(minx, px);
+            maxx = max(maxx, px);
+            miny = min(miny, py);
+            maxy = max(maxy, py);
+        }
+    
+        //return [minx, miny, maxx, maxy];
+        return collision_rectangle(minx, miny, maxx, maxy, _other, false, true);
     }
     
     draw = function(_host) {

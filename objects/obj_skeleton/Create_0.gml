@@ -1,3 +1,6 @@
+// Inherit the parent event
+event_inherited();
+
 image_speed = 0;
 
 if (!instance_exists(activate_inst)) {

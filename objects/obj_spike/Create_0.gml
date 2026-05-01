@@ -1,4 +1,5 @@
-
+// Inherit the parent event
+event_inherited();
 
 #macro State_UP 0
 #macro State_DOWN 7

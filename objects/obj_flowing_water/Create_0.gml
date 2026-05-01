@@ -1,3 +1,6 @@
+// Inherit the parent event
+event_inherited();
+
 is_in_use = false;
 boost_percent = 0;
 

@@ -1,3 +1,5 @@
+// Inherit the parent event
+event_inherited();
 
 is_plugged = false;
 plugged_by = noone;

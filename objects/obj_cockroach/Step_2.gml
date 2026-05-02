@@ -1,0 +1,1 @@
+image_angle = point_direction(target_x, target_y, x, y)+90;

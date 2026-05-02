@@ -22,19 +22,12 @@ particle_emitter_interval_quicken = false;
 part_system_position(particle_system, x, y);
 part_emitter_enable(particle_system, part_emitter, true);
 
-follow_target = noone;
-set_follow_target = function(_target) {
-    follow_target = _target;
+onFollowTarget = function() {
     if (follow_target != noone) {
         show_eye = true;
-        do_wander = false;
-        alarm[NPCAlarms.Wandering_Update] = 0;
+        
     } else {
         show_eye = false;
-        do_wander = true;
-        wander_origin_x = x;
-        wander_origin_y = y;
-        alarm[NPCAlarms.Wandering_Update] = TIME_SECOND;
     }
 }
 

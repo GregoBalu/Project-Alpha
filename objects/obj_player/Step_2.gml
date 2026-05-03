@@ -3,6 +3,7 @@
 
 with (obj_entity_base)
 {
+    if (!do_depth_shift) continue;
     if (distance_to_object(obj_player) > 24) continue;
    // depth = layer_get_depth("Instances") - bbox_bottom;
     if (bbox_bottom > other.bbox_bottom) {

@@ -1,4 +1,5 @@
-draw_self();
+//draw_self();
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, sprite_angle, image_blend, image_alpha);
 
 if (DEBUG) {
     draw_set_colour(c_red);

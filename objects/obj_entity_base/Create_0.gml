@@ -6,6 +6,8 @@ if (!debug_mode) DEBUG = false;
 
 immobilized = false;
 
+do_depth_shift = true;
+
 orientation = Orientation.DOWN;
 
 collision_tilemaps = [layer_tilemap_get_id("Tiles_Col_Invis"), layer_tilemap_get_id("Tiles_Col")];

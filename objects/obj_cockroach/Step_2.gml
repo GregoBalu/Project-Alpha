@@ -1,1 +1,4 @@
-image_angle = point_direction(target_x, target_y, x, y)+90;
+
+if (!immobilized) {
+    sprite_angle = point_direction(x, y, target_x, target_y)-90;
+}

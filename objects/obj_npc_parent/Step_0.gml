@@ -31,7 +31,7 @@ if (can_talk) {
     talk_index = talk_index mod 5;
 }
 
-if (do_wander) {
+if (do_wander && !immobilized) {
 
     npc_move_towards_point(target_x, target_y);
 

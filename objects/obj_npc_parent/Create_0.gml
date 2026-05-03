@@ -21,6 +21,8 @@ alarm[NPCAlarms.Wandering_Update] = random_range(TIME_SECOND, 2*TIME_SECOND);
 
 
 npc_move_towards_point = function(_target_x, _target_y) {
+    if (immobilized) return;
+    
     var _hor = clamp(_target_x - x, -1, 1);
     var _ver = clamp(_target_y - y, -1, 1);
     

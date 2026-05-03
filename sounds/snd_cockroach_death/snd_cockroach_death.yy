@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_cockroach_death",
+  "audioGroupId":{
+    "name":"ag_sfx",
+    "path":"audiogroups/ag_sfx",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.6501587,
+  "exportDir":"",
+  "name":"snd_cockroach_death",
+  "parent":{
+    "name":"cockroach",
+    "path":"folders/Sounds/npcs/cockroach.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_cockroach_death.wav",
+  "volume":1.0,
+}

@@ -24,13 +24,17 @@ npc_move_towards_point = function(_target_x, _target_y) {
     if (immobilized) return;
     
     var _hor = clamp(_target_x - x, -1, 1);
+    if (abs(_hor) < 0.01) _hor = 0;
     var _ver = clamp(_target_y - y, -1, 1);
+    if (abs(_ver) < 0.01) _ver = 0;
     
     if (_hor != 0 || _ver != 0) {
         var colls = array_concat(collision_tilemaps, [obj_enemy_base]);
         move_and_collide(_hor * move_speed, _ver * move_speed, colls, undefined, undefined, undefined, move_speed, move_speed);
         MOVING = true;
+        if (DEBUG) show_debug_message($"NPC Move {_hor} {_ver}");
     } else {
         MOVING = false;
+        if (DEBUG) show_debug_message("NPC Stopped");
     }
 }

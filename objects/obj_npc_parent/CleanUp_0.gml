@@ -1,1 +1,1 @@
-show_debug_message($"NPC dead {object_index} {id}");
+if (DEBUG) show_debug_message($"NPC dead {object_index} {id}");

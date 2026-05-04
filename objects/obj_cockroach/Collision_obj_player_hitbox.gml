@@ -13,6 +13,7 @@ if (right > left && bottom > top)
     if (overlap_area >= my_area * 0.5)
     {
         // 50% or more overlap
+        if (DEBUG) show_debug_message("Cockroach stepped on, dead");
         immobilized = true;
         sprite_index = spr_cockroach_dead;
         audio_stop_sound(audio);

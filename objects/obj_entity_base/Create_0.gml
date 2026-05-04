@@ -2,7 +2,7 @@ default_move_speed = move_speed;
 default_depth = depth;
 MOVING = false;
 
-if (!debug_mode) DEBUG = false;
+//if (!debug_mode) DEBUG = false;
 
 immobilized = false;
 

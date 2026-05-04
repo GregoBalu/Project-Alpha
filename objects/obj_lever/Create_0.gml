@@ -3,6 +3,10 @@ event_inherited();
 
 checkPlayerTooFar = function() {}
 
+paused = false;
+visible = true;
+onPauseChanged();
+
 image_speed = 0;
 
 if (!instance_exists(activate_inst)) {

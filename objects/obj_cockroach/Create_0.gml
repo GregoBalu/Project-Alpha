@@ -11,3 +11,5 @@ depth = obj_player.depth+1;
 
 audio_falloff_set_model(audio_falloff_exponent_distance);
 audio = audio_play_sound_at(snd_cockroach_scurry, x, y, 0, 32, 48, 1, false, AUDIO_PRIO_EFFECTS, 1, 0, random_range(0.9, 1.1));
+
+level = 1;

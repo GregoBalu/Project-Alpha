@@ -1,4 +1,5 @@
 checkPlayerTooFar = function() {
+    if (!optimize) exit;
     
     if (distance_to_object(obj_player) > camera_get_view_width(obj_player.camera.cam)*2) {
         if (!paused) {

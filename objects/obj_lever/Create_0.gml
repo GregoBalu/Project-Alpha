@@ -1,8 +1,6 @@
 // Inherit the parent event
 event_inherited();
 
-checkPlayerTooFar = function() {}
-
 paused = false;
 visible = true;
 onPauseChanged();

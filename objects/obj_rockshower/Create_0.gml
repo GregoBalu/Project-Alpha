@@ -6,8 +6,6 @@ damage_cooldown = 0;
 image_fps = sprite_get_speed(sprite_index);
 original_image_speed = image_speed;
 
-checkPlayerTooFar = function() {}
-
 round_time_ticks = (image_number/ image_fps)*TIME_SECOND;
 if (DEBUG) show_debug_message($"round_time_ticks={round_time_ticks}")
 

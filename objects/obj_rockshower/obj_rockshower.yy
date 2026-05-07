@@ -9,7 +9,9 @@
   ],
   "managed":true,
   "name":"obj_rockshower",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_trap_base","path":"objects/obj_trap_base/obj_trap_base.yy",},"propertyId":{"name":"optimize","path":"objects/obj_trap_base/obj_trap_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"False",},
+  ],
   "parent":{
     "name":"Traps",
     "path":"folders/Objects/Traps.yy",

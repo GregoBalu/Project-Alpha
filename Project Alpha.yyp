@@ -658,6 +658,7 @@
     {"id":{"name":"spr_statue_broom","path":"sprites/spr_statue_broom/spr_statue_broom.yy",},},
     {"id":{"name":"spr_statue_flame_holder","path":"sprites/spr_statue_flame_holder/spr_statue_flame_holder.yy",},},
     {"id":{"name":"spr_steam_emitter","path":"sprites/spr_steam_emitter/spr_steam_emitter.yy",},},
+    {"id":{"name":"spr_sunray","path":"sprites/spr_sunray/spr_sunray.yy",},},
     {"id":{"name":"spr_sword_of_misery","path":"sprites/spr_sword_of_misery/spr_sword_of_misery.yy",},},
     {"id":{"name":"spr_table","path":"sprites/spr_table/spr_table.yy",},},
     {"id":{"name":"spr_talent_cost_0","path":"sprites/spr_talent_cost_0/spr_talent_cost_0.yy",},},

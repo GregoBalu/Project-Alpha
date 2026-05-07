@@ -17,6 +17,7 @@ original_image_angle = inst_id.image_angle;
 
 On = function(_inst_id) {
     inst_id.force = new_force;
+    inst_id.current_force = new_force;
     inst_id.force_direction = new_force_dir;
     inst_id.force_boost_delay_sec = new_force_boost_delay_sec;
     inst_id.force_boost = new_force_boost;
@@ -25,6 +26,7 @@ On = function(_inst_id) {
 };
 Off = function(_inst_id) {
     inst_id.force = original_force;
+    inst_id.current_force = original_force;
     inst_id.force_direction = original_dir;
     inst_id.force_boost_delay_sec = original_boost_delay;
     inst_id.force_boost = original_force_boost;

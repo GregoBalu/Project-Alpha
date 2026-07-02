@@ -7,3 +7,6 @@ audio_play_sound(snd_firetoad_lick, AUDIO_PRIO_NOISE, false, 1.0, 0, rr);*/
 //hp++;
 
 addToInventory(obj_sword_of_misery, InventorySlots.Slot1);
+addToInventory(obj_helm_of_horns, InventorySlots.Slot1);
+addToInventory(obj_ring_of_sorrow, InventorySlots.Slot1);
+addToInventory(obj_cane_of_wisdom, InventorySlots.Slot1);

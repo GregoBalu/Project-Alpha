@@ -3,6 +3,10 @@ enum InventorySlots { Slot1, Slot2, Slot3, Slot4, Slot5 };
 
 enum EquipSlot { Armor, Helmet, Ring, Weapon };
 
+function canItemEquipTo(_item, _equipSlot) {
+    return _item.equip_slot == _equipSlot;
+}
+
 
 function RDObject(_id, _uniq = false, _enab = true) constructor {
     

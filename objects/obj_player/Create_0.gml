@@ -166,7 +166,28 @@ addToInventory = function(_obj, _slot = InventorySlots.Slot1) {
     ds_map_add(inventory, _slot, _inst);
     return true;
 }
-
+/**
+ * Try to swap items in player inventory
+ * @param {Asset.InventorySlots} _slot1 Slot to change from
+ * @param {Asset.InventorySlots} _slot2 Slot to change to
+ * @returns {bool} True if item is swapped.
+ */
+swapInventory = function(_slot1, _slot2) {
+    var _existItem1 = ds_map_exists(inventory, _slot1);
+    var _existItem2 = ds_map_exists(inventory, _slot2);
+    if (_existItem1 && _existItem2) {
+        var _temp = inventory[?_slot1];
+        inventory[?_slot1] = inventory[?_slot2]
+        inventory[?_slot2] = _temp;
+    } else if (_existItem1) {
+        ds_map_add(inventory, _slot2, inventory[?_slot1]);
+        ds_map_delete(inventory, _slot1);
+    } else {
+        ds_map_add(inventory, _slot1, inventory[?_slot2]);
+        ds_map_delete(inventory, _slot2);
+    }
+    return true;
+}
 
 /**
  * Try to remove item from inventory slot
@@ -183,6 +204,18 @@ removeFromInventory = function(_slot) {
     } else {
         return noone;
     }
+}
+
+canItemEquipTo = function(_invSlot, _equipSlot) {
+    if (!ds_map_exists(inventory, _invSlot)) {
+        return false;
+    }
+    
+    if (!inventory[?_invSlot].is_equipable) {
+        return false;
+    }
+    
+    return inventory[?_invSlot].equip_slot == _equipSlot;
 }
 
 equipItem = function(_fromInventorySlot) {
@@ -209,13 +242,15 @@ equipItem = function(_fromInventorySlot) {
     equipped_items[?_eq_slot].equip();
 }
 
-unequipItem = function(_equipSlot) {
+unequipItem = function(_equipSlot, _preferredInvSlot = undefined) {
     if (!ds_map_exists(equipped_items, _equipSlot)) {
         return false;
     }
     
     var _invSlot = undefined;
-    if (!ds_map_exists(inventory, InventorySlots.Slot1)) {
+    if (_preferredInvSlot != undefined && !ds_map_exists(inventory, _preferredInvSlot)) {
+        _invSlot = _preferredInvSlot;
+    } else if (!ds_map_exists(inventory, InventorySlots.Slot1)) {
         _invSlot = InventorySlots.Slot1;
     } else if (!ds_map_exists(inventory, InventorySlots.Slot2)) {
         _invSlot = InventorySlots.Slot2;
@@ -232,6 +267,11 @@ unequipItem = function(_equipSlot) {
     equipped_items[?_equipSlot].unequip();
     inventory[?_invSlot] = equipped_items[?_equipSlot];
     ds_map_delete(equipped_items, _equipSlot);
+    
+    if (_preferredInvSlot != undefined && _invSlot != _preferredInvSlot) {
+        swapInventory(_invSlot, _preferredInvSlot);
+    }
+    
     return true;
 }
 

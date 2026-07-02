@@ -27,6 +27,10 @@ coins_hint = getText("Coins_hint");
 symbols_hint = getText("Symbols_hint");
 keyring_hint = getText("Keyring_hint");
 
+_draggingItem = false;
+_dragSlotFromInventory = undefined;
+_dragSlotFromEquipment = undefined;
+
 openingSoundId = undefined;
 
 #macro mouse_gui_x device_mouse_x_to_gui(0)

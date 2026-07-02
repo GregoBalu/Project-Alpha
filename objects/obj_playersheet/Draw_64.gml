@@ -193,17 +193,44 @@ if (is_visible) {
         draw_sprite_stretched_ext(spr_human_mesh, 0, _invX, _invY-4, _invSlotW*4, _invSlotH*4, c_gray, 0.75);
         
         function drawArmorSlot(_slot, _x, _y, _w, _h, _margin) {
-            draw_sprite_stretched_ext(spr_gui_slot, 0, _x, _y , _w, _h, #C0C0C0, 1);
+            //draw_sprite_stretched_ext(spr_gui_slot, 0, _x, _y , _w, _h, #C0C0C0, 1);
+            if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _x, _y, _x+_w, _y+_h)) {
+                if (_draggingItem && mouse_check_button_released(mb_left)) {
+                    if (_dragSlotFromEquipment == _slot) {
+                        //skip, cannot swap with itself
+                    } else if (_dragSlotFromInventory != undefined && obj_player.canItemEquipTo(_dragSlotFromInventory, _slot)) {
+                        obj_player.equipItem(_dragSlotFromInventory);
+                    } else if (_dragSlotFromEquipment != undefined) {
+                        //skip, cannot swap a helmet with armor
+                    }
+                    _draggingItem = false;
+                    _dragSlotFromInventory = undefined;
+                    _dragSlotFromEquipment = undefined;
+                }
+            }
+            
             if (ds_map_exists(obj_player.equipped_items, _slot) ) {
                 //show_debug_message($"Draw {_slot} slot");
-                draw_sprite_stretched(obj_player.equipped_items[?_slot].sprite_index, 
+                if (_draggingItem && _dragSlotFromEquipment == _slot) {
+                    draw_sprite_stretched(obj_player.equipped_items[?_slot].sprite_index, 
+                        obj_player.equipped_items[?_slot].image_index, 
+                        mouse_gui_x, mouse_gui_y, _w -(2*_margin), _h-(2*_margin));
+                } else {
+                    draw_sprite_stretched(obj_player.equipped_items[?_slot].sprite_index, 
                         obj_player.equipped_items[?_slot].image_index, 
                         _x + _margin, _y + _margin, _w -(2*_margin), _h-(2*_margin));
+                }
+                
                 if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _x, _y, _x+_w, _y+_h)) {
-                    if (mouse_check_button_pressed(mb_right)) {
+                    if (!_draggingItem && mouse_check_button_pressed(mb_right)) {
                         obj_player.unequipItem(_slot);
                         return undefined;
-                    }
+                    } else if (!_draggingItem && mouse_check_button_pressed(mb_left)) {
+                        _draggingItem = true;
+                        _dragSlotFromEquipment = _slot;
+                        _dragSlotFromInventory = undefined;
+                        return undefined;
+                    } else if (_draggingItem) return undefined;
                     var _hint_x = clamp(mouse_gui_x, _x+_margin, _x+_w-_margin);
                     var _halign = fa_left;
                     if (_hint_x > display_get_gui_width()/2) {
@@ -222,18 +249,20 @@ if (is_visible) {
             }
             return undefined;
         }
-        var _hint_data = {};
-        _hint_data = drawArmorSlot(EquipSlot.Helmet, _invX+_invSlotW*1.5, _invY, _invSlotW, _invSlotH, 2);
-        //draw_sprite_stretched_ext(spr_gui_slot, 0, _invX+_invSlotW*1.5, _invY, _invSlotW, _invSlotH, #C0C0C0, 1);
-    
-        _hint_data = drawArmorSlot(EquipSlot.Armor, _invX+_invSlotW*1.5, _invY+(_invSlotW+_invGap)*2, _invSlotW, _invSlotH, 2) ?? _hint_data;
-        //draw_sprite_stretched_ext(spr_gui_slot, 0, _invX+_invSlotW*1.5, _invY+(_invSlotW+_invGap)*2, _invSlotW, _invSlotH, #C0C0C0, 1);
         
+        var _gui_slot_color = #C0C0C0;
+        
+        var _hint_data = {};
+        var _helmet_pos = new Vec2(_invX+_invSlotW*1.5, _invY);
+        var _equip_size = new Vec2(_invSlotW, _invSlotH);
+        var _armor_pos = new Vec2(_invX+_invSlotW*1.5, _invY+(_invSlotW+_invGap)*2);
         _invY+=(_invGap+_invSlotH)*2;
-        _hint_data = drawArmorSlot(EquipSlot.Ring, _invX, _invY, _invSlotW, _invSlotH, 2) ?? _hint_data;
-        //draw_sprite_stretched_ext(spr_gui_slot, 0, _invX, _invY, _invSlotW, _invSlotH, #C0C0C0, 1);
-        _hint_data = drawArmorSlot(EquipSlot.Weapon, _invX + (_invSlotW)*3, _invY, _invSlotW, _invSlotH, 2) ?? _hint_data;
-        //draw_sprite_stretched_ext(spr_gui_slot, 0, _invX + (_invSlotW)*3, _invY, _invSlotW, _invSlotH, #C0C0C0, 1);
+        var _ring_pos = new Vec2(_invX, _invY);
+        var _weapon_pos = new Vec2(_invX + (_invSlotW)*3, _invY);
+        draw_sprite_stretched_ext(spr_gui_slot, 0, _helmet_pos.x, _helmet_pos.y, _equip_size.x, _equip_size.y, (_draggingItem && _dragSlotFromInventory!= undefined && obj_player.canItemEquipTo(_dragSlotFromInventory, EquipSlot.Helmet))?#FFFFFF:_gui_slot_color, 1);
+        draw_sprite_stretched_ext(spr_gui_slot, 0, _armor_pos.x, _armor_pos.y, _equip_size.x, _equip_size.y, (_draggingItem && _dragSlotFromInventory!= undefined && obj_player.canItemEquipTo(_dragSlotFromInventory, EquipSlot.Armor))?#FFFFFF:_gui_slot_color, 1);
+        draw_sprite_stretched_ext(spr_gui_slot, 0, _ring_pos.x, _ring_pos.y, _equip_size.x, _equip_size.y, (_draggingItem && _dragSlotFromInventory!= undefined && obj_player.canItemEquipTo(_dragSlotFromInventory, EquipSlot.Ring))?#FFFFFF:_gui_slot_color, 1);
+        draw_sprite_stretched_ext(spr_gui_slot, 0, _weapon_pos.x, _weapon_pos.y, _equip_size.x, _equip_size.y, (_draggingItem && _dragSlotFromInventory!= undefined && obj_player.canItemEquipTo(_dragSlotFromInventory, EquipSlot.Weapon))?#FFFFFF:_gui_slot_color, 1);
         
         _invY += _invSlotH + _invSlotH + _invGap;
         _invSlotW = 16;
@@ -241,18 +270,67 @@ if (is_visible) {
         _invGap = 2;
         var _invItemMargin = 2;
         
+        _gui_slot_color = #C0C0C0;
+        if (_draggingItem && _dragSlotFromEquipment != undefined) {
+            _gui_slot_color = #FFFFFF;
+        }
+        
+        var _inv_size = new Vec2(_invSlotW, _invSlotH);
+        var _1_pos = new Vec2(_invX + _invGap, _invY);
+        var _2_pos = new Vec2(_invX + _invGap+(_invGap + _invSlotW), _invY);
+        var _3_pos = new Vec2(_invX + _invGap+(_invGap + _invSlotW)*2, _invY);
+        var _4_pos = new Vec2(_invX + _invGap+(_invGap + _invSlotW)*3, _invY);
+        var _5_pos = new Vec2(_invX + _invGap+(_invGap + _invSlotW)*4, _invY);
+        draw_sprite_stretched_ext(spr_gui_slot, 0, _1_pos.x, _1_pos.y , _inv_size.x, _inv_size.y, _gui_slot_color, 1);
+        draw_sprite_stretched_ext(spr_gui_slot, 0, _2_pos.x, _2_pos.y , _inv_size.x, _inv_size.y, _gui_slot_color, 1);
+        draw_sprite_stretched_ext(spr_gui_slot, 0, _3_pos.x, _3_pos.y , _inv_size.x, _inv_size.y, _gui_slot_color, 1);
+        draw_sprite_stretched_ext(spr_gui_slot, 0, _4_pos.x, _4_pos.y , _inv_size.x, _inv_size.y, _gui_slot_color, 1);
+        draw_sprite_stretched_ext(spr_gui_slot, 0, _5_pos.x, _5_pos.y , _inv_size.x, _inv_size.y, _gui_slot_color, 1);
+        
+        
+        _hint_data = drawArmorSlot(EquipSlot.Helmet, _helmet_pos.x, _helmet_pos.y, _equip_size.x, _equip_size.y, 2);
+        _hint_data = drawArmorSlot(EquipSlot.Armor, _armor_pos.x, _armor_pos.y, _equip_size.x, _equip_size.y, 2) ?? _hint_data;
+        _hint_data = drawArmorSlot(EquipSlot.Ring, _ring_pos.x, _ring_pos.y, _equip_size.x, _equip_size.y, 2) ?? _hint_data;
+        _hint_data = drawArmorSlot(EquipSlot.Weapon, _weapon_pos.x, _weapon_pos.y, _equip_size.x, _equip_size.y, 2) ?? _hint_data;
+        
         function drawInventorySlot(_slot, _x, _y, _w, _h, _margin) {
-            draw_sprite_stretched_ext(spr_gui_slot, 0, _x, _y , _w, _h, #C0C0C0, 1);
+            //draw_sprite_stretched_ext(spr_gui_slot, 0, _x, _y , _w, _h, #C0C0C0, 1);
+            if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _x, _y, _x+_w, _y+_h)) {
+                if (_draggingItem && mouse_check_button_released(mb_left)) {
+                    if (_dragSlotFromInventory == _slot) {
+                        //skip, cannot swap with itself
+                    } else if (_dragSlotFromInventory != undefined) {
+                        obj_player.swapInventory(_dragSlotFromInventory, _slot);
+                    } else if (_dragSlotFromEquipment != undefined) {
+                        obj_player.unequipItem(_dragSlotFromEquipment, _slot);
+                    }
+                    _draggingItem = false;
+                    _dragSlotFromInventory = undefined;
+                    _dragSlotFromEquipment = undefined;
+                }
+            }
             if (ds_map_exists(obj_player.inventory, _slot) ) {
                 //show_debug_message($"Draw {_slot} slot");
-                draw_sprite_stretched(obj_player.inventory[?_slot].sprite_index, 
-                        obj_player.inventory[?_slot].image_index, 
-                        _x + _margin, _y + _margin, _w -(2*_margin), _h-(2*_margin));
+                if (_draggingItem && _dragSlotFromInventory == _slot) {
+                    draw_sprite_stretched(obj_player.inventory[?_slot].sprite_index, 
+                            obj_player.inventory[?_slot].image_index, 
+                            mouse_gui_x, mouse_gui_y, _w -(2*_margin), _h-(2*_margin));
+                } else {
+                    draw_sprite_stretched(obj_player.inventory[?_slot].sprite_index, 
+                            obj_player.inventory[?_slot].image_index, 
+                            _x + _margin, _y + _margin, _w -(2*_margin), _h-(2*_margin));
+                }
+                if (_draggingItem) return undefined;
                 if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _x, _y, _x+_w, _y+_h)) {
-                    if (mouse_check_button_pressed(mb_right)) {
+                    if (!_draggingItem && mouse_check_button_pressed(mb_right)) {
                         obj_player.equipItem(_slot);
                         return undefined;
-                    }
+                    } else if (!_draggingItem && mouse_check_button_pressed(mb_left)) {
+                        _draggingItem = true;
+                        _dragSlotFromInventory = _slot;
+                        _dragSlotFromEquipment = undefined;
+                        return undefined;
+                    } else if (_draggingItem) return undefined;
                     var _hint_x = clamp(mouse_gui_x, _x+_margin, _x+_w-_margin);
                     var _halign = fa_left;
                     if (_hint_x > display_get_gui_width()/2) {
@@ -272,11 +350,11 @@ if (is_visible) {
             return undefined;
         }
         
-        _hint_data = drawInventorySlot(InventorySlots.Slot1, _invX + _invGap, _invY, _invSlotW, _invSlotH, _invItemMargin) ?? _hint_data;
-        _hint_data = drawInventorySlot(InventorySlots.Slot2, _invX + _invGap+(_invGap + _invSlotW), _invY, _invSlotW, _invSlotH, _invItemMargin) ?? _hint_data;
-        _hint_data = drawInventorySlot(InventorySlots.Slot3, _invX + _invGap+(_invGap + _invSlotW)*2, _invY, _invSlotW, _invSlotH, _invItemMargin) ?? _hint_data;
-        _hint_data = drawInventorySlot(InventorySlots.Slot4, _invX + _invGap+(_invGap + _invSlotW)*3, _invY, _invSlotW, _invSlotH, _invItemMargin) ?? _hint_data;
-        _hint_data = drawInventorySlot(InventorySlots.Slot5, _invX + _invGap+(_invGap + _invSlotW)*4, _invY, _invSlotW, _invSlotH, _invItemMargin) ?? _hint_data;
+        _hint_data = drawInventorySlot(InventorySlots.Slot1, _1_pos.x, _1_pos.y, _inv_size.x, _inv_size.y, _invItemMargin) ?? _hint_data;
+        _hint_data = drawInventorySlot(InventorySlots.Slot2, _2_pos.x, _2_pos.y, _inv_size.x, _inv_size.y, _invItemMargin) ?? _hint_data;
+        _hint_data = drawInventorySlot(InventorySlots.Slot3, _3_pos.x, _3_pos.y, _inv_size.x, _inv_size.y, _invItemMargin) ?? _hint_data;
+        _hint_data = drawInventorySlot(InventorySlots.Slot4, _4_pos.x, _4_pos.y, _inv_size.x, _inv_size.y, _invItemMargin) ?? _hint_data;
+        _hint_data = drawInventorySlot(InventorySlots.Slot5, _5_pos.x, _5_pos.y, _inv_size.x, _inv_size.y, _invItemMargin) ?? _hint_data;
         
         //coins
         var _footer_x = _invX - _invGap*3 ;
@@ -356,5 +434,11 @@ if (is_visible) {
     if (_do_draw_hint) { 
         //show_debug_message($"_hint_data={_hint_data}, _do_draw_hint={_do_draw_hint}, hint={_draw_hint_data.hint}");
         draw_textbox_background(_draw_hint_data.hint_x, _draw_hint_data.hint_y, 64, 64, _draw_hint_data.hint, new BackgroundData(spr_hint_back, 0, 8), _draw_hint_data.halign, _draw_hint_data.valign, undefined, 0.6);
+    }
+    
+    if (mouse_check_button_released(mb_left)) {
+        _draggingItem = false;
+        _dragSlotFromInventory = undefined;
+        _dragSlotFromEquipment = undefined;
     }
 } 

@@ -253,16 +253,23 @@ if (is_visible) {
         var _gui_slot_color = #C0C0C0;
         
         var _hint_data = {};
-        var _helmet_pos = new Vec2(_invX+_invSlotW*1.5, _invY);
         var _equip_size = new Vec2(_invSlotW, _invSlotH);
+        var _hint_slot_ratio = 0.7;
+        var _hint_size = new Vec2(_invSlotW*_hint_slot_ratio, _invSlotH*_hint_slot_ratio);
+        var _hint_offset = new Vec2((_invSlotW-_hint_size.x)/2, (_invSlotH-_hint_size.y)/2);
+        var _helmet_pos = new Vec2(_invX+_invSlotW*1.5, _invY);
         var _armor_pos = new Vec2(_invX+_invSlotW*1.5, _invY+(_invSlotW+_invGap)*2);
         _invY+=(_invGap+_invSlotH)*2;
         var _ring_pos = new Vec2(_invX, _invY);
         var _weapon_pos = new Vec2(_invX + (_invSlotW)*3, _invY);
         draw_sprite_stretched_ext(spr_gui_slot, 0, _helmet_pos.x, _helmet_pos.y, _equip_size.x, _equip_size.y, (_draggingItem && _dragSlotFromInventory!= undefined && obj_player.canItemEquipTo(_dragSlotFromInventory, EquipSlot.Helmet))?#FFFFFF:_gui_slot_color, 1);
+        draw_sprite_stretched_ext(spr_gui_helmet_hint, 0, _helmet_pos.x+_hint_offset.x, _helmet_pos.y+_hint_offset.y, _hint_size.x, _hint_size.y, _gui_slot_color, 0.5);
         draw_sprite_stretched_ext(spr_gui_slot, 0, _armor_pos.x, _armor_pos.y, _equip_size.x, _equip_size.y, (_draggingItem && _dragSlotFromInventory!= undefined && obj_player.canItemEquipTo(_dragSlotFromInventory, EquipSlot.Armor))?#FFFFFF:_gui_slot_color, 1);
+        draw_sprite_stretched_ext(spr_gui_armor_hint, 0, _armor_pos.x+_hint_offset.x, _armor_pos.y+_hint_offset.y, _hint_size.x, _hint_size.y, _gui_slot_color, 0.5);
         draw_sprite_stretched_ext(spr_gui_slot, 0, _ring_pos.x, _ring_pos.y, _equip_size.x, _equip_size.y, (_draggingItem && _dragSlotFromInventory!= undefined && obj_player.canItemEquipTo(_dragSlotFromInventory, EquipSlot.Ring))?#FFFFFF:_gui_slot_color, 1);
+        draw_sprite_stretched_ext(spr_gui_ring_hint, 0, _ring_pos.x+_hint_offset.x, _ring_pos.y+_hint_offset.y, _hint_size.x, _hint_size.y, _gui_slot_color, 0.5);
         draw_sprite_stretched_ext(spr_gui_slot, 0, _weapon_pos.x, _weapon_pos.y, _equip_size.x, _equip_size.y, (_draggingItem && _dragSlotFromInventory!= undefined && obj_player.canItemEquipTo(_dragSlotFromInventory, EquipSlot.Weapon))?#FFFFFF:_gui_slot_color, 1);
+        draw_sprite_stretched_ext(spr_gui_weapon_hint, 0, _weapon_pos.x+_hint_offset.x, _weapon_pos.y+_hint_offset.y, _hint_size.x, _hint_size.y, _gui_slot_color, 0.5);
         
         _invY += _invSlotH + _invSlotH + _invGap;
         _invSlotW = 16;

@@ -69,10 +69,6 @@ if (is_visible) {
     }
     
     
-    
-    
-    
-    
     if (opening_state-32 > (_x + 64 + 2) ) {
         //divider
         draw_line_width_color(_x + 64, _y + 16, _x + 64, _y + _height - 16, 2, c_black, c_black);
@@ -214,7 +210,7 @@ if (is_visible) {
                 if (_draggingItem && _dragSlotFromEquipment == _slot) {
                     draw_sprite_stretched(obj_player.equipped_items[?_slot].sprite_index, 
                         obj_player.equipped_items[?_slot].image_index, 
-                        mouse_gui_x, mouse_gui_y, _w -(2*_margin), _h-(2*_margin));
+                        mouse_gui_x-_dragginRelPos.x, mouse_gui_y-_dragginRelPos.y, _w -(2*_margin), _h-(2*_margin));
                 } else {
                     draw_sprite_stretched(obj_player.equipped_items[?_slot].sprite_index, 
                         obj_player.equipped_items[?_slot].image_index, 
@@ -227,6 +223,8 @@ if (is_visible) {
                         return undefined;
                     } else if (!_draggingItem && mouse_check_button_pressed(mb_left)) {
                         _draggingItem = true;
+                        _dragginRelPos.x = mouse_gui_x - (_x+_margin);
+                        _dragginRelPos.y = mouse_gui_y - (_y+_margin);
                         _dragSlotFromEquipment = _slot;
                         _dragSlotFromInventory = undefined;
                         return undefined;
@@ -235,8 +233,9 @@ if (is_visible) {
                     var _halign = fa_left;
                     if (_hint_x > display_get_gui_width()/2) {
                         _halign = fa_right;
+                        _hint_x -= _margin;
                     } else {
-                        _hint_x += (_talentWidth+2);
+                        _hint_x += _margin;
                     }
                     return {
                         hint_x : _hint_x,
@@ -263,13 +262,21 @@ if (is_visible) {
         var _ring_pos = new Vec2(_invX, _invY);
         var _weapon_pos = new Vec2(_invX + (_invSlotW)*3, _invY);
         draw_sprite_stretched_ext(spr_gui_slot, 0, _helmet_pos.x, _helmet_pos.y, _equip_size.x, _equip_size.y, (_draggingItem && _dragSlotFromInventory!= undefined && obj_player.canItemEquipTo(_dragSlotFromInventory, EquipSlot.Helmet))?#FFFFFF:_gui_slot_color, 1);
-        draw_sprite_stretched_ext(spr_gui_helmet_hint, 0, _helmet_pos.x+_hint_offset.x, _helmet_pos.y+_hint_offset.y, _hint_size.x, _hint_size.y, _gui_slot_color, 0.5);
+        if (!ds_map_exists(obj_player.equipped_items, EquipSlot.Helmet)){
+            draw_sprite_stretched_ext(spr_gui_helmet_hint, 0, _helmet_pos.x+_hint_offset.x, _helmet_pos.y+_hint_offset.y, _hint_size.x, _hint_size.y, _gui_slot_color, 0.5);
+        }
         draw_sprite_stretched_ext(spr_gui_slot, 0, _armor_pos.x, _armor_pos.y, _equip_size.x, _equip_size.y, (_draggingItem && _dragSlotFromInventory!= undefined && obj_player.canItemEquipTo(_dragSlotFromInventory, EquipSlot.Armor))?#FFFFFF:_gui_slot_color, 1);
-        draw_sprite_stretched_ext(spr_gui_armor_hint, 0, _armor_pos.x+_hint_offset.x, _armor_pos.y+_hint_offset.y, _hint_size.x, _hint_size.y, _gui_slot_color, 0.5);
+        if (!ds_map_exists(obj_player.equipped_items, EquipSlot.Armor)){
+            draw_sprite_stretched_ext(spr_gui_armor_hint, 0, _armor_pos.x+_hint_offset.x, _armor_pos.y+_hint_offset.y, _hint_size.x, _hint_size.y, _gui_slot_color, 0.5);
+        }
         draw_sprite_stretched_ext(spr_gui_slot, 0, _ring_pos.x, _ring_pos.y, _equip_size.x, _equip_size.y, (_draggingItem && _dragSlotFromInventory!= undefined && obj_player.canItemEquipTo(_dragSlotFromInventory, EquipSlot.Ring))?#FFFFFF:_gui_slot_color, 1);
-        draw_sprite_stretched_ext(spr_gui_ring_hint, 0, _ring_pos.x+_hint_offset.x, _ring_pos.y+_hint_offset.y, _hint_size.x, _hint_size.y, _gui_slot_color, 0.5);
+        if (!ds_map_exists(obj_player.equipped_items, EquipSlot.Ring)){
+            draw_sprite_stretched_ext(spr_gui_ring_hint, 0, _ring_pos.x+_hint_offset.x, _ring_pos.y+_hint_offset.y, _hint_size.x, _hint_size.y, _gui_slot_color, 0.5);
+        }
         draw_sprite_stretched_ext(spr_gui_slot, 0, _weapon_pos.x, _weapon_pos.y, _equip_size.x, _equip_size.y, (_draggingItem && _dragSlotFromInventory!= undefined && obj_player.canItemEquipTo(_dragSlotFromInventory, EquipSlot.Weapon))?#FFFFFF:_gui_slot_color, 1);
-        draw_sprite_stretched_ext(spr_gui_weapon_hint, 0, _weapon_pos.x+_hint_offset.x, _weapon_pos.y+_hint_offset.y, _hint_size.x, _hint_size.y, _gui_slot_color, 0.5);
+        if (!ds_map_exists(obj_player.equipped_items, EquipSlot.Weapon)){
+            draw_sprite_stretched_ext(spr_gui_weapon_hint, 0, _weapon_pos.x+_hint_offset.x, _weapon_pos.y+_hint_offset.y, _hint_size.x, _hint_size.y, _gui_slot_color, 0.5);
+        }
         
         _invY += _invSlotH + _invSlotH + _invGap;
         _invSlotW = 16;
@@ -321,7 +328,7 @@ if (is_visible) {
                 if (_draggingItem && _dragSlotFromInventory == _slot) {
                     draw_sprite_stretched(obj_player.inventory[?_slot].sprite_index, 
                             obj_player.inventory[?_slot].image_index, 
-                            mouse_gui_x, mouse_gui_y, _w -(2*_margin), _h-(2*_margin));
+                            mouse_gui_x-_dragginRelPos.x, mouse_gui_y-_dragginRelPos.y, _w -(2*_margin), _h-(2*_margin));
                 } else {
                     draw_sprite_stretched(obj_player.inventory[?_slot].sprite_index, 
                             obj_player.inventory[?_slot].image_index, 
@@ -334,6 +341,8 @@ if (is_visible) {
                         return undefined;
                     } else if (!_draggingItem && mouse_check_button_pressed(mb_left)) {
                         _draggingItem = true;
+                        _dragginRelPos.x = mouse_gui_x - (_x+_margin);
+                        _dragginRelPos.y = mouse_gui_y - (_y+_margin);
                         _dragSlotFromInventory = _slot;
                         _dragSlotFromEquipment = undefined;
                         return undefined;
@@ -342,8 +351,9 @@ if (is_visible) {
                     var _halign = fa_left;
                     if (_hint_x > display_get_gui_width()/2) {
                         _halign = fa_right;
+                        _hint_x -= _margin;
                     } else {
-                        _hint_x += (_talentWidth+2);
+                        _hint_x += _margin;
                     }
                     return {
                         hint_x : _hint_x,

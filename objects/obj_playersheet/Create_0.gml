@@ -28,6 +28,7 @@ symbols_hint = getText("Symbols_hint");
 keyring_hint = getText("Keyring_hint");
 
 _draggingItem = false;
+_dragginRelPos = new Vec2(0, 0);
 _dragSlotFromInventory = undefined;
 _dragSlotFromEquipment = undefined;
 

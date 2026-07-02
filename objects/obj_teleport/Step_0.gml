@@ -47,7 +47,7 @@ if (collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_player
         }
         
         with(obj_player) {
-            move_and_collide(_dx, _dy, collision_array, undefined, undefined, undefined);
+            move_and_collide(_dx, _dy, collision_array);
         }
     }
 } else {

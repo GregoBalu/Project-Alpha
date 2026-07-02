@@ -4,7 +4,7 @@ function sc_fish(){
 
 
 
-function draw_rope(x1, y1, x2, y2, _rope_len)
+function draw_rope(x1, y1, x2, y2)
 {
     var _segments = 8;
     var _smoothness = 2;// 2-3 iterations is enough

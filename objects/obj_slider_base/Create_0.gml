@@ -5,12 +5,10 @@ max_value = 1;
 indicator_width = sprite_get_width(spr_indicator);
 indicator_height = sprite_get_height(spr_indicator);
 
-updateIndicator();
-
 previous_mouse_click = false;
 previous_click_indicator = false;
 
-function updateIndicator() {
+updateIndicator = function() {
     indicator_pos = {
         x: x + sprite_width*(current_value/max_value),
         x_offset: -indicator_width/2,
@@ -20,6 +18,8 @@ function updateIndicator() {
     }
 }
 
-function onValueChanged(new_value) {
+onValueChanged = function(new_value) {
     //Override me
 }
+
+updateIndicator();

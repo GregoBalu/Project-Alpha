@@ -5,10 +5,14 @@ if (!variable_global_exists("show_hints")) {
     global.show_hints = true;
 }
 
-checked = global.show_hints;
-refresh_image();
+init = function() {
+    checked = global.show_hints;
+    refresh_image();
+}
 
 onChanged = function() {
     // override me
     global.show_hints = checked;
 }
+
+init();

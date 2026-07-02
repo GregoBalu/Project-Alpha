@@ -1,5 +1,5 @@
 
-function clicked() {
+clicked = function() {
     //Override me
     show_debug_message($"Button '{text}' clicked");
     clickAction();

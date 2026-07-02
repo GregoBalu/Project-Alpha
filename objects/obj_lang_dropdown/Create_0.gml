@@ -1,10 +1,12 @@
 event_inherited();
 
 options = ["English", "Magyar"];
-if (global.language == "en") {
-    selected_index = 0;
-} else if (global.language == "hu") {
-    selected_index = 1;
+init = function() {
+    if (global.language == "en") {
+        selected_index = 0;
+    } else if (global.language == "hu") {
+        selected_index = 1;
+    }
 }
 
 onChanged = function() {
@@ -18,3 +20,5 @@ onChanged = function() {
     })
     room_restart();
 }
+
+init();

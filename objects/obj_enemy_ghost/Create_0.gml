@@ -42,3 +42,11 @@ onBattleDamageReceived = function(_damaged_amount) {
         audio_play_sound(snd_ghost_damaged, AUDIO_PRIO_EFFECTS, false, 1.0, 0.3);
     }
 }
+onDeath = function() {
+    if (DEBUG) show_debug_message("enemy dead ghost");
+    obj_loottable.generate_loot(self);
+    obj_player.gain_experience(self);
+    obj_player.add_corruption(-5);
+    instance_destroy();
+    exit;
+}

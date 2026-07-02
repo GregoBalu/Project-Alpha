@@ -1,6 +1,11 @@
 if (room != rm_battle)
 {
     alarm[0] = TIME_SECOND;
+    with (obj_enemy_base) {
+        if (hp <= 0) {
+            onDeath();
+        }
+    }
 }
 
 if (room == rm_battle){

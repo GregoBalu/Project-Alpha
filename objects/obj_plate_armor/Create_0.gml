@@ -10,7 +10,7 @@ increase_defense = 3;
 minus_lifesteal = 2;
 
 name = getText("Item_plate_armor_name");
-description = string(getText("Item_plate_armor_desc"), increase_defense, minus_lifesteal);
+description = string(getText("Item_plate_armor_desc"), increase_defense, minus_lifesteal*100);
 
 
 

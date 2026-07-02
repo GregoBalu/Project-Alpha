@@ -43,11 +43,7 @@ if (MOVING && ds_list_size(particles) > 0) {
 }
 
 if (hp <= 0) {
-    if (DEBUG) show_debug_message("enemy dead");
-    obj_loottable.generate_loot(self);
-    obj_player.gain_experience(self);
-    instance_destroy();
-    exit;
+    onDeath();
 }
 
 //scale enemy up with player a bit to be more exciting/challenging

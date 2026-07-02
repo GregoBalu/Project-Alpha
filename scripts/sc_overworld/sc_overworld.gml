@@ -35,11 +35,21 @@ function spawn_effect(_sprite, _x, _y, _w, _h, _depth, _dir, _speed, _life_secon
     });
 }
 
-function point_check_for_spawn(_p, _ok_tilemap, _collision_tilemap, _width, _height) {
+/**
+ * Check if a point is OK to spawn the object or not
+ * @param {Vec2} _p Point to check, assuming it's the center of object
+ * @param {Id.TileMapElement} _ok_tilemap
+ * @param {Id.TileMapElement OR Array} _collision_tilemap
+ * @param {real} _width Width of item to spawn
+ * @param {real} _height Height of item to spawn
+ * @param {real} [_margin]=0 Additional margin around object
+ * @returns {Bool} True if spawnage is OK, false otherwise
+ */ 
+function point_check_for_spawn(_p, _ok_tilemap, _collision_tilemap, _width, _height, _margin = 0) {
     if (typeof(_collision_tilemap) == "array") {
         var _res = true;
         for (var _i = 0; _i < array_length(_collision_tilemap); _i++) {
-            _res = _res && point_check_for_spawn(_p, _ok_tilemap, _collision_tilemap[_i], _width, _height);
+            _res = _res && point_check_for_spawn(_p, _ok_tilemap, _collision_tilemap[_i], _width, _height, _margin);
         }
         return _res;
     }
@@ -48,19 +58,22 @@ function point_check_for_spawn(_p, _ok_tilemap, _collision_tilemap, _width, _hei
         return false;
     }
     
-    var _top_left = new Vec2(_p.x-_width/2, _p.y-_height/2);
+    var _w2 = _width/2;
+    var _h2 = _height/2;
+    
+    var _top_left = new Vec2(_p.x-_w2-_margin, _p.y-_h2-_margin);
     if (tilemap_get_at_pixel(_ok_tilemap, _top_left.x, _top_left.y) <= 0 || tilemap_get_at_pixel(_collision_tilemap, _top_left.x, _top_left.y) > 0) {
         return false;
     }
-    var _top_right = new Vec2(_p.x+_width/2, _p.y-_height/2);
+    var _top_right = new Vec2(_p.x+_w2+_margin, _top_left.y);
     if (tilemap_get_at_pixel(_ok_tilemap, _top_right.x, _top_right.y) <= 0 || tilemap_get_at_pixel(_collision_tilemap, _top_right.x, _top_right.y) > 0) {
         return false;
     }
-    var _bot_left = new Vec2(_p.x-_width/2, _p.y+_height/2);
+    var _bot_left = new Vec2(_top_left.x, _p.y+_h2+_margin);
     if (tilemap_get_at_pixel(_ok_tilemap, _bot_left.x, _bot_left.y) <= 0 || tilemap_get_at_pixel(_collision_tilemap, _bot_left.x, _bot_left.y) > 0) {
         return false;
     }
-    var _bot_right = new Vec2(_p.x+_width/2, _p.y+_height/2);
+    var _bot_right = new Vec2(_top_right.x, _bot_left.y);
     if (tilemap_get_at_pixel(_ok_tilemap, _bot_right.x, _bot_right.y) <= 0 || tilemap_get_at_pixel(_collision_tilemap, _bot_right.x, _bot_right.y) > 0) {
         return false;
     }

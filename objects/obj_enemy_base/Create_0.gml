@@ -159,3 +159,10 @@ onBattleEnd = function(_self) {
         ds_list_destroy(_self.particles);
     }
 }
+onDeath = function() {
+    if (DEBUG) show_debug_message("enemy dead");
+    obj_loottable.generate_loot(self);
+    obj_player.gain_experience(self);
+    instance_destroy();
+    exit;
+}

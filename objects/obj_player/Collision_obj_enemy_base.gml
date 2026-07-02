@@ -1,4 +1,7 @@
+show_debug_message("DEBUG: Collision enemy_base");
 if (instance_exists(obj_dialog) || instance_exists(obj_vendor) || instance_exists(obj_battle_switcher)) exit;
+    
+show_debug_message($"dialog={instance_exists(obj_dialog)} vendor={instance_exists(obj_vendor)} battle_switcher={instance_exists(obj_battle_switcher)} pause={global.do_pause}")
     
 if (global.do_pause) exit;
     

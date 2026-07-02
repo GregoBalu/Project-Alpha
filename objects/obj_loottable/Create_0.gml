@@ -37,8 +37,8 @@ search_point = function(target_x, target_y, radius, width, height){
         
         var x1 = nx;
         var y1 = ny;
-        var x2 = nx;
-        var y2 = ny;
+        var x2 = nx+width;
+        var y2 = ny+height;
     
         if (collision_rectangle(x1, y1, x2, y2, collision_array, false, true) == noone) 
         {

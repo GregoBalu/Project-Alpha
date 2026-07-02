@@ -2,6 +2,7 @@ if (object_exists(obj_playersheet)) {
     depth = obj_playersheet.depth -1;
 }
 
+show_debug_message("DEBUG: talent pause: true");
 global.do_pause = true;
 
 init_localisation();

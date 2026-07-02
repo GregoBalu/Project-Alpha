@@ -91,6 +91,10 @@ gain_experience = function(_enemy) {
     }
 }
 
+/**
+* Gain _num amount of talents for the player.
+* @param {Integer} _num Enemy that is killed.
+*/
 gain_talent = function(_num) {
     talent_points+= _num;
     statistic.talent_gains += _num;
@@ -232,9 +236,7 @@ unequipItem = function(_equipSlot) {
 }
 
 add_corruption = function(_amount) {
-    if (_amount > 0 && corruption >= corruption_total ) {
-        return;
-    } else if (_amount < 0 && corruption <= 0) {
+    if (_amount < 0 && corruption <= 0) {
         return;
     }
     

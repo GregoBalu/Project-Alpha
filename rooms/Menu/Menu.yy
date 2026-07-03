@@ -6,6 +6,7 @@
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
+    {"name":"inst_5D348246","path":"rooms/Menu/Menu.yy",},
     {"name":"inst_259784BE","path":"rooms/Menu/Menu.yy",},
     {"name":"inst_721FD87D","path":"rooms/Menu/Menu.yy",},
     {"name":"inst_29AED840","path":"rooms/Menu/Menu.yy",},
@@ -29,6 +30,7 @@
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_2BDE6DC0","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_2BDE6DC0","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":3.0,"scaleY":2.5,"spriteId":{"name":"spr_title","path":"sprites/spr_title/spr_title.yy",},"x":128.0,"y":0.0,},
       ],"depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Assets","properties":[],"resourceType":"GMRAssetLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":100,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+        {"$GMRInstance":"v4","%Name":"inst_5D348246","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5D348246","objectId":{"name":"obj_settings_loader","path":"objects/obj_settings_loader/obj_settings_loader.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":640.0,"y":208.0,},
         {"$GMRInstance":"v4","%Name":"inst_259784BE","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_259784BE","objectId":{"name":"obj_button_newgame","path":"objects/obj_button_newgame/obj_button_newgame.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_button_base","path":"objects/obj_button_base/obj_button_base.yy",},"propertyId":{"name":"text","path":"objects/obj_button_base/obj_button_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"New_Game",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":6.0,"scaleY":1.5,"x":224.0,"y":192.0,},

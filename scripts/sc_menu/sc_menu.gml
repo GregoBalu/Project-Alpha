@@ -13,7 +13,10 @@ function onNewGame() {
     
 }
 
+global.settings_loaded = false;
+
 function loadSettings() {
+    if (global.settings_loaded) exit;
     init_localisation();
     
     var _fname = "settings.dat";
@@ -29,7 +32,9 @@ function loadSettings() {
     
     audio_group_set_gain(ag_music, _json.music_volume);
     audio_group_set_gain(ag_sfx, _json.sfx_volume);
-    loadLocale(_json.language);
+    if (global.language != _json.language) {
+        loadLocale(_json.language);
+    }
     global.show_hints = _json.show_hints;
     
     with(obj_slider_audio) {
@@ -43,6 +48,7 @@ function loadSettings() {
     }
 
     file_text_close(_file);
+    global.settings_loaded = true;
 }
 
 function saveSettings() {

@@ -277,6 +277,7 @@
     {"id":{"name":"obj_room_restart","path":"objects/obj_room_restart/obj_room_restart.yy",},},
     {"id":{"name":"obj_room_switcher","path":"objects/obj_room_switcher/obj_room_switcher.yy",},},
     {"id":{"name":"obj_saber_of_many_edges","path":"objects/obj_saber_of_many_edges/obj_saber_of_many_edges.yy",},},
+    {"id":{"name":"obj_settings_loader","path":"objects/obj_settings_loader/obj_settings_loader.yy",},},
     {"id":{"name":"obj_sewer_lamp","path":"objects/obj_sewer_lamp/obj_sewer_lamp.yy",},},
     {"id":{"name":"obj_shiny","path":"objects/obj_shiny/obj_shiny.yy",},},
     {"id":{"name":"obj_shroud_clear","path":"objects/obj_shroud_clear/obj_shroud_clear.yy",},},

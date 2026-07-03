@@ -1,7 +1,10 @@
 event_inherited();
 
+init_localisation();
+
 options = ["English", "Magyar"];
 init = function() {
+    show_debug_message($"lang_dropdown.init() lang={global.language}");
     if (global.language == "en") {
         selected_index = 0;
     } else if (global.language == "hu") {

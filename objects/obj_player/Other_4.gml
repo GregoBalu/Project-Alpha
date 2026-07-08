@@ -27,11 +27,6 @@ if (instance_exists(obj_room_switcher)) {
     if (DEBUG) show_debug_message("Cloning player from room_switcher");
     load_player_data_from(_inst);
     
-    create_checkpoint();
-} else if (instance_exists(obj_checkpoint)) {
-    var _inst = instance_find(obj_checkpoint, 0);
-    if (DEBUG) show_debug_message("Cloning player from checkpoint");
-    load_player_data_from(_inst);
 } else {
     {
         ds_list_add(talents, instance_create_layer(0, 0, "GUI", obj_talent_heavy_cheap, {
@@ -131,7 +126,6 @@ if (instance_exists(obj_room_switcher)) {
         }));
     }
     
-    create_checkpoint();
 }
 
 

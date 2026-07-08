@@ -29,6 +29,6 @@ onPickup = function(othr) {
     }
     
     
-    othr.divine_symbols++;
+    obj_perma_progress.divine_symbols++;
     return true;
 }

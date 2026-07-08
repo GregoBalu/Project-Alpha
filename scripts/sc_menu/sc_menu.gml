@@ -30,21 +30,40 @@ function loadSettings() {
     var _line = file_text_read_string(_file);
     var _json = json_parse(_line);
     
-    audio_group_set_gain(ag_music, _json.music_volume);
-    audio_group_set_gain(ag_sfx, _json.sfx_volume);
-    if (global.language != _json.language) {
-        loadLocale(_json.language);
-    }
-    global.show_hints = _json.show_hints;
+    var _loaded_audio = false;
     
-    with(obj_slider_audio) {
-        init();
+    if (struct_exists(_json, "music_volume")) {
+        audio_group_set_gain(ag_music, _json.music_volume);
+        _loaded_audio = true;
     }
-    with (obj_lang_dropdown) {
-        init();
+    if (struct_exists(_json, "sfx_volume")) {
+        audio_group_set_gain(ag_sfx, _json.sfx_volume);
+        _loaded_audio = true;
     }
-    with (obj_checkbox_show_hint) {
-        init();
+    if (struct_exists(_json, "language")) {
+        if (global.language != _json.language) {
+            loadLocale(_json.language);
+            with (obj_lang_dropdown) {
+                init();
+            }
+        }
+    }
+    if (struct_exists(_json, "show_hints")) {
+        global.show_hints = _json.show_hints;
+        with (obj_checkbox_show_hint) {
+            init();
+        }
+    }
+    if (struct_exists(_json, "progress")) {
+        if (struct_exists(_json.progress, "divine_symbols")) {
+            obj_perma_progress.divine_symbols = _json.progress.divine_symbols;
+        }
+    }
+    
+    if (_loaded_audio) {
+        with(obj_slider_audio) {
+            init();
+        }
     }
 
     file_text_close(_file);
@@ -58,7 +77,10 @@ function saveSettings() {
         music_volume: audio_group_get_gain(ag_music),
         sfx_volume: audio_group_get_gain(ag_sfx),
         language: global.language,
-        show_hints: global.show_hints
+        show_hints: global.show_hints,
+        progress: {
+            divine_symbols: obj_perma_progress.divine_symbols
+        }
     };
     
     file_text_write_string(_file, json_stringify(_settings));

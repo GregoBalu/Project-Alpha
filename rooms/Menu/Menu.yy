@@ -23,6 +23,7 @@
     {"name":"inst_96DCED4","path":"rooms/Menu/Menu.yy",},
     {"name":"inst_C333075","path":"rooms/Menu/Menu.yy",},
     {"name":"inst_4F9B413E","path":"rooms/Menu/Menu.yy",},
+    {"name":"inst_E98464F","path":"rooms/Menu/Menu.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -77,6 +78,7 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_textbox","path":"objects/obj_textbox/obj_textbox.yy",},"propertyId":{"name":"text","path":"objects/obj_textbox/obj_textbox.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Menu_show_hints",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":7.0,"scaleY":1.0,"x":736.0,"y":192.0,},
         {"$GMRInstance":"v4","%Name":"inst_4F9B413E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4F9B413E","objectId":{"name":"obj_checkbox_show_hint","path":"objects/obj_checkbox_show_hint/obj_checkbox_show_hint.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.5,"scaleY":0.5,"x":864.0,"y":192.0,},
+        {"$GMRInstance":"v4","%Name":"inst_E98464F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_E98464F","objectId":{"name":"obj_perma_progress","path":"objects/obj_perma_progress/obj_perma_progress.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":560.0,"y":320.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Assets_Background","assets":[
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_B3A09DE","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_B3A09DE","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":2.0,"spriteId":{"name":"spr_corner_ornament","path":"sprites/spr_corner_ornament/spr_corner_ornament.yy",},"x":576.0,"y":416.0,},

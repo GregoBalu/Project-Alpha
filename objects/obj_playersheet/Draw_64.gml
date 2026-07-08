@@ -401,7 +401,7 @@ if (is_visible) {
             var _symbol_y = _invY;
             draw_sprite_stretched_ext(spr_divine_symbol, 0, _footer_x, _invY , _invSlotW, _invSlotH, #C0C0C0, 1);
             _footer_x += _invSlotW + _invGap;
-            draw_textbox(_footer_x, _invY+_invGap, _invSlotW-2*_invGap, _invSlotH-2*_invGap, $"x{obj_player.divine_symbols}");
+            draw_textbox(_footer_x, _invY+_invGap, _invSlotW-2*_invGap, _invSlotH-2*_invGap, $"x{obj_perma_progress.divine_symbols}");
             if (point_in_rectangle(mouse_gui_x, mouse_gui_y, _symbol_x, _symbol_y, _footer_x+_invSlotW-2*_invGap, _invY+_invSlotH-2*_invGap)) {
                 _do_draw_hint = true;
                 _draw_hint_data = {

@@ -11,8 +11,7 @@ function save_player_data_to(_inst){
         equipped_items: ds_map_create(),
         coins: self.coins,
         statistic: self.statistic,
-        key_ring: self.key_ring,
-        divine_symbols: self.divine_symbols
+        key_ring: self.key_ring
     };
     ds_list_copy(_inst.player_data.talents, self.talents);
     ds_list_copy(_inst.player_data.unlocked_talents, self.unlocked_talents);
@@ -37,16 +36,5 @@ function load_player_data_from(_inst) {
     coins = _inst.player_data.coins;
     statistic = _inst.player_data.statistic;
     key_ring = _inst.player_data.key_ring;
-    divine_symbols = _inst.player_data.divine_symbols;
 }
 
-function create_checkpoint() {
-    with (obj_checkpoint) {
-        instance_destroy();
-    }
-    
-    var _inst = instance_create_layer(0, 0, "Instances", obj_checkpoint);
-    with (obj_player) {
-        save_player_data_to(_inst);
-    }
-}
